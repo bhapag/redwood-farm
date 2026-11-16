@@ -1,0 +1,70 @@
+---
+import Base from '../layouts/Base.astro';
+import SpokeList from './SpokeList.astro';
+import Icon from './Icon.astro';
+import { Picture } from 'astro:assets';
+import { clusters } from '../data/clusters.js';
+import { img } from '../data/images.js';
+import { pagesIn, pathOf } from '../data/pages.js';
+import { faqSchema } from '../data/faq.js';
+import { site, waLink } from '../data/site.js';
+import { u, abs } from '../data/urls.js';
+
+const { cluster, title, seoTitle, description, answer, image, alt, faq = [], og = 'og-home.jpg' } = Astro.props;
+const hub = clusters[cluster];
+const list = await pagesIn(cluster);
+const schema = [
+  { '@context': 'https://schema.org', '@type': 'CollectionPage', name: hub.name, description, url: abs(hub.path),
+    hasPart: list.map((p) => ({ '@type': 'Article', headline: p.data.title, url: abs(pathOf(p)) })) },
+  { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: abs('/') },
+    { '@type': 'ListItem', position: 2, name: hub.name, item: abs(hub.path) },
+  ] },
+  ...(faq.length ? [faqSchema(faq)] : []),
+];
+---
+<Base title={seoTitle} description={description} schema={schema} og={og} current={hub.short}>
+  <header class="h-head">
+    <div class="h-img" data-parallax="10"><Picture src={img(image)} formats={['avif', 'webp']} widths={[640, 1000, 1400]} sizes="100vw" alt={alt} loading="eager" fetchpriority="high" /></div>
+    <div class="h-copy wrap">
+      <span class="kicker">{hub.name}</span>
+      <h1 data-split set:html={title} />
+    </div>
+  </header>
+  <section class="wrap h-answer">
+    <p class="h-lede" data-reveal>{answer}</p>
+    <slot />
+  </section>
+  <SpokeList cluster={cluster} heading={`Everything in ${hub.name}`} />
+  {faq.length > 0 && (
+    <section class="wrap faq h-faq" aria-labelledby="hfaq">
+      <h2 id="hfaq">Quick answers</h2>
+      {faq.map((f) => <details><summary>{f.q}</summary><p>{f.a}</p></details>)}
+    </section>
+  )}
+  <section class="wood wood-edge h-cta">
+    <div class="wrap">
+      <h2>Questions before you come?</h2>
+      <p>Message us with your date, time and number of guests. Open every day, 10 AM to 11 PM.</p>
+      <div class="btns">
+        <a class="btn red" data-magnetic href={waLink('Hello Red Wood Farm, I have a question.')} target="_blank" rel="noopener"><Icon name="wa" />WhatsApp {site.phoneDisplay}</a>
+        <a class="btn ghost" href={u('/menu/')}><Icon name="menu" />See the menu</a>
+      </div>
+    </div>
+  </section>
+</Base>
+<style>
+  .h-head { position: relative; height: 72svh; min-height: 460px; overflow: hidden; display: flex; align-items: flex-end; }
+  .h-img { position: absolute; inset: -6% 0; }
+  .h-img :global(img) { width: 100%; height: 100%; object-fit: cover; }
+  .h-head::after { content: ''; position: absolute; inset: 0; background: linear-gradient(rgb(11 15 12 / 0.3), rgb(11 15 12 / 0.15) 35%, var(--ink) 97%); }
+  .h-copy { position: relative; z-index: 1; padding-bottom: 6vh; }
+  .h-copy h1 { font-size: var(--t-1); max-width: 15ch; }
+  .h-answer { padding-top: 48px; }
+  .h-lede { font: 400 clamp(1.3rem, 1rem + 1.4vw, 2.2rem)/1.25 var(--serif); max-width: 34ch; }
+  .h-faq { padding-bottom: 80px; }
+  .h-faq h2 { font-size: var(--t-2); }
+  .h-cta { padding-block: 72px; }
+  .h-cta h2 { font-size: var(--t-2); }
+  .h-cta p { color: var(--ivory-2); }
+</style>

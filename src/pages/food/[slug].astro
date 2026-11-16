@@ -1,0 +1,9 @@
+---
+import GuidePage from '../../components/GuidePage.astro';
+import { pagesIn, slugOf } from '../../data/pages.js';
+
+export async function getStaticPaths() {
+  return (await pagesIn('food')).map((entry) => ({ params: { slug: slugOf(entry) }, props: { entry } }));
+}
+---
+<GuidePage entry={Astro.props.entry} />

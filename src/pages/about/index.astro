@@ -1,0 +1,89 @@
+---
+import Base from '../../layouts/Base.astro';
+import Icon from '../../components/Icon.astro';
+import { Picture } from 'astro:assets';
+import { site, waLink } from '../../data/site.js';
+import { menu, allItems } from '../../data/menu.js';
+import { reviews } from '../../data/reviews.js';
+import { u, abs } from '../../data/urls.js';
+import nameArch from '../../assets/venue/name-arch.jpg';
+import tunnel from '../../assets/venue/tunnel.jpg';
+import longTables from '../../assets/venue/day-long-tables.jpg';
+import platter from '../../assets/food/nonveg_platter.jpg';
+
+const veg = allItems.filter((i) => i.veg).length;
+const schema = [
+  { '@context': 'https://schema.org', '@type': 'AboutPage', name: 'About Red Wood Farm', url: abs('/about/'), about: { '@id': abs('/#venue') } },
+  { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: abs('/') },
+    { '@type': 'ListItem', position: 2, name: 'About', item: abs('/about/') },
+  ] },
+];
+---
+<Base title="About Red Wood Farm | Garden Family Restaurant, Pakhowal Road, Ludhiana" description={`Red Wood Farm is a garden family restaurant and party lawn on outer Pakhowal Road, Ludhiana: ${menu.count} dishes, a fairy-lit lawn, open daily 10 AM to 11 PM.`} schema={schema} og="og-home.jpg" current="About">
+  <header class="ab-head wrap">
+    <span class="kicker">About us</span>
+    <h1 data-split>A family restaurant first, a party lawn <em>second</em></h1>
+    <p class="answer">Red Wood Farm is a garden family restaurant and party lawn at VPO Daad, on outer Pakhowal Road in Ludhiana. We cook North Indian, tandoor and Indo-Chinese food, {menu.count} dishes in all, and serve it at tables on a lawn lit with fairy lights. We are open every day from 10 AM to 11 PM.</p>
+  </header>
+
+  <section class="wrap ab-grid">
+    <figure class="frame ab-a" data-clip><Picture src={nameArch} formats={['avif', 'webp']} widths={[400, 800]} sizes="(min-width: 900px) 40vw, 92vw" alt="The Red Wood Farm name arch at the entrance" loading="eager" /></figure>
+    <div class="prose">
+      <h2>The name</h2>
+      <p>The name is Red Wood Farm, three words, exactly as it is written on the gate. You will find the same name on our arch at the entrance, on the green neon sign and on the small crimson RW monogram we use on our menus and cards.</p>
+      <h2>The place</h2>
+      <p>You come in through a garden gate and a hedge arch. After dark, the path runs through a tunnel of warm white fairy lights over a red carpet, which is the photo most guests take first. Beyond it is the lawn: open grass with dining tables, low lounge seating under string lights, and tables under palm trees whose trunks are wrapped in lights. In the daytime the same lawn takes long wooden tables for lunches and get-togethers.</p>
+      <h2>The kitchen</h2>
+      <p>The menu runs from soups and Indo-Chinese starters to the tandoor, soya champ, platters, sizzlers, a long North Indian main course, breads, rice and desserts. {veg} of the {menu.count} dishes are vegetarian, and every dish carries a veg or non-veg mark. Many mains come in half and full portions so a family can share. Prices include GST and are printed on the <a href={u('/menu/')}>menu page</a>.</p>
+      <p>Two dishes are ours alone: the Farm to Table Special Chicken, our house signature chicken, and Atta Chicken, cooked sealed inside wheat-flour dough.</p>
+    </div>
+  </section>
+
+  <section class="wrap ab-grid ab-rev">
+    <div class="prose">
+      <h2>Parties on the lawn</h2>
+      <p>The same lawn hosts birthday parties, kitty parties, small family functions and office lunches, with food from our own kitchen. Past set-ups on the lawn have included balloon arches, a kite-theme backdrop for a daytime party, a mehndi stage and buffet counters. Booking is done on WhatsApp: you send the date, time and number of guests, and we reply with what is possible. See <a href={u('/party/')}>parties and events</a>.</p>
+      <h2>What we do not publish</h2>
+      <p>We keep this website to facts we can stand behind. Guest capacity, per-plate party prices and packages change with the set-up and the date, so we share them on WhatsApp rather than print a number here. We do not have wheelchair access at the moment, and we say so on every page where it matters.</p>
+      <h2>What guests say</h2>
+      <ul>
+        {reviews.slice(0, 4).map((r) => <li>"{r.q}" ({r.by}, Google review)</li>)}
+      </ul>
+      <p>Our Google rating was {site.rating.value} from {site.rating.count} reviews when we last checked on {site.rating.checked}. If you visit, we would be glad to read yours: <a href={site.reviewUrl} target="_blank" rel="noopener">write a Google review</a>.</p>
+    </div>
+    <div class="ab-stack">
+      <figure class="frame" data-clip><Picture src={tunnel} formats={['avif', 'webp']} widths={[400, 800]} sizes="(min-width: 900px) 40vw, 92vw" alt="The fairy-light tunnel over the red carpet at night" /></figure>
+      <figure class="frame" data-clip><Picture src={longTables} formats={['avif', 'webp']} widths={[400, 800]} sizes="(min-width: 900px) 40vw, 92vw" alt="Long wooden tables set on the lawn for a daytime gathering" /></figure>
+      <figure class="frame" data-clip><Picture src={platter} formats={['avif', 'webp']} widths={[400, 800]} sizes="(min-width: 900px) 40vw, 92vw" alt="A non-veg tandoori platter with mint chutney" /></figure>
+    </div>
+  </section>
+
+  <section class="wood wood-edge ab-cta">
+    <div class="wrap">
+      <h2>Find us</h2>
+      <address class="lede">{site.address.full}</address>
+      <p class="muted">{site.hoursDisplay}. Takeaway and Wi-Fi. No wheelchair access.</p>
+      <div class="btns">
+        <a class="btn red" data-magnetic href={waLink('Hello Red Wood Farm, I would like to book a table.')} target="_blank" rel="noopener"><Icon name="wa" />Book on WhatsApp</a>
+        <a class="btn ghost" href={u('/visit/')}><Icon name="pin" />Getting here</a>
+      </div>
+    </div>
+  </section>
+</Base>
+<style>
+  .ab-head { padding-top: clamp(110px, 16vw, 200px); padding-bottom: 40px; }
+  .ab-head h1 { font-size: var(--t-1); max-width: 16ch; }
+  .ab-grid { display: grid; gap: 48px; padding-block: 48px; align-items: start; }
+  @media (min-width: 900px) { .ab-grid { grid-template-columns: 0.9fr 1.1fr; } .ab-rev { grid-template-columns: 1.1fr 0.9fr; } }
+  .ab-a { aspect-ratio: 1; }
+  .ab-stack { display: grid; gap: 14px; }
+  .ab-stack figure { margin: 0; aspect-ratio: 16 / 10; }
+  .prose h2 { font-size: var(--t-3); margin-top: 0; }
+  .prose h2 + p { margin-top: 0; }
+  .prose p + h2, .prose ul + h2 { margin-top: 1.6em; }
+  .prose p, .prose li { color: var(--ivory-2); }
+  .prose a { color: var(--red-ink); }
+  .ab-cta { padding-block: 72px; margin-top: 40px; }
+  .ab-cta h2 { font-size: var(--t-2); }
+</style>

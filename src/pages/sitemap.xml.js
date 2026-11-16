@@ -1,14 +1,22 @@
-import { base, u, abs, sitePath, CANONICAL_ORIGIN } from '../data/urls.js';
-import { getCollection } from 'astro:content';
+import { abs } from '../data/urls.js';
+import { allPages, pathOf } from '../data/pages.js';
 
-export async function GET({ site }) {
-    const notes = await getCollection('notes');
+const NL = String.fromCharCode(10);
+
+export async function GET() {
+  const pages = await allPages();
   const today = new Date().toISOString().slice(0, 10);
-  const paths = ['/', '/menu/', '/party/', '/visit/', '/notes/', ...notes.map((n) => `/notes/${n.id}/`)];
-  const body = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${paths.map((p) => `  <url><loc>${abs(p)}</loc><lastmod>${today}</lastmod></url>`).join('\n')}
-</urlset>
-`;
+  const core = ['/', '/menu/', '/party/', '/visit/', '/food/', '/garden/', '/guides/', '/about/', '/faq/'];
+  const rows = [
+    ...core.map((p) => ({ loc: abs(p), lastmod: today })),
+    ...pages.map((p) => ({ loc: abs(pathOf(p)), lastmod: p.data.updated.toISOString().slice(0, 10) })),
+  ];
+  const body = [
+    '<?xml version="1.0" encoding="UTF-8"?>',
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+    ...rows.map((r) => `  <url><loc>${r.loc}</loc><lastmod>${r.lastmod}</lastmod></url>`),
+    '</urlset>',
+    '',
+  ].join(NL);
   return new Response(body, { headers: { 'Content-Type': 'application/xml' } });
 }

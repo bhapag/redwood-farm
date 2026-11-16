@@ -1,0 +1,16 @@
+---
+import HubPage from '../../components/HubPage.astro';
+import { menu, allItems } from '../../data/menu.js';
+const veg = allItems.filter((i) => i.veg).length;
+const faq = [
+  { q: 'What kind of food does Red Wood Farm serve?', a: `North Indian, tandoor and Indo-Chinese food: ${menu.count} dishes across soups, appetizers, tandoori, soya champ, platters, sizzlers, mains, breads, rice, salads, raita, sides and desserts.` },
+  { q: 'Are the menu prices final?', a: 'Menu prices are in rupees and include GST. The full menu page always shows the current prices.' },
+  { q: 'How many vegetarian dishes are there?', a: `${veg} of the ${menu.count} dishes are marked veg. Every dish carries a veg or non-veg mark.` },
+  { q: 'Can I order takeaway?', a: 'Yes. Call or WhatsApp 096467 13555 and pick up your order at the restaurant.' },
+];
+---
+<HubPage cluster="food" title="Food at Red Wood Farm, <em>dish by dish</em>"
+  seoTitle="Food Guides: Tandoor, Paneer, Dal Makhni & More | Red Wood Farm"
+  description={`Guides to the Red Wood Farm menu on Pakhowal Road, Ludhiana: tandoor, paneer, dal, chicken curries, Indo-Chinese, breads and desserts, with real prices.`}
+  answer={`Red Wood Farm serves ${menu.count} North Indian, tandoor and Indo-Chinese dishes, ${veg} of them vegetarian, with prices that include GST. These guides walk through the menu section by section: what each dish is, what it costs and what to order with it.`}
+  image="food/tandoor-glow.jpg" alt="Skewers cooking inside a glowing clay tandoor" faq={faq} og="og-menu.jpg" />

@@ -1,0 +1,19 @@
+# Totals verified by hand on 17 Nov 2026 (sum of real menu prices).
+food/first-visit-what-to-order.md|Garlic Naan|145
+food/first-visit-what-to-order.md|Laccha Paratha|135
+food/group-ordering-guide.md|Butter Naan|180
+food/group-ordering-guide.md|Tandoori Roti|80
+food/group-ordering-guide.md|Dal Makhni|550
+food/group-ordering-guide.md|Jeera Rice|460
+food/group-ordering-guide.md|Butter Naan|360
+food/group-ordering-guide.md|Tandoori Roti|160
+food/group-ordering-guide.md|Dal Makhni|825
+food/group-ordering-guide.md|Butter Naan|450
+food/group-ordering-guide.md|Garlic Naan|550
+food/group-ordering-guide.md|Tandoori Roti|200
+food/group-ordering-guide.md|Garden Fresh Kachumber|250
+food/group-ordering-guide.md|Mixed Raita|350
+food/kids-favourites.md|Butter Naan|180
+food/kids-favourites.md|Vanilla|100
+food/desserts.md|Vanilla|100
+party/christmas-lunch-ludhiana.md|Non-Veg Platter|725

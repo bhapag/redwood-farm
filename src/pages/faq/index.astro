@@ -1,0 +1,58 @@
+---
+import Base from '../../layouts/Base.astro';
+import Icon from '../../components/Icon.astro';
+import { site, waLink } from '../../data/site.js';
+import { menu, allItems } from '../../data/menu.js';
+import { faqSchema, partyFaq, visitFaq } from '../../data/faq.js';
+import { u, abs } from '../../data/urls.js';
+
+const veg = allItems.filter((i) => i.veg).length;
+const min = Math.min(...allItems.map((i) => i.half || i.full));
+const max = Math.max(...allItems.map((i) => i.full));
+const groups = [
+  { h: 'Visiting', items: visitFaq },
+  { h: 'Food and menu', items: [
+    { q: 'What cuisine does Red Wood Farm serve?', a: `North Indian, tandoor and Indo-Chinese. The menu has ${menu.count} dishes.` },
+    { q: 'What do dishes cost?', a: `Menu prices run from ₹${min} to ₹${max} and include GST. Many mains come in half and full portions. Every price is on the menu page.` },
+    { q: 'How many vegetarian dishes are there?', a: `${veg} of the ${menu.count} dishes are vegetarian, and every dish is marked veg or non-veg.` },
+    { q: 'Do you have a house special?', a: 'Yes: the Farm to Table Special Chicken, our house signature chicken, and Atta Chicken, cooked sealed inside wheat-flour dough.' },
+  ] },
+  { h: 'Parties and events', items: partyFaq },
+  { h: 'This website', items: [
+    { q: 'Do you store my details when I send an enquiry?', a: 'No. The enquiry form only opens WhatsApp with your message filled in. Nothing is saved on this website.' },
+    { q: 'Why are party prices not listed?', a: 'They depend on the menu, the number of guests and the set-up, and they change. We share current prices on WhatsApp.' },
+  ] },
+];
+const all = groups.flatMap((g) => g.items);
+const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
+  { '@type': 'ListItem', position: 1, name: 'Home', item: abs('/') },
+  { '@type': 'ListItem', position: 2, name: 'FAQ', item: abs('/faq/') },
+] };
+---
+<Base title="Red Wood Farm FAQ: Hours, Menu, Parties & Directions" description="Answers about Red Wood Farm, Pakhowal Road, Ludhiana: opening hours, menu and prices, vegetarian food, takeaway, party bookings, wheelchair access and directions." schema={[faqSchema(all), crumbs]} og="og-home.jpg" current="FAQ">
+  <header class="fq-head wrap">
+    <span class="kicker">Questions and answers</span>
+    <h1 data-split>Everything people ask us, <em>answered</em></h1>
+    <p class="answer">Red Wood Farm is open every day from 10 AM to 11 PM at 676, VPO Daad, Pakhowal Road, Ludhiana. We serve {menu.count} North Indian, tandoor and Indo-Chinese dishes, offer takeaway and Wi-Fi, and host parties on the lawn. We do not have wheelchair access. Bookings are on WhatsApp at {site.phoneDisplay}.</p>
+  </header>
+  <div class="wrap fq-body">
+    {groups.map((g) => (
+      <section class="faq fq-group" aria-label={g.h}>
+        <h2>{g.h}</h2>
+        {g.items.map((f) => <details><summary>{f.q}</summary><p>{f.a}</p></details>)}
+      </section>
+    ))}
+    <div class="btns fq-cta">
+      <a class="btn red" data-magnetic href={waLink('Hello Red Wood Farm, I have a question.')} target="_blank" rel="noopener"><Icon name="wa" />Ask on WhatsApp</a>
+      <a class="btn ghost" href={u('/menu/')}><Icon name="menu" />See the menu</a>
+    </div>
+  </div>
+</Base>
+<style>
+  .fq-head { padding-top: clamp(110px, 16vw, 200px); padding-bottom: 40px; }
+  .fq-head h1 { font-size: var(--t-1); max-width: 16ch; }
+  .fq-body { padding-bottom: 100px; max-width: 900px; }
+  .fq-group { margin-top: 48px; }
+  .fq-group h2 { font-size: var(--t-3); }
+  .fq-cta { margin-top: 48px; }
+</style>

@@ -13,6 +13,13 @@ export default defineConfig({
   trailingSlash: 'always',
   build: { format: 'directory', inlineStylesheets: 'always' },
   image: { responsiveStyles: false },
-  redirects: { '/parties/': (BASE === '/' ? '' : BASE) + '/party/' },
+  redirects: Object.fromEntries(Object.entries({
+    '/parties/': '/party/',
+    '/notes/': '/guides/',
+    '/notes/kitty-party-venue-ludhiana/': '/party/kitty-party-venues-ludhiana/',
+    '/notes/birthday-party-venue-checklist-ludhiana/': '/party/birthday-party-venues-ludhiana/',
+    '/notes/tandoor-what-to-order-first/': '/food/tandoor-guide/',
+    '/notes/an-evening-on-the-lawn/': '/garden/an-evening-on-the-lawn/',
+  }).map(([from, to]) => [from, (BASE === '/' ? '' : BASE) + to])),
   compressHTML: true,
 });

@@ -96,7 +96,7 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', it
           </div>
           {ph && (
             <figure class="frame m-fig">
-              <Picture src={photos[ph]} formats={['avif', 'webp']} widths={[400, 700, 1000]} sizes="(min-width: 900px) 34vw, 92vw" alt={`${ph} at Red Wood Farm`} loading="lazy" />
+              <Picture src={photos[ph]} formats={['avif', 'webp']} widths={[400, 700, 1000]} sizes="(min-width: 900px) 34vw, 92vw" alt={`${ph}, illustrative food photo`} loading="lazy" />
             </figure>
           )}
           <div class="m-groups">
@@ -127,11 +127,11 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', it
     })}
     <p class="m-empty" hidden data-empty>No dish matches that search. Try another word, or ask us on WhatsApp.</p>
 
-    <aside class="m-foot">
+    <aside class="m-foot wood" style="padding: 28px; border-radius: 6px;">
       <p>All prices are in ₹ and inclusive of GST. <span class="mark v" aria-hidden="true"></span> Veg <span class="mark nv" aria-hidden="true"></span> Non-veg. Ice Cream with Brownie is marked non-veg until we confirm the brownie is eggless.</p>
       <p>Open daily, 10 AM to 11 PM. Dine-in and takeaway.</p>
       <div class="btns">
-        <a class="btn" href={waLink('Hello Red Wood Farm, I would like to order a takeaway.')} target="_blank" rel="noopener"><Icon name="wa" />Order takeaway on WhatsApp</a>
+        <a class="btn red" href={waLink('Hello Red Wood Farm, I would like to order a takeaway.')} target="_blank" rel="noopener"><Icon name="wa" />Order takeaway on WhatsApp</a>
         <a class="btn ghost" href={site.tel}><Icon name="call" />Call {site.phoneDisplay}</a>
       </div>
     </aside>
@@ -205,17 +205,19 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', it
   @media (min-width: 1360px) { .m-cats { padding-inline: calc((100vw - var(--max)) / 2); } }
   .m-cats a { text-decoration: none; font-size: 0.92rem; color: var(--mute); white-space: nowrap; display: block; padding: 6px 0; transition: color 0.3s; }
   .m-cats a[aria-current] { color: var(--ivory); }
-  .m-ind { position: absolute; left: 0; bottom: 8px; height: 1px; background: var(--gold); transition: transform 0.5s var(--ease), width 0.5s var(--ease); }
+  .m-ind { position: absolute; left: 0; bottom: 8px; height: 2px; background: var(--redwood-2); transition: transform 0.5s var(--ease), width 0.5s var(--ease); }
 
   .m-body { padding-block: 32px 80px; }
   .m-count { font-size: var(--t-small); margin-bottom: 8px; }
   .m-sec { padding-top: 56px; scroll-margin-top: 140px; display: grid; gap: 24px 64px; content-visibility: auto; contain-intrinsic-size: auto 1200px; }
   @media (min-width: 900px) { .m-sec { grid-template-columns: 1fr 1.6fr; } .m-sec-head, .m-fig { grid-column: 1; } .m-groups { grid-column: 2; grid-row: 1 / span 3; } .m-fig { position: sticky; top: 150px; align-self: start; } }
   .m-sec h2 { font-size: var(--t-2); margin: 0; }
+  .m-sec h2::after { content: ''; display: block; width: 48px; height: 2px; background: var(--redwood-2); margin-top: 14px; }
+  .m-fig { box-shadow: 0 0 0 6px var(--wood-1), 0 0 0 7px rgb(168 64 44 / 0.5); }
   .m-sec-head p { margin: 8px 0 0; }
   .m-fig { margin: 0; aspect-ratio: 4 / 3; }
   .m-group + .m-group { margin-top: 28px; }
-  .m-sub { font: 500 0.8rem/1 var(--sans); letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); display: flex; align-items: center; margin: 0 0 8px; padding-bottom: 10px; border-bottom: 1px solid var(--line); }
+  .m-sub { font: 500 0.8rem/1 var(--sans); letter-spacing: 0.16em; text-transform: uppercase; color: var(--red-ink); display: flex; align-items: center; margin: 0 0 8px; padding-bottom: 10px; border-bottom: 1px solid var(--line); }
   .m-hf { margin-left: auto; display: flex; gap: 0; }
   .m-hf span { width: 4.6rem; text-align: right; color: var(--mute); letter-spacing: 0.08em; }
   .m-group ul { list-style: none; margin: 0; padding: 0; }

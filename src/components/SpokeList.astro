@@ -1,0 +1,35 @@
+---
+// Lists every page in a cluster (hub to spokes). Used on hub pages.
+import { pagesIn, pathOf } from '../data/pages.js';
+import { u } from '../data/urls.js';
+const { cluster, heading = 'All guides in this section' } = Astro.props;
+const list = await pagesIn(cluster);
+---
+{list.length > 0 && (
+  <section class="spokes wrap" aria-labelledby={`sp-${cluster}`}>
+    <h2 id={`sp-${cluster}`} class="sp-h">{heading}</h2>
+    <ol class="sp-list" role="list">
+      {list.map((p, i) => (
+        <li data-reveal>
+          <a href={u(pathOf(p))}>
+            <span class="sp-n">{String(i + 1).padStart(2, '0')}</span>
+            <span class="sp-t">{p.data.title}</span>
+            <span class="sp-d">{p.data.description}</span>
+          </a>
+        </li>
+      ))}
+    </ol>
+  </section>
+)}
+<style>
+  .spokes { padding-block: clamp(56px, 8vw, 110px); }
+  .sp-h { font-size: var(--t-2); }
+  .sp-list { list-style: none; padding: 0; margin: 32px 0 0; }
+  .sp-list a { display: grid; gap: 6px 28px; padding: 24px 0; border-top: 1px solid var(--line); text-decoration: none; transition: padding 0.5s var(--ease); }
+  .sp-list li:last-child a { border-bottom: 1px solid var(--line); }
+  @media (min-width: 900px) { .sp-list a { grid-template-columns: 60px 1fr 1.1fr; align-items: baseline; } .sp-list a:hover { padding-left: 14px; } }
+  .sp-n { color: var(--red-ink); font-size: var(--t-small); }
+  .sp-t { font: 450 clamp(1.25rem, 1rem + 1vw, 1.8rem)/1.2 var(--serif); }
+  .sp-list a:hover .sp-t { color: var(--red-ink); }
+  .sp-d { font-size: 0.93rem; color: var(--mute); }
+</style>

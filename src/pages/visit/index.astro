@@ -1,6 +1,7 @@
 ---
 import { base, u, abs, sitePath, CANONICAL_ORIGIN } from '../../data/urls.js';
 import Base from '../../layouts/Base.astro';
+import SpokeList from '../../components/SpokeList.astro';
 import Icon from '../../components/Icon.astro';
 import { Picture } from 'astro:assets';
 import { site, waLink } from '../../data/site.js';
@@ -60,6 +61,8 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', it
       </div>
     </div>
   </section>
+
+  <SpokeList cluster="visit" heading="Directions from around Ludhiana" />
 
   <section class="section wrap faq" aria-labelledby="faq-h">
     <h2 id="faq-h" class="v-h2">Before you come</h2>

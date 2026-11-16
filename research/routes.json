@@ -1,0 +1,210 @@
+{
+ "Ludhiana Railway Station": {
+  "from": "Ludhiana Junction, Sher Shah Suri Marg - GT Road Flyover, Ludhiana, Ludhiana (West) Tahsil",
+  "lat": 30.9122517,
+  "lon": 75.8493757,
+  "km": 10.7,
+  "min_osrm": 16,
+  "roads": [
+   [
+    "Ferozepur Road",
+    0.8
+   ],
+   [
+    "Pakhowal Road",
+    1.3
+   ],
+   [
+    "Satpal Mittal Road",
+    0.3
+   ],
+   [
+    "Krishna Mandir Road",
+    0.5
+   ],
+   [
+    "Pakhowal Road",
+    2.0
+   ],
+   [
+    "Jodhan - Ludhiana Road",
+    2.8
+   ]
+  ]
+ },
+ "Sarabha Nagar": {
+  "from": "Sarabha Nagar, Ludhiana, Ludhiana (West) Tahsil, Ludhiana, Punjab, India",
+  "lat": 30.891894,
+  "lon": 75.8183896,
+  "km": 6.8,
+  "min_osrm": 11,
+  "roads": [
+   [
+    "Rotary Club",
+    0.8
+   ],
+   [
+    "Pakhowal Road",
+    2.0
+   ],
+   [
+    "Jodhan - Ludhiana Road",
+    2.8
+   ]
+  ]
+ },
+ "Dugri": {
+  "from": "Dugri, Ludhiana (West) Tahsil, Ludhiana, Punjab, India",
+  "lat": 30.8715878,
+  "lon": 75.8457591,
+  "km": 6.5,
+  "min_osrm": 12,
+  "roads": [
+   [
+    "Phase 1 Road",
+    1.1
+   ],
+   [
+    "Jawadi Road",
+    1.7
+   ],
+   [
+    "Jodhan - Ludhiana Road",
+    2.8
+   ]
+  ]
+ },
+ "Model Town": {
+  "from": "Model Town, Model Town Road, Gurudev Nagar, Ludhiana, Ludhiana (West) Tahsil, Ludhiana, Pu",
+  "lat": 30.8884442,
+  "lon": 75.8403959,
+  "km": 6.9,
+  "min_osrm": 11,
+  "roads": [
+   [
+    "Model Town Road",
+    0.6
+   ],
+   [
+    "Krishna Mandir Road",
+    0.5
+   ],
+   [
+    "Pakhowal Road",
+    2.0
+   ],
+   [
+    "Jodhan - Ludhiana Road",
+    2.8
+   ]
+  ]
+ },
+ "Ferozepur Road (Westend Mall)": "not found",
+ "Ludhiana Bus Stand": {
+  "from": "ISBT Ludhiana, Link Road Flyover, Gurudev Nagar, Ludhiana, Ludhiana (West) Tahsil, Ludhian",
+  "lat": 30.8969098,
+  "lon": 75.8463956,
+  "km": 8.2,
+  "min_osrm": 13,
+  "roads": [
+   [
+    "Krishna Mandir Road",
+    0.5
+   ],
+   [
+    "Pakhowal Road",
+    2.0
+   ],
+   [
+    "Jodhan - Ludhiana Road",
+    2.8
+   ]
+  ]
+ },
+ "Pakhowal Road (Ludhiana Club)": {
+  "from": "Hero Bakery Chowk, Satpal Mittal Road, Gurudev Nagar, Ludhiana, Ludhiana (West) Tahsil, Lu",
+  "lat": 30.891133,
+  "lon": 75.828263,
+  "km": 6.1,
+  "min_osrm": 10,
+  "roads": [
+   [
+    "Satpal Mittal Road",
+    0.3
+   ],
+   [
+    "Krishna Mandir Road",
+    0.5
+   ],
+   [
+    "Pakhowal Road",
+    2.0
+   ],
+   [
+    "Jodhan - Ludhiana Road",
+    2.8
+   ]
+  ]
+ },
+ "Ferozepur Road (Bharat Nagar Chowk)": {
+  "from": "Bharat Nagar Chowk, Ferozepur Road Flyover, Gurudev Nagar, Ludhiana, Ludhiana (West) Tahsi",
+  "km": 9.5,
+  "min_osrm": 14,
+  "roads": [
+   [
+    "Ferozepur Road Flyover",
+    0.6
+   ],
+   [
+    "Ferozepur Road",
+    0.9
+   ],
+   [
+    "Pakhowal Road",
+    1.3
+   ],
+   [
+    "Satpal Mittal Road",
+    0.3
+   ],
+   [
+    "Krishna Mandir Road",
+    0.5
+   ],
+   [
+    "Pakhowal Road",
+    2.0
+   ],
+   [
+    "Jodhan - Ludhiana Road",
+    2.8
+   ]
+  ]
+ },
+ "Daad village": {
+  "from": "Dad, Ludhiana (West) Tahsil, Ludhiana, Punjab, 141021, India",
+  "km": 1.2,
+  "min_osrm": 2,
+  "roads": [
+   [
+    "Dad Link Road",
+    0.3
+   ],
+   [
+    "Jodhan - Ludhiana Road",
+    0.8
+   ]
+  ]
+ },
+ "Omaxe (Royal Residency)": {
+  "from": "Omaxe Royal Residency, Thakarwal Link Road, Thakarwal, Ludhiana (West) Tahsil, Ludhiana, P",
+  "km": 0.8,
+  "min_osrm": 2,
+  "roads": [
+   [
+    "Jodhan - Ludhiana Road",
+    0.3
+   ]
+  ]
+ }
+}

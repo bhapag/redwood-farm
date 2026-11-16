@@ -1,0 +1,14 @@
+---
+import HubPage from '../../components/HubPage.astro';
+const faq = [
+  { q: 'Is Red Wood Farm an outdoor restaurant?', a: 'Yes. Most tables are on a garden lawn with string lights, lit palm trees and a fairy-light tunnel at the entrance.' },
+  { q: 'When are the lights on?', a: 'The lights come on after dark. Come around sunset to see the lawn change from day to night.' },
+  { q: 'Is it suitable for children?', a: 'Families come with children and there is open grass. There is no play area, so keep an eye on young children near the paths.' },
+  { q: 'What are the opening hours?', a: 'Every day, 10:00 AM to 11:00 PM.' },
+];
+---
+<HubPage cluster="garden" title="The garden, the lawn and the <em>lights</em>"
+  seoTitle="Garden Restaurant & Open-Air Dining in Ludhiana | Red Wood Farm"
+  description="The garden at Red Wood Farm, Pakhowal Road: open-air tables on the lawn, the fairy-light tunnel, lit palms and how to spend an afternoon or evening outdoors."
+  answer="Red Wood Farm is a garden restaurant on the outer edge of Ludhiana where most tables sit on an open lawn. After dark the string lights, the lit palms and the fairy-light tunnel come on. These pages cover when to come, where to sit and how to plan a family outing here."
+  image="venue/string-wide.jpg" alt="Lounge seating under string lights on the lawn at night" faq={faq} og="og-home.jpg" />

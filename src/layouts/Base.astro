@@ -4,6 +4,7 @@ import '../styles/global.css';
 import Icon from '../components/Icon.astro';
 import { site, waLink } from '../data/site.js';
 import monogram from '../assets/rw-monogram.png';
+import woodImg from '../assets/wood.jpg';
 import { getImage } from 'astro:assets';
 import bodoniUrl from '@fontsource-variable/bodoni-moda/files/bodoni-moda-latin-wght-normal.woff2?url';
 import sansUrl from '@fontsource/schibsted-grotesk/files/schibsted-grotesk-latin-400-normal.woff2?url';
@@ -12,6 +13,7 @@ const { title, description, og = 'og-home.jpg', schema = [], current = '', noind
 const canonical = abs(sitePath(Astro.url.pathname));
 const ogUrl = abs(`/og/${og}`);
 const mono = await getImage({ src: monogram, width: 64, format: 'webp' });
+const wood = await getImage({ src: woodImg, width: 1200, format: 'webp', quality: 60 });
 
 const venue = {
   '@context': 'https://schema.org',
@@ -44,7 +46,7 @@ const nav = [
   ['Menu', '/menu/'],
   ['Parties', '/party/'],
   ['Visit', '/visit/'],
-  ['Notes', '/notes/'],
+  ['Guides', '/guides/'],
 ];
 ---
 <!doctype html>
@@ -81,7 +83,7 @@ const nav = [
   <script is:inline>document.documentElement.classList.replace('no-js','js');</script>
   <!-- Analytics placeholder: Google Analytics is not set up yet. Add the GA4 tag here after the owner approves it. -->
 </head>
-<body>
+<body style={`--wood: url(${wood.src})`}>
   <a class="skip" href="#main">Skip to content</a>
   <header class="site-head" data-head>
     <a class="brand" href={u('/')} aria-label="Red Wood Farm, home">
@@ -89,8 +91,8 @@ const nav = [
       <span>Red Wood Farm</span>
     </a>
     <nav class="nav" aria-label="Main">
-      {nav.map(([l, h]) => <a href={u(h)} class={l === 'Notes' ? 'hide-m' : ''} aria-current={current === l ? 'page' : undefined}>{l}</a>)}
-      <a class="btn hide-m" data-magnetic href={waLink('Hello Red Wood Farm, I would like to book a table.')} target="_blank" rel="noopener">Book on WhatsApp</a>
+      {nav.map(([l, h]) => <a href={u(h)} class={l === 'Guides' ? 'hide-m' : ''} aria-current={current === l ? 'page' : undefined}>{l}</a>)}
+      <a class="btn red hide-m" data-magnetic href={waLink('Hello Red Wood Farm, I would like to book a table.')} target="_blank" rel="noopener">Book on WhatsApp</a>
     </nav>
   </header>
 
@@ -108,12 +110,16 @@ const nav = [
         </address>
       </div>
       <div>
-        <h3 class="kicker">Visit</h3>
+        <h3 class="kicker">Explore</h3>
         <ul>
           <li><a href={u('/menu/')}>Menu and prices</a></li>
           <li><a href={u('/party/')}>Parties and events</a></li>
-          <li><a href={u('/visit/')}>Directions and hours</a></li>
-          <li><a href={u('/notes/')}>Notes</a></li>
+          <li><a href={u('/food/')}>Food guides</a></li>
+          <li><a href={u('/garden/')}>The garden</a></li>
+          <li><a href={u('/visit/')}>Getting here</a></li>
+          <li><a href={u('/guides/')}>Guides</a></li>
+          <li><a href={u('/about/')}>About us</a></li>
+          <li><a href={u('/faq/')}>Questions and answers</a></li>
         </ul>
       </div>
       <div>

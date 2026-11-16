@@ -8,8 +8,8 @@ The script stops if counts or any price disagree.
 import json, re, sys, html as H
 import openpyxl
 
-XLSX = r"C:/Users/harmy/Downloads/Redwood-Farm/RED_Wood_Restaurant_Menu.xlsx"
-LIVE = r"C:/Users/harmy/redwood-site/repo/index.html"  # backup/live-2026-11-17
+XLSX = "data/RED_Wood_Restaurant_Menu.xlsx"
+LIVE = "data/old-live-menu.html"  # owner-approved spellings and veg marks, from branch backup/live-2026-11-17
 
 def num(v):
     if v is None or v == "": return None

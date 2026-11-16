@@ -1,0 +1,12 @@
+---
+import HubPage from '../../components/HubPage.astro';
+const faq = [
+  { q: 'Who writes these guides?', a: 'The Red Wood Farm team. Facts about our own menu, hours and venue come from the restaurant; general advice is labelled as general.' },
+  { q: 'Do the guides list prices?', a: 'They quote our menu prices exactly. Party and per-plate prices are not published; ask on WhatsApp for current details.' },
+];
+---
+<HubPage cluster="guides" title="Guides to food and parties in <em>Ludhiana</em>"
+  seoTitle="Ludhiana Party & Food Guides | Red Wood Farm"
+  description="Practical guides from Red Wood Farm: what to eat in Ludhiana, Punjabi winter food, choosing a party venue, planning a birthday budget and hosting a kitty party."
+  answer="These guides answer the questions we hear most from families planning a meal or a party in Ludhiana: what local food to try, how to choose a venue, how to plan a budget without surprises and how to host a kitty party."
+  image="venue/palm-table.jpg" alt="A dining table under lit palm trees on the lawn at night" faq={faq} og="og-notes.jpg" />

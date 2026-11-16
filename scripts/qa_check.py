@@ -10,9 +10,10 @@ Exit code 1 on any failure.
 import html, json, pathlib, re, sys, urllib.parse
 import openpyxl
 
-DIST = pathlib.Path("dist")
-BASE = "/redwood-farm"
-XLSX = r"C:/Users/harmy/Downloads/Redwood-Farm/RED_Wood_Restaurant_Menu.xlsx"
+import os
+DIST = pathlib.Path(os.environ.get("DIST", "dist"))
+BASE = os.environ.get("BASE", "")  # "" for the Cloudflare build, "/redwood-farm" for dist-gh
+XLSX = "data/RED_Wood_Restaurant_Menu.xlsx"
 ADDRESS = "676, VPO Daad, Pakhowal Road, Opp. Cerajot Tiles, near Omaxe Flats, Ludhiana, Punjab 142022"
 PHONE = "096467 13555"
 fail = 0
@@ -51,31 +52,14 @@ brownie = [i for i in site_items if i[0] == "Ice Cream with Brownie"]
 if not brownie or brownie[0][1] != "nv":
     bad("Ice Cream with Brownie must keep the non-veg mark")
 
-# 2. Notes price claims
-menu = {n: (h, f) for n, _, h, f in site_items}
-claims = 0
-for f in (DIST / "notes").glob("*/index.html"):
-    t = html.unescape(re.sub(r"<[^>]+>", "", f.read_text(encoding="utf8")))
-    for dish, a, b in re.findall(r"([A-Z][A-Za-z ]+?)\s*\(?₹(\d+)(?: half and ₹(\d+) full|, ₹?(?:\d+) full)?", t):
-        dish = dish.strip()
-        if dish.startswith("is "):
-            continue
-        cand = [n for n in menu if dish.endswith(n)]
-        if not cand:
-            continue
-        n = max(cand, key=len)
-        h, fu = menu[n]
-        claims += 1
-        if int(a) not in (h, fu) or (b and int(b) != fu):
-            bad(f"{f.parent.name}: {n} claims ₹{a}{'/'+b if b else ''}, menu {h}/{fu}")
-print(f"notes: {claims} price claims checked")
+# 2. Prices inside content pages are checked by scripts/qa_content.py (handles order totals).
 
 # 3. Links, 4. NAP, 5. JSON-LD
 external = set()
 for f in DIST.rglob("*.html"):
     t = f.read_text(encoding="utf8")
     rel = f.relative_to(DIST).as_posix()
-    if f.name != "404.html" and "parties" not in rel:
+    if f.name != "404.html" and "http-equiv=\"refresh\"" not in t:
         if ADDRESS not in html.unescape(t):
             bad(f"{rel}: address missing or different")
         if PHONE not in t:

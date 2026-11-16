@@ -113,7 +113,7 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'WebSite', name: sit
       {dishes.map((d, i) => (
         <li class="dish">
           <a href={u(`/menu/#${d.item.catId}`)} data-peek={peek[i].src}>
-            <div class="frame dish-img"><Picture src={d.img} formats={['avif', 'webp']} widths={[320, 480, 640, 800]} sizes="(min-width: 900px) 400px, 78vw" alt={`${d.name} at Red Wood Farm`} /></div>
+            <div class="frame dish-img"><Picture src={d.img} formats={['avif', 'webp']} widths={[320, 480, 640, 800]} sizes="(min-width: 900px) 400px, 78vw" alt={`${d.name}, illustrative food photo`} /></div>
             <div class="dish-row"><span class={`mark ${d.item.veg ? 'v' : 'nv'}`} role="img" aria-label={d.item.veg ? 'Veg' : 'Non-veg'}></span><h3>{d.name}</h3><span class="dish-price">{price(d.item)}</span></div>
             <p class="muted">{d.line}</p>
           </a>
@@ -129,7 +129,7 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'WebSite', name: sit
         <span class="kicker">An evening here</span>
         <h2 id="eve-h" data-split>Walk in through the lights, stay for the <em>food</em></h2>
         <p data-reveal>Come in through the garden gate and the fairy-light tunnel, and pick a table on the lawn or under the palms. Order from the tandoor while the children run on the grass. Every photo on this page is the real place.</p>
-        <div class="btns" data-reveal><a class="btn" data-magnetic href={waLink('Hello Red Wood Farm, I would like to book a table for this evening.')} target="_blank" rel="noopener"><Icon name="wa" />Book a table</a></div>
+        <div class="btns" data-reveal><a class="btn red" data-magnetic href={waLink('Hello Red Wood Farm, I would like to book a table for this evening.')} target="_blank" rel="noopener"><Icon name="wa" />Book a table</a></div>
       </div>
       <div class="eve-stack">
         <div class="frame eve-a" data-clip><div data-parallax="10"><Picture src={palmTable} formats={['avif', 'webp']} widths={[480, 800, 1200]} sizes="(min-width: 900px) 40vw, 90vw" alt="A dining table under the lit palm trees on the lawn at night" /></div></div>
@@ -146,7 +146,7 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'WebSite', name: sit
     </div>
   </section>
 
-  <section class="section reviews" aria-labelledby="rev-h">
+  <section class="section reviews wood wood-edge" aria-labelledby="rev-h">
     <div class="wrap rev-head">
       <div>
         <span class="kicker">Google reviews</span>
@@ -164,7 +164,8 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'WebSite', name: sit
     </div>
   </section>
 
-  <section class="section visit-cta wrap" aria-labelledby="visit-h">
+  <section class="section visit-cta wood wood-edge" aria-labelledby="visit-h">
+   <div class="wrap">
     <div class="split">
       <div class="frame" data-clip><Picture src={entrance} formats={['avif', 'webp']} widths={[480, 800, 1200]} sizes="(min-width: 900px) 45vw, 92vw" alt="The hedge and flower entrance arch at Red Wood Farm, by day" /></div>
       <div>
@@ -178,6 +179,7 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'WebSite', name: sit
         </div>
       </div>
     </div>
+   </div>
   </section>
 </Base>
 
@@ -223,7 +225,7 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'WebSite', name: sit
   .story-step h2 { font-size: var(--t-2); }
   .story-step p { color: var(--ivory-2); }
   .story-progress { position: absolute; left: var(--gutter); right: var(--gutter); bottom: 4vh; height: 1px; background: var(--line); }
-  .story-progress i { display: block; height: 100%; background: var(--gold); transform: scaleX(0); transform-origin: left; }
+  .story-progress i { display: block; height: 100%; background: var(--redwood-2); transform: scaleX(0); transform-origin: left; }
   /* No JS or reduced motion: the three chapters stack, over the first image, with no pinning. */
   :global(.no-js) .story { height: auto; }
   :global(.no-js) .story-text { display: block; padding-block: 16vh; }

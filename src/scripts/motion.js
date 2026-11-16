@@ -268,11 +268,13 @@ function hstrip() {
 /* ---------- Stacked sticky cards: earlier cards recede ---------- */
 function cards() {
   const cs = gsap.utils.toArray('.stack-card');
+  if (!desktop()) return; // mobile cards are taller than the screen; plain sticky stacking reads better
   cs.forEach((c, i) => {
     if (i === cs.length - 1) return;
     gsap.to(c.querySelector('.stack-inner'), {
-      scale: 0.94, filter: 'brightness(0.45)', ease: 'none',
-      scrollTrigger: { trigger: cs[i + 1], start: 'top bottom', end: 'top 20%', scrub: true },
+      scale: 0.95, filter: 'brightness(0.6)', ease: 'none',
+      // Dim only while the next card slides up over this one (until it reaches its sticky top).
+      scrollTrigger: { trigger: cs[i + 1], start: 'top 75%', end: () => 'top ' + (84 + (i + 1) * 18) + 'px', scrub: true },
     });
   });
 }

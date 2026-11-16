@@ -25,7 +25,7 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', it
 
   <section class="wrap v-grid">
     <div class="v-map frame" data-map>
-      <Picture src={palms} formats={['avif', 'webp']} widths={[480, 800, 1200]} sizes="(min-width: 900px) 55vw, 92vw" alt="The fairy-lit palm driveway at Red Wood Farm at dusk" class="v-map-img" />
+      <Picture src={palms} formats={['avif', 'webp']} widths={[480, 800, 1200]} sizes="(min-width: 900px) 55vw, 92vw" alt="The fairy-lit palm driveway at Red Wood Farm at dusk" class="v-map-img" loading="eager" fetchpriority="high" />
       <button type="button" class="btn v-map-btn" data-map-load><Icon name="pin" />Show the map</button>
       <p class="v-map-note">The map loads from Google when you tap.</p>
     </div>

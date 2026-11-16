@@ -1,0 +1,8 @@
+# Cloudflare Pages redirects
+/party      /party/      301
+/parties    /party/      301
+/parties/   /party/      301
+/menu       /menu/       301
+/visit      /visit/      301
+/notes      /notes/      301
+/redwood-farm/*  /:splat  301

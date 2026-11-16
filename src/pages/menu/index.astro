@@ -1,0 +1,234 @@
+---
+import { base, u, abs, sitePath, CANONICAL_ORIGIN } from '../../data/urls.js';
+import Base from '../../layouts/Base.astro';
+import Icon from '../../components/Icon.astro';
+import { Picture, getImage } from 'astro:assets';
+import { site, waLink } from '../../data/site.js';
+import { menu } from '../../data/menu.js';
+
+import paneerTikka from '../../assets/food/paneer_tikka.jpg';
+import tandooriChicken from '../../assets/food/tandoori_chicken.jpg';
+import dalMakhni from '../../assets/food/dal_makhni.jpg';
+import butterChicken from '../../assets/food/butter_chicken.jpg';
+import kadhaiPaneer from '../../assets/food/kadhai_paneer.jpg';
+import biryani from '../../assets/food/nonveg_biryani.jpg';
+import hakka from '../../assets/food/hakka_noodles.jpg';
+import roganJosh from '../../assets/food/mutton_rogan_josh.jpg';
+import jalebi from '../../assets/food/paneer_jalebi_rabri.jpg';
+import platter from '../../assets/food/nonveg_platter.jpg';
+import sizzler from '../../assets/food/veg_sizzler.jpg';
+import naan from '../../assets/food/naan.jpg';
+
+
+// One photo per category where a matching dish exists; the same photos power the hover preview.
+const photos = {
+  'Paneer Tikka': paneerTikka, 'Tandoori Chicken': tandooriChicken, 'Dal Makhni': dalMakhni,
+  'Butter Chicken': butterChicken, 'Kadhai Paneer': kadhaiPaneer, 'Non-Veg Biryani': biryani,
+  'Hakka Noodles': hakka, 'Mutton Rogan Josh': roganJosh, 'Paneer Jalebi with Rabri': jalebi,
+  'Non-Veg Platter': platter, 'Veg Sizzler': sizzler, 'Butter Naan': naan,
+};
+const catPhoto = { appetizers: 'Hakka Noodles', tandoori: 'Paneer Tikka', platters: 'Non-Veg Platter', sizzlers: 'Veg Sizzler', main: 'Dal Makhni', breads: 'Butter Naan', rice: 'Non-Veg Biryani', dessert: 'Paneer Jalebi with Rabri' };
+const peek = Object.fromEntries(await Promise.all(Object.entries(photos).map(async ([k, v]) => [k, (await getImage({ src: v, width: 480, format: 'webp' })).src])));
+
+const menuUrl = abs(`/menu/`);
+const menuSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Menu',
+  '@id': `${menuUrl}#menu`,
+  name: 'Red Wood Farm menu',
+  url: menuUrl,
+  inLanguage: 'en',
+  description: 'All prices in Indian rupees, inclusive of GST.',
+  hasMenuSection: menu.categories.map((c) => ({
+    '@type': 'MenuSection',
+    name: c.name,
+    hasMenuItem: c.groups.flatMap((g) => g.items.map((i) => ({
+      '@type': 'MenuItem',
+      name: i.name,
+      suitableForDiet: i.veg ? 'https://schema.org/VegetarianDiet' : undefined,
+      offers: i.half
+        ? [{ '@type': 'Offer', name: 'Half', price: i.half, priceCurrency: 'INR' }, { '@type': 'Offer', name: 'Full', price: i.full, priceCurrency: 'INR' }]
+        : { '@type': 'Offer', price: i.full, priceCurrency: 'INR' },
+    }))),
+  })),
+};
+const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
+  { '@type': 'ListItem', position: 1, name: 'Home', item: abs(`/`) },
+  { '@type': 'ListItem', position: 2, name: 'Menu', item: menuUrl },
+] };
+---
+<Base title="Menu and Prices | Red Wood Farm, Pakhowal Road, Ludhiana" description={`Full menu with prices: ${menu.count} dishes, tandoor, North Indian, Indo-Chinese, breads and desserts. Half and full portions, veg and non-veg marked. Prices include GST.`} schema={[menuSchema, crumbs]} og="og-menu.jpg" current="Menu">
+  <header class="m-head wrap">
+    <span class="kicker">The menu</span>
+    <h1 data-split>Everything we cook, <em>with prices</em></h1>
+    <p class="answer">Red Wood Farm serves {menu.count} dishes: soups, appetizers, tandoor, champ, platters, sizzlers, North Indian mains, breads, rice and desserts. Prices are in rupees and include GST. Many mains come in half and full portions. Open daily, 10 AM to 11 PM, for dine-in and takeaway.</p>
+  </header>
+
+  <div class="m-bar" data-menubar>
+    <div class="wrap m-tools">
+      <label class="m-search">
+        <span class="sr-only">Search the menu</span>
+        <input type="search" placeholder="Search dishes, e.g. paneer" autocomplete="off" data-q />
+      </label>
+      <div class="m-diet" role="group" aria-label="Filter by diet">
+        <button type="button" aria-pressed="true" data-diet="all">All</button>
+        <button type="button" aria-pressed="false" data-diet="v"><span class="mark v" aria-hidden="true"></span>Veg</button>
+        <button type="button" aria-pressed="false" data-diet="nv"><span class="mark nv" aria-hidden="true"></span>Non-veg</button>
+      </div>
+    </div>
+    <nav class="m-cats" aria-label="Menu categories">
+      <ul role="list">
+        {menu.categories.map((c) => <li><a href={`#${c.id}`} data-cat={c.id}>{c.name}</a></li>)}
+      </ul>
+      <span class="m-ind" aria-hidden="true"></span>
+    </nav>
+  </div>
+
+  <div class="wrap m-body">
+    <p class="m-count muted" aria-live="polite" data-count></p>
+    {menu.categories.map((c) => {
+      const ph = catPhoto[c.id];
+      return (
+        <section id={c.id} class="m-sec" data-sec>
+          <div class="m-sec-head">
+            <h2>{c.name}</h2>
+            {c.note && <p class="muted">{c.note}</p>}
+          </div>
+          {ph && (
+            <figure class="frame m-fig">
+              <Picture src={photos[ph]} formats={['avif', 'webp']} widths={[400, 700, 1000]} sizes="(min-width: 900px) 34vw, 92vw" alt={`${ph} at Red Wood Farm`} loading="lazy" />
+            </figure>
+          )}
+          <div class="m-groups">
+            {c.groups.map((g) => {
+              const hasHalf = g.items.some((i) => i.half);
+              return (
+                <div class="m-group" data-group>
+                  {(g.name || hasHalf) && (
+                    <h3 class="m-sub">{g.name ?? ''}{hasHalf && <span class="m-hf" aria-hidden="true"><span>Half</span><span>Full</span></span>}</h3>
+                  )}
+                  <ul role="list">
+                    {g.items.map((i) => (
+                      <li class="m-item" data-veg={i.veg ? 'v' : 'nv'} data-name={i.name.toLowerCase()}>
+                        <span class={`mark ${i.veg ? 'v' : 'nv'}`} role="img" aria-label={i.veg ? 'Veg' : 'Non-veg'}></span>
+                        <span class="m-name" data-peek={peek[i.name]}>{i.name}{i.desc && <small class="m-desc">{i.desc}</small>}</span>
+                        <span class="m-dots" aria-hidden="true"></span>
+                        {hasHalf && <span class="m-p m-half">{i.half ? <><span class="sr-only">Half </span>₹{i.half}</> : ''}</span>}
+                        <span class="m-p">{i.half && <span class="sr-only">Full </span>}₹{i.full}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+      );
+    })}
+    <p class="m-empty" hidden data-empty>No dish matches that search. Try another word, or ask us on WhatsApp.</p>
+
+    <aside class="m-foot">
+      <p>All prices are in ₹ and inclusive of GST. <span class="mark v" aria-hidden="true"></span> Veg <span class="mark nv" aria-hidden="true"></span> Non-veg. Ice Cream with Brownie is marked non-veg until we confirm the brownie is eggless.</p>
+      <p>Open daily, 10 AM to 11 PM. Dine-in and takeaway.</p>
+      <div class="btns">
+        <a class="btn" href={waLink('Hello Red Wood Farm, I would like to order a takeaway.')} target="_blank" rel="noopener"><Icon name="wa" />Order takeaway on WhatsApp</a>
+        <a class="btn ghost" href={site.tel}><Icon name="call" />Call {site.phoneDisplay}</a>
+      </div>
+    </aside>
+  </div>
+</Base>
+
+<script>
+  const items = [...document.querySelectorAll('.m-item')];
+  const secs = [...document.querySelectorAll('[data-sec]')];
+  const q = document.querySelector('[data-q]');
+  const count = document.querySelector('[data-count]');
+  const empty = document.querySelector('[data-empty]');
+  const dietBtns = [...document.querySelectorAll('[data-diet]')];
+  let diet = 'all';
+  const apply = () => {
+    const term = q.value.trim().toLowerCase();
+    let shown = 0;
+    items.forEach((li) => {
+      const ok = (diet === 'all' || li.dataset.veg === diet) && (!term || li.dataset.name.includes(term));
+      li.hidden = !ok; if (ok) shown++;
+    });
+    document.querySelectorAll('[data-group]').forEach((g) => (g.hidden = !g.querySelector('.m-item:not([hidden])')));
+    secs.forEach((s) => (s.hidden = !s.querySelector('.m-item:not([hidden])')));
+    count.textContent = term || diet !== 'all' ? `${shown} of ${items.length} dishes` : `${items.length} dishes`;
+    empty.hidden = shown > 0;
+    window.dispatchEvent(new Event('resize'));
+  };
+  q.addEventListener('input', apply);
+  dietBtns.forEach((b) => b.addEventListener('click', () => {
+    diet = b.dataset.diet;
+    dietBtns.forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+    apply();
+  }));
+  apply();
+
+  // Active category synced to scroll, with a sliding indicator.
+  const links = new Map([...document.querySelectorAll('[data-cat]')].map((a) => [a.dataset.cat, a]));
+  const ind = document.querySelector('.m-ind');
+  const strip = document.querySelector('.m-cats');
+  const setActive = (id) => {
+    const a = links.get(id); if (!a) return;
+    links.forEach((l) => l.removeAttribute('aria-current'));
+    a.setAttribute('aria-current', 'true');
+    ind.style.transform = `translateX(${a.offsetLeft}px)`;
+    ind.style.width = `${a.offsetWidth}px`;
+    const left = a.offsetLeft - strip.clientWidth / 2 + a.offsetWidth / 2;
+    strip.scrollTo({ left, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+  };
+  const io = new IntersectionObserver((es) => {
+    const vis = es.filter((e) => e.isIntersecting).sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+    if (vis[0]) setActive(vis[0].target.id);
+  }, { rootMargin: '-35% 0px -60% 0px' });
+  secs.forEach((s) => io.observe(s));
+  setActive(secs[0].id);
+</script>
+
+<style>
+  .m-head { padding-top: clamp(110px, 16vw, 200px); padding-bottom: 40px; }
+  .m-head h1 { font-size: var(--t-1); }
+  .m-bar { position: sticky; top: 0; z-index: 55; background: rgb(11 15 12 / 0.97); border-bottom: 1px solid var(--line); }
+  .m-tools { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; padding-block: 12px 8px; }
+  .m-search { flex: 1 1 220px; }
+  .m-search input { width: 100%; min-height: 44px; padding: 0 16px; border-radius: 999px; border: 1px solid var(--line); background: var(--ink-2); color: var(--ivory); font: inherit; font-size: 1rem; }
+  .m-search input:focus { outline: 2px solid var(--gold); outline-offset: 1px; }
+  .m-diet { display: flex; gap: 6px; }
+  .m-diet button { min-height: 44px; padding: 0 14px; border-radius: 999px; border: 1px solid var(--line); background: transparent; color: var(--ivory); font: inherit; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 8px; cursor: pointer; }
+  .m-diet button[aria-pressed='true'] { background: var(--ivory); color: var(--ink); border-color: var(--ivory); }
+  .m-cats { position: relative; overflow-x: auto; scrollbar-width: none; padding: 0 var(--gutter); }
+  .m-cats::-webkit-scrollbar { display: none; }
+  .m-cats ul { list-style: none; display: flex; gap: 22px; margin: 0; padding: 6px 0 12px; width: max-content; }
+  @media (min-width: 1360px) { .m-cats { padding-inline: calc((100vw - var(--max)) / 2); } }
+  .m-cats a { text-decoration: none; font-size: 0.92rem; color: var(--mute); white-space: nowrap; display: block; padding: 6px 0; transition: color 0.3s; }
+  .m-cats a[aria-current] { color: var(--ivory); }
+  .m-ind { position: absolute; left: 0; bottom: 8px; height: 1px; background: var(--gold); transition: transform 0.5s var(--ease), width 0.5s var(--ease); }
+
+  .m-body { padding-block: 32px 80px; }
+  .m-count { font-size: var(--t-small); margin-bottom: 8px; }
+  .m-sec { padding-top: 56px; scroll-margin-top: 140px; display: grid; gap: 24px 64px; content-visibility: auto; contain-intrinsic-size: auto 1200px; }
+  @media (min-width: 900px) { .m-sec { grid-template-columns: 1fr 1.6fr; } .m-sec-head, .m-fig { grid-column: 1; } .m-groups { grid-column: 2; grid-row: 1 / span 3; } .m-fig { position: sticky; top: 150px; align-self: start; } }
+  .m-sec h2 { font-size: var(--t-2); margin: 0; }
+  .m-sec-head p { margin: 8px 0 0; }
+  .m-fig { margin: 0; aspect-ratio: 4 / 3; }
+  .m-group + .m-group { margin-top: 28px; }
+  .m-sub { font: 500 0.8rem/1 var(--sans); letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); display: flex; align-items: center; margin: 0 0 8px; padding-bottom: 10px; border-bottom: 1px solid var(--line); }
+  .m-hf { margin-left: auto; display: flex; gap: 0; }
+  .m-hf span { width: 4.6rem; text-align: right; color: var(--mute); letter-spacing: 0.08em; }
+  .m-group ul { list-style: none; margin: 0; padding: 0; }
+  .m-item { display: flex; align-items: baseline; gap: 10px; padding: 11px 0; border-bottom: 1px solid rgb(247 244 236 / 0.06); }
+  .m-item .mark { align-self: center; }
+  .m-name { font-size: 1.02rem; }
+  .m-desc { display: block; font-size: 0.85rem; color: var(--mute); margin-top: 2px; }
+  .m-dots { flex: 1; border-bottom: 1px dotted rgb(247 244 236 / 0.18); transform: translateY(-4px); min-width: 12px; }
+  .m-p { width: 4.6rem; text-align: right; font-variant-numeric: tabular-nums; color: var(--ivory); flex: none; }
+  .m-half { color: var(--ivory-2); }
+  .m-item[hidden], .m-sec[hidden], .m-group[hidden] { display: none; }
+  .m-empty { padding: 40px 0; font-size: 1.1rem; }
+  .m-foot { margin-top: 72px; padding-top: 28px; border-top: 1px solid var(--line); color: var(--ivory-2); }
+  .m-foot .mark { vertical-align: -2px; margin-inline: 4px 2px; }
+  @media (max-width: 420px) { .m-p, .m-hf span { width: 3.9rem; } .m-name { font-size: 0.98rem; } }
+</style>

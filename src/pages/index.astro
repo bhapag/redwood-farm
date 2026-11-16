@@ -1,0 +1,287 @@
+---
+import { base, u, abs, sitePath, CANONICAL_ORIGIN } from '../data/urls.js';
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import { Picture, getImage } from 'astro:assets';
+import { site, waLink } from '../data/site.js';
+import { find, price } from '../data/menu.js';
+import { reviews } from '../data/reviews.js';
+
+import tunnel from '../assets/venue/tunnel.jpg';
+import palmTable from '../assets/venue/palm-table.jpg';
+import stringWide from '../assets/venue/string-wide.jpg';
+import birthday from '../assets/venue/birthday-arch.jpg';
+import fairyTree from '../assets/venue/fairy-tree.jpg';
+import gardenNight from '../assets/venue/garden-path-night.jpg';
+import entrance from '../assets/venue/entrance-arch.jpg';
+import tandoorGlow from '../assets/food/tandoor-glow.jpg';
+
+import paneerTikka from '../assets/food/paneer_tikka.jpg';
+import tandooriChicken from '../assets/food/tandoori_chicken.jpg';
+import dalMakhni from '../assets/food/dal_makhni.jpg';
+import butterChicken from '../assets/food/butter_chicken.jpg';
+import kadhaiPaneer from '../assets/food/kadhai_paneer.jpg';
+import biryani from '../assets/food/nonveg_biryani.jpg';
+import hakka from '../assets/food/hakka_noodles.jpg';
+import roganJosh from '../assets/food/mutton_rogan_josh.jpg';
+import jalebi from '../assets/food/paneer_jalebi_rabri.jpg';
+
+const dishes = [
+  [paneerTikka, 'Paneer Tikka', 'From the tandoor, with mint chutney and onion.'],
+  [tandooriChicken, 'Tandoori Chicken', 'Charred in the clay oven. Half or full.'],
+  [dalMakhni, 'Dal Makhni', 'Black lentils, slow-cooked, finished with butter and cream.'],
+  [butterChicken, 'Butter Chicken', 'Tandoori chicken in a smooth tomato and butter gravy.'],
+  [kadhaiPaneer, 'Kadhai Paneer', 'Paneer, peppers and onion tossed in the kadhai.'],
+  [biryani, 'Non-Veg Biryani', 'Long-grain rice layered with spiced chicken.'],
+  [hakka, 'Hakka Noodles', 'Our Indo-Chinese favourite, wok-tossed.'],
+  [roganJosh, 'Mutton Rogan Josh', 'Slow-cooked mutton in a deep red gravy.'],
+  [jalebi, 'Paneer Jalebi with Rabri', 'A house dessert to finish.'],
+].map(([img, name, line]) => ({ img, name, line, item: find(name) }));
+const peek = await Promise.all(dishes.map((d) => getImage({ src: d.img, width: 480, format: 'webp' })));
+
+const title = 'Red Wood Farm: Garden Family Restaurant & Party Lawn, Ludhiana';
+const description = 'Garden family restaurant and party lawn on outer Pakhowal Road, Ludhiana. Tandoor, North Indian and Indo-Chinese, open daily 10 AM to 11 PM. Book on WhatsApp.';
+const crumbs = { '@context': 'https://schema.org', '@type': 'WebSite', name: site.name, url: abs(`/`) };
+---
+<Base title={title} description={description} schema={[crumbs]} og="og-home.jpg">
+  <section class="hero" data-hero aria-labelledby="hero-title">
+   <div class="hero-stage">
+    <div class="hero-photo">
+      <Picture src={tunnel} formats={['avif', 'webp']} widths={[640, 960, 1280, 1536]} sizes="100vw" alt="The fairy-light tunnel and red carpet at Red Wood Farm, lit at night" loading="eager" fetchpriority="low" decoding="async" />
+    </div>
+    <canvas aria-hidden="true"></canvas>
+    <div class="hero-shade" aria-hidden="true"></div>
+    <div class="hero-name neon" aria-hidden="true">Red Wood Farm</div>
+    <div class="hero-copy wrap">
+      <p class="hero-open" data-open>Open daily, 10 AM to 11 PM</p>
+      <h1 id="hero-title"><span class="sr-only">Red Wood Farm: </span>Garden family restaurant and party lawn on outer Pakhowal Road</h1>
+      <div class="btns">
+        <a class="btn" data-magnetic href={u('/menu/')}><Icon name="menu" />See the menu</a>
+        <a class="btn ghost" data-magnetic href={u('/party/')}>Plan a party</a>
+      </div>
+    </div>
+    <p class="hero-hint" aria-hidden="true">Scroll to walk through the lights</p>
+   </div>
+  </section>
+
+  <section class="section intro wrap" aria-labelledby="intro-h">
+    <h2 id="intro-h" class="sr-only">About Red Wood Farm</h2>
+    <p class="intro-big" data-split>Red Wood Farm is a garden family restaurant and party lawn at VPO Daad, on outer Pakhowal Road in Ludhiana. We serve tandoor, North Indian and Indo-Chinese food every day from 10 AM to 11 PM, at tables on a fairy-lit lawn.</p>
+    <div class="intro-facts" data-reveal>
+      <div><span class="kicker">Hours</span>{site.hoursDisplay}</div>
+      <div><span class="kicker">Also</span>Takeaway and Wi-Fi</div>
+      <div><span class="kicker">Book</span><a href={waLink('Hello Red Wood Farm, I would like to book a table.')} target="_blank" rel="noopener">WhatsApp {site.phoneDisplay}</a></div>
+    </div>
+  </section>
+
+  <section class="story" data-story aria-label="Family restaurant first, the lawn by night, parties">
+    <div class="story-media" aria-hidden="true">
+      <div class="frame"><Picture src={tandoorGlow} formats={['avif', 'webp']} widths={[640, 1024, 1500]} sizes="100vw" alt="" /></div>
+      <div class="frame"><video muted playsinline loop preload="none" data-lazy data-poster={u('/media/lawn-poster.webp')}><source data-src={u('/media/lawn-loop.webm')} type="video/webm" /><source data-src={u('/media/lawn-loop.mp4')} type="video/mp4" /></video></div>
+      <div class="frame"><Picture src={birthday} formats={['avif', 'webp']} widths={[640, 960]} sizes="100vw" alt="" /></div>
+    </div>
+    <div class="story-shade" aria-hidden="true"></div>
+    <div class="story-text wrap">
+      <article class="story-step">
+        <span class="kicker">01 / Family restaurant first</span>
+        <h2>The tandoor is lit from ten in the morning</h2>
+        <p>187 dishes, all priced on the menu: tandoor, curries, breads, Indo-Chinese, sizzlers and desserts. Most mains come in half and full portions, so a family can share.</p>
+        <a class="btn ghost" href={u('/menu/')}>Read the full menu</a>
+      </article>
+      <article class="story-step">
+        <span class="kicker">02 / The lawn by night</span>
+        <h2>Dinner under the string lights</h2>
+        <p>After sunset the lawn, the palms and the tunnel light up. Take a table outside, or book the lounge corner for a small group.</p>
+        <a class="btn ghost" href={u('/visit/')}>How to find us</a>
+      </article>
+      <article class="story-step">
+        <span class="kicker">03 / Parties</span>
+        <h2>Birthdays, kitty parties and family functions</h2>
+        <p>The lawn and its lights are yours for the afternoon or the evening. Tell us the date and the number of guests on WhatsApp and we will plan it with you.</p>
+        <a class="btn ghost" href={u('/party/')}>Plan a party</a>
+      </article>
+    </div>
+    <div class="story-progress" aria-hidden="true"><i></i></div>
+  </section>
+
+  <section class="hstrip" data-hstrip aria-labelledby="dish-h">
+    <div class="hstrip-head wrap">
+      <span class="kicker">Signature dishes</span>
+      <h2 id="dish-h" data-skew>What to order <em>first</em></h2>
+    </div>
+    <ul class="hstrip-track" role="list">
+      {dishes.map((d, i) => (
+        <li class="dish">
+          <a href={u(`/menu/#${d.item.catId}`)} data-peek={peek[i].src}>
+            <div class="frame dish-img"><Picture src={d.img} formats={['avif', 'webp']} widths={[320, 480, 640, 800]} sizes="(min-width: 900px) 400px, 78vw" alt={`${d.name} at Red Wood Farm`} /></div>
+            <div class="dish-row"><span class={`mark ${d.item.veg ? 'v' : 'nv'}`} role="img" aria-label={d.item.veg ? 'Veg' : 'Non-veg'}></span><h3>{d.name}</h3><span class="dish-price">{price(d.item)}</span></div>
+            <p class="muted">{d.line}</p>
+          </a>
+        </li>
+      ))}
+      <li class="dish dish-more"><a class="btn" href={u('/menu/')}>All 187 dishes <Icon name="arrow" /></a></li>
+    </ul>
+  </section>
+
+  <section class="section evening wrap" aria-labelledby="eve-h">
+    <div class="split">
+      <div>
+        <span class="kicker">An evening here</span>
+        <h2 id="eve-h" data-split>Walk in through the lights, stay for the <em>food</em></h2>
+        <p data-reveal>Come in through the garden gate and the fairy-light tunnel, and pick a table on the lawn or under the palms. Order from the tandoor while the children run on the grass. Every photo on this page is the real place.</p>
+        <div class="btns" data-reveal><a class="btn" data-magnetic href={waLink('Hello Red Wood Farm, I would like to book a table for this evening.')} target="_blank" rel="noopener"><Icon name="wa" />Book a table</a></div>
+      </div>
+      <div class="eve-stack">
+        <div class="frame eve-a" data-clip><div data-parallax="10"><Picture src={palmTable} formats={['avif', 'webp']} widths={[480, 800, 1200]} sizes="(min-width: 900px) 40vw, 90vw" alt="A dining table under the lit palm trees on the lawn at night" /></div></div>
+        <div class="frame eve-b" data-clip><Picture src={fairyTree} formats={['avif', 'webp']} widths={[360, 640]} sizes="(min-width: 900px) 20vw, 45vw" alt="A tree wrapped in fairy lights beside a lawn table" /></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="lawn" aria-labelledby="lawn-h">
+    <div class="lawn-bg" data-parallax="14"><Picture src={stringWide} formats={['avif', 'webp']} widths={[800, 1280, 2048]} sizes="100vw" alt="Lounge seating under string lights on the lawn at night" /></div>
+    <div class="lawn-copy wrap">
+      <h2 id="lawn-h" data-split>The lawn by night</h2>
+      <p data-reveal>String lights, low lounge seating and open sky. Families come for dinner; groups book a corner for a birthday or a get-together.</p>
+    </div>
+  </section>
+
+  <section class="section reviews" aria-labelledby="rev-h">
+    <div class="wrap rev-head">
+      <div>
+        <span class="kicker">Google reviews</span>
+        <h2 id="rev-h"><span class="rating">{site.rating.value}</span> from {site.rating.count} reviews</h2>
+        <p class="muted">Rating as shown on Google on {site.rating.checked}.</p>
+      </div>
+      <a class="btn ghost" href={site.reviewUrl} target="_blank" rel="noopener"><Icon name="star" />Write a review</a>
+    </div>
+    <div class="marquee">
+      <ul class="marquee-track" role="list">
+        {[...reviews, ...reviews].map((r, i) => (
+          <li aria-hidden={i >= reviews.length ? 'true' : undefined}><q>{r.q}</q><span>{r.by}, Google review</span></li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section visit-cta wrap" aria-labelledby="visit-h">
+    <div class="split">
+      <div class="frame" data-clip><Picture src={entrance} formats={['avif', 'webp']} widths={[480, 800, 1200]} sizes="(min-width: 900px) 45vw, 92vw" alt="The hedge and flower entrance arch at Red Wood Farm, by day" /></div>
+      <div>
+        <span class="kicker">Visit</span>
+        <h2 id="visit-h" data-split>Opposite Cerajot Tiles, near Omaxe Flats</h2>
+        <address class="lede" data-reveal>{site.address.full}</address>
+        <p class="muted" data-reveal>{site.hoursDisplay}. Takeaway available. No wheelchair access.</p>
+        <div class="btns" data-reveal>
+          <a class="btn" data-magnetic href={site.directionsUrl} target="_blank" rel="noopener"><Icon name="pin" />Directions</a>
+          <a class="btn ghost" href={site.tel}><Icon name="call" />Call {site.phoneDisplay}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .hero { position: relative; height: 100svh; min-height: 560px; background: radial-gradient(ellipse at 50% 56%, var(--green) 0, var(--ink) 64%); }
+  :global(.js) .hero { height: 240svh; }
+  @media (min-width: 900px) { :global(.js) .hero { height: 280svh; } }
+  :global(.js) .hero.is-static { height: 100svh; }
+  @media (prefers-reduced-motion: reduce) { :global(.js) .hero { height: 100svh; } }
+  .hero-stage { position: sticky; top: 0; height: 100svh; min-height: 560px; overflow: hidden; }
+  .hero canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .hero-photo { position: absolute; inset: 0; }
+  .hero-photo :global(img), .hero-photo :global(.hero-video) { width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%; }
+  .hero-photo :global(.hero-video) { position: absolute; inset: 0; opacity: 0; transition: opacity 1.2s var(--ease); }
+  .hero-photo :global(.hero-video.on) { opacity: 1; }
+  :global(.js) .hero-photo { opacity: 0; }
+  .hero-shade { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 40%, transparent 20%, rgb(11 15 12 / 0.7) 75%), linear-gradient(rgb(11 15 12 / 0) 45%, var(--ink) 97%); pointer-events: none; }
+  .hero-name { position: absolute; left: 0; right: 0; top: 26%; text-align: center; font-size: clamp(4rem, 15vw, 11rem); padding-inline: 12px; }
+  :global(.js) .hero-name { opacity: 0; visibility: hidden; }
+  .hero-copy { position: absolute; left: 0; right: 0; bottom: calc(6vh + 8px); margin: 0 auto; text-align: center; }
+  .hero h1 { font-size: clamp(1.45rem, 1.1rem + 1.8vw, 2.6rem); line-height: 1.12; max-width: 20em; margin: 0 auto 26px; }
+  .hero .btns { justify-content: center; }
+  .hero-open { margin: 0 auto 14px; font-size: 0.85rem; letter-spacing: 0.04em; color: var(--ivory-2); display: inline-flex; align-items: center; gap: 8px; }
+  .hero-open::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 10px var(--gold); }
+  .hero-hint { position: absolute; top: 88px; left: 0; right: 0; text-align: center; font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ivory-2); }
+  :global(.no-js) .hero-photo, :global(.no-js) .hero-name, .hero.is-static .hero-photo, .hero.is-static .hero-name { opacity: 1; visibility: visible; }
+  :global(.no-js) .hero canvas, .hero.is-static canvas, :global(.no-js) .hero-hint, .hero.is-static .hero-hint { display: none; }
+
+  .intro-big { font: 400 clamp(1.6rem, 1.1rem + 2.4vw, 3.2rem)/1.18 var(--serif); max-width: 26ch; letter-spacing: -0.01em; }
+  .intro-facts { display: grid; gap: 24px; margin-top: 56px; border-top: 1px solid var(--line); padding-top: 28px; }
+  .intro-facts .kicker { margin-bottom: 10px; }
+  .intro-facts a { color: var(--gold); }
+  @media (min-width: 900px) { .intro-facts { grid-template-columns: repeat(3, 1fr); } }
+
+  .story { position: relative; height: 100svh; overflow: hidden; }
+  .story-media, .story-media > .frame { position: absolute; inset: 0; border-radius: 0; }
+  .story-media :global(img), .story-media video { width: 100%; height: 100%; object-fit: cover; }
+  .story-shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgb(11 15 12 / 0.92) 0, rgb(11 15 12 / 0.55) 55%, rgb(11 15 12 / 0.15) 100%); }
+  @media (max-width: 899px) { .story-shade { background: linear-gradient(rgb(11 15 12 / 0.2) 0, rgb(11 15 12 / 0.9) 60%); } }
+  .story-text { position: relative; height: 100%; display: grid; align-items: end; padding-bottom: 12vh; }
+  @media (min-width: 900px) { .story-text { align-items: center; padding-bottom: 0; } }
+  .story-step { grid-area: 1 / 1; max-width: 34rem; }
+  .story-step h2 { font-size: var(--t-2); }
+  .story-step p { color: var(--ivory-2); }
+  .story-progress { position: absolute; left: var(--gutter); right: var(--gutter); bottom: 4vh; height: 1px; background: var(--line); }
+  .story-progress i { display: block; height: 100%; background: var(--gold); transform: scaleX(0); transform-origin: left; }
+  /* No JS or reduced motion: the three chapters stack, over the first image, with no pinning. */
+  :global(.no-js) .story { height: auto; }
+  :global(.no-js) .story-text { display: block; padding-block: 16vh; }
+  :global(.no-js) .story-step { margin-bottom: 14vh; }
+  :global(.no-js) .story-media > .frame + .frame, :global(.no-js) .story-progress { display: none; }
+  @media (prefers-reduced-motion: reduce) {
+    .story { height: auto; }
+    .story-text { display: block; padding-block: 16vh; }
+    .story-step { margin-bottom: 14vh; }
+    .story-media > .frame + .frame, .story-progress { display: none; }
+    .story-shade { background: rgb(11 15 12 / 0.75); }
+  }
+
+  .hstrip { padding-block: clamp(72px, 10vw, 120px); overflow: hidden; }
+  .hstrip-head h2 { font-size: var(--t-1); }
+  .hstrip-track { list-style: none; margin: 40px 0 0; padding: 0 var(--gutter); display: flex; gap: clamp(16px, 2vw, 32px); overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain; }
+  .hstrip-track::-webkit-scrollbar { display: none; }
+  @media (min-width: 900px) { .hstrip { height: 100svh; display: flex; flex-direction: column; justify-content: center; } .hstrip-track { overflow: visible; width: max-content; } }
+  @media (prefers-reduced-motion: reduce) { .hstrip { height: auto; } .hstrip-track { overflow-x: auto; width: auto; } }
+  :global(.no-js) .hstrip { height: auto; }
+  :global(.no-js) .hstrip-track { overflow-x: auto; width: auto; }
+  .dish { flex: 0 0 min(78vw, 400px); scroll-snap-align: start; }
+  .dish a { text-decoration: none; display: block; }
+  .dish-img { aspect-ratio: 4 / 3; }
+  .dish-img :global(img) { transition: transform 0.9s var(--ease); }
+  .dish a:hover .dish-img :global(img) { transform: scale(1.05); }
+  .dish-row { display: flex; align-items: center; gap: 10px; margin-top: 16px; }
+  .dish-row h3 { font-size: 1.5rem; margin: 0; flex: 1; }
+  .dish-price { color: var(--gold); font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .dish p { margin: 6px 0 0; font-size: 0.95rem; }
+  .dish-more { flex-basis: 260px; display: grid; place-items: center; }
+
+  .evening h2 { font-size: var(--t-1); }
+  .eve-stack { position: relative; padding-bottom: 18%; }
+  .eve-a { aspect-ratio: 4 / 5; width: 82%; }
+  .eve-a > div { height: 118%; margin-top: -9%; }
+  .eve-b { position: absolute; right: 0; bottom: 0; width: 44%; aspect-ratio: 1; border: 6px solid var(--ink); }
+
+  .lawn { position: relative; height: 92svh; min-height: 520px; overflow: hidden; display: flex; align-items: flex-end; }
+  .lawn-bg { position: absolute; inset: -8% 0; }
+  .lawn-bg :global(img) { width: 100%; height: 100%; object-fit: cover; }
+  .lawn::after { content: ''; position: absolute; inset: 0; background: linear-gradient(rgb(11 15 12 / 0) 30%, var(--ink) 96%); }
+  .lawn-copy { position: relative; z-index: 1; padding-bottom: 10vh; }
+  .lawn-copy h2 { font-size: var(--t-hero); line-height: 0.92; }
+  .lawn-copy p { color: var(--ivory-2); max-width: 44ch; }
+
+  .rev-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 24px; }
+  .rev-head h2 { font-size: var(--t-2); }
+  .rating { color: var(--gold); }
+  .marquee { margin-top: 48px; overflow: hidden; mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+  .marquee-track { list-style: none; margin: 0; padding: 0; display: flex; gap: 56px; width: max-content; animation: marquee 60s linear infinite; }
+  .marquee:hover .marquee-track { animation-play-state: paused; }
+  .marquee li { display: flex; flex-direction: column; gap: 10px; max-width: 30rem; }
+  .marquee q { font: italic 400 clamp(1.3rem, 1rem + 1vw, 1.9rem)/1.25 var(--serif); quotes: '\201C' '\201D'; }
+  .marquee span { font-size: var(--t-small); color: var(--mute); }
+  @keyframes marquee { to { transform: translateX(calc(-50% - 28px)); } }
+  @media (prefers-reduced-motion: reduce) { .marquee-track { animation: none; flex-wrap: wrap; width: auto; padding-inline: var(--gutter); } .marquee li[aria-hidden] { display: none; } }
+
+  .visit-cta h2 { font-size: var(--t-2); }
+  .visit-cta .frame { aspect-ratio: 4 / 3; }
+</style>

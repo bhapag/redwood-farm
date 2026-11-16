@@ -1,0 +1,75 @@
+---
+import { base, u, abs, sitePath, CANONICAL_ORIGIN } from '../../data/urls.js';
+import Base from '../../layouts/Base.astro';
+import Icon from '../../components/Icon.astro';
+import { getCollection, render } from 'astro:content';
+import { site, waLink } from '../../data/site.js';
+import { faqSchema } from '../../data/faq.js';
+
+export async function getStaticPaths() {
+  const notes = await getCollection('notes');
+  return notes.map((n) => ({ params: { slug: n.id }, props: { note: n, all: notes } }));
+}
+const { note, all } = Astro.props;
+const { Content } = await render(note);
+const url = abs(`/notes/${note.id}/`);
+const others = all.filter((n) => n.id !== note.id).sort((a, b) => a.data.order - b.data.order);
+const article = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: note.data.title,
+  description: note.data.description,
+  datePublished: note.data.date.toISOString().slice(0, 10),
+  dateModified: note.data.date.toISOString().slice(0, 10),
+  inLanguage: 'en',
+  mainEntityOfPage: url,
+  image: abs(`/og/og-notes.jpg`),
+  author: { '@type': 'Organization', name: site.name, url: abs(`/`) },
+  publisher: { '@type': 'Organization', name: site.name, logo: { '@type': 'ImageObject', url: abs(`/icon-512.png`) } },
+};
+const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
+  { '@type': 'ListItem', position: 1, name: 'Home', item: abs(`/`) },
+  { '@type': 'ListItem', position: 2, name: 'Notes', item: abs(`/notes/`) },
+  { '@type': 'ListItem', position: 3, name: note.data.title, item: url },
+] };
+const schema = [article, crumbs, ...(note.data.faq.length ? [faqSchema(note.data.faq)] : [])];
+const date = note.data.date.toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' });
+---
+<Base title={note.data.seoTitle} description={note.data.description} schema={schema} og="og-notes.jpg" current="Notes">
+  <article class="a wrap">
+    <nav class="a-crumbs" aria-label="Breadcrumb"><a href={`${base}/notes/`}>Notes</a></nav>
+    <h1 data-split>{note.data.title}</h1>
+    <p class="muted a-meta">Red Wood Farm, <time datetime={note.data.date.toISOString().slice(0, 10)}>{date}</time></p>
+    <div class="prose"><Content /></div>
+    {note.data.faq.length > 0 && (
+      <section class="faq a-faq" aria-labelledby="afaq">
+        <h2 id="afaq">Quick answers</h2>
+        {note.data.faq.map((f) => <details><summary>{f.q}</summary><p>{f.a}</p></details>)}
+      </section>
+    )}
+    <div class="btns a-cta">
+      <a class="btn" href={waLink('Hello Red Wood Farm, I have a question.')} target="_blank" rel="noopener"><Icon name="wa" />Ask us on WhatsApp</a>
+      <a class="btn ghost" href={`${base}/menu/`}><Icon name="menu" />See the menu</a>
+    </div>
+    <aside class="a-more">
+      <h2 class="kicker">More notes</h2>
+      <ul role="list">{others.map((n) => <li><a href={`${base}/notes/${n.id}/`}>{n.data.title}</a></li>)}</ul>
+    </aside>
+  </article>
+</Base>
+<style>
+  .a { padding-top: clamp(110px, 14vw, 180px); padding-bottom: 100px; }
+  .a h1 { font-size: var(--t-2); max-width: 20ch; }
+  .a-crumbs a { color: var(--gold); text-decoration: none; font-size: var(--t-small); }
+  .a-meta { font-size: var(--t-small); margin-bottom: 40px; }
+  .prose :global(p:first-child) { font-size: clamp(1.1rem, 1rem + 0.4vw, 1.35rem); color: var(--ivory); }
+  .prose :global(p), .prose :global(li) { color: var(--ivory-2); }
+  .prose :global(strong) { color: var(--ivory); font-weight: 500; }
+  .a-faq { max-width: 68ch; margin-top: 64px; }
+  .a-faq h2 { font-size: var(--t-3); }
+  .a-cta { margin-top: 48px; }
+  .a-more { margin-top: 72px; border-top: 1px solid var(--line); padding-top: 28px; }
+  .a-more ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+  .a-more a { text-decoration: none; font: 450 1.25rem/1.25 var(--serif); }
+  .a-more a:hover { color: var(--gold); }
+</style>

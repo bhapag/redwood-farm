@@ -1,0 +1,1571 @@
+{
+ "source": "RED_Wood_Restaurant_Menu.xlsx",
+ "count": 187,
+ "categories": [
+  {
+   "id": "soups",
+   "name": "Soups",
+   "note": null,
+   "groups": [
+    {
+     "name": "Veg",
+     "items": [
+      {
+       "name": "Tomato Shorba",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 145
+      },
+      {
+       "name": "Cream of Tomato",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 155
+      },
+      {
+       "name": "Cream of Mushroom",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 155
+      },
+      {
+       "name": "Manchow Soup",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 155
+      },
+      {
+       "name": "Sweet Corn Soup",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 155
+      },
+      {
+       "name": "Lemon Coriander",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 145,
+       "xlsx_name": "Lemon Corrander"
+      },
+      {
+       "name": "Hot & Sour",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 145
+      }
+     ]
+    },
+    {
+     "name": "Non-Veg",
+     "items": [
+      {
+       "name": "Smoked Chicken",
+       "desc": null,
+       "veg": false,
+       "half": null,
+       "full": 265
+      },
+      {
+       "name": "Chicken Clear",
+       "desc": null,
+       "veg": false,
+       "half": null,
+       "full": 245
+      },
+      {
+       "name": "Chicken Hot & Sour",
+       "desc": null,
+       "veg": false,
+       "half": null,
+       "full": 245
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "appetizers",
+   "name": "Appetizers",
+   "note": null,
+   "groups": [
+    {
+     "name": "Veg",
+     "items": [
+      {
+       "name": "Cheese Corn Roll",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 280
+      },
+      {
+       "name": "Manchurian Gravy",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 260
+      },
+      {
+       "name": "Manchurian Dry",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 275
+      },
+      {
+       "name": "Spring Roll",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 240
+      },
+      {
+       "name": "Cheese Chilli",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 325,
+       "xlsx_name": "Cheese Chilly"
+      },
+      {
+       "name": "Mushroom Chilli",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 325,
+       "xlsx_name": "Mushroom Chilly"
+      },
+      {
+       "name": "Hakka Noodles",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 255
+      },
+      {
+       "name": "Honey Chilli Potato",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 255,
+       "xlsx_name": "Honey Chilly Potato"
+      },
+      {
+       "name": "Crispy Veg",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 285
+      },
+      {
+       "name": "French Fries",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 195
+      },
+      {
+       "name": "Cheesy Fries",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 225
+      },
+      {
+       "name": "Veg Triple",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 275,
+       "xlsx_name": "Veg Tripple"
+      },
+      {
+       "name": "Cheese Fingers",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 315,
+       "xlsx_name": "Cheeze Fingres"
+      },
+      {
+       "name": "Baby Corn Chilli",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 265,
+       "xlsx_name": "Baby Corn Chilly"
+      },
+      {
+       "name": "Veg Cutlet",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 245,
+       "xlsx_name": "Veg. Cutlet"
+      },
+      {
+       "name": "Peri Peri Fries",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 225
+      }
+     ]
+    },
+    {
+     "name": "Non-Veg",
+     "items": [
+      {
+       "name": "Chicken Noodles",
+       "desc": null,
+       "veg": false,
+       "half": null,
+       "full": 345
+      },
+      {
+       "name": "Chicken Manchurian",
+       "desc": null,
+       "veg": false,
+       "half": null,
+       "full": 355
+      },
+      {
+       "name": "Crispy Honey Chicken",
+       "desc": null,
+       "veg": false,
+       "half": null,
+       "full": 375
+      },
+      {
+       "name": "Garlic Chicken",
+       "desc": null,
+       "veg": false,
+       "half": null,
+       "full": 375
+      },
+      {
+       "name": "Chicken Popcorn",
+       "desc": null,
+       "veg": false,
+       "half": null,
+       "full": 385
+      },
+      {
+       "name": "Crispy Chicken Wings",
+       "desc": null,
+       "veg": false,
+       "half": null,
+       "full": 375
+      },
+      {
+       "name": "Chicken Manchurian Dry",
+       "desc": null,
+       "veg": false,
+       "half": null,
+       "full": 375
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "tandoori",
+   "name": "Tandoori",
+   "note": null,
+   "groups": [
+    {
+     "name": "Veg",
+     "items": [
+      {
+       "name": "Paneer Tikka",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 375
+      },
+      {
+       "name": "Paneer Achari Tikka",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 375
+      },
+      {
+       "name": "Mushroom Tikka",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 395
+      },
+      {
+       "name": "Seekh Kabab",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 295
+      },
+      {
+       "name": "Mushroom Duplex",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 375
+      },
+      {
+       "name": "Roasted Gobi Irani",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 285
+      },
+      {
+       "name": "Hariyali Tikka",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 325,
+       "xlsx_name": "Gharyali Tikka"
+      },
+      {
+       "name": "Aloo Nazakat",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 245,
+       "xlsx_name": "Aaloo Nazakat"
+      }
+     ]
+    },
+    {
+     "name": "Non-Veg",
+     "items": [
+      {
+       "name": "Tangri Chicken",
+       "desc": null,
+       "veg": false,
+       "half": null,
+       "full": 375
+      },
+      {
+       "name": "Chicken Cheese Kabab",
+       "desc": null,
+       "veg": false,
+       "half": null,
+       "full": 375
+      },
+      {
+       "name": "Punjabi Murg Tikka",
+       "desc": null,
+       "veg": false,
+       "half": null,
+       "full": 415
+      },
+      {
+       "name": "Bhatti Da Murg",
+       "desc": null,
+       "veg": false,
+       "half": null,
+       "full": 395
+      },
+      {
+       "name": "Chicken Kabab",
+       "desc": null,
+       "veg": false,
+       "half": null,
+       "full": 400
+      },
+      {
+       "name": "Tandoori Chicken",
+       "desc": null,
+       "veg": false,
+       "half": null,
+       "full": 375
+      },
+      {
+       "name": "Pindi Seekh Kabab",
+       "desc": null,
+       "veg": false,
+       "half": null,
+       "full": 395
+      },
+      {
+       "name": "Shami Kabab",
+       "desc": null,
+       "veg": false,
+       "half": null,
+       "full": 395
+      },
+      {
+       "name": "Tandoori Bharva Tangri",
+       "desc": null,
+       "veg": false,
+       "half": null,
+       "full": 395
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "champ",
+   "name": "Champ",
+   "note": "Soya chaap",
+   "groups": [
+    {
+     "name": "Veg",
+     "items": [
+      {
+       "name": "Lemon Champ",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 230
+      },
+      {
+       "name": "Garlic Champ",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 240
+      },
+      {
+       "name": "Afghani Champ",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 275,
+       "xlsx_name": "Afgani Champ"
+      },
+      {
+       "name": "Malai Champ",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 275
+      },
+      {
+       "name": "Hariyali Champ",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 265,
+       "xlsx_name": "Haryali Champ"
+      },
+      {
+       "name": "Achari Champ",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 245
+      },
+      {
+       "name": "Chatpati Champ",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 245
+      },
+      {
+       "name": "Stuffed Champ",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 300
+      },
+      {
+       "name": "Kali Mirch Champ",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 245
+      },
+      {
+       "name": "Tawa Masala Champ",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 275
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "platters",
+   "name": "Platters",
+   "note": null,
+   "groups": [
+    {
+     "name": "Veg",
+     "items": [
+      {
+       "name": "Chinese Veg Platter",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 575
+      },
+      {
+       "name": "Tandoori Veg Platter",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 525
+      }
+     ]
+    },
+    {
+     "name": "Non-Veg",
+     "items": [
+      {
+       "name": "Non-Veg Platter",
+       "desc": null,
+       "veg": false,
+       "half": null,
+       "full": 775
+      },
+      {
+       "name": "Tandoori Non-Veg",
+       "desc": null,
+       "veg": false,
+       "half": null,
+       "full": 725
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sizzlers",
+   "name": "Sizzlers",
+   "note": null,
+   "groups": [
+    {
+     "name": "Veg",
+     "items": [
+      {
+       "name": "Veg Sizzler",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 395
+      }
+     ]
+    },
+    {
+     "name": "Non-Veg",
+     "items": [
+      {
+       "name": "Non-Veg Sizzler",
+       "desc": null,
+       "veg": false,
+       "half": null,
+       "full": 475
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "main",
+   "name": "Main Course",
+   "note": null,
+   "groups": [
+    {
+     "name": "Veg",
+     "items": [
+      {
+       "name": "Dal Makhni",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 275
+      },
+      {
+       "name": "Yellow Dal Tadka",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 245
+      },
+      {
+       "name": "Dal Missi Tadka",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 245
+      },
+      {
+       "name": "Dal Handi",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 245,
+       "xlsx_name": "Daal Handi"
+      },
+      {
+       "name": "Chana Masala",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 275,
+       "xlsx_name": "Channa Masala"
+      },
+      {
+       "name": "Rajmah",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 230
+      },
+      {
+       "name": "Malai Kofta",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 275
+      },
+      {
+       "name": "Palak Paneer",
+       "desc": null,
+       "veg": true,
+       "half": 225,
+       "full": 295
+      },
+      {
+       "name": "Shahi Paneer",
+       "desc": null,
+       "veg": true,
+       "half": 225,
+       "full": 375
+      },
+      {
+       "name": "Kadhai Paneer",
+       "desc": null,
+       "veg": true,
+       "half": 225,
+       "full": 375
+      },
+      {
+       "name": "Paneer Do Pyaza",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 375
+      },
+      {
+       "name": "Paneer Korma",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 375
+      },
+      {
+       "name": "Chilli Paneer",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 375
+      },
+      {
+       "name": "Paneer Butter Masala",
+       "desc": null,
+       "veg": true,
+       "half": 225,
+       "full": 345
+      },
+      {
+       "name": "Paneer Bhurji",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 395
+      },
+      {
+       "name": "Cheese Tomato",
+       "desc": null,
+       "veg": true,
+       "half": 200,
+       "full": 375
+      },
+      {
+       "name": "Paneer Lababdar",
+       "desc": null,
+       "veg": true,
+       "half": 255,
+       "full": 395
+      },
+      {
+       "name": "Lahori Paneer",
+       "desc": null,
+       "veg": true,
+       "half": 225,
+       "full": 395
+      },
+      {
+       "name": "Matka Paneer",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 395
+      },
+      {
+       "name": "Lemon Paneer",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 300
+      },
+      {
+       "name": "Mix Vegetable",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 345
+      },
+      {
+       "name": "Jalfrezi",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 300,
+       "xlsx_name": "Jal Farezi"
+      },
+      {
+       "name": "Keema Gobi",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 350,
+       "xlsx_name": "Keema Gobhi"
+      },
+      {
+       "name": "Matar Methi",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 255
+      },
+      {
+       "name": "Saag (seasonal)",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 275,
+       "xlsx_name": "Saag (Seasonal)"
+      },
+      {
+       "name": "Bhindi (seasonal)",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 275,
+       "xlsx_name": "Bhindi (Seasonal)"
+      },
+      {
+       "name": "Bhartha",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 230
+      },
+      {
+       "name": "Kadhi Pakoda",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 230
+      }
+     ]
+    },
+    {
+     "name": "Non-Veg",
+     "items": [
+      {
+       "name": "Butter Chicken",
+       "desc": null,
+       "veg": false,
+       "half": 415,
+       "full": 695
+      },
+      {
+       "name": "Chicken Tikka Butter Masala",
+       "desc": null,
+       "veg": false,
+       "half": 415,
+       "full": 695
+      },
+      {
+       "name": "Chicken Curry",
+       "desc": null,
+       "veg": false,
+       "half": 395,
+       "full": 665
+      },
+      {
+       "name": "Kadhai Chicken",
+       "desc": null,
+       "veg": false,
+       "half": 350,
+       "full": 600
+      },
+      {
+       "name": "Chicken Tikka Lababdar",
+       "desc": null,
+       "veg": false,
+       "half": 350,
+       "full": 610
+      },
+      {
+       "name": "Rara Chicken",
+       "desc": null,
+       "veg": false,
+       "half": 350,
+       "full": 645
+      },
+      {
+       "name": "Chicken Kali Mirch",
+       "desc": null,
+       "veg": false,
+       "half": 350,
+       "full": 645,
+       "xlsx_name": "Chicken Kali Mirchi"
+      },
+      {
+       "name": "Lemon Chicken",
+       "desc": null,
+       "veg": false,
+       "half": 350,
+       "full": 645
+      },
+      {
+       "name": "Chicken Malai Methi",
+       "desc": null,
+       "veg": false,
+       "half": 325,
+       "full": 625
+      },
+      {
+       "name": "Farm to Table Special Chicken",
+       "desc": "Our house signature chicken.",
+       "veg": false,
+       "half": 415,
+       "full": 695,
+       "xlsx_name": "Farm to Table (Special Chicken)"
+      },
+      {
+       "name": "Lahori Chicken",
+       "desc": null,
+       "veg": false,
+       "half": 400,
+       "full": 695
+      },
+      {
+       "name": "Chicken Handi",
+       "desc": null,
+       "veg": false,
+       "half": null,
+       "full": 645
+      },
+      {
+       "name": "Atta Chicken",
+       "desc": "Chicken cooked sealed inside wheat-flour dough.",
+       "veg": false,
+       "half": null,
+       "full": 925
+      },
+      {
+       "name": "Barmi Chicken",
+       "desc": null,
+       "veg": false,
+       "half": 350,
+       "full": 675
+      },
+      {
+       "name": "Palak Chicken",
+       "desc": null,
+       "veg": false,
+       "half": 415,
+       "full": 695
+      }
+     ]
+    },
+    {
+     "name": "Mutton",
+     "items": [
+      {
+       "name": "Mutton Rogan Josh",
+       "desc": null,
+       "veg": false,
+       "half": 345,
+       "full": 645
+      },
+      {
+       "name": "Mutton Rara",
+       "desc": null,
+       "veg": false,
+       "half": 325,
+       "full": 645
+      },
+      {
+       "name": "Mutton Handi",
+       "desc": null,
+       "veg": false,
+       "half": null,
+       "full": 665
+      },
+      {
+       "name": "Palak Mutton",
+       "desc": null,
+       "veg": false,
+       "half": 325,
+       "full": 645
+      },
+      {
+       "name": "Shahi Mutton",
+       "desc": null,
+       "veg": false,
+       "half": 325,
+       "full": 695
+      }
+     ]
+    },
+    {
+     "name": "Fish (seasonal)",
+     "items": [
+      {
+       "name": "Fish Curry",
+       "desc": null,
+       "veg": false,
+       "half": null,
+       "full": 595
+      },
+      {
+       "name": "Tomato Fish",
+       "desc": null,
+       "veg": false,
+       "half": null,
+       "full": 565
+      },
+      {
+       "name": "Lahori Fish",
+       "desc": null,
+       "veg": false,
+       "half": null,
+       "full": 575
+      },
+      {
+       "name": "Smoked Fish",
+       "desc": null,
+       "veg": false,
+       "half": null,
+       "full": 575
+      },
+      {
+       "name": "Lemon Pepper Fish",
+       "desc": null,
+       "veg": false,
+       "half": null,
+       "full": 565
+      },
+      {
+       "name": "Tawa Fish Fry",
+       "desc": null,
+       "veg": false,
+       "half": null,
+       "full": 565
+      },
+      {
+       "name": "Fish Manchurian",
+       "desc": null,
+       "veg": false,
+       "half": null,
+       "full": 555
+      },
+      {
+       "name": "Fish Tikka Masala",
+       "desc": null,
+       "veg": false,
+       "half": null,
+       "full": 575
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "breads",
+   "name": "Breads",
+   "note": null,
+   "groups": [
+    {
+     "name": null,
+     "items": [
+      {
+       "name": "Butter Naan",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 45
+      },
+      {
+       "name": "Garlic Naan",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 55
+      },
+      {
+       "name": "Onion Naan",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 55
+      },
+      {
+       "name": "Palak Naan",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 45
+      },
+      {
+       "name": "Tandoori Roti",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 20
+      },
+      {
+       "name": "Butter Roti",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 25
+      },
+      {
+       "name": "Laccha Paratha",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 45,
+       "xlsx_name": "Laccha Parantha"
+      },
+      {
+       "name": "Paneer Paratha",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 55,
+       "xlsx_name": "Paneer Prantha"
+      },
+      {
+       "name": "Plain Naan",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 25
+      },
+      {
+       "name": "Tawa Roti",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 20
+      },
+      {
+       "name": "Roomali Roti",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 30
+      },
+      {
+       "name": "Cheese Naan",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 80
+      },
+      {
+       "name": "Missi Roti",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 30
+      },
+      {
+       "name": "Mirchi Paratha",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 55,
+       "xlsx_name": "Mirchi Prantha"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "rice",
+   "name": "Rice",
+   "note": null,
+   "groups": [
+    {
+     "name": "Veg",
+     "items": [
+      {
+       "name": "Veg Pulao",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 275
+      },
+      {
+       "name": "Jeera Rice",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 230
+      },
+      {
+       "name": "Matar Pulao",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 260,
+       "xlsx_name": "Muttar Pulao"
+      },
+      {
+       "name": "Cheese Pulao",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 280
+      },
+      {
+       "name": "Steamed Rice",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 180
+      },
+      {
+       "name": "Veg Biryani",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 325
+      }
+     ]
+    },
+    {
+     "name": "Non-Veg",
+     "items": [
+      {
+       "name": "Chicken Fried Rice",
+       "desc": null,
+       "veg": false,
+       "half": null,
+       "full": 320
+      },
+      {
+       "name": "Non-Veg Biryani",
+       "desc": null,
+       "veg": false,
+       "half": null,
+       "full": 375
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "salad",
+   "name": "Salad",
+   "note": null,
+   "groups": [
+    {
+     "name": null,
+     "items": [
+      {
+       "name": "Green Salad",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 125
+      },
+      {
+       "name": "Garden Fresh Kachumber",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 125
+      },
+      {
+       "name": "Macaroni Peanut Salad",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 145,
+       "xlsx_name": "Macroni Peanut Salad"
+      },
+      {
+       "name": "Pasta Salad",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 145
+      },
+      {
+       "name": "Laccha Onion Salad",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 125,
+       "xlsx_name": "Lacha Onion Salad"
+      },
+      {
+       "name": "Russian Salad",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 145
+      },
+      {
+       "name": "Baked Beans Salad",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 155
+      },
+      {
+       "name": "Aloo Chana Chaat",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 125,
+       "xlsx_name": "Aaloo Chana Chat"
+      },
+      {
+       "name": "Cream Salad",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 155
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "raita",
+   "name": "Curd & Raita",
+   "note": null,
+   "groups": [
+    {
+     "name": null,
+     "items": [
+      {
+       "name": "Mixed Raita",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 175
+      },
+      {
+       "name": "Pineapple Raita",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 195,
+       "xlsx_name": "Pineaaple Raita"
+      },
+      {
+       "name": "Mix Fruit Raita",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 200
+      },
+      {
+       "name": "Boondi Raita",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 165
+      },
+      {
+       "name": "Plain Curd",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 125
+      },
+      {
+       "name": "Curd Pudina Jeera",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 145
+      },
+      {
+       "name": "Cucumber Raita",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 165
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sides",
+   "name": "Sides",
+   "note": null,
+   "groups": [
+    {
+     "name": "Veg",
+     "items": [
+      {
+       "name": "Aloo Paratha with Butter",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 50,
+       "xlsx_name": "Alloo Prantha with Butter"
+      },
+      {
+       "name": "Gobi Paratha with Butter",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 55,
+       "xlsx_name": "Gobi Prantha with Butter"
+      },
+      {
+       "name": "Cheese Paratha with Butter",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 60,
+       "xlsx_name": "Cheese Prantha with Butter"
+      },
+      {
+       "name": "Mix Paratha with Butter",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 55,
+       "xlsx_name": "Mix. Prantha with Butter"
+      },
+      {
+       "name": "Homemade Pudina Chutney",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 55
+      },
+      {
+       "name": "Mango Chutney",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 55
+      },
+      {
+       "name": "Onion Chilli Chutney",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 55
+      },
+      {
+       "name": "Farm to Table Special Herbs Chutney",
+       "desc": "Our own herb chutney, made in the house.",
+       "veg": true,
+       "half": null,
+       "full": 75
+      },
+      {
+       "name": "Rajasthani Hari Mirch Masala Pickles",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 65
+      },
+      {
+       "name": "Papad Roasted",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 25
+      },
+      {
+       "name": "Masala Papad",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 75
+      }
+     ]
+    },
+    {
+     "name": "Non-Veg",
+     "items": [
+      {
+       "name": "Masala Omelette with 2 Slices",
+       "desc": null,
+       "veg": false,
+       "half": null,
+       "full": 75,
+       "xlsx_name": "Masala Omelette + 2 Slice"
+      },
+      {
+       "name": "Plain Omelette with 2 Slices",
+       "desc": null,
+       "veg": false,
+       "half": null,
+       "full": 70,
+       "xlsx_name": "Plain Omelette + 2 Slice"
+      },
+      {
+       "name": "Cheese Omelette with 2 Slices",
+       "desc": null,
+       "veg": false,
+       "half": null,
+       "full": 85,
+       "xlsx_name": "Cheese Omelette + 2 Slice"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "dessert",
+   "name": "Dessert",
+   "note": null,
+   "groups": [
+    {
+     "name": null,
+     "items": [
+      {
+       "name": "Gulab Jamun",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 35
+      },
+      {
+       "name": "Rasmalai",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 45
+      },
+      {
+       "name": "Raj Bhog",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 55
+      },
+      {
+       "name": "Paneer Jalebi with Rabri",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 75
+      },
+      {
+       "name": "Gajrela, 100 g (seasonal)",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 75,
+       "xlsx_name": "Gajerla 100gm (Seasonal)"
+      },
+      {
+       "name": "Kesar Kheer",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 75
+      },
+      {
+       "name": "Malpua Rabri (seasonal)",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 65,
+       "xlsx_name": "Mall Poora Rabri (Seasonal)"
+      },
+      {
+       "name": "Kheer",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 65
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "icecream",
+   "name": "Ice Creams",
+   "note": "Per scoop",
+   "groups": [
+    {
+     "name": null,
+     "items": [
+      {
+       "name": "Vanilla",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 50
+      },
+      {
+       "name": "Strawberry",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 50
+      },
+      {
+       "name": "Chocolate",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 55
+      },
+      {
+       "name": "Tutti Frutti",
+       "desc": null,
+       "veg": true,
+       "half": null,
+       "full": 55
+      },
+      {
+       "name": "Ice Cream with Brownie",
+       "desc": null,
+       "veg": false,
+       "half": null,
+       "full": 95,
+       "xlsx_name": "Ice Cream with Browine"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

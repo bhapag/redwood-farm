@@ -66,3 +66,12 @@ Harman was asleep. Each call below is a sensible default; any of them can be rev
 ## 9. Analytics
 - None installed. There's a commented placeholder in `src/layouts/Base.astro`.
 - No third-party scripts. The Google Maps embed loads only after a tap, so nothing from Google loads by default.
+
+## 10. Added during the build
+- **Google rating:** shown as "4.2 from 72 reviews, as shown on Google on 14 Nov 2026", with the date on the page. I did not re-check it live tonight, because Google search blocks automated checks with a captcha and I don't solve captchas. Update `rating` in `src/data/site.js` when it changes. Never round it up.
+- **Review quotes:** 8 short excerpts from real public Google reviews, quoted as written with the reviewer's public name. Only spacing before punctuation was tidied.
+- **"Open now" line** in the hero, worked out in India time (10:00 to 23:00). Without JavaScript it reads "Open daily, 10 AM to 11 PM".
+- **Desktop hero:** after the first scroll, the still tunnel photo is swapped for the tunnel loop video, which is made from the same real photo. Mobile keeps the still to save data.
+- **Party cards:** they stack as sticky cards. On desktop the card underneath dims as the next one slides over; on mobile they just stack, because each card is taller than the screen.
+- **Map:** shown only after a tap, so no Google request loads by default.
+- **Article links** are relative, so they keep working after the domain move.

@@ -13,7 +13,7 @@ MSG="${1:-Deploy GitHub Pages copy}"
 python scripts/build_menu.py
 MSYS_NO_PATHCONV=1 BASE_PATH=/redwood-farm PUBLIC_CANONICAL_ORIGIN="$CANONICAL" npx astro build --outDir dist-gh
 # QA runs against the GitHub build layout.
-PYTHONIOENCODING=utf8 DIST=dist-gh BASE=/redwood-farm python scripts/qa_check.py | tail -1
+MSYS_NO_PATHCONV=1 PYTHONIOENCODING=utf8 DIST=dist-gh BASE=/redwood-farm python scripts/qa_check.py | tail -1
 
 cd "$REPO"
 git checkout -q gh-pages

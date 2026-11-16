@@ -6,6 +6,8 @@ import { Picture, getImage } from 'astro:assets';
 import { site, waLink } from '../data/site.js';
 import { find, price } from '../data/menu.js';
 import { reviews } from '../data/reviews.js';
+import { clusters, clusterOrder } from '../data/clusters.js';
+import { pagesIn, pathOf } from '../data/pages.js';
 
 import tunnel from '../assets/venue/tunnel.jpg';
 import palmTable from '../assets/venue/palm-table.jpg';
@@ -39,6 +41,16 @@ const dishes = [
 ].map(([img, name, line]) => ({ img, name, line, item: find(name) }));
 const peek = await Promise.all(dishes.map((d) => getImage({ src: d.img, width: 480, format: 'webp' })));
 
+const featured = {
+  party: ['birthday-party-venues-ludhiana', 'kitty-party-venues-ludhiana', 'office-team-lunch-ludhiana'],
+  food: ['tandoor-guide', 'vegetarian-guide', 'group-ordering-guide'],
+  garden: ['open-air-dining-ludhiana', 'fairy-light-tunnel', 'sunday-family-lunch'],
+  guides: ['how-to-choose-a-party-venue-ludhiana', 'ludhiana-food-guide', 'birthday-party-budget'],
+};
+const hubs = await Promise.all(Object.entries(featured).map(async ([c, slugs]) => {
+  const list = await pagesIn(c);
+  return { c, hub: clusters[c], items: slugs.map((sl) => list.find((p) => pathOf(p) === `/${c}/${sl}/`)).filter(Boolean) };
+}));
 const title = 'Red Wood Farm: Garden Family Restaurant & Party Lawn, Ludhiana';
 const description = 'Garden family restaurant and party lawn on outer Pakhowal Road, Ludhiana. Tandoor, North Indian and Indo-Chinese, open daily 10 AM to 11 PM. Book on WhatsApp.';
 const crumbs = { '@context': 'https://schema.org', '@type': 'WebSite', name: site.name, url: abs(`/`) };
@@ -143,6 +155,20 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'WebSite', name: sit
     <div class="lawn-copy wrap">
       <h2 id="lawn-h" data-split>The lawn by night</h2>
       <p data-reveal>String lights, low lounge seating and open sky. Families come for dinner; groups book a corner for a birthday or a get-together.</p>
+    </div>
+  </section>
+
+  <section class="section explore wrap" aria-labelledby="ex-h">
+    <span class="kicker">Plan your visit</span>
+    <h2 id="ex-h" data-split>Guides from the <em>Red Wood Farm</em> team</h2>
+    <div class="ex-grid">
+      {hubs.map(({ c, hub, items }) => (
+        <div class="ex-col" data-reveal>
+          <h3><a href={u(hub.path)}>{hub.name}</a></h3>
+          <ul role="list">{items.map((p) => <li><a href={u(pathOf(p))}>{p.data.title}</a></li>)}</ul>
+          <a class="ex-all" href={u(hub.path)}>See all <Icon name="arrow" /></a>
+        </div>
+      ))}
     </div>
   </section>
 
@@ -272,6 +298,17 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'WebSite', name: sit
   .lawn-copy h2 { font-size: var(--t-hero); line-height: 0.92; }
   .lawn-copy p { color: var(--ivory-2); max-width: 44ch; }
 
+.ex-grid { display: grid; gap: 32px; margin-top: 40px; }
+  @media (min-width: 900px) { .ex-grid { grid-template-columns: repeat(4, 1fr); } }
+  .explore h2 { font-size: var(--t-2); }
+  .ex-col { border-top: 2px solid var(--redwood); padding-top: 18px; }
+  .ex-col h3 { font-size: 1.35rem; }
+  .ex-col h3 a { text-decoration: none; }
+  .ex-col ul { list-style: none; padding: 0; margin: 0 0 16px; display: grid; gap: 12px; }
+  .ex-col li a { text-decoration: none; color: var(--ivory-2); font-size: 0.95rem; line-height: 1.4; }
+  .ex-col li a:hover, .ex-col h3 a:hover { color: var(--red-ink); }
+  .ex-all { display: inline-flex; align-items: center; gap: 8px; color: var(--red-ink); text-decoration: none; font-size: 0.9rem; }
+  .ex-all :global(svg) { width: 16px; height: 16px; }
   .rev-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 24px; }
   .rev-head h2 { font-size: var(--t-2); }
   .rating { color: var(--gold); }

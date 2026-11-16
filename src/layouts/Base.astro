@@ -1,0 +1,148 @@
+---
+import '../styles/global.css';
+import Icon from '../components/Icon.astro';
+import { site, waLink } from '../data/site.js';
+import monogram from '../assets/rw-monogram.png';
+import { getImage } from 'astro:assets';
+import bodoniUrl from '@fontsource-variable/bodoni-moda/files/bodoni-moda-latin-wght-normal.woff2?url';
+import sansUrl from '@fontsource/schibsted-grotesk/files/schibsted-grotesk-latin-400-normal.woff2?url';
+
+const { title, description, og = 'og-home.jpg', schema = [], current = '', noindex = false } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const u = (p) => `${base}${p}`;
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const ogUrl = new URL(`${base}/og/${og}`, Astro.site).href;
+const mono = await getImage({ src: monogram, width: 64, format: 'webp' });
+
+const venue = {
+  '@context': 'https://schema.org',
+  '@type': ['Restaurant', 'EventVenue'],
+  '@id': new URL(`${base}/#venue`, Astro.site).href,
+  name: site.name,
+  description: `${site.story}, Ludhiana. North Indian, tandoor and Indo-Chinese food; birthday, kitty and family parties on the lawn.`,
+  url: new URL(`${base}/`, Astro.site).href,
+  telephone: site.phoneE164,
+  image: new URL(`${base}/og/og-home.jpg`, Astro.site).href,
+  logo: new URL(`${base}/icon-512.png`, Astro.site).href,
+  address: { '@type': 'PostalAddress', streetAddress: site.address.street, addressLocality: site.address.locality, addressRegion: site.address.region, postalCode: site.address.postal, addressCountry: site.address.country },
+  geo: { '@type': 'GeoCoordinates', latitude: site.geo.lat, longitude: site.geo.lng },
+  hasMap: site.mapsUrl,
+  openingHoursSpecification: [{ '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'], opens: '10:00', closes: '23:00' }],
+  servesCuisine: ['North Indian', 'Tandoor', 'Indo-Chinese'],
+  hasMenu: new URL(`${base}/menu/`, Astro.site).href,
+  acceptsReservations: site.wa,
+  potentialAction: { '@type': 'ReserveAction', target: { '@type': 'EntryPoint', urlTemplate: site.wa, actionPlatform: ['http://schema.org/DesktopWebPlatform', 'http://schema.org/MobileWebPlatform'] }, result: { '@type': 'FoodEstablishmentReservation', name: 'Table or party enquiry on WhatsApp' } },
+  amenityFeature: [
+    { '@type': 'LocationFeatureSpecification', name: 'Takeaway', value: true },
+    { '@type': 'LocationFeatureSpecification', name: 'Wi-Fi', value: true },
+    { '@type': 'LocationFeatureSpecification', name: 'Outdoor seating (garden lawn)', value: true },
+    { '@type': 'LocationFeatureSpecification', name: 'Wheelchair accessible', value: false },
+  ],
+  sameAs: site.sameAs,
+};
+const graphs = [venue, ...schema];
+const nav = [
+  ['Menu', '/menu/'],
+  ['Parties', '/party/'],
+  ['Visit', '/visit/'],
+  ['Notes', '/notes/'],
+];
+---
+<!doctype html>
+<html lang="en" class="no-js" data-base={base}>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+  <link rel="preload" href={bodoniUrl} as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href={sansUrl} as="font" type="font/woff2" crossorigin />
+  <meta name="theme-color" content="#0b0f0c" />
+  <meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large'} />
+  <link rel="icon" href={u('/favicon.ico')} sizes="48x48" />
+  <link rel="icon" href={u('/favicon-32.png')} type="image/png" sizes="32x32" />
+  <link rel="apple-touch-icon" href={u('/apple-touch-icon.png')} />
+  <link rel="manifest" href={u('/site.webmanifest')} />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content={site.name} />
+  <meta property="og:locale" content="en_IN" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:image" content={ogUrl} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogUrl} />
+  <slot name="head" />
+  {graphs.map((g) => <script type="application/ld+json" set:html={JSON.stringify(g)} />)}
+  <script is:inline>document.documentElement.classList.replace('no-js','js');</script>
+  <!-- Analytics placeholder: Google Analytics is not set up yet. Add the GA4 tag here after the owner approves it. -->
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-head" data-head>
+    <a class="brand" href={u('/')} aria-label="Red Wood Farm, home">
+      <img src={mono.src} alt="" width="30" height="30" />
+      <span>Red Wood Farm</span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      {nav.map(([l, h]) => <a href={u(h)} class={l === 'Notes' ? 'hide-m' : ''} aria-current={current === l ? 'page' : undefined}>{l}</a>)}
+      <a class="btn hide-m" data-magnetic href={waLink('Hello Red Wood Farm, I would like to book a table.')} target="_blank" rel="noopener">Book on WhatsApp</a>
+    </nav>
+  </header>
+
+  <main id="main"><slot /></main>
+
+  <footer class="site-foot">
+    <div class="wrap foot-grid">
+      <div>
+        <h2>Red Wood Farm</h2>
+        <p class="muted">{site.story}, Ludhiana.</p>
+        <address>
+          {site.address.full}<br />
+          <a href={site.tel}>{site.phoneDisplay}</a> (call or WhatsApp)<br />
+          {site.hoursDisplay}
+        </address>
+      </div>
+      <div>
+        <h3 class="kicker">Visit</h3>
+        <ul>
+          <li><a href={u('/menu/')}>Menu and prices</a></li>
+          <li><a href={u('/party/')}>Parties and events</a></li>
+          <li><a href={u('/visit/')}>Directions and hours</a></li>
+          <li><a href={u('/notes/')}>Notes</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="kicker">Elsewhere</h3>
+        <ul>
+          <li><a href={site.mapsUrl} target="_blank" rel="noopener">Google Maps</a></li>
+          <li><a href={site.reviewUrl} target="_blank" rel="noopener">Write a Google review</a></li>
+          <li><a href={site.sameAs[1]} target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href={site.sameAs[0]} target="_blank" rel="noopener">Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap signoff">
+      <img src={mono.src} alt="Red Wood Farm RW monogram" width="28" height="28" loading="lazy" />
+      <span>All prices in ₹, inclusive of GST. Takeaway available. Wi-Fi. No wheelchair access.</span>
+    </div>
+  </footer>
+
+  <nav class="actionbar" aria-label="Quick actions">
+    <a href={u('/menu/')}><Icon name="menu" />Menu</a>
+    <a href={site.tel}><Icon name="call" />Call</a>
+    <a href={site.directionsUrl} target="_blank" rel="noopener"><Icon name="pin" />Directions</a>
+    <a class="wa" href={waLink('Hello Red Wood Farm, I would like to book a table.')} target="_blank" rel="noopener"><Icon name="wa" />WhatsApp</a>
+  </nav>
+
+  <script>
+    import { initMotion } from '../scripts/motion.js';
+    initMotion();
+  </script>
+</body>
+</html>

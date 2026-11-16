@@ -1,0 +1,21 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+<Base title="Page not found | Red Wood Farm" description="This page does not exist. See the Red Wood Farm menu, plan a party or find directions." og="og-home.jpg" noindex>
+  <section class="nf wrap">
+    <p class="kicker">404</p>
+    <h1>This path leads out of the <em>garden</em></h1>
+    <p class="muted">The page you were looking for is not here. Try one of these instead.</p>
+    <div class="btns">
+      <a class="btn" href={`${base}/menu/`}><Icon name="menu" />See the menu</a>
+      <a class="btn ghost" href={`${base}/party/`}>Plan a party</a>
+      <a class="btn ghost" href={`${base}/`}>Home</a>
+    </div>
+  </section>
+</Base>
+<style>
+  .nf { min-height: 80svh; display: flex; flex-direction: column; justify-content: center; padding-top: 120px; }
+  .nf h1 { font-size: var(--t-1); max-width: 14ch; }
+</style>

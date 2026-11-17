@@ -6,7 +6,7 @@ import ReviewBand from '../../components/ReviewBand.astro';
 import Icon from '../../components/Icon.astro';
 import { Picture, getImage } from 'astro:assets';
 import BlurHeading from '../../components/BlurHeading.astro';
-import Headline from '../../components/rb/Headline';
+import ScrollWords from '../../components/ScrollWords.astro';
 import PartyStack from '../../components/rb/PartyStack';
 import Spark from '../../components/rb/Spark';
 import { site, waLink } from '../../data/site.js';
@@ -54,14 +54,14 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', it
 
   <section class="section tone-paper" aria-labelledby="types-h">
     <div class="wrap">
-      <Headline client:interact id="types-h" className="p-h2" text="What we host" />
+      <ScrollWords id="types-h" class="p-h2" text="What we host" />
       <PartyStack client:visible items={typeCards} />
     </div>
   </section>
 
   <section class="section tone-green" aria-labelledby="how-h">
     <div class="wrap">
-      <Headline client:interact id="how-h" className="p-h2" text="How booking works" />
+      <ScrollWords id="how-h" class="p-h2" text="How booking works" />
       <p class="muted">Four messages on WhatsApp. There are no forms to fill in on this website.</p>
       <ol class="steps">
         <li data-reveal><b>Tell us the occasion</b><span>Birthday, kitty party, family function or team lunch.</span></li>
@@ -75,7 +75,7 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', it
   <section id="enquire" class="section tone-night enquire" aria-labelledby="enq-h">
     <div class="wrap split">
       <div>
-        <Headline client:interact id="enq-h" className="p-h2" text="Plan your party on WhatsApp" />
+        <ScrollWords id="enq-h" class="p-h2" text="Plan your party on WhatsApp" />
         <p class="muted">Fill this in and it opens WhatsApp with your message ready to send. Nothing is saved on this website.</p>
         <p class="muted">Guest capacity, per-plate prices and packages: ask us on WhatsApp and we will share current details for your date.</p>
       </div>
@@ -103,7 +103,7 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', it
 
   <section class="section tone-paper" aria-labelledby="gal-h">
     <div class="wrap">
-      <Headline client:interact id="gal-h" className="p-h2" text="From past parties on the lawn" />
+      <ScrollWords id="gal-h" class="p-h2" text="From past parties on the lawn" />
       <p class="muted">Real set-ups at Red Wood Farm.</p>
       <div class="gal">
         <figure class="frame g-a sd-zoom"><Picture src={gate} formats={['avif', 'webp']} widths={[400, 700]} sizes="(min-width: 900px) 30vw, 46vw" alt="A floral entry gate decorated for an evening event" /></figure>
@@ -187,7 +187,7 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', it
   @media (min-width: 900px) { .faq-wrap { grid-template-columns: 4fr 7fr; gap: 64px; } }
   /* React Bits islands on Parties */
   .p-hero :global(.p-title) { font-size: var(--t-1); max-width: 14ch; line-height: 1.04; margin: 0 0 0.45em; }
-  :global(.p-h2.rb-headline) { font-size: var(--t-2); }
+  :global(.p-h2.scroll-words) { font-size: var(--t-2); }
   section :global(.pstack) { margin-top: 32px; }
   section :global(.scroll-stack__inner) { padding-inline: 0; }
   section :global(.pstack-card) { height: auto; padding: 0; border-radius: 14px; overflow: hidden; background: #fff; color: var(--ink); display: grid; }

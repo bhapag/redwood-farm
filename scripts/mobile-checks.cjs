@@ -28,11 +28,10 @@ const pages = ['/', '/menu/', '/party/', '/visit/', '/party/birthday-party-venue
           out.heroH1Lines = Math.round(h1.getBoundingClientRect().height / parseFloat(getComputedStyle(h1).lineHeight));
           const n = document.querySelector('.hero-name');
           out.neonOneLine = n.getBoundingClientRect().height < parseFloat(getComputedStyle(n).fontSize) * 1.6 && n.scrollWidth <= n.clientWidth;
-          const row = document.querySelector('.dish-row');
-          const cs = getComputedStyle(row);
-          const card = row.querySelector('.dish').getBoundingClientRect().width;
-          out.carouselSnap = cs.scrollSnapType.includes('x') && cs.overflowX === 'auto';
-          out.cardsPerView = +(row.clientWidth / card).toFixed(2);
+          // Dishes on phones: React Bits Stack (swipe or tap to flip), one card in front.
+          const stack = document.querySelector('.dstack');
+          out.dishStack = !!stack && stack.getBoundingClientRect().height > 200;
+          out.dishCards = document.querySelectorAll('.dstack-card').length;
           out.swipeHint = !!document.querySelector('.swipe-hint') && getComputedStyle(document.querySelector('.swipe-hint')).display !== 'none';
           out.reviewRowsShown = [...document.querySelectorAll('.rv-row')].filter((e) => getComputedStyle(e).display !== 'none').length;
           out.reviewsInRow = document.querySelectorAll('.rv-phone .rv-card:not([aria-hidden])').length;
@@ -47,7 +46,7 @@ const pages = ['/', '/menu/', '/party/', '/visit/', '/party/birthday-party-venue
           out.backToTop = !!document.querySelector('[data-top]');
         }
         // Pinned or sticky content sections on phones (header, action bar, menu bar and back-to-top are allowed).
-        const allowed = ['site-head', 'actionbar', 'm-bar', 'to-top', 'sheet'];
+        const allowed = ['site-head', 'actionbar', 'm-bar', 'to-top', 'sheet', 'scroll-stack__slot'];
         out.pinnedSections = [...document.querySelectorAll('body *')].filter((e) => {
           const s = getComputedStyle(e).position;
           return (s === 'sticky' || s === 'fixed') && !allowed.some((c) => e.closest('.' + c)) && e.getBoundingClientRect().height > 0;
@@ -57,7 +56,7 @@ const pages = ['/', '/menu/', '/party/', '/visit/', '/party/birthday-party-venue
         const texts = [...document.querySelectorAll('main h1, main h2, main h3, main p')].filter((t) => t.textContent.trim() && !t.closest('figcaption'));
         out.textOverPhoto = texts.filter((t) => { const a = t.getBoundingClientRect(); return imgs.some((r) => a.left < r.right - 4 && a.right > r.left + 4 && a.top < r.bottom - 4 && a.bottom > r.top + 4); }).map((t) => t.textContent.trim().slice(0, 30));
         // Ghosting: anything mid cross-fade (two stacked images both partly transparent).
-        out.translucentImages = [...document.querySelectorAll('main img, main video')].filter((i) => { let e = i, o = 1; while (e && e !== document.body) { o *= +getComputedStyle(e).opacity; e = e.parentElement; } return o < 0.99; }).length;
+        out.translucentImages = [...document.querySelectorAll('main img, main video')].filter((i) => { let e = i, o = 1; while (e && e !== document.body) { o *= +getComputedStyle(e).opacity; e = e.parentElement; } return o > 0.05 && o < 0.95; }).length; // half-visible only; fully hidden deck cards (opacity 0) are not ghosts
         // Page end clears the action bar.
         window.scrollTo(0, document.documentElement.scrollHeight);
         await new Promise((r) => setTimeout(r, 300));

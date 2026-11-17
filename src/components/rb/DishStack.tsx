@@ -8,11 +8,13 @@ export interface Dish { name: string; price: string; veg: boolean; img: string; 
 export default function DishStack({ dishes }: { dishes: Dish[] }) {
   // Photos get their source only after hydration (600 px before the stack scrolls in), so on a slow
   // connection they never compete with the hero photo during page load.
+  // Only the front three photos load at first; the next ones load as the visitor swipes.
   const [ready, setReady] = useState(false);
+  const [upTo, setUpTo] = useState(3);
   useEffect(() => setReady(true), []);
-  const cards = dishes.map((d) => (
+  const cards = dishes.map((d, i) => (
     <article className="dstack-card" key={d.name}>
-      <img src={ready ? d.img : undefined} alt={d.alt} width={480} height={600} decoding="async" draggable={false} />
+      <img src={ready && i < upTo ? d.img : undefined} alt={d.alt} width={480} height={600} decoding="async" draggable={false} />
       <div className="dstack-panel">
         <h3>{d.name}</h3>
         <p className="dstack-meta">
@@ -36,6 +38,7 @@ export default function DishStack({ dishes }: { dishes: Dish[] }) {
       tilt={8}
       threshold={70}
       sendToBackOnClick
+      onChange={(top) => setUpTo((n) => Math.max(n, Math.min(dishes.length, top + 4)))}
     />
   );
 }

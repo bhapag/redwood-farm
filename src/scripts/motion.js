@@ -72,6 +72,24 @@ function lazyVideos() {
   vids.forEach((v) => io.observe(v));
 }
 
+/* ---------- Warm-up: parse the heavy island libraries while the visitor reads the first screen ----------
+   Islands hydrate on scroll; parsing GSAP and the motion library at that moment would make the first
+   scroll stutter on a mid-range phone. So, 3 s after load and in idle time, fetch and evaluate them once.
+   The islands share these exact modules, so their own hydration is then cheap. */
+function warmIslands() {
+  if (reduce) return;
+  const has = (name) => document.querySelector(`astro-island[component-url*="${name}"]`);
+  const jobs = [];
+  if (has('CountUp') || has('DishStack')) jobs.push(() => import('motion/react'));
+  if (has('DishStack')) jobs.push(() => import('../components/rb/DishStack'));
+  if (has('PartyStack')) jobs.push(() => import('../components/rb/PartyStack')); // parsed early, mounted only near the screen (it updates on every scroll frame)
+  if (!jobs.length) return;
+  const idle = (fn) => ('requestIdleCallback' in window ? requestIdleCallback(fn, { timeout: 2000 }) : setTimeout(fn, 200));
+  const run = () => { const job = jobs.shift(); if (!job) return; job().catch(() => {}).finally(() => idle(run)); };
+  const arm = () => setTimeout(() => idle(run), 3000);
+  if (document.readyState === 'complete') arm(); else window.addEventListener('load', arm, { once: true });
+}
+
 export function initMotion() {
   openNow();
   header();
@@ -79,6 +97,7 @@ export function initMotion() {
   reveals();
   swipeHints();
   lazyVideos();
+  warmIslands();
   const desktop = window.matchMedia('(min-width: 900px) and (hover: hover) and (pointer: fine)').matches;
   if (desktop && !reduce) {
     const go = () => import('./motion-desktop.js').then((m) => m.initDesktop());

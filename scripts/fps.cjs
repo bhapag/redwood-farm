@@ -7,9 +7,12 @@ const { chromium, devices } = require('playwright');
   const b = await chromium.launch({ executablePath: exe || undefined });
   const ctx = await b.newContext({ ...devices['Pixel 7'] });
   const pg = await ctx.newPage();
+  // Optional: BLOCK=Name1,Name2 blocks those island chunks, to find which effect costs frames.
+  for (const n of (process.env.BLOCK || '').split(',').filter(Boolean)) await pg.route(new RegExp(`/_astro/${n}[.][^/]*js$`), (r) => r.abort());
   const cdp = await ctx.newCDPSession(pg);
   await pg.goto(url, { waitUntil: 'load' });
-  await pg.waitForTimeout(2500);
+  // A visitor looks at the first screen for a few seconds before scrolling; the hero effects hydrate then.
+  await pg.waitForTimeout(8000);
   await cdp.send('Emulation.setCPUThrottlingRate', { rate: 4 });
   const res = await pg.evaluate(async ({ sels, secs }) => {
     const list = sels.split(',');

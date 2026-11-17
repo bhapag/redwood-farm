@@ -18,7 +18,8 @@ export default function HeroLights() {
     let t = 0;
     const start = () => { t = window.setTimeout(() => setOn(true), 200); };
     if (document.readyState === 'complete') start(); else window.addEventListener('load', start, { once: true });
-    const io = new IntersectionObserver(([e]) => setPaused(!e.isIntersecting));
+    // Pause once less than half of the hero is on screen, so the canvas never draws while the next section scrolls in.
+    const io = new IntersectionObserver(([e]) => setPaused(e.intersectionRatio < 0.5), { threshold: [0, 0.5, 1] });
     if (box.current) io.observe(box.current);
     const vis = () => setPaused(document.hidden);
     document.addEventListener('visibilitychange', vis);

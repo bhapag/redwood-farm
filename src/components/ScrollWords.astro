@@ -1,0 +1,30 @@
+---
+// Section headline whose words rise into place as it scrolls into view: the ScrollFloat look, done with
+// CSS scroll-driven animations (animation-timeline: view()). It runs on the compositor with no JavaScript,
+// never pins, and costs nothing while off screen. React Bits ScrollFloat was tried first and dropped:
+// its GSAP ScrollTrigger timelines held the hero at about 22 fps on a 4x-slowed Pixel 7.
+// Words are clipped, not faded, so the text is always full contrast. Where scroll timelines are not
+// supported, or under reduced motion, the heading is simply static.
+const { text, id, class: cls = '' } = Astro.props;
+const words = text.split(' ');
+---
+<h2 id={id} class={`scroll-words ${cls}`}>
+  {words.map((w, i) => <><span class="sw-w"><span class="sw-i" style={`--i:${i}`}>{w}</span></span>{i < words.length - 1 ? ' ' : ''}</>)}
+</h2>
+<style>
+  .sw-w { display: inline-block; overflow: clip; overflow-clip-margin: 0.12em; vertical-align: top; padding-bottom: 0.06em; margin-bottom: -0.06em; }
+  .sw-i { display: inline-block; }
+  @supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+      .sw-i {
+        animation: sw-rise linear both;
+        animation-timeline: view();
+        animation-range: entry calc(5% + var(--i) * 4%) cover calc(30% + var(--i) * 4%);
+      }
+    }
+  }
+  @keyframes sw-rise {
+    from { transform: translateY(105%) rotate(4deg) scaleY(1.25); transform-origin: 0 100%; }
+    to { transform: none; }
+  }
+</style>

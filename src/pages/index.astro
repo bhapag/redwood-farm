@@ -7,7 +7,7 @@ import ShinyText from '../components/reactbits/ShinyText/ShinyText';
 import BlurHeading from '../components/BlurHeading.astro';
 import CountUp from '../components/reactbits/CountUp/CountUp';
 import HeroLights from '../components/rb/HeroLights';
-import Headline from '../components/rb/Headline';
+import ScrollWords from '../components/ScrollWords.astro';
 import DishStack from '../components/rb/DishStack';
 import PartyStack from '../components/rb/PartyStack';
 import Spark from '../components/rb/Spark';
@@ -123,12 +123,12 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'WebSite', name: sit
   <section class="intro section tone-paper" aria-labelledby="intro-h">
     <div class="wrap intro-grid">
       <div class="intro-copy">
-        <Headline client:interact id="intro-h" text="A garden restaurant for the whole family" />
+        <h2 id="intro-h" class="intro-h" data-reveal>A garden restaurant for the whole family</h2>
         <p class="lede" data-reveal>Red Wood Farm is a garden family restaurant and party lawn at VPO Daad, on outer Pakhowal Road in Ludhiana. We serve tandoor, North Indian and Indo-Chinese food every day from 10 AM to 11 PM, at tables on a fairy-lit lawn.</p>
         <ul class="stats" role="list" data-reveal>
-          <li><span class="stat-n"><CountUp client:visible to={187} duration={1.6} /></span><span class="stat-l">dishes on the menu</span></li>
-          <li><span class="stat-n"><CountUp client:visible to={13} duration={1.2} /></span><span class="stat-l">hours open, every day</span></li>
-          <li><span class="stat-n"><CountUp client:visible to={4.2} decimals={1} duration={1.4} /><span class="stat-star" aria-hidden="true">★</span></span><span class="stat-l">from {site.rating.count} Google reviews</span></li>
+          <li><span class="stat-n"><CountUp client:interact to={187} duration={1.6} /></span><span class="stat-l">dishes on the menu</span></li>
+          <li><span class="stat-n"><CountUp client:interact to={13} duration={1.2} /></span><span class="stat-l">hours open, every day</span></li>
+          <li><span class="stat-n"><CountUp client:interact to={4.2} decimals={1} duration={1.4} /><span class="stat-star" aria-hidden="true">★</span></span><span class="stat-l">from {site.rating.count} Google reviews</span></li>
         </ul>
         <a class="link" href={u('/about/')} data-reveal>About Red Wood Farm <Icon name="arrow" /></a>
       </div>
@@ -149,11 +149,11 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'WebSite', name: sit
 
   <section class="dishes section tone-green" aria-labelledby="dish-h">
     <div class="wrap dish-head">
-      <Headline client:interact id="dish-h" text="Start with the tandoor" />
+      <ScrollWords id="dish-h" text="Start with the tandoor" />
       <p class="muted">Nine dishes from our menu of 187, with their prices. Food photos are illustrative.</p>
       <p class="swipe-hint" aria-hidden="true">Swipe or tap the card <Icon name="arrow" /></p>
     </div>
-    <div class="dish-phone wrap"><DishStack client:visible={{ rootMargin: '600px' }} dishes={dishCards} /></div>
+    <div class="dish-phone wrap"><DishStack client:interact dishes={dishCards} /></div>
     <div class="dswap wrap" data-dswap>
       <ol class="dswap-list" role="list">
         {dishes.map((d, i) => (
@@ -180,7 +180,7 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'WebSite', name: sit
   <section class="occasions section tone-paper" aria-labelledby="occ-h">
     <div class="wrap">
       <div class="occ-head">
-        <Headline client:interact id="occ-h" text="Birthdays, kitty parties and family functions" />
+        <ScrollWords id="occ-h" text="Birthdays, kitty parties and family functions" />
         <div>
           <p data-reveal>The lawn and its lights are yours for the afternoon or the evening. Tell us the date and the number of guests on WhatsApp and we will plan it with you.</p>
           <a class="link" href={u('/party/')} data-reveal>Plan a party <Icon name="arrow" /></a>
@@ -197,7 +197,7 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'WebSite', name: sit
         <figcaption class="cap">A table under the palms on the lawn, after dark.</figcaption>
       </figure>
       <div class="eve-copy">
-        <Headline client:interact id="eve-h" text="The lawn by night" />
+        <ScrollWords id="eve-h" text="The lawn by night" />
         <p data-reveal>After sunset the lawn, the palms and the tunnel light up. Take a table outside, or book a corner for a birthday or a get-together.</p>
         <a class="btn red" href={waLink('Hello Red Wood Farm, I would like to book a table for this evening.')} target="_blank" rel="noopener" data-reveal><Icon name="wa" />Book a table tonight</a>
       </div>
@@ -218,7 +218,7 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'WebSite', name: sit
 
   <section class="guides section tone-paper" aria-labelledby="ex-h">
     <div class="wrap">
-      <Headline client:interact id="ex-h" text="Guides from our team" />
+      <ScrollWords id="ex-h" text="Guides from our team" />
       <div class="ex-grid">
         {hubs.map(({ hub, items }) => (
           <div class="ex-col" data-reveal>
@@ -235,7 +235,7 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'WebSite', name: sit
     <div class="wrap split">
       <div class="frame visit-img sd-zoom"><Picture src={entrance} formats={['avif', 'webp']} widths={[480, 800, 1200]} sizes="(min-width: 900px) 45vw, 92vw" alt="The hedge and flower entrance arch at Red Wood Farm, by day" /></div>
       <div>
-        <Headline client:interact id="visit-h" text="Opposite Cerajot Tiles, near Omaxe Flats" />
+        <ScrollWords id="visit-h" text="Opposite Cerajot Tiles, near Omaxe Flats" />
         <address class="lede">{site.address.full}</address>
         <p class="muted">{site.hoursDisplay}. Takeaway available. No wheelchair access.</p>
         <div class="btns">
@@ -382,10 +382,10 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'WebSite', name: sit
   .hero :global(.hero-title) { font-size: var(--t-hero); max-width: 18ch; margin: 0 0 14px; line-height: 1.04; justify-content: flex-start; }
   @media (min-width: 900px) { .hero :global(.hero-title) { font-size: clamp(2.8rem, 1rem + 3.2vw, 4.4rem); max-width: 15ch; } }
   .hero-photo :global(.hero-lights) { position: absolute; inset: 0; pointer-events: none; mix-blend-mode: screen; }
-  .intro :global(.rb-headline), .dishes :global(.rb-headline), .occasions :global(.rb-headline), .evening :global(.rb-headline), .guides :global(.rb-headline) { font-size: var(--t-1); }
-  .intro :global(.rb-headline) { max-width: 14ch; }
-  .occasions :global(.rb-headline) { max-width: 16ch; }
-  .visit :global(.rb-headline) { font-size: var(--t-2); }
+  .intro :global(.scroll-words), .dishes :global(.scroll-words), .occasions :global(.scroll-words), .evening :global(.scroll-words), .guides :global(.scroll-words) { font-size: var(--t-1); }
+  .intro .intro-h { font-size: var(--t-1); max-width: 14ch; }
+  .occasions :global(.scroll-words) { max-width: 16ch; }
+  .visit :global(.scroll-words) { font-size: var(--t-2); }
   .stats { list-style: none; padding: 18px 0 0; margin: 4px 0 26px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; border-top: 1px solid var(--line); }
   .stats li { display: grid; gap: 4px; align-content: start; }
   .stat-n { font: 400 clamp(2rem, 1.4rem + 2.4vw, 3.2rem)/1 var(--serif); color: var(--redwood); font-variant-numeric: tabular-nums; display: inline-flex; align-items: baseline; gap: 2px; }

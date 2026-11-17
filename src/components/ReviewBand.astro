@@ -2,10 +2,12 @@
 // Moving band of real Google reviews. Plain HTML only: no Review or AggregateRating schema.
 // rows: 2 = two rows in opposite directions on desktop (one row on phones); 1 = a single row everywhere.
 // limit: show only the newest N reviews (the shorter version on Parties and Visit).
-import { reviews, reviewsUrl } from '../data/reviews.js';
+import { bandReviews, reviewsUrl } from '../data/reviews.js';
 import { site } from '../data/site.js';
-const { rows = 2, limit = reviews.length, tone = 'night', heading = 'What guests say on Google', id = 'reviews' } = Astro.props;
-const list = reviews.slice(0, limit);
+const { rows: wantRows = 2, limit = 99, tone = 'night', heading = 'What guests say on Google', id = 'reviews' } = Astro.props;
+const list = bandReviews().slice(0, limit);
+// Fewer than 8 cards: one row on desktop too, so repeats are not obvious.
+const rows = list.length < 8 ? 1 : wantRows;
 // Two rows on desktop (alternating reviews), plus one row holding every review for phones.
 // CSS shows one set per breakpoint, so screen readers only ever get one copy.
 const sets = rows === 2
@@ -17,7 +19,7 @@ const sets = rows === 2
   : [{ items: list, cls: 'rv-a', label: 'Google reviews' }];
 const starPath = 'm12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9L12 3Z';
 // Seconds per card: slow enough to read a card as it passes.
-const speed = (n) => `${Math.max(40, n * 7)}s`;
+const speed = (n) => `${Math.max(60, n * 10)}s`;
 ---
 <section class={`rv section tone-${tone}`} aria-labelledby={`${id}-h`} data-rv>
   <div class="wrap rv-head">

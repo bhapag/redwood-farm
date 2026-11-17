@@ -28,6 +28,7 @@ main = src[src.find("<main>"):src.find('<section id="parties"')]
 cats = []
 for sec in re.finditer(r'<section id="([^"]+)"><h2>(.*?)</h2>(.*?)</section>', main, re.S):
     cid, cname, body = sec.group(1), H.unescape(sec.group(2)), sec.group(3)
+    cid = {"main": "main-course"}.get(cid, cid)  # "main" would clash with the page's <main id="main">
     cat = {"id": cid, "name": cname, "note": None, "groups": []}
     tokens = re.finditer(r'<p class="sn">(.*?)</p>|<h3 class="sub">(.*?)(?:<span class="hf">.*?</span></span>)?</h3>|<ul>(.*?)</ul>', body, re.S)
     pending = None

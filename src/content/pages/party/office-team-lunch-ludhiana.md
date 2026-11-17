@@ -9,10 +9,6 @@ updated: 2026-11-17
 images:
   - src: venue/day-long-tables.jpg
     alt: "Long wooden table and benches on the grass in daylight, with canopy-covered dining and lounge sofas behind, at Red Wood Farm"
-  - src: food/nonveg_platter.jpg
-    alt: "A mixed non-veg tandoori platter with kebabs, tikka and onion rings on a dark plate"
-  - src: food/paneer_tikka.jpg
-    alt: "Charred paneer tikka cubes with peppers and onion, served with green chutney"
 faq:
   - q: "Does Red Wood Farm have Wi-Fi for a working lunch?"
     a: "Yes. Wi-Fi is available, which helps if part of the team needs to stay online during a lunch meeting."

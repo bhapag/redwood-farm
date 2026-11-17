@@ -7,12 +7,8 @@ query: "paneer dishes ludhiana restaurant"
 summary: "In short: Red Wood Farm on Pakhowal Road, Ludhiana has 16 dishes with paneer in the name. Paneer Tikka and Paneer Achari Tikka cost ₹375 each, twelve paneer gravies run from ₹295 to ₹395 for a Full, and six of them come as a Half from ₹225. Prices include GST."
 updated: 2026-11-17
 images:
-  - src: food/kadhai_paneer.jpg
-    alt: "Kadhai paneer with cubes of paneer, onion and capsicum in a thick red gravy"
-  - src: food/paneer_tikka.jpg
-    alt: "Paneer tikka pieces with charred edges on skewers"
-  - src: food/paneer_jalebi_rabri.jpg
-    alt: "Paneer jalebi served with a bowl of thick rabri"
+  - src: venue/tent-dining.jpg
+    alt: "Tables under a draped tent with chandeliers at an evening event"
 faq:
   - q: "Which paneer dishes come in a Half portion?"
     a: "Six do: Palak Paneer, Shahi Paneer, Kadhai Paneer, Paneer Butter Masala and Lahori Paneer at ₹225 for a Half, and Paneer Lababdar at ₹255. The other paneer gravies come in a Full only."

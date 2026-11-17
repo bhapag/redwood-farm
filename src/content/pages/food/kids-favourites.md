@@ -7,8 +7,6 @@ query: "kid friendly food restaurant ludhiana"
 summary: "Plenty of what children like is on the Red Wood Farm main menu: French Fries at ₹195, Hakka Noodles at ₹255, Paneer Tikka at ₹375, Butter Naan at ₹45 and ice cream from ₹50 a scoop. Families order from the regular menu and share, and every price includes GST."
 updated: 2026-11-17
 images:
-  - src: food/hakka_noodles.jpg
-    alt: "A plate of veg hakka noodles with shredded vegetables"
   - src: venue/lawn-seating.jpg
     alt: "Dining tables set out on the open grass lawn at Red Wood Farm"
 faq:

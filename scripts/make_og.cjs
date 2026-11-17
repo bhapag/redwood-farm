@@ -19,6 +19,14 @@ for (const cluster of fs.readdirSync(path.join(root, 'src/content/pages'))) {
     if (title && img) pages.push({ slug: f.replace(/\.md$/, ''), cluster, title, img: path.join(root, 'src/assets', img) });
   }
 }
+// Core cards that need a real photo too (the menu card used an AI dish photo before 18 Nov).
+for (const [name, title, img] of [
+  ['og-home', 'A garden family restaurant and party lawn', 'venue/hero-path-landscape.jpg'],
+  ['og-party', 'Birthday, kitty and family parties on the lawn', 'venue/birthday-arch.jpg'],
+  ['og-visit', 'Find us on outer Pakhowal Road', 'venue/entrance-arch.jpg'],
+  ['og-notes', 'Guides for parties, food and evenings', 'venue/palm-table.jpg'],
+]) pages.push({ slug: name, cluster: 'core', title, img: path.join(root, 'src/assets', img), out: path.join(root, 'public/og', `${name}.jpg`) });
+pages.push({ slug: 'menu', cluster: 'core', title: 'Our full menu of 187 dishes, with prices', img: path.join(root, 'src/assets/venue/buffet-lawn.jpg'), out: path.join(root, 'public/og/og-menu.jpg') });
 const esc = (t) => t.replace(/&/g, '&amp;').replace(/</g, '&lt;');
 (async () => {
   const b = await chromium.launch({ executablePath: process.argv[2] || undefined });
@@ -41,7 +49,7 @@ const esc = (t) => t.replace(/&/g, '&amp;').replace(/</g, '&lt;');
     </style></head><body><div class="panel"><div class="name">Red Wood Farm</div><h1>${esc(t)}</h1>
       <div class="foot">Pakhowal Road, Ludhiana · Open daily 10 AM to 11 PM</div></div><div class="photo"></div></body></html>`);
     await pg.evaluate(() => document.fonts.ready);
-    await pg.screenshot({ path: path.join(out, `${p.cluster}-${p.slug}.jpg`), type: 'jpeg', quality: 78 });
+    await pg.screenshot({ path: p.out || path.join(out, `${p.cluster}-${p.slug}.jpg`), type: 'jpeg', quality: 78 });
   }
   console.log(pages.length, 'OG images');
   await b.close();

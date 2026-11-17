@@ -1,5 +1,5 @@
 // Image registry: content frontmatter refers to images by key, e.g. "venue/tunnel.jpg".
-const files = import.meta.glob('../assets/{venue,food}/*.{jpg,png}', { eager: true });
+const files = import.meta.glob('../assets/venue/*.{jpg,png}', { eager: true });
 export const images = Object.fromEntries(
   Object.entries(files).map(([path, mod]) => [path.replace('../assets/', ''), mod.default])
 );

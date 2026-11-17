@@ -7,10 +7,8 @@ query: "naan roti types ludhiana restaurant"
 summary: "In short: Red Wood Farm on Pakhowal Road, Ludhiana lists 14 breads, from Tandoori Roti and Tawa Roti at ₹20 to Cheese Naan at ₹80, with Butter Naan at ₹45 and Garlic Naan at ₹55. Four stuffed parathas with butter, from ₹50 to ₹60, sit in the Sides section. All prices include GST."
 updated: 2026-11-17
 images:
-  - src: food/naan.jpg
-    alt: "Naan with blistered, charred spots brushed with butter"
-  - src: food/tandoor-glow.jpg
-    alt: "The glowing mouth of a clay tandoor oven"
+  - src: venue/buffet-lawn.jpg
+    alt: "Buffet counters with lit food warmers set out on the lawn for a function"
 faq:
   - q: "What is the cheapest bread at Red Wood Farm?"
     a: "Tandoori Roti and Tawa Roti, both at ₹20. They are also the lowest prices anywhere on our menu."

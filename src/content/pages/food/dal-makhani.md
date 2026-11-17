@@ -7,10 +7,8 @@ query: "dal makhani ludhiana"
 summary: "In short: Red Wood Farm on Pakhowal Road, Ludhiana serves Dal Makhni at ₹275 for one Full portion, GST included. Pair it with Butter Naan (₹45), Laccha Paratha (₹45) or Jeera Rice (₹230). We are open every day from 10 AM to 11 PM, and you can order it for takeaway at 096467 13555."
 updated: 2026-11-17
 images:
-  - src: food/dal_makhni.jpg
-    alt: "A bowl of dark, creamy dal makhani with a swirl of cream on top"
-  - src: food/naan.jpg
-    alt: "Butter naan with charred spots, torn open on a plate"
+  - src: venue/lawn-tables.jpg
+    alt: "Dining tables with orange cloths set out on the lawn at night"
 faq:
   - q: "How much does dal makhani cost at Red Wood Farm?"
     a: "Dal Makhni is ₹275 for one Full portion, and the price includes GST. The menu does not list a Half size for it."

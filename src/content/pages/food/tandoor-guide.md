@@ -7,10 +7,8 @@ query: "best tandoori chicken / tandoori food pakhowal road"
 summary: "In short: Red Wood Farm on outer Pakhowal Road serves Tandoori Chicken at ₹375, with eight veg and nine non-veg dishes in its Tandoori section. The Tandoori Veg Platter is ₹525 and the Tandoori Non-Veg platter is ₹725. Breads start at ₹20 for a Tandoori Roti, and all prices include GST."
 updated: 2026-11-17
 images:
-  - src: food/tandoori_chicken.jpg
-    alt: "Two tandoori chicken legs on a black plate with onion rings, lemon wedges and green chutney"
-  - src: food/nonveg_platter.jpg
-    alt: "A mixed tandoori platter with chicken tikka, seekh kebabs, onion rings and two bowls of green chutney"
+  - src: venue/day-long-tables.jpg
+    alt: "Long wooden tables and lounge seating on the lawn in the daytime"
 faq:
   - q: "How much is Tandoori Chicken at Red Wood Farm?"
     a: "Tandoori Chicken is ₹375 on our current menu, and the price includes GST. The menu lists one portion size for it, with no half portion."

@@ -7,10 +7,8 @@ query: "how much to order for a group, half vs full"
 summary: "At Red Wood Farm, 24 main-course dishes come in Half and Full; everything else has one price. As general guidance, order one starter or platter and one main for every three or four people, about two breads each, and add rice and raita for larger tables. Takeaway group orders go by phone or message."
 updated: 2026-11-17
 images:
-  - src: food/nonveg_platter.jpg
-    alt: "A mixed non-veg tandoori platter for sharing"
-  - src: food/dal_makhni.jpg
-    alt: "A bowl of dal makhni topped with cream"
+  - src: venue/string-lounge.jpg
+    alt: "Low table with cushions on the lawn at night under string lights"
 faq:
   - q: "Is a Full portion double a Half?"
     a: "The menu doesn't print portion weights, so we can't promise an exact ratio. On price, a Full costs less than two Halves for every dish except Shahi Mutton. Ask us how much a Full serves before a big order."

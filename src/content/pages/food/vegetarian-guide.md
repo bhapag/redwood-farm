@@ -7,12 +7,8 @@ query: "veg restaurant pakhowal road ludhiana"
 summary: "In short: Red Wood Farm on Pakhowal Road, Ludhiana serves both veg and non-veg food, and 131 of its 187 menu dishes are marked veg with a green mark. Vegetarians can order from every section, including soups, tandoori, soya champ, paneer curries, breads, rice and desserts. One dessert, Ice Cream with Brownie, is marked non-veg until we confirm whether it contains egg."
 updated: 2026-11-17
 images:
-  - src: food/paneer_tikka.jpg
-    alt: "Paneer tikka cubes with onion and green capsicum on a slate board, with green chutney and lemon"
-  - src: food/dal_makhni.jpg
-    alt: "Dal makhni in a copper bowl, topped with a swirl of cream, a cube of butter and coriander"
-  - src: food/veg_sizzler.jpg
-    alt: "A veg sizzler with paneer, a cutlet, fries and mixed vegetables on a cast-iron plate"
+  - src: venue/string-lounge.jpg
+    alt: "Low table with cushions on the lawn at night under string lights"
 faq:
   - q: "Is Red Wood Farm a pure vegetarian restaurant?"
     a: "No. Red Wood Farm serves both veg and non-veg food. 131 of the 187 dishes on the menu are marked veg. If a pure-veg kitchen matters to your family, ask us on 096467 13555 before you visit."

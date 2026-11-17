@@ -29,7 +29,8 @@ const shortText = shortRaw.charAt(0).toUpperCase() + shortRaw.slice(1);
 const hero = d.images[0];
 const rest = d.images.slice(1);
 
-const og = { party: 'og-party.jpg', food: 'og-menu.jpg', garden: 'og-home.jpg', visit: 'og-visit.jpg', guides: 'og-notes.jpg' }[d.cluster];
+// Each guide has its own Open Graph card (scripts/make_og.cjs): its own photo plus its title.
+const og = `pages/${d.cluster}-${entry.id.split('/').pop()}.jpg`;
 const article = {
   '@context': 'https://schema.org',
   '@type': 'Article',

@@ -1,8 +1,17 @@
-# Cloudflare Pages redirects
+# Cloudflare Pages redirects (real 301s; these run before static files)
 /party      /party/      301
 /parties    /party/      301
 /parties/   /party/      301
 /menu       /menu/       301
 /visit      /visit/      301
-/notes      /notes/      301
+/notes      /guides/     301
+/notes/     /guides/     301
+/notes/kitty-party-venue-ludhiana/              /party/kitty-party-venues-ludhiana/      301
+/notes/kitty-party-venue-ludhiana               /party/kitty-party-venues-ludhiana/      301
+/notes/birthday-party-venue-checklist-ludhiana/ /party/birthday-party-venues-ludhiana/   301
+/notes/birthday-party-venue-checklist-ludhiana  /party/birthday-party-venues-ludhiana/   301
+/notes/tandoor-what-to-order-first/             /food/tandoor-guide/                     301
+/notes/tandoor-what-to-order-first              /food/tandoor-guide/                     301
+/notes/an-evening-on-the-lawn/                  /garden/an-evening-on-the-lawn/          301
+/notes/an-evening-on-the-lawn                   /garden/an-evening-on-the-lawn/          301
 /redwood-farm/*  /:splat  301

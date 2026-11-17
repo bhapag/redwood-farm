@@ -7,7 +7,7 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 SITE_DIR="$(pwd)"
 REPO="${REPO:-$SITE_DIR/../repo}"
-CANONICAL="${CANONICAL:-https://bhapag.github.io/redwood-farm}"
+CANONICAL="${CANONICAL:-https://redwoodfarm.in}"
 MSG="${1:-Deploy GitHub Pages copy}"
 
 python scripts/build_menu.py

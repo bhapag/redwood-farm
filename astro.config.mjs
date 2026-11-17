@@ -12,9 +12,9 @@ const interact = { name: 'rwf-directives', hooks: { 'astro:config:setup': ({ add
 // Two builds from one source:
 //   Cloudflare Pages:  BASE_PATH unset  -> served at "/"
 //   GitHub Pages copy: BASE_PATH=/redwood-farm -> served at bhapag.github.io/redwood-farm/ (printed QR codes)
-// Canonical URLs come from PUBLIC_CANONICAL_ORIGIN (default in src/data/urls.js). Switch it to the custom domain later.
+// Canonical URLs come from PUBLIC_CANONICAL_ORIGIN, default https://redwoodfarm.in (src/data/urls.js).
 const BASE = process.env.BASE_PATH || '/';
-const SITE = process.env.PUBLIC_CANONICAL_ORIGIN || 'https://redwood-farm.pages.dev';
+const SITE = process.env.PUBLIC_CANONICAL_ORIGIN || 'https://redwoodfarm.in';
 
 export default defineConfig({
   site: SITE,

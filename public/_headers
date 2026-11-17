@@ -14,3 +14,9 @@
 
 /og/*
   Cache-Control: public, max-age=604800
+
+# Preview hosts are never indexed; https://redwoodfarm.in is the only indexable host.
+https://:project.pages.dev/*
+  X-Robots-Tag: noindex
+https://:version.:project.pages.dev/*
+  X-Robots-Tag: noindex

@@ -47,7 +47,7 @@ const schema = [
       <p>We keep this website to facts we can stand behind. Guest capacity, per-plate party prices and packages change with the set-up and the date, so we share them on WhatsApp rather than print a number here. We do not have wheelchair access at the moment, and we say so on every page where it matters.</p>
       <h2>What guests say</h2>
       <ul>
-        {reviews.slice(0, 4).map((r) => <li>"{r.q}" ({r.by}, Google review)</li>)}
+        {reviews.slice(0, 4).map((r) => <li>"{r.text}" ({r.name}, {r.stars} stars, Google review, {r.when})</li>)}
       </ul>
       <p>Our Google rating was {site.rating.value} from {site.rating.count} reviews when we last checked on {site.rating.checked}. If you visit, we would be glad to read yours: <a href={site.reviewUrl} target="_blank" rel="noopener">write a Google review</a>.</p>
     </div>

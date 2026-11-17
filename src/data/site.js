@@ -20,7 +20,7 @@ export const site = {
   mapsUrl: 'https://maps.google.com/?cid=8737420667065992361',
   directionsUrl: 'https://www.google.com/maps/dir/?api=1&destination=Red+Wood+Farm&destination_place_id=ChIJD0lx94mBGjkRqQSgyc2NQXk',
   reviewUrl: 'https://g.page/r/CakEoMnNjUF5EBE/review',
-  rating: { value: '4.2', count: 72, checked: '14 Nov 2026' },
+  rating: { value: '4.2', count: 72, checked: '17 Nov 2026' },
   sameAs: [
     'https://www.facebook.com/p/Red-Wood-Farm-100064074312671/',
     'https://www.instagram.com/redwoodfarm_/',

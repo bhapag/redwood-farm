@@ -1,0 +1,109 @@
+---
+// Moving band of real Google reviews. Plain HTML only: no Review or AggregateRating schema.
+// rows: 2 = two rows in opposite directions on desktop (one row on phones); 1 = a single row everywhere.
+// limit: show only the newest N reviews (the shorter version on Parties and Visit).
+import { reviews, reviewsUrl } from '../data/reviews.js';
+import { site } from '../data/site.js';
+const { rows = 2, limit = reviews.length, tone = 'night', heading = 'What guests say on Google', id = 'reviews' } = Astro.props;
+const list = reviews.slice(0, limit);
+// Two rows on desktop (alternating reviews), plus one row holding every review for phones.
+// CSS shows one set per breakpoint, so screen readers only ever get one copy.
+const sets = rows === 2
+  ? [
+      { items: list.filter((_, i) => i % 2 === 0), cls: 'rv-desk rv-a', label: 'Google reviews' },
+      { items: list.filter((_, i) => i % 2 === 1), cls: 'rv-desk rv-b', label: 'More Google reviews' },
+      { items: list, cls: 'rv-phone rv-a', label: 'Google reviews' },
+    ]
+  : [{ items: list, cls: 'rv-a', label: 'Google reviews' }];
+const starPath = 'm12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9L12 3Z';
+// Seconds per card: slow enough to read a card as it passes.
+const speed = (n) => `${Math.max(40, n * 7)}s`;
+---
+<section class={`rv section tone-${tone}`} aria-labelledby={`${id}-h`} data-rv>
+  <div class="wrap rv-head">
+    <div>
+      <h2 id={`${id}-h`}>{heading}</h2>
+      <p class="rv-rating">
+        <span class="rv-num">{site.rating.value}</span>
+        <svg class="rv-star" viewBox="0 0 24 24" aria-hidden="true"><path d={starPath} fill="currentColor" /></svg>
+        <span>from {site.rating.count} Google reviews</span>
+      </p>
+      <p class="rv-note">Rating as shown on Google on {site.rating.checked}. Quotes are copied exactly, with Google's spelling.</p>
+    </div>
+    <div class="rv-links">
+      <a class="btn" href={reviewsUrl} target="_blank" rel="noopener">Read all reviews on Google</a>
+      <a class="btn ghost" href={site.reviewUrl} target="_blank" rel="noopener">Leave a review</a>
+    </div>
+  </div>
+
+  {sets.map(({ items: row, cls, label }) => (
+    <div class={`rv-row ${cls}`} style={`--dur:${speed(row.length)}`}>
+      <ul class="rv-track" role="list" aria-label={label}>
+        {[...row, ...row].map((r, i) => (
+          <li class="rv-card" aria-hidden={i >= row.length ? 'true' : undefined}>
+            <p class="rv-stars" role="img" aria-label={`${r.stars} out of 5 stars`}>
+              {[1, 2, 3, 4, 5].map((n) => <svg viewBox="0 0 24 24" aria-hidden="true" class={n <= r.stars ? 'on' : 'off'}><path d={starPath} /></svg>)}
+            </p>
+            <blockquote><p>{r.text}</p></blockquote>
+            <p class="rv-by"><span class="rv-name">{r.name}</span> <span class="rv-meta">Google review, {r.when}</span></p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  ))}
+</section>
+
+<script>
+  // Touch: a tap pauses the band (and a second tap resumes), so a card can be read on a phone.
+  document.querySelectorAll('[data-rv] .rv-row').forEach((row) => {
+    row.addEventListener('pointerdown', (e) => { if (e.pointerType !== 'mouse') row.classList.toggle('paused'); });
+  });
+</script>
+
+<style>
+  .rv { overflow: clip; }
+  .rv-head { display: grid; gap: 24px; margin-bottom: clamp(32px, 4vw, 48px); }
+  .rv-head h2 { font-size: var(--t-2); }
+  .rv-rating { display: flex; align-items: center; gap: 10px; margin: 0; font-weight: 650; font-size: 1.0625rem; }
+  .rv-num { font: 400 2.6rem/1 var(--serif); color: var(--accent); }
+  .rv-star { width: 26px; height: 26px; color: var(--accent); }
+  .rv-note { font-size: var(--t-small); color: var(--mute); margin: 10px 0 0; }
+  .rv-links { display: flex; flex-wrap: wrap; gap: 10px; align-self: end; }
+  @media (min-width: 900px) { .rv-head { grid-template-columns: 1fr auto; align-items: end; } }
+
+  .rv-row { overflow: hidden; padding-block: 8px; }
+  .rv-row + .rv-row { margin-top: 12px; }
+  .rv-track { list-style: none; margin: 0; padding: 0; display: flex; gap: 16px; width: max-content; animation: rv-left var(--dur) linear infinite; }
+  .rv-b .rv-track { animation-name: rv-right; }
+  .rv-row:hover .rv-track, .rv-row:focus-within .rv-track, .rv-row.paused .rv-track { animation-play-state: paused; }
+  @keyframes rv-left { from { transform: translateX(0); } to { transform: translateX(calc(-50% - 8px)); } }
+  @keyframes rv-right { from { transform: translateX(calc(-50% - 8px)); } to { transform: translateX(0); } }
+
+  .rv-card { width: min(78vw, 340px); flex: none; display: flex; flex-direction: column; gap: 12px; padding: 22px; border-radius: 10px; background: var(--night-2); border: 1px solid var(--line); }
+  .tone-green .rv-card { background: var(--green-deep); }
+  .tone-paper .rv-card { background: #fff; }
+  .rv-stars { display: flex; gap: 3px; margin: 0; }
+  .rv-stars svg { width: 17px; height: 17px; }
+  .rv-stars .on { fill: var(--gold); }
+  .rv-stars .off { fill: none; stroke: var(--mute); stroke-width: 1.5; }
+  .tone-paper .rv-stars .on { fill: #a8780f; }
+  .rv-card blockquote { margin: 0; flex: 1; }
+  .rv-card blockquote p { margin: 0; font: 400 1.0625rem/1.42 var(--serif); }
+  @media (min-width: 900px) { .rv-card blockquote p { font-size: 1.125rem; } }
+  .rv-card blockquote p::before { content: '\201C'; } .rv-card blockquote p::after { content: '\201D'; }
+  .rv-by { margin: 0; font-size: var(--t-small); display: flex; flex-wrap: wrap; gap: 4px 8px; }
+  .rv-name { font-weight: 700; }
+  .rv-meta { color: var(--mute); }
+
+  /* Phones: one row with every review. Desktop: two rows in opposite directions. */
+  @media (max-width: 899px) { .rv-desk { display: none; } }
+  @media (min-width: 900px) { .rv-phone { display: none; } }
+
+  /* Reduced motion: no movement; a static row to swipe through, duplicates removed. */
+  @media (prefers-reduced-motion: reduce) {
+    .rv-row { overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding-inline: var(--gutter); }
+    .rv-track { animation: none !important; }
+    .rv-card { scroll-snap-align: start; }
+    .rv-card[aria-hidden='true'] { display: none; }
+  }
+</style>

@@ -1,4 +1,6 @@
-# Mobile audit: before the redesign (17 Nov 2026)
+# Mobile audit: before and after the redesign (17 Nov 2026)
+
+The **before** findings are first. The **after** results, measured on the same devices and pages, are in the last section.
 
 ## How it was run
 - **Tool:** Playwright, `scripts/mobile-shots.cjs`.
@@ -108,3 +110,80 @@
   - sticky chips at 44 px
   - 17 px dish names and prices
   - a back-to-top button
+
+
+---
+
+## After: measured on the finished build (17 Nov 2026, evening)
+
+**Devices:** Galaxy S20 / Redmi size (360 x 800), Pixel 7 (412 x 915) and iPhone 13 (390 x 844).
+**Pages:** Home, Menu, Parties, Visit and the birthday guide.
+**Evidence:**
+- `report/redesign/after/sheet_<device>_<page>.jpg`
+- `report/redesign/after/metrics.json`
+- `report/redesign/mobile-checks.json` (from `scripts/mobile-checks.cjs`)
+
+### The brief's phone rules, checked
+
+| Rule | Result on all 3 phones |
+|---|---|
+| Hero fits one screen, both CTAs visible above the action bar | Pass. Measured: both CTA boxes sit inside the viewport, above the bar. |
+| Headline at most 3 lines, no word left alone on a line | Pass: 3 lines ("A garden family / restaurant and / party lawn"), with a non-breaking space between "restaurant" and "and" |
+| Neon "Red Wood Farm" on one line | Pass. It scales with the hero panel width (container units) and is checked from 360 to 2560 px. |
+| No pinned or scroll-scrubbed sections on phones | Pass. The only sticky or fixed items are the header, action bar, menu bar and back-to-top. GSAP and Lenis do not load on phones. |
+| Text never on a busy photo | Pass. No heading or paragraph box overlaps an image box. |
+| Portrait crops | Pass: occasion photos 4:5, visit photo 1:1 |
+| Swipe carousel with snap and a hint, at most two cards per view | Pass: x-mandatory snap, 1.72 cards per view, "Swipe for more" hint |
+| Menu: sticky search, Veg / Non-veg filter, 14 category chips, large prices, back-to-top | Pass: the bar is sticky, chips and filter buttons are 44 px tall, prices are 18.4–20 px bold, back-to-top is there |
+| Menu sheet; the action bar hides while it is open | Pass (native dialog; `html.sheet-open` hides the bar) |
+| The action bar never covers content | Pass. At the page end, the footer's last line sits above the bar on every page. |
+| No ghosted double images | Pass. No image or video is partly transparent at any scroll position: the pinned crossfade was removed, and reveals are transform-only. |
+| Review band | One row on phones holding all 22 quoted reviews. A tap pauses it; under reduced motion it becomes a static swipe row. |
+
+### Before and after numbers
+
+| Page (each phone) | Tap targets under 44 px | Text under 14 px | Overflow | Console errors |
+|---|---|---|---|---|
+| Home | 13 → **0** | 17 → **0** | none → none | 0 → 0 |
+| Menu | 18 → **0** | 10 → **0** | none → none | 0 → 0 |
+| Parties | 5–9 → **0** | 12 → **0** | none → none | 0 → 0 |
+| Visit | 11 → **0** | 7 → **0** | none → none | 0 → 0 |
+| Guide | 6–7 → **0** | 7 → **0** | none → none | 0 → 0 |
+
+### Before-list items, resolved
+1–7, Everywhere:
+- **1:** ivory, green and night rhythm.
+- **2, 3:** eyebrows and italic accents removed.
+- **4:** Gloock and Hanken Grotesk, body 17 px, labels 14 px or more.
+- **5, 6:** every tap target and footer link at least 44 px.
+- **7:** full menu sheet.
+
+8–16, Home:
+- **8:** hero rebuilt as above.
+- **9:** intro is a split with the hours card.
+- **10:** the pinned story is gone.
+- **11:** dish carousel with a hint; prices 19 px bold.
+- **12:** collage replaced by one large photo with a caption.
+- **13:** the mattress photo is dropped.
+- **14:** guide links are 52 px rows.
+- **15:** the clipped marquee is replaced by the review band (cards, readable, pausable).
+- **16:** the visit split keeps the hours visible.
+
+17–21, Menu:
+- **17:** opaque sticky bar with a shadow, so headings no longer show through underneath.
+- **18:** larger names and prices.
+- **19:** 44 px chips; the active chip is filled green.
+- **20:** back-to-top button.
+- **21:** search is visible on the first screen.
+
+22–25, Parties:
+- **22:** hero photo above, text on a solid panel.
+- **23:** numbered labels removed; step numbers sit inline in the step heading.
+- **24:** guide list as one clean list with arrows.
+- **25:** form inputs are 50 px with 15 px labels.
+
+26–27, Visit and guide:
+- **26:** Visit heading on paper; the map opens on tap.
+- **27:** breadcrumbs 44 px; the "In short" box is a green panel with a real heading; prose on ivory.
+
+**Jank:** nothing pins and nothing smooth-scrolls on phones; reveals are short transform-only moves that never hide content.

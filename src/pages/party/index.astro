@@ -2,6 +2,7 @@
 import { base, u, abs, sitePath, CANONICAL_ORIGIN } from '../../data/urls.js';
 import Base from '../../layouts/Base.astro';
 import SpokeList from '../../components/SpokeList.astro';
+import ReviewBand from '../../components/ReviewBand.astro';
 import Icon from '../../components/Icon.astro';
 import { Picture } from 'astro:assets';
 import { site, waLink } from '../../data/site.js';
@@ -112,6 +113,8 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', it
       </div>
     </div>
   </section>
+
+  <ReviewBand rows={1} limit={10} id="party-reviews" heading="Guests on Google" />
 
   <SpokeList cluster="party" heading="Party guides" tone="green" />
 

@@ -1,15 +1,34 @@
 # DEPLOY: hosting, the domain, and what to do after buying it
 
-## Current state (17 Nov 2026, 02:15 IST)
+## Current state (17 Nov 2026, updated 12:45 IST)
 
 | Piece | Where | State |
 |---|---|---|
 | Source code | github.com/bhapag/redwood-farm, branch `main` | Live. Every change is a commit. |
 | Live site (QR codes) | https://bhapag.github.io/redwood-farm/ served from branch `gh-pages` | Live. Built with `bash scripts/deploy-gh.sh "message"` (base `/redwood-farm/`). |
+| Vercel (temporary preview) | project "redwood-farm" in the hbagga52-3954 Vercel account, https://redwood-farm.vercel.app | Live. Builds `main` on every push. Sends `X-Robots-Tag: noindex`, so Google doesn't index it. |
 | Cloudflare Pages | project "redwood-farm" at https://redwood-farm.pages.dev | **Not created yet.** See "Cloudflare: why it is not live" below. |
 | Old one-page site | branch `backup/live-2026-11-17` | Kept for reference. |
 
 Canonical URLs currently point to the GitHub Pages address, because Cloudflare isn't live yet. One value controls this: `PUBLIC_CANONICAL_ORIGIN` (default in `src/data/urls.js`; set in `scripts/deploy-gh.sh` for the GitHub build).
+
+## Vercel: temporary preview only
+- **Project:** `redwood-farm` in the Vercel account hbagga52-3954 (the account with the other sites). It is connected to GitHub `bhapag/redwood-farm`, branch `main`. Every push to `main` redeploys it.
+- **Settings live in `vercel.json`** at the repo root, not in the Vercel dashboard:
+  - Astro preset; build `PUBLIC_CANONICAL_ORIGIN=https://bhapag.github.io/redwood-farm npx astro build`; output `dist`; served at `/` (`BASE_PATH` unset, the same build as Cloudflare).
+  - The same security headers and cache rules as `public/_headers`, and the same redirects as `public/_redirects`, as real 301s.
+  - **No duplicate indexing:** a header rule sends `X-Robots-Tag: noindex` only when the host matches `*.vercel.app`. Canonical tags point at the GitHub Pages address.
+- **GitHub access:** the Vercel GitHub app on bhapag can now see `redwood-farm` (added to its selected repositories alongside crm, salesleak and SamratFRPTraders).
+- Vercel is not the final host. Don't add the custom domain here.
+
+## Domain day: leave Vercel, move to Cloudflare Pages + GoDaddy
+Do these in order once the domain is bought. Each step is detailed further down.
+1. **Cloudflare Pages:** set up the project (section "Cloudflare Pages setup"), then add the domain to Cloudflare.
+2. **GoDaddy nameservers:** point the domain at the two Cloudflare nameservers.
+3. **Canonical to the domain:** set `PUBLIC_CANONICAL_ORIGIN=https://redwoodfarm.in` in Cloudflare Pages and redeploy. Canonicals, sitemap, robots.txt, llms.txt, Open Graph URLs and schema all follow.
+4. **Indexing on:** the domain is served by Cloudflare, so it never gets the Vercel `noindex` header. Check with `curl -sI https://redwoodfarm.in/ | grep -i x-robots`, which should print nothing.
+5. **Retire Vercel:** delete `vercel.json` from the repo and delete the Vercel project `redwood-farm` (Project Settings, then Advanced, then Delete). Leave the other Vercel projects alone. Optionally remove `redwood-farm` from the Vercel GitHub app's repository list.
+6. **GitHub copy to redirects:** run `python scripts/make_redirect_site.py https://redwoodfarm.in` and push `dist-redirect/` to `gh-pages`. The printed QR codes then forward to the same page on the domain.
 
 ## Cloudflare: why it is not live
 - **Chrome is signed into Cloudflare as hbagga52@gmail.com.** That account also holds the Samrat and other sites. I didn't sign it out, and I didn't use it for Red Wood Farm, because the plan is a separate redwoodfarm7@gmail.com account.

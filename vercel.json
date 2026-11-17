@@ -12,7 +12,7 @@
     { "source": "/notes/birthday-party-venue-checklist-ludhiana/", "destination": "/party/birthday-party-venues-ludhiana/", "permanent": true },
     { "source": "/notes/tandoor-what-to-order-first/", "destination": "/food/tandoor-guide/", "permanent": true },
     { "source": "/notes/an-evening-on-the-lawn/", "destination": "/garden/an-evening-on-the-lawn/", "permanent": true },
-    { "source": "/redwood-farm/:path*", "destination": "/:path*", "permanent": true }
+    { "source": "/redwood-farm/(.*)", "destination": "/$1", "permanent": true }
   ],
   "headers": [
     {

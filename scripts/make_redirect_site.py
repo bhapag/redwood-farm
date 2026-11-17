@@ -24,7 +24,6 @@ for page in src.rglob('index.html'):
     target = html.escape(origin + path, quote=True)
     doc = f'''<!doctype html><html lang="en"><head><meta charset="utf-8">
 <title>Red Wood Farm has moved</title>
-<meta name="robots" content="noindex">
 <link rel="canonical" href="{target}">
 <meta http-equiv="refresh" content="0; url={target}">
 <script>location.replace("{origin}{path}" + location.search + location.hash);</script>
@@ -38,5 +37,8 @@ for page in src.rglob('index.html'):
 <script>location.replace("{origin}" + location.pathname.replace(/^\\/redwood-farm/, "") + location.search + location.hash);</script>
 <p>Red Wood Farm has moved to <a href="{origin}/">{origin}</a>.</p>''', encoding='utf8')
 (out / '.nojekyll').write_text('')
+# Keep the Search Console verification file so the github.io property stays verified.
+for f in src.glob('google*.html'):
+    shutil.copy(f, out / f.name)
 print(f'wrote {count} redirect pages to {out}')
 print('publish: copy dist-redirect/ over branch gh-pages, commit, push (same steps as scripts/deploy-gh.sh)')

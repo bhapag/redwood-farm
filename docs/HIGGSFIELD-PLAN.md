@@ -38,3 +38,18 @@ Rules kept: no generated venue, no generated people, no events that didn't happe
 6. **Quality gate:** reject warped cutlery, melted food, text, extra hands or plastic sheen. Log each kept asset here (prompt, model, job id, where used).
 
 Estimated cost for steps 1 to 5: check `get_cost: true` per job before running. It needs a top-up, which is Harman's call.
+
+## Motion pass check (17 Nov 2026, 19:30 IST)
+- **Balance: 0.62 credits** (Lite plan), unchanged. No job was run and nothing was bought.
+- **Skipped**, ready to run when credits are added:
+  1. **Hero loop.** Image-to-video from the REAL tunnel photo (`src/assets/venue/tunnel-hero.jpg`), 6 to 8 s, seamless. Prompt: "the fairy lights twinkle gently, a slow push-in along the red carpet, nothing else changes, no people". Formats: 9:16 for phones (under 2 MB) and 16:9 for desktop, plus a poster frame. Plays muted and inline.
+  2. **Three food loops** from the existing menu photos:
+     - steam rising over dal makhni (`dal_makhni.jpg`)
+     - sizzle on the tandoori platter (`nonveg_platter.jpg`)
+     - a slow pour of butter gravy (`butter_chicken.jpg`)
+     
+     Each 4 to 6 s and looping, for the dishes section as video blocks.
+  3. **Venue upscales.** Upscale every real venue photo used large (tunnel, palm-table, entrance-arch, function-night, birthday-arch, day-lounge), with no added people or objects.
+- **Until then:**
+  - the hero moves through a CSS push-in on the real photo, React Bits Particles (fairy lights) and ShinyText on the neon name
+  - the food stays as stills in the swipe stack

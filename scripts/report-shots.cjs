@@ -18,7 +18,9 @@ const path = require('path');
     // Load every lazy image first, so no section is captured with empty frames.
     const H = await pg.evaluate(() => document.documentElement.scrollHeight);
     for (let y = 0; y < H; y += 600) { await pg.evaluate((yy) => window.scrollTo(0, yy), y); await pg.waitForTimeout(120); }
-    await pg.evaluate(() => { window.scrollTo(0, 0); document.querySelectorAll('[data-reveal]').forEach((e) => e.classList.add('in')); document.querySelectorAll('img[loading=lazy]').forEach((i) => (i.loading = 'eager')); });
+    await pg.evaluate(() => { window.scrollTo(0, 0); document.querySelectorAll('[data-reveal]').forEach((e) => e.classList.add('in')); document.querySelectorAll('img[loading=lazy]').forEach((i) => (i.loading = 'eager'));
+      // Fixed chrome (header, bottom bar, back-to-top) would otherwise be stamped over each section capture.
+      const st = document.createElement('style'); st.textContent = '.site-head, .actionbar, .to-top { visibility: hidden !important; }'; document.head.append(st); });
     await pg.waitForTimeout(1500);
     for (let i = 0; i < list.length; i++) {
       const el = await pg.$(list[i]);

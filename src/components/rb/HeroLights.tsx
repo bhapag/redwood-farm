@@ -1,5 +1,5 @@
 // Fairy-light dots drifting over the tunnel photo (React Bits Particles).
-// 40 particles on phones, 90 on desktop; pauses off screen; nothing at all under reduced motion.
+// 40 particles on phones, 90 on desktop; starts 1.2 s after load; pauses off screen; nothing at all under reduced motion.
 import { useEffect, useRef, useState } from 'react';
 import Particles from '../reactbits/Particles/Particles';
 
@@ -11,13 +11,18 @@ export default function HeroLights() {
 
   useEffect(() => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    setCount(window.innerWidth < 900 ? 40 : 90);
-    setOn(true);
+    const phone = window.innerWidth < 900;
+    setCount(phone ? 40 : 90);
+    // Start only after the page has finished loading and painted the hero photo, so the canvas
+    // never competes with the first paint.
+    let t = 0;
+    const start = () => { t = window.setTimeout(() => setOn(true), 1200); };
+    if (document.readyState === 'complete') start(); else window.addEventListener('load', start, { once: true });
     const io = new IntersectionObserver(([e]) => setPaused(!e.isIntersecting));
     if (box.current) io.observe(box.current);
     const vis = () => setPaused(document.hidden);
     document.addEventListener('visibilitychange', vis);
-    return () => { io.disconnect(); document.removeEventListener('visibilitychange', vis); };
+    return () => { window.clearTimeout(t); window.removeEventListener('load', start); io.disconnect(); document.removeEventListener('visibilitychange', vis); };
   }, []);
 
   return (
@@ -33,7 +38,8 @@ export default function HeroLights() {
           sizeRandomness={0.9}
           cameraDistance={20}
           disableRotation
-          pixelRatio={Math.min(window.devicePixelRatio || 1, 1.5)}
+          pixelRatio={count === 40 ? 1 : Math.min(window.devicePixelRatio || 1, 1.5)}
+          intro={false}
           twinkle={0.8}
           glow={0.6}
           drift="up"

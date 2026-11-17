@@ -3,17 +3,22 @@
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()
   X-Frame-Options: SAMEORIGIN
+  # no-transform stops Cloudflare injecting its analytics beacon (cost ~15 Lighthouse points on the domain).
+  Cache-Control: public, max-age=0, must-revalidate, no-transform
   Strict-Transport-Security: max-age=31536000; includeSubDomains
   Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; media-src 'self'; frame-src https://maps.google.com https://www.google.com; connect-src 'self' https://cloudflareinsights.com; base-uri 'self'; form-action https://wa.me; frame-ancestors 'self'; upgrade-insecure-requests
 
 /_astro/*
-  Cache-Control: public, max-age=31536000, immutable
+  ! Cache-Control
+  Cache-Control: public, max-age=31536000, immutable, no-transform
 
 /media/*
-  Cache-Control: public, max-age=2592000
+  ! Cache-Control
+  Cache-Control: public, max-age=2592000, no-transform
 
 /og/*
-  Cache-Control: public, max-age=604800
+  ! Cache-Control
+  Cache-Control: public, max-age=604800, no-transform
 
 # Preview hosts are never indexed; https://redwoodfarm.in is the only indexable host.
 https://:project.pages.dev/*

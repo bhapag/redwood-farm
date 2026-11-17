@@ -22,7 +22,7 @@ The live, indexed site is **https://redwoodfarm.in**, served by Cloudflare Pages
   - HSTS is sent from `public/_headers`
   - `*.pages.dev` stays noindex
 - **One config value:** `SITE_URL = 'https://redwoodfarm.in'` in `site.config.mjs`. It drives canonicals, the sitemap and image sitemap, robots.txt, llms.txt and llms-full.txt, OG/Twitter, schema and the base path (`/`).
-- **CSP:** `public/_headers` allows the Cloudflare Web Analytics beacon (`static.cloudflareinsights.com`, `cloudflareinsights.com`), which Cloudflare injects on the domain.
+- **Cloudflare beacon:** when the apex was proxied, Cloudflare injected its analytics beacon (about -15 Lighthouse points). With the apex on DNS only, nothing is injected. Don't add `Cache-Control: no-transform` to stop it: that also turns off compression (HTML went out raw at 214 KB). The CSP still allows the beacon in case analytics is enabled on purpose later.
 - **Search Console (redwoodfarm7):**
   - Domain property `redwoodfarm.in` verified by a TXT record in Cloudflare DNS
   - `https://redwoodfarm.in/sitemap.xml` submitted on 18 Nov
@@ -51,12 +51,12 @@ The live, indexed site is **https://redwoodfarm.in**, served by Cloudflare Pages
 ### Cloudflare zone redwoodfarm.in: DNS records
 | Type | Name | Content | Proxy | Purpose |
 |---|---|---|---|---|
-| CNAME | `@` (redwoodfarm.in) | `redwood-farm.pages.dev` | Proxied | Site (added by Pages, Custom domains) |
+| CNAME | `@` (redwoodfarm.in) | `redwood-farm.pages.dev` | **DNS only** (since 18 Nov) | Site (added by Pages, Custom domains). DNS only on purpose: proxied on the Free plan, Indian visitors were routed via Marseille (TTFB ~480 ms); DNS only, Pages serves it from Delhi (~100 ms), with its own certificate, http to https redirect and no injected beacon. Don't switch it back to Proxied. |
 | CNAME | `www` | `redwood-farm.pages.dev` | Proxied | www, redirected to the apex by the rule below |
 | TXT | `@` | `google-site-verification=…` (exact value: Search Console, Settings, Ownership verification; also visible in Cloudflare DNS) | DNS only | Search Console Domain property (redwoodfarm7) |
 
 ### Cloudflare zone settings
-- SSL/TLS: **Full (strict)**. Edge Certificates: **Always Use HTTPS** on. **HSTS** on once HTTPS works (max-age 6 months, include subdomains, no preload).
+- SSL/TLS: **Full (strict)**. Edge Certificates: **Always Use HTTPS** on (applies to the proxied `www`; the apex gets HTTPS from Pages itself). **HSTS** on once HTTPS works (max-age 6 months, include subdomains, no preload).
 - Rules, Redirect Rules: "www to apex 301", request URL `https://www.*`, target `https://${1}`, 301, preserve query string.
 - Bot Preference Sync: off (the site's own robots.txt is served).
 

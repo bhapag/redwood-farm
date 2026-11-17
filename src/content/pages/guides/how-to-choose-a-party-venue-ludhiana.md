@@ -13,9 +13,9 @@ images:
     alt: "Buffet counters set up on the Red Wood Farm lawn during an event, with serving pots and cooks behind the counter"
 faq:
   - q: "How early should I book a party venue in Ludhiana?"
-    a: "Message venues as soon as your date is fixed, since weekend and festival dates fill first. For Red Wood Farm, send the date, time and guest count on WhatsApp to 096467 13555 and we'll tell you what's open."
+    a: "Message venues as soon as your date is fixed, since weekend and festival dates fill first. For Red Wood Farm, send the date, time and guest count to 096467 13555 and we'll tell you what's open."
   - q: "Do party venues in Ludhiana publish prices?"
-    a: "Many venues quote per head only after you share a date and guest count. Red Wood Farm publishes its full restaurant menu with GST-inclusive prices, and party pricing depends on the menu and numbers, so ask us on WhatsApp."
+    a: "Many venues quote per head only after you share a date and guest count. Red Wood Farm publishes its full restaurant menu with GST-inclusive prices, and party pricing depends on the menu and numbers, so ask us."
   - q: "Is Red Wood Farm suitable for guests in wheelchairs?"
     a: "No. Red Wood Farm has no wheelchair access. If a guest uses a wheelchair, choose a venue with step-free access from the gate to the seating."
   - q: "Can I see a venue before I book?"
@@ -39,7 +39,7 @@ Write down the guest list before you call anyone. Then estimate how many will re
 
 Next, set a budget per head. Food is usually the largest cost at an Indian party, so most venues price around the menu and the headcount. Decoration, cake and return gifts sit on top of that.
 
-With those two numbers, you can rule out half the venues on your list in one evening of WhatsApp messages.
+With those two numbers, you can rule out half the venues on your list in one evening of messages.
 
 **At Red Wood Farm:** we don't publish a capacity figure. Tell us your headcount and we'll say honestly whether the lawn works for it. Our restaurant menu is public, with every price including GST, so you can see what the food costs before you ask.
 
@@ -49,7 +49,7 @@ This choice shapes everything else, from the decoration to the weather plan. We'
 
 An outdoor lawn gives space, open sky and lights that do part of the decorating after dark. An indoor hall gives you control over heat, cold and rain. If you pick outdoors, ask every venue where your party will go if the weather turns on the day.
 
-**At Red Wood Farm:** parties happen on an open grass lawn with string lights, palms wrapped in fairy lights and a walk-through light tunnel. A covered tent dining area with chandeliers has been set up at an event. Ask us on WhatsApp what cover is possible for your date before you commit.
+**At Red Wood Farm:** parties happen on an open grass lawn with string lights, palms wrapped in fairy lights and a walk-through light tunnel. A covered tent dining area with chandeliers has been set up at an event. Ask us what cover is possible for your date before you commit.
 
 ## Food: the venue's kitchen or an outside caterer
 
@@ -59,7 +59,7 @@ An in-house kitchen means one bill, one point of contact and a menu you can tast
 
 Whichever you choose, ask for the menu in writing with prices, and check that veg and non-veg dishes are clearly separated. For quantities, such as how much dal or how many breads per guest, use our [party planning checklist](../../party/party-planning-checklist/).
 
-**At Red Wood Farm:** food comes from our own kitchen, which serves North Indian, tandoor and Indo-Chinese dishes. The [menu](../../menu/) lists 187 dishes, each marked veg or non-veg, and many mains come in half and full portions. If you want to bring an outside caterer, ask us on WhatsApp first.
+**At Red Wood Farm:** food comes from our own kitchen, which serves North Indian, tandoor and Indo-Chinese dishes. The [menu](../../menu/) lists 187 dishes, each marked veg or non-veg, and many mains come in half and full portions. If you want to bring an outside caterer, ask us first.
 
 ## Timing: lunch, evening and the length of the slot
 
@@ -96,7 +96,7 @@ Send these in one message so the answers come back in writing:
 
 ## Red flags to watch for
 
-- **No written menu or prices.** If a venue won't put numbers on WhatsApp, the bill can grow later.
+- **No written menu or prices.** If a venue won't put numbers, the bill can grow later.
 - **Photos that aren't of the venue.** Ask for pictures of the exact area you'll use. Our [party page](../../party/) shows only photos taken at Red Wood Farm.
 - **A vague weather answer** for an outdoor space.
 - **Pressure to pay a large advance today**, with no written terms.
@@ -111,4 +111,4 @@ We're likely a good fit for a family-sized gathering that wants a garden setting
 
 ## Send an enquiry
 
-WhatsApp or call 096467 13555 with three things: the date, the time and the number of guests. We'll reply with what's possible that day. You can also come for a meal any day between 10:00 AM and 11:00 PM and see the lawn for yourself. More planning guides are on the [guides hub](../).
+Message or call 096467 13555 with three things: the date, the time and the number of guests. We'll reply with what's possible that day. You can also come for a meal any day between 10:00 AM and 11:00 PM and see the lawn for yourself. More planning guides are on the [guides hub](../).

@@ -42,9 +42,9 @@ const schema = [
   <section class="wrap ab-grid ab-rev">
     <div class="prose">
       <h2>Parties on the lawn</h2>
-      <p>The same lawn hosts birthday parties, kitty parties, small family functions and office lunches, with food from our own kitchen. Past set-ups on the lawn have included balloon arches, a kite-theme backdrop for a daytime party, a mehndi stage and buffet counters. Booking is done on WhatsApp: you send the date, time and number of guests, and we reply with what is possible. See <a href={u('/party/')}>parties and events</a>.</p>
+      <p>The same lawn hosts birthday parties, kitty parties, small family functions and office lunches, with food from our own kitchen. Past set-ups on the lawn have included balloon arches, a kite-theme backdrop for a daytime party, a mehndi stage and buffet counters. Booking is done by message: you send the date, time and number of guests, and we reply with what is possible. See <a href={u('/party/')}>parties and events</a>.</p>
       <h2>What we do not publish</h2>
-      <p>We keep this website to facts we can stand behind. Guest capacity, per-plate party prices and packages change with the set-up and the date, so we share them on WhatsApp rather than print a number here. We do not have wheelchair access at the moment, and we say so on every page where it matters.</p>
+      <p>We keep this website to facts we can stand behind. Guest capacity, per-plate party prices and packages change with the set-up and the date, so we share them by message rather than print a number here. We do not have wheelchair access at the moment, and we say so on every page where it matters.</p>
       <h2>What guests say</h2>
       <ul>
         {reviews.slice(0, 4).map((r) => <li>"{r.text}" ({r.name}, {r.stars} stars, Google review, {r.when})</li>)}
@@ -64,7 +64,7 @@ const schema = [
       <address class="lede">{site.address.full}</address>
       <p class="muted">{site.hoursDisplay}. Takeaway and Wi-Fi. No wheelchair access.</p>
       <div class="btns">
-        <a class="btn red" href={waLink('Hello Red Wood Farm, I would like to book a table.')} target="_blank" rel="noopener"><Icon name="wa" />Book on WhatsApp</a>
+        <a class="btn red" href={waLink('Hello Red Wood Farm, I would like to book a table.')} target="_blank" rel="noopener"><Icon name="wa" />Book a table</a>
         <a class="btn ghost" href={u('/visit/')}><Icon name="pin" />Getting here</a>
       </div>
     </div>

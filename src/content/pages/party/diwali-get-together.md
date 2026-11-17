@@ -4,7 +4,7 @@ seoTitle: "Diwali Get-Together Venue in Ludhiana | Red Wood Farm"
 description: "Plan a family or office Diwali get-together on a fairy-lit garden lawn on Pakhowal Road, Ludhiana, with Indian sweets and dishes at real menu prices."
 cluster: party
 query: "diwali party venue / ideas ludhiana"
-summary: "Red Wood Farm on outer Pakhowal Road hosts family and office Diwali get-togethers on a garden lawn lit with fairy lights. The menu has Indian sweets such as Gulab Jamun at ₹35 and Paneer Jalebi with Rabri at ₹75, with GST included. Book on WhatsApp at 096467 13555 and confirm timings for the festival days."
+summary: "Red Wood Farm on outer Pakhowal Road hosts family and office Diwali get-togethers on a garden lawn lit with fairy lights. The menu has Indian sweets such as Gulab Jamun at ₹35 and Paneer Jalebi with Rabri at ₹75, with GST included. Book at 096467 13555 and confirm timings for the festival days."
 updated: 2026-11-17
 images:
   - src: venue/fairy-tree.jpg
@@ -15,11 +15,11 @@ images:
     alt: "Paneer jalebi with rabri"
 faq:
   - q: "Is Red Wood Farm open on Diwali day?"
-    a: "Our regular hours are 10 AM to 11 PM every day. For the festival day itself, confirm on WhatsApp at 096467 13555 before you plan."
+    a: "Our regular hours are 10 AM to 11 PM every day. For the festival day itself, confirm at 096467 13555 before you plan."
   - q: "Can we order Diwali sweets as takeaway?"
-    a: "Takeaway is available by phone or WhatsApp. The desserts on the menu include Gulab Jamun, Rasmalai, Raj Bhog and Kesar Kheer; ask us which ones you can take away and in what quantity."
+    a: "Takeaway is available by phone or message. The desserts on the menu include Gulab Jamun, Rasmalai, Raj Bhog and Kesar Kheer; ask us which ones you can take away and in what quantity."
   - q: "Can an office book a Diwali lunch for its team?"
-    a: "Yes. Send the date, time and team size on WhatsApp. You order from the regular menu, and every price includes GST."
+    a: "Yes. Send the date, time and team size. You order from the regular menu, and every price includes GST."
 related:
   - /party/
   - /party/office-team-lunch-ludhiana/
@@ -28,13 +28,13 @@ related:
   - /garden/fairy-light-tunnel/
 ---
 
-For a Diwali get-together in Ludhiana, Red Wood Farm on outer Pakhowal Road offers a garden lawn strung with fairy lights, a menu of North Indian dishes and Indian sweets, and space for a family or an office group. Gulab Jamun is ₹35 and Paneer Jalebi with Rabri is ₹75, GST included. Book on WhatsApp at 096467 13555.
+For a Diwali get-together in Ludhiana, Red Wood Farm on outer Pakhowal Road offers a garden lawn strung with fairy lights, a menu of North Indian dishes and Indian sweets, and space for a family or an office group. Gulab Jamun is ₹35 and Paneer Jalebi with Rabri is ₹75, GST included. Book at 096467 13555.
 
 ## When do people hold Diwali get-togethers?
 
 Most families spend the festival night itself at home, with prayers, visits to relatives and boxes of sweets going from door to door. The get-togethers happen around it. Offices hold a party in the week before. Friends meet for lunch on the weekend. The extended family sits down to dinner a day or two after, once the visiting is done.
 
-If you can, pick a date other than the festival night. Guests are freer, and you aren't competing with every family's own plans. Our regular hours are 10 AM to 11 PM every day. For the festival days themselves, confirm timings with us on WhatsApp.
+If you can, pick a date other than the festival night. Guests are freer, and you aren't competing with every family's own plans. Our regular hours are 10 AM to 11 PM every day. For the festival days themselves, confirm timings with us.
 
 ## Family dinner or office party?
 
@@ -87,8 +87,8 @@ Share this plan when you book, and we will tell you what works on the day.
 
 ## Can we bring our own sweets, gifts or decorations?
 
-Many offices hand out gift boxes at their Diwali party, and families sometimes bring a box of sweets from a favorite shop. Tell us on WhatsApp what you plan to bring, and we will tell you what is possible for your date. The same goes for any decoration beyond what the garden already has.
+Many offices hand out gift boxes at their Diwali party, and families sometimes bring a box of sweets from a favorite shop. Tell us what you plan to bring, and we will tell you what is possible for your date. The same goes for any decoration beyond what the garden already has.
 
 ## Booking a Diwali get-together
 
-Send your preferred date, time and guest count to 096467 13555 on WhatsApp, or call. Message early in the festival weeks so you still have a choice of dates, and say whether it is a family dinner or an office lunch. For more of the lit garden, see the [fairy-light tunnel](../../garden/fairy-light-tunnel/), and for other events, the [party page](../).
+Send your preferred date, time and guest count to 096467 13555, or call. Message early in the festival weeks so you still have a choice of dates, and say whether it is a family dinner or an office lunch. For more of the lit garden, see the [fairy-light tunnel](../../garden/fairy-light-tunnel/), and for other events, the [party page](../).

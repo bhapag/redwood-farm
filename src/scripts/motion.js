@@ -12,19 +12,23 @@ function openNow() {
   els.forEach((el) => { el.textContent = open ? 'Open now, until 11 PM' : 'Closed now, opens at 10 AM'; el.dataset.state = open ? 'open' : 'closed'; });
 }
 
-/* ---------- Header: solid after the hero, hides on scroll down ---------- */
+/* ---------- Header ----------
+   Phones: the header is always solid and never moves, so there is no scroll listener at all (native
+   momentum scrolling stays untouched). Desktop: it hides while scrolling down, using one passive listener
+   that only writes when the state actually changes. */
 function header() {
   const h = document.querySelector('[data-head]');
   if (!h) return;
-  let last = 0;
+  if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+  let last = 0, hidden = false, frame = 0;
   const on = () => {
+    frame = 0;
     const y = window.scrollY;
-    h.classList.toggle('solid', y > 40);
-    h.classList.toggle('hide', y > 500 && y > last && !reduce && !document.documentElement.classList.contains('sheet-open'));
+    const hide = y > 500 && y > last && !reduce && !document.documentElement.classList.contains('sheet-open');
+    if (hide !== hidden) { hidden = hide; h.classList.toggle('hide', hide); }
     last = y;
   };
-  window.addEventListener('scroll', on, { passive: true });
-  on();
+  window.addEventListener('scroll', () => { if (!frame) frame = requestAnimationFrame(on); }, { passive: true });
 }
 
 /* ---------- Menu sheet: native <dialog>, so focus and Escape are handled by the browser ---------- */
@@ -80,9 +84,6 @@ function warmIslands() {
   if (reduce) return;
   const has = (name) => document.querySelector(`astro-island[component-url*="${name}"]`);
   const jobs = [];
-  if (has('CountUp') || has('DishStack')) jobs.push(() => import('motion/react'));
-  if (has('DishStack')) jobs.push(() => import('../components/rb/DishStack'));
-  if (has('PartyStack')) jobs.push(() => import('../components/rb/PartyStack')); // parsed early, mounted only near the screen (it updates on every scroll frame)
   if (!jobs.length) return;
   const idle = (fn) => ('requestIdleCallback' in window ? requestIdleCallback(fn, { timeout: 2000 }) : setTimeout(fn, 200));
   const run = () => { const job = jobs.shift(); if (!job) return; job().catch(() => {}).finally(() => idle(run)); };

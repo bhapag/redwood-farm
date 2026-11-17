@@ -4,7 +4,7 @@ seoTitle: "Farm to Table Restaurant Ludhiana, Honestly | Red Wood Farm"
 description: "Farm to table restaurant in Ludhiana? Our house dish is Farm to Table Special Chicken. Here is what the term usually means and what we can and cannot promise."
 cluster: garden
 query: "farm to table restaurant ludhiana"
-summary: "In short: Red Wood Farm is a garden family restaurant on outer Pakhowal Road, and Farm to Table Special Chicken (₹415 half, ₹695 full) is the name of our house signature dish. We do not claim to grow our own produce or to buy from named farms, because that is not confirmed. If sourcing matters to you, ask us on WhatsApp about the dish you plan to order."
+summary: "In short: Red Wood Farm is a garden family restaurant on outer Pakhowal Road, and Farm to Table Special Chicken (₹415 half, ₹695 full) is the name of our house signature dish. We do not claim to grow our own produce or to buy from named farms, because that is not confirmed. If sourcing matters to you, ask us about the dish you plan to order."
 updated: 2026-11-17
 images:
   - src: venue/garden-path-day.jpg
@@ -13,7 +13,7 @@ images:
     alt: "A dining table set under palm trees wrapped in fairy lights on the lawn at night"
 faq:
   - q: "Does Red Wood Farm grow its own vegetables?"
-    a: "We have not confirmed that, so we do not claim it. If you want to know where a particular ingredient comes from, ask us on WhatsApp at 096467 13555."
+    a: "We have not confirmed that, so we do not claim it. If you want to know where a particular ingredient comes from, ask us at 096467 13555."
   - q: "What is Farm to Table Special Chicken?"
     a: "It is our house signature chicken, priced at ₹415 for a half and ₹695 for a full, GST included. For recipe or allergy questions, message us before you order."
   - q: "Is Red Wood Farm a working farm?"
@@ -52,7 +52,7 @@ The same goes for the word in our own name. Red Wood Farm is a garden family res
 - **A garden setting.** An open grass lawn with dining tables, trees, a stone path and, in the evening, fairy lights and string lights.
 - **Our own house dishes.** Farm to Table Special Chicken, the herb chutney, and Atta Chicken at ₹925, which is chicken cooked sealed inside wheat-flour dough.
 - **A clear menu.** 187 dishes with prices that include GST, and every dish marked veg or non-veg.
-- **Honest seasonal marks.** Saag, Bhindi, Gajrela, Malpua Rabri and the whole fish section are marked seasonal, so they are not available all year. Ask us on WhatsApp before you come for one of them.
+- **Honest seasonal marks.** Saag, Bhindi, Gajrela, Malpua Rabri and the whole fish section are marked seasonal, so they are not available all year. Ask us before you come for one of them.
 
 ## What you should not expect
 
@@ -65,7 +65,7 @@ A few menu names sound farm-fresh too, such as the Garden Fresh Kachumber at ₹
 
 ## How to ask about ingredients
 
-If where your food comes from matters to you, because of an allergy, a diet or a guest with strict rules, message us on WhatsApp at 096467 13555 before your visit. Ask about the exact dish you have in mind, and we will tell you what we can confirm.
+If where your food comes from matters to you, because of an allergy, a diet or a guest with strict rules, message us at 096467 13555 before your visit. Ask about the exact dish you have in mind, and we will tell you what we can confirm.
 
 One example of how we handle unknowns: the Ice Cream with Brownie is marked non-veg on our menu until the egg question is confirmed. When we are unsure, the menu marks it the cautious way. You can read more about how the marks work on our page about [veg and non-veg marks and GST](../../food/menu-marks-and-gst/).
 
@@ -77,4 +77,4 @@ Vegetarians at the same table can share Paneer Lababdar (₹255 half, ₹395 ful
 
 ## Visiting and booking
 
-Our address is 676, VPO Daad, Pakhowal Road, Ludhiana 142022. Look for us opposite Cerajot Tiles, a short way from Omaxe Flats. We are open from 10:00 AM to 11:00 PM, seven days a week. For a table, send your date, time and number of guests on WhatsApp to 096467 13555. More about the lawn and the grounds is on our [garden page](../).
+Our address is 676, VPO Daad, Pakhowal Road, Ludhiana 142022. Look for us opposite Cerajot Tiles, a short way from Omaxe Flats. We are open from 10:00 AM to 11:00 PM, seven days a week. For a table, send your date, time and number of guests to 096467 13555. More about the lawn and the grounds is on our [garden page](../).

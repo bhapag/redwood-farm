@@ -4,7 +4,7 @@ seoTitle: "Small Family Function Venue in Ludhiana | Red Wood Farm"
 description: "A garden lawn on Pakhowal Road for a roka, engagement or small family function in Ludhiana: what past set-ups looked like, how to plan, and how to book."
 cluster: party
 query: "small family function venue ludhiana"
-summary: "In short: Red Wood Farm on outer Pakhowal Road hosts small family functions such as a roka, an engagement or a close-family get-together on its garden lawn, with food from its own North Indian kitchen. Past functions here used a mehndi stage, draped set-ups and buffet counters. Send your date and numbers on WhatsApp for a set-up suggestion."
+summary: "In short: Red Wood Farm on outer Pakhowal Road hosts small family functions such as a roka, an engagement or a close-family get-together on its garden lawn, with food from its own North Indian kitchen. Past functions here used a mehndi stage, draped set-ups and buffet counters. Send your date and numbers for a set-up suggestion."
 updated: 2026-11-17
 images:
   - src: venue/family-function.jpg
@@ -15,11 +15,11 @@ images:
     alt: "Covered tent dining area with chandeliers and a draped teal and yellow ceiling, seen at an event at Red Wood Farm"
 faq:
   - q: "Can we hold a roka at Red Wood Farm?"
-    a: "Yes. Send your date, time and family numbers on WhatsApp (096467 13555), and we'll tell you what set-up is possible that day."
+    a: "Yes. Send your date, time and family numbers on 096467 13555, and we'll tell you what set-up is possible that day."
   - q: "Is there a stage for an engagement ring ceremony?"
-    a: "Decorated stages have been set up on our lawn for past functions, including a mehndi stage. Ask us on WhatsApp what can be arranged for your date."
+    a: "Decorated stages have been set up on our lawn for past functions, including a mehndi stage. Ask us what can be arranged for your date."
   - q: "Do you have fixed function packages?"
-    a: "We don't publish packages or per-head prices. Food comes from our menu, where every price includes GST, and we'll talk through your function on WhatsApp."
+    a: "We don't publish packages or per-head prices. Food comes from our menu, where every price includes GST, and we'll talk through your function."
   - q: "Can elderly guests in wheelchairs attend?"
     a: "Red Wood Farm has no wheelchair access. Please plan around this with older relatives before you book."
 related:
@@ -72,7 +72,7 @@ Not every family function has a name. Relatives visiting from abroad, a cousins'
 4. **Say if the function is vegetarian only.** Every dish on our menu carries a veg or non-veg mark, which makes planning a mixed or all-veg spread simple.
 5. **List your decoration.** A stage, drapes, an entry gate or flowers. Tell us early so we can confirm what's possible.
 6. **Share the location with older relatives.** We're at 676, VPO Daad, Pakhowal Road, opposite Cerajot Tiles. There is no wheelchair access.
-7. **Confirm everything in writing.** Keep the final details in one WhatsApp thread.
+7. **Confirm everything in writing.** Keep the final details in one message thread.
 
 Our [party planning checklist](../party-planning-checklist/) helps with how much food to order per guest.
 
@@ -102,4 +102,4 @@ These prices are exact from our [menu](../../menu/) and include GST. We don't pu
 
 ## Booking your function
 
-Send these on WhatsApp to 096467 13555: the date, the time, the occasion, the number of adults and children, and whether the food should be vegetarian only. Our hours are 10:00 AM to 11:00 PM, seven days a week. You can also start from the [enquiry section of our party page](../#enquire).
+Send these to 096467 13555: the date, the time, the occasion, the number of adults and children, and whether the food should be vegetarian only. Our hours are 10:00 AM to 11:00 PM, seven days a week. You can also start from the [enquiry section of our party page](../#enquire).

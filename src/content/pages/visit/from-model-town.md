@@ -15,7 +15,7 @@ faq:
   - q: "Is the route from the ISBT bus stand similar?"
     a: "Yes. From ISBT Ludhiana, OSRM uses the same Krishna Mandir Road, Pakhowal Road and outer Pakhowal Road sequence, for about 8.2 km and roughly 13 minutes with no traffic."
   - q: "Does Red Wood Farm do takeaway for Model Town?"
-    a: "We do takeaway. Order by phone or WhatsApp on 096467 13555 and collect it from us on Pakhowal Road. Ask us on WhatsApp about anything beyond that."
+    a: "We do takeaway. Order by phone or message on 096467 13555 and collect it from us on Pakhowal Road. Ask us about anything beyond that."
   - q: "Is Red Wood Farm open on weekdays?"
     a: "Yes, we are open every day from 10:00 AM to 11:00 PM."
 related:
@@ -66,7 +66,7 @@ One thing to know in advance: there is no wheelchair access at Red Wood Farm. Fa
 
 ## Without a car
 
-From Model Town, a cab or an auto booked through an app is the simplest choice. Set the drop point to Red Wood Farm on Pakhowal Road. To be sure the driver stops at the right gate, ask us on WhatsApp (096467 13555) to share our location and forward it to them. That works better than reading out directions over the phone.
+From Model Town, a cab or an auto booked through an app is the simplest choice. Set the drop point to Red Wood Farm on Pakhowal Road. To be sure the driver stops at the right gate, ask us on 096467 13555 to share our location and forward it to them. That works better than reading out directions over the phone.
 
 ## Why people from Model Town make the drive
 
@@ -79,4 +79,4 @@ A few practical points:
 - Planning a birthday or a family function: see how [parties on the lawn](../../party/) work.
 - Want the wider context of the road: the [Pakhowal Road guide](../pakhowal-road-guide/) covers where it runs and how far common starting points are.
 
-Book a table or a party on WhatsApp or by phone at 096467 13555 with your date, time and number of guests. Directions from other parts of the city are on the [Visit page](../).
+Book a table or a party by message or phone at 096467 13555 with your date, time and number of guests. Directions from other parts of the city are on the [Visit page](../).

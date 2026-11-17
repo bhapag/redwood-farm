@@ -17,7 +17,7 @@ faq:
   - q: "Are the Indo-Chinese dishes vegetarian?"
     a: "Most are. Every dish carries a veg or non-veg mark on the menu, and the chicken and fish versions are marked non-veg."
   - q: "Can I order Indo-Chinese food for takeaway?"
-    a: "Yes. Call or WhatsApp 096467 13555 with your order and pickup time, and collect it from 676, VPO Daad, Pakhowal Road."
+    a: "Yes. Call or message 096467 13555 with your order and pickup time, and collect it from 676, VPO Daad, Pakhowal Road."
 related:
   - /food/
   - /menu/
@@ -60,7 +60,7 @@ Manchurian is usually made from deep-fried balls of minced vegetables or pieces 
 | Chicken Manchurian Dry | ₹375 |
 | Fish Manchurian (seasonal) | ₹555 |
 
-Order the dry version as a starter to share. The gravy version is meant to go with noodles or rice. Fish Manchurian sits in our seasonal fish section, so ask us on WhatsApp whether it is available on your date.
+Order the dry version as a starter to share. The gravy version is meant to go with noodles or rice. Fish Manchurian sits in our seasonal fish section, so ask us whether it is available on your date.
 
 ## Chilli dishes and crispy starters
 
@@ -87,7 +87,7 @@ There is no veg fried rice on the menu. Vegetarians can pair Manchurian Gravy wi
 
 ## The Chinese Veg Platter
 
-The Platters section has a Chinese Veg Platter at ₹575. The menu doesn't list what goes on it. If you are choosing between the platter and separate starters for a group, ask us on WhatsApp and we'll tell you what it includes.
+The Platters section has a Chinese Veg Platter at ₹575. The menu doesn't list what goes on it. If you are choosing between the platter and separate starters for a group, ask us and we'll tell you what it includes.
 
 ## Building an Indo-Chinese order for your table
 
@@ -104,4 +104,4 @@ You can also order one or two Indo-Chinese starters and then move on to Butter C
 
 ## Ordering at Red Wood Farm
 
-Find us at 676, VPO Daad, Pakhowal Road, opposite Cerajot Tiles near Omaxe Flats. We're open from 10 AM to 11 PM every day for dine-in and takeaway. Send your order on WhatsApp to 096467 13555. If you are planning a [party on the lawn](../../party/), tell us which starters you'd like, and see the full [menu](../../menu/) for every section.
+Find us at 676, VPO Daad, Pakhowal Road, opposite Cerajot Tiles near Omaxe Flats. We're open from 10 AM to 11 PM every day for dine-in and takeaway. Send your order to 096467 13555. If you are planning a [party on the lawn](../../party/), tell us which starters you'd like, and see the full [menu](../../menu/) for every section.

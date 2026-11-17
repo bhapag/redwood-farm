@@ -17,7 +17,7 @@ faq:
   - q: "Is an outdoor party a good idea in Ludhiana in December?"
     a: "Yes, if you plan for the cold. A lunch or an early evening start works well. Ask guests to bring warm layers, and expect fog late at night in December and January."
   - q: "What happens if it rains on the day of an outdoor party?"
-    a: "Ask the venue for its rain plan before you book. At Red Wood Farm, our photos show a covered tent dining area with chandeliers set up at one event, so ask us on WhatsApp (096467 13555) whether a tent is possible for your date."
+    a: "Ask the venue for its rain plan before you book. At Red Wood Farm, our photos show a covered tent dining area with chandeliers set up at one event, so ask us on 096467 13555 whether a tent is possible for your date."
   - q: "Does Red Wood Farm have wheelchair access?"
     a: "No. Red Wood Farm does not have wheelchair access. Please plan for that if a guest uses a wheelchair."
   - q: "Are outdoor venues cheaper than indoor halls?"
@@ -96,12 +96,12 @@ For elders who can walk short distances, a few steps help at any lawn:
 
 Indoors, sound bounces. A small hall with a DJ gets loud fast, which is fun for dancing and hard on conversation. Outdoors, sound drifts off, so you need less volume for the same mood, though music carries further beyond the venue.
 
-Every venue has its own rules on music and closing time. Ask before you book. For Red Wood Farm, ask us on WhatsApp about music for your event.
+Every venue has its own rules on music and closing time. Ask before you book. For Red Wood Farm, ask us about music for your event.
 
 ## Red Wood Farm as an outdoor example
 
-Red Wood Farm is a garden family restaurant and party lawn on outer Pakhowal Road. Our own photos show an open grass lawn with dining tables, buffet counters set up on the lawn, birthday balloon arches and a mehndi stage. At one event, a covered tent dining area with chandeliers was set up. We don't describe any indoor hall on this site, so if you need indoor space, ask us on WhatsApp what's possible.
+Red Wood Farm is a garden family restaurant and party lawn on outer Pakhowal Road. Our own photos show an open grass lawn with dining tables, buffet counters set up on the lawn, birthday balloon arches and a mehndi stage. At one event, a covered tent dining area with chandeliers was set up. We don't describe any indoor hall on this site, so if you need indoor space, ask us what's possible.
 
 One guest, Inderpreet Singh, described it on Google as a "Good space for small function parties.."
 
-If you're still weighing options, our guide on [how to choose a party venue in Ludhiana](../how-to-choose-a-party-venue-ludhiana/) lists the questions to ask any venue. For birthdays, see [birthday party venues in Ludhiana](../../party/birthday-party-venues-ludhiana/). To see the lawn before deciding, find directions on our [visit page](../../visit/). We're open every day from 10:00 AM to 11:00 PM, and you can book on WhatsApp or by phone at 096467 13555.
+If you're still weighing options, our guide on [how to choose a party venue in Ludhiana](../how-to-choose-a-party-venue-ludhiana/) lists the questions to ask any venue. For birthdays, see [birthday party venues in Ludhiana](../../party/birthday-party-venues-ludhiana/). To see the lawn before deciding, find directions on our [visit page](../../visit/). We're open every day from 10:00 AM to 11:00 PM, and you can book by message or phone at 096467 13555.

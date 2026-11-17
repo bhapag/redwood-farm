@@ -17,7 +17,7 @@ faq:
   - q: "Does Red Wood Farm serve lassi?"
     a: "No. Lassi is not on our menu. Our dessert list starts at ₹35 for Gulab Jamun and includes Rasmalai at ₹45 and Kheer at ₹65."
   - q: "Can I get makki di roti with saag at Red Wood Farm?"
-    a: "Makki di roti is not on our menu. Saag (seasonal) is listed at ₹275, and it goes well with Missi Roti at ₹30 or Tandoori Roti at ₹20. Ask us on WhatsApp (096467 13555) whether saag is on that day."
+    a: "Makki di roti is not on our menu. Saag (seasonal) is listed at ₹275, and it goes well with Missi Roti at ₹30 or Tandoori Roti at ₹20. Ask us on 096467 13555 whether saag is on that day."
   - q: "Which single dish is Punjab best known for?"
     a: "There isn't one answer. Dal makhani, butter chicken, tandoori chicken and sarson da saag with makki di roti are the dishes people name most often when they talk about Punjabi food."
   - q: "Do Red Wood Farm menu prices include GST?"
@@ -100,4 +100,4 @@ One guest, Gurveer Singh, wrote on Google that the "food was absolutely deliciou
 
 ## Where to eat it at Red Wood Farm
 
-Red Wood Farm is a garden family restaurant at 676, VPO Daad, on Pakhowal Road opposite Cerajot Tiles and near Omaxe Flats. We're open from 10:00 AM to 11:00 PM every day. You can eat in on the lawn or order takeaway by phone or WhatsApp on 096467 13555. Directions from the railway station, Sarabha Nagar, Dugri and Model Town are on our [visit page](../../visit/).
+Red Wood Farm is a garden family restaurant at 676, VPO Daad, on Pakhowal Road opposite Cerajot Tiles and near Omaxe Flats. We're open from 10:00 AM to 11:00 PM every day. You can eat in on the lawn or order takeaway by phone or message on 096467 13555. Directions from the railway station, Sarabha Nagar, Dugri and Model Town are on our [visit page](../../visit/).

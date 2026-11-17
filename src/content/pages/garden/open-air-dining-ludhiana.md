@@ -17,9 +17,9 @@ faq:
   - q: "Is Red Wood Farm open for lunch or only in the evening?"
     a: "Both. We are open every day from 10:00 AM to 11:00 PM, so you can eat on the lawn in daylight or after the lights come on."
   - q: "Is there covered seating if it rains?"
-    a: "Our seating is mainly outdoors on the lawn. A covered tent dining area has been set up at an event, but we can't promise cover for a regular table, so message us on WhatsApp (096467 13555) before you set out on a wet day."
+    a: "Our seating is mainly outdoors on the lawn. A covered tent dining area has been set up at an event, but we can't promise cover for a regular table, so message us on 096467 13555 before you set out on a wet day."
   - q: "Is Red Wood Farm good for a couple's dinner?"
-    a: "For two people, the tables under the palm trees or the low lounge seating under string lights work well. Send your date and time on WhatsApp and ask which tables are free."
+    a: "For two people, the tables under the palm trees or the low lounge seating under string lights work well. Send your date and time and ask which tables are free."
   - q: "How far is Red Wood Farm from Sarabha Nagar?"
     a: "About 6.8 km by road, around 11 minutes without traffic, via Pakhowal Road. Leave extra time in the evening rush."
 related:
@@ -58,11 +58,11 @@ Both work, and they feel quite different.
 
 **Evening** is when the lights do the work. In Ludhiana the sun sets before 6 PM through the winter months and after 7 PM in summer. Arrive a little before sunset and you'll see the tunnel and the palms switch from daylight to fairy lights while you order. We stay open until 11 PM.
 
-A few honest notes on weather. This is an open-air restaurant, so the sky decides a lot. A covered tent dining area with chandeliers has been set up at an event, but we can't promise cover for an ordinary table. On a day with rain in the forecast, message us on WhatsApp (096467 13555) before you leave home. Punjab winter evenings get cold, so bring a warm layer if you plan to sit out late.
+A few honest notes on weather. This is an open-air restaurant, so the sky decides a lot. A covered tent dining area with chandeliers has been set up at an event, but we can't promise cover for an ordinary table. On a day with rain in the forecast, message us on 096467 13555 before you leave home. Punjab winter evenings get cold, so bring a warm layer if you plan to sit out late.
 
 ## Open-air dining for couples
 
-For two people, the tables under the palms and the lounge seating under the string lights are the coziest spots on the lawn. The lawn is shared with other diners. If you want a particular spot, send the date and time on WhatsApp and ask which tables are free.
+For two people, the tables under the palms and the lounge seating under the string lights are the coziest spots on the lawn. The lawn is shared with other diners. If you want a particular spot, send the date and time and ask which tables are free.
 
 A simple dinner for two from the [menu](../../menu/):
 
@@ -98,14 +98,14 @@ The other difference is distance. We're on outer Pakhowal Road, near Daad villag
 
 ## Practical tips before you go
 
-- **Book for groups and weekends.** Tables are booked on WhatsApp or by phone. Send the date, time and number of guests.
-- **Takeaway is there if plans change.** Order by phone or WhatsApp and collect it on the way home.
+- **Book for groups and weekends.** Tables are booked by message or phone. Send the date, time and number of guests.
+- **Takeaway is there if plans change.** Order by phone or message and collect it on the way home.
 - **Wi-Fi is available** if you need to stay connected.
-- **Accessibility:** we have no wheelchair access. If anyone in your group has limited mobility, ask us on WhatsApp about the walk from the gate to the lawn.
+- **Accessibility:** we have no wheelchair access. If anyone in your group has limited mobility, ask us about the walk from the gate to the lawn.
 - **Parties:** the same lawn hosts birthdays and family functions. See the [party page](../../party/).
 
 For a longer look at a night out here, read [an evening on the lawn](../an-evening-on-the-lawn/).
 
 ## Find us and book
 
-Red Wood Farm is at 676, VPO Daad, Pakhowal Road, opposite Cerajot Tiles and near Omaxe Flats, Ludhiana. Turn-by-turn directions are on the [Visit page](../../visit/). To book a table on the lawn, WhatsApp or call 096467 13555 with your date, time and group size. Other garden pages are on the [garden hub](../).
+Red Wood Farm is at 676, VPO Daad, Pakhowal Road, opposite Cerajot Tiles and near Omaxe Flats, Ludhiana. Turn-by-turn directions are on the [Visit page](../../visit/). To book a table on the lawn, Message or call 096467 13555 with your date, time and group size. Other garden pages are on the [garden hub](../).

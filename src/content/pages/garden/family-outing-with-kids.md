@@ -17,9 +17,9 @@ faq:
   - q: "How far is Red Wood Farm from the centre of Ludhiana?"
     a: "By road it is about 6.8 km from Sarabha Nagar and 10.7 km from Ludhiana Railway Station, roughly 11 and 16 minutes by OSRM routing without traffic. Leave extra time."
   - q: "Can grandparents who use a wheelchair visit?"
-    a: "Red Wood Farm has no wheelchair access. Please message us on WhatsApp at 096467 13555 if you have questions about getting around."
+    a: "Red Wood Farm has no wheelchair access. Please message us at 096467 13555 if you have questions about getting around."
   - q: "Should a big family book ahead?"
-    a: "Yes, for a group send the date, time and number of guests on WhatsApp to 096467 13555 and we will confirm."
+    a: "Yes, for a group send the date, time and number of guests to 096467 13555 and we will confirm."
 related:
   - /garden/
   - /food/kids-favourites/
@@ -60,7 +60,7 @@ Older kids tend to like the lights. Arrive a little before sunset so they can se
 
 ## What is there for children, and what isn't?
 
-There is space on the grass. That is the honest list. Red Wood Farm has no play area, no kids' zone and no rides, so plan on the lawn and the food doing the work. Keep an eye on small children near the paths and the lit decorations, and bring anything that usually keeps them busy at a restaurant table. A spare set of clothes helps too, since grass and small children tend to meet. If a child has a food allergy, message us on WhatsApp before the visit and ask about the dishes you plan to order.
+There is space on the grass. That is the honest list. Red Wood Farm has no play area, no kids' zone and no rides, so plan on the lawn and the food doing the work. Keep an eye on small children near the paths and the lit decorations, and bring anything that usually keeps them busy at a restaurant table. A spare set of clothes helps too, since grass and small children tend to meet. If a child has a food allergy, message us before the visit and ask about the dishes you plan to order.
 
 ## Food that keeps a mixed table happy
 
@@ -70,7 +70,7 @@ For the adults, Dal Makhni at ₹275 and a half Kadhai Paneer at ₹225 make a s
 
 ## Bringing grandparents along
 
-Red Wood Farm has no wheelchair access, and we would rather you know that before you set out. The seating is outdoors on a lawn, and you reach it on garden paths. If an older family member finds walking hard, message us on WhatsApp and ask which table is easiest to reach.
+Red Wood Farm has no wheelchair access, and we would rather you know that before you set out. The seating is outdoors on a lawn, and you reach it on garden paths. If an older family member finds walking hard, message us and ask which table is easiest to reach.
 
 ## Other good places to visit in Ludhiana with family
 
@@ -80,4 +80,4 @@ Closer to us, OpenStreetMap shows Gurdwara Bhai Bala Sahib Ji about 1.6 km away 
 
 ## Booking for a family group
 
-For a large family, send us your date, time and number of guests on WhatsApp at 096467 13555. If the outing is really a birthday in disguise, our page on [birthday party venues in Ludhiana](../../party/birthday-party-venues-ludhiana/) explains how we host those on the lawn. Our address is 676, VPO Daad, Pakhowal Road, opposite Cerajot Tiles and near Omaxe Flats.
+For a large family, send us your date, time and number of guests at 096467 13555. If the outing is really a birthday in disguise, our page on [birthday party venues in Ludhiana](../../party/birthday-party-venues-ludhiana/) explains how we host those on the lawn. Our address is 676, VPO Daad, Pakhowal Road, opposite Cerajot Tiles and near Omaxe Flats.

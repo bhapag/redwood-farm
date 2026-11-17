@@ -17,7 +17,7 @@ faq:
   - q: "What food do garden restaurants in Punjab usually serve?"
     a: "Most lean on North Indian cooking: tandoor dishes, dal, paneer and chicken curries, and breads. Red Wood Farm also serves Indo-Chinese and a Champ section of soya chaap."
   - q: "Can I order takeaway from Red Wood Farm?"
-    a: "Yes. Order by phone or WhatsApp on 096467 13555. The kitchen serves dine-in and takeaway from 10 AM to 11 PM every day."
+    a: "Yes. Order by phone or message on 096467 13555. The kitchen serves dine-in and takeaway from 10 AM to 11 PM every day."
   - q: "What is Red Wood Farm's Google rating?"
     a: "It showed 4.2 from 72 reviews on Google on 14 Nov 2026."
   - q: "How far is Red Wood Farm from central Ludhiana?"
@@ -52,7 +52,7 @@ Use this list for any garden restaurant you're considering. It works anywhere in
 5. **Evening lighting.** A lawn looks different at night. Ask for night photos, not only daytime ones.
 6. **Cover for bad weather.** Ask what happens if it rains or turns cold.
 7. **Accessibility.** If someone in your group uses a wheelchair, ask directly about access before you travel.
-8. **How booking works.** Find out if you book by phone, WhatsApp or a website, and what details they need.
+8. **How booking works.** Find out if you book by phone, message or a website, and what details they need.
 9. **Recent reviews with dates.** A rating means more when you know when it was checked.
 
 ## How do Punjab's seasons change the experience?
@@ -77,7 +77,7 @@ Here is how Red Wood Farm answers the checklist above, using only what we can co
 - **Evening lighting:** a walk-through [fairy-light tunnel](../fairy-light-tunnel/) over a red carpet, palms along the driveway wrapped in fairy lights, lit paths with lamp posts and string lights over the lounge seating.
 - **Cover:** photos from one event show a covered tent dining area with chandeliers. Ask whether one is part of your booking.
 - **Accessibility:** there's no wheelchair access.
-- **Booking:** by WhatsApp or phone, with the date, time and number of guests.
+- **Booking:** by message or phone, with the date, time and number of guests.
 - **Reviews:** Google showed 4.2 from 72 reviews on 14 Nov 2026.
 
 ## What does the garden at Red Wood Farm look like?
@@ -96,4 +96,4 @@ We're at 676, VPO Daad, Pakhowal Road, opposite Cerajot Tiles and near Omaxe Fla
 
 ## Try the garden for yourself
 
-Message us on [WhatsApp at 096467 13555](https://wa.me/919646713555) with your date, time and group size to book a table. Come once in daylight and once after dark, and you'll see both sides of the garden.
+Message us on [096467 13555](https://wa.me/919646713555) with your date, time and group size to book a table. Come once in daylight and once after dark, and you'll see both sides of the garden.

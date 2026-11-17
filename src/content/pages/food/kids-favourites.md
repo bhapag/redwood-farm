@@ -127,4 +127,4 @@ There's no wheelchair access. Plan for that if you're bringing a pram or a grand
 
 ## Book a family table
 
-We're open every day from 10 AM to 11 PM on Pakhowal Road, near Daad village. Send the date, time and number of guests, including children, to [WhatsApp 096467 13555](https://wa.me/919646713555) to book. You can also order the same dishes for takeaway by phone or WhatsApp.
+We're open every day from 10 AM to 11 PM on Pakhowal Road, near Daad village. Send the date, time and number of guests, including children, to [096467 13555](https://wa.me/919646713555) to book. You can also order the same dishes for takeaway by phone or message.

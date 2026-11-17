@@ -15,7 +15,7 @@ faq:
   - q: "What is the most expensive chicken dish at Red Wood Farm?"
     a: "Atta Chicken, at ₹925 for a Full. It is chicken cooked sealed inside wheat-flour dough, and it is the highest-priced dish on our whole menu."
   - q: "Is Farm to Table Special Chicken spicy?"
-    a: "The menu describes it only as our house signature chicken. Ask us on WhatsApp at 096467 13555 and we'll tell you how it is cooked and how hot it is."
+    a: "The menu describes it only as our house signature chicken. Ask us at 096467 13555 and we'll tell you how it is cooked and how hot it is."
   - q: "Which chicken curries come in a Full only?"
     a: "Chicken Handi (₹645) and Atta Chicken (₹925). The other 13 chicken curries come in both Half and Full sizes."
   - q: "Do the chicken curry prices include GST?"
@@ -41,7 +41,7 @@ On our menu, Butter Chicken sits at the same price as Chicken Tikka Butter Masal
 
 ### Farm to Table Special Chicken
 
-The menu calls this "our house signature chicken." It costs Half ₹415 or Full ₹695. The menu doesn't spell out the recipe, so if you want to know what goes into it before you order, send us a message on WhatsApp.
+The menu calls this "our house signature chicken." It costs Half ₹415 or Full ₹695. The menu doesn't spell out the recipe, so if you want to know what goes into it before you order, send us a message.
 
 ### Atta Chicken
 
@@ -84,7 +84,7 @@ Most of these names describe the main flavor or the pot. Here is what they usual
 - **Chicken Handi:** named for the handi, a deep cooking pot.
 - **Chicken Tikka Lababdar:** pieces of chicken tikka in a lababdar gravy.
 
-Rara Chicken, Barmi Chicken and Lahori Chicken have names that don't describe the gravy on their own. Ask us on WhatsApp and we'll explain each one.
+Rara Chicken, Barmi Chicken and Lahori Chicken have names that don't describe the gravy on their own. Ask us and we'll explain each one.
 
 If you like your chicken dry and smoky, skip the curries and look at the Tandoori section. Tandoori Chicken costs ₹375 there. Our [tandoor guide](../tandoor-guide/) covers it with the kebabs.
 
@@ -110,8 +110,8 @@ If you'd like mutton, the Mutton section starts with Mutton Rogan Josh at Half �
 
 ## Should you order a Half or a Full?
 
-We don't publish how many people each portion serves. The price gap is a useful guide: a Full Butter Chicken at ₹695 costs ₹280 more than a Half at ₹415. Two Halves of different curries let a small table try more dishes. For bigger groups, tell us the number of people on WhatsApp and we'll suggest a mix. The [group ordering guide](../group-ordering-guide/) explains how to plan Half and Full portions.
+We don't publish how many people each portion serves. The price gap is a useful guide: a Full Butter Chicken at ₹695 costs ₹280 more than a Half at ₹415. Two Halves of different curries let a small table try more dishes. For bigger groups, tell us the number of people and we'll suggest a mix. The [group ordering guide](../group-ordering-guide/) explains how to plan Half and Full portions.
 
 ## Booking a table for a chicken dinner
 
-Red Wood Farm is at 676, VPO Daad, Pakhowal Road, opposite Cerajot Tiles and near Omaxe Flats. We open at 10 AM and close at 11 PM, seven days a week. Book a table, place a takeaway order or ask about a [party on the lawn](../../party/) by WhatsApp or phone on 096467 13555. The full list of dishes is on our [menu](../../menu/).
+Red Wood Farm is at 676, VPO Daad, Pakhowal Road, opposite Cerajot Tiles and near Omaxe Flats. We open at 10 AM and close at 11 PM, seven days a week. Book a table, place a takeaway order or ask about a [party on the lawn](../../party/) by message or phone on 096467 13555. The full list of dishes is on our [menu](../../menu/).

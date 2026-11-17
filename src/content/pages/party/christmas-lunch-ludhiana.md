@@ -4,7 +4,7 @@ seoTitle: "Christmas Lunch or Party in Ludhiana | Red Wood Farm"
 description: "Spend Christmas with family on a garden lawn on Pakhowal Road, Ludhiana: lunch in the winter sun or dinner under fairy lights, from our regular menu."
 cluster: party
 query: "christmas party / lunch ludhiana family"
-summary: "Red Wood Farm on outer Pakhowal Road is open 10 AM to 11 PM every day, so a family can have Christmas lunch on the lawn or dinner under its fairy lights in December. There is no special Christmas menu; you order from the regular North Indian and Indo-Chinese menu, with GST-inclusive prices. Book on WhatsApp at 096467 13555."
+summary: "Red Wood Farm on outer Pakhowal Road is open 10 AM to 11 PM every day, so a family can have Christmas lunch on the lawn or dinner under its fairy lights in December. There is no special Christmas menu; you order from the regular North Indian and Indo-Chinese menu, with GST-inclusive prices. Book at 096467 13555."
 updated: 2026-11-17
 images:
   - src: venue/string-lounge.jpg
@@ -15,9 +15,9 @@ faq:
   - q: "Is there a special Christmas menu at Red Wood Farm?"
     a: "No special menu is announced. You order from the regular menu, which covers North Indian, tandoor and Indo-Chinese dishes, with prices that include GST."
   - q: "What are the timings on 25 December?"
-    a: "Our hours are 10 AM to 11 PM every day. For a holiday, a quick WhatsApp message to 096467 13555 confirms your table."
+    a: "Our hours are 10 AM to 11 PM every day. For a holiday, a quick message to 096467 13555 confirms your table."
   - q: "Can we order Christmas dinner as takeaway?"
-    a: "Yes. Takeaway is available by phone or WhatsApp on 096467 13555. Order early on a holiday so the food is ready when you arrive."
+    a: "Yes. Takeaway is available by phone or message on 096467 13555. Order early on a holiday so the food is ready when you arrive."
   - q: "How far is Red Wood Farm from Sarabha Nagar?"
     a: "About 6.8 km by road, roughly 11 minutes without traffic, along Pakhowal Road. Leave extra time on a holiday evening."
 related:
@@ -28,7 +28,7 @@ related:
   - /garden/family-outing-with-kids/
 ---
 
-For a Christmas lunch or family party in Ludhiana, Red Wood Farm on outer Pakhowal Road gives you two choices: a midday table on the garden lawn, or dinner after dark when the palms and tunnel glow with fairy lights. We open 10 AM to 11 PM every day and serve our regular menu. Book on WhatsApp at 096467 13555.
+For a Christmas lunch or family party in Ludhiana, Red Wood Farm on outer Pakhowal Road gives you two choices: a midday table on the garden lawn, or dinner after dark when the palms and tunnel glow with fairy lights. We open 10 AM to 11 PM every day and serve our regular menu. Book at 096467 13555.
 
 ## Lunch in the winter sun or dinner under the lights?
 
@@ -62,7 +62,7 @@ There is space on the grass for children to move around after the meal. There is
 
 ## Can we bring a cake, a Santa hat or gifts?
 
-Families celebrating Christmas often bring a plum cake, a Secret Santa game or wrapped gifts for the children. Tell us on WhatsApp what you are bringing, and we will tell you what is possible at your table. If an older relative is coming, note that Red Wood Farm has no wheelchair access.
+Families celebrating Christmas often bring a plum cake, a Secret Santa game or wrapped gifts for the children. Tell us what you are bringing, and we will tell you what is possible at your table. If an older relative is coming, note that Red Wood Farm has no wheelchair access.
 
 ## What about a Christmas party with friends or a small team?
 
@@ -74,4 +74,4 @@ We are at 676, VPO Daad, Pakhowal Road, opposite Cerajot Tiles and near Omaxe Fl
 
 ## Booking Christmas at Red Wood Farm
 
-Message 096467 13555 on WhatsApp, or call, with the date, the time and how many people are coming. Christmas is a public holiday, so message a few days ahead. Read more about [winter evenings on the lawn](../../garden/winter-evenings-on-the-lawn/), or see the [party page](../) for group events.
+Message 096467 13555, or call, with the date, the time and how many people are coming. Christmas is a public holiday, so message a few days ahead. Read more about [winter evenings on the lawn](../../garden/winter-evenings-on-the-lawn/), or see the [party page](../) for group events.

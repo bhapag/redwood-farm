@@ -15,7 +15,7 @@ images:
     alt: "A veg sizzler with paneer, a cutlet, fries and mixed vegetables on a cast-iron plate"
 faq:
   - q: "Is Red Wood Farm a pure vegetarian restaurant?"
-    a: "No. Red Wood Farm serves both veg and non-veg food. 131 of the 187 dishes on the menu are marked veg. If a pure-veg kitchen matters to your family, ask us on WhatsApp (096467 13555) before you visit."
+    a: "No. Red Wood Farm serves both veg and non-veg food. 131 of the 187 dishes on the menu are marked veg. If a pure-veg kitchen matters to your family, ask us on 096467 13555 before you visit."
   - q: "Are egg dishes marked non-veg on the menu?"
     a: "Yes. The three omelettes in the Sides section carry the non-veg mark. Ice Cream with Brownie is also marked non-veg until we confirm whether the brownie contains egg."
   - q: "What is the cheapest veg dish on the menu?"
@@ -33,7 +33,7 @@ related:
 
 Red Wood Farm on Pakhowal Road, Ludhiana, is a garden restaurant with 131 vegetarian dishes out of 187 on its menu, each with a green veg mark. That covers soups from ₹145, eight tandoori dishes, ten soya champ dishes, 28 veg mains, breads from ₹20 and desserts from ₹35.
 
-We serve non-veg food too, so this is a mixed restaurant. If a pure-veg kitchen matters to your family, ask us on WhatsApp (096467 13555) before you come. Everything below is taken from our current menu, and all prices include GST.
+We serve non-veg food too, so this is a mixed restaurant. If a pure-veg kitchen matters to your family, ask us on 096467 13555 before you come. Everything below is taken from our current menu, and all prices include GST.
 
 ## How many veg dishes are on the menu?
 
@@ -142,4 +142,4 @@ That comes to ₹1,830, GST included. Order more bread as you go.
 
 ## Visit or book a table
 
-Red Wood Farm is at 676, VPO Daad, Pakhowal Road, opposite Cerajot Tiles and near Omaxe Flats. We're open daily from 10:00 AM to 11:00 PM, with tables on an open garden lawn. Takeaway works by phone or WhatsApp on 096467 13555, and that's also where to book a table or plan a [party](../../party/). Directions are on the [Visit page](../../visit/). More food guides are on the [food hub](../).
+Red Wood Farm is at 676, VPO Daad, Pakhowal Road, opposite Cerajot Tiles and near Omaxe Flats. We're open daily from 10:00 AM to 11:00 PM, with tables on an open garden lawn. Takeaway works by phone or message on 096467 13555, and that's also where to book a table or plan a [party](../../party/). Directions are on the [Visit page](../../visit/). More food guides are on the [food hub](../).

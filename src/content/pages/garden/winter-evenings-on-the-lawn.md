@@ -4,7 +4,7 @@ seoTitle: "Winter Dinner Outdoors in Ludhiana | Red Wood Farm"
 description: "Winter dinner outdoors in Ludhiana: what to wear on a December night, hot soups from ₹145, tandoor dishes and seasonal Saag and Gajrela at Red Wood Farm."
 cluster: garden
 query: "winter dinner outdoor ludhiana"
-summary: "In short: Red Wood Farm on outer Pakhowal Road serves dinner on its garden lawn every evening until 11 PM, winter included. Dress warm for December and January, start with a hot soup from ₹145 and order from the tandoor. Message us on WhatsApp before you leave to ask what is set up on the lawn that night."
+summary: "In short: Red Wood Farm on outer Pakhowal Road serves dinner on its garden lawn every evening until 11 PM, winter included. Dress warm for December and January, start with a hot soup from ₹145 and order from the tandoor. Message us before you leave to ask what is set up on the lawn that night."
 updated: 2026-11-17
 images:
   - src: venue/garden-path-night.jpg
@@ -15,11 +15,11 @@ faq:
   - q: "Is Red Wood Farm open for dinner in December and January?"
     a: "Yes. We are open every day from 10:00 AM to 11:00 PM, and that includes the winter months."
   - q: "Can we eat outside on a cold January night?"
-    a: "The lawn is outdoors, so come in a warm jacket and closed shoes. Send us a WhatsApp message on 096467 13555 before you set out to ask what is set up that evening."
+    a: "The lawn is outdoors, so come in a warm jacket and closed shoes. Send us a message on 096467 13555 before you set out to ask what is set up that evening."
   - q: "Is Saag on the menu in winter?"
-    a: "Saag is on our menu at ₹275 and is marked seasonal. Ask us on WhatsApp whether it is being served on the day you plan to come."
+    a: "Saag is on our menu at ₹275 and is marked seasonal. Ask us whether it is being served on the day you plan to come."
   - q: "Can I get soup and tandoor food as takeaway on a cold night?"
-    a: "Yes. Takeaway orders go by phone or WhatsApp on 096467 13555. Soups on the menu start at ₹145."
+    a: "Yes. Takeaway orders go by phone or message on 096467 13555. Soups on the menu start at ₹145."
 related:
   - /garden/
   - /guides/punjabi-winter-food/
@@ -28,7 +28,7 @@ related:
   - /menu/
 ---
 
-For a winter dinner outdoors in Ludhiana, Red Wood Farm serves on its garden lawn on outer Pakhowal Road every evening until 11 PM. In December and January, dress warm, start with a hot soup priced ₹145 to ₹265 and order from the tandoor. Message us on WhatsApp first to ask what is set up on the lawn that night.
+For a winter dinner outdoors in Ludhiana, Red Wood Farm serves on its garden lawn on outer Pakhowal Road every evening until 11 PM. In December and January, dress warm, start with a hot soup priced ₹145 to ₹265 and order from the tandoor. Message us first to ask what is set up on the lawn that night.
 
 ## How cold does a winter night on the lawn feel?
 
@@ -47,7 +47,7 @@ If someone in your group feels the cold badly, plan a shorter sitting. Order the
 
 ## What warming is set up at the venue?
 
-We would rather tell you on the day than promise it on a web page. What we can set up for warmth changes from night to night, so send a WhatsApp message to 096467 13555 before you leave home and ask what is on the lawn that evening. If you are bringing older relatives, ask about the most sheltered table as well.
+We would rather tell you on the day than promise it on a web page. What we can set up for warmth changes from night to night, so send a message to 096467 13555 before you leave home and ask what is on the lawn that evening. If you are bringing older relatives, ask about the most sheltered table as well.
 
 For some events we have put up a covered tent dining area with chandeliers. Whether anything covered is in place on an ordinary dinner night is another good question for the same message.
 
@@ -85,7 +85,7 @@ Three dishes on our menu carry a seasonal mark, and all three belong to a Punjab
 - **Gajrela, 100 g (seasonal), ₹75.** The slow-cooked carrot sweet that shows up on Punjabi tables once the cold sets in.
 - **Malpua Rabri (seasonal), ₹65.** Fried malpua served with rabri.
 
-Seasonal means these dishes are not on every day of the year. If one of them is the reason for your visit, ask us on WhatsApp before you drive out. For more on what Punjab eats in the cold months, read our guide to [Punjabi winter food](../../guides/punjabi-winter-food/).
+Seasonal means these dishes are not on every day of the year. If one of them is the reason for your visit, ask us before you drive out. For more on what Punjab eats in the cold months, read our guide to [Punjabi winter food](../../guides/punjabi-winter-food/).
 
 ## Winter dates worth planning ahead
 
@@ -96,7 +96,7 @@ The cold months bring Christmas, New Year's Eve and Lohri in mid-January. These 
 - We are open 10:00 AM to 11:00 PM every day. An early dinner around 7 PM leaves time to sit without rushing.
 - From Sarabha Nagar the drive is about 6.8 km, roughly 11 minutes by OSRM routing with no traffic. In fog, allow a lot longer. Full routes are on our [visit page](../../visit/).
 - There is no wheelchair access at Red Wood Farm.
-- On a night that feels too cold to sit out, order soups and tandoor dishes for takeaway by phone or WhatsApp.
-- To book a table, send the date, time and number of guests to 096467 13555 on WhatsApp.
+- On a night that feels too cold to sit out, order soups and tandoor dishes for takeaway by phone or message.
+- To book a table, send the date, time and number of guests to 096467 13555.
 
 The full [menu with prices](../../menu/) lists all 187 dishes, each marked veg or non-veg.

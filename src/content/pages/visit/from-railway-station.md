@@ -15,7 +15,7 @@ faq:
   - q: "How far is Red Wood Farm from Ludhiana Railway Station?"
     a: "About 10.7 km by road, according to OSRM route data checked on 17 Nov 2026. OSRM's estimate of about 16 minutes assumes empty roads."
   - q: "Can I take an auto from the station to Red Wood Farm?"
-    a: "Yes. Book an auto or a cab on a ride-hailing app and set Red Wood Farm on Pakhowal Road as the drop point. Ask us on WhatsApp (096467 13555) to share our location so you can forward the pin to the driver."
+    a: "Yes. Book an auto or a cab on a ride-hailing app and set Red Wood Farm on Pakhowal Road as the drop point. Ask us on 096467 13555 to share our location so you can forward the pin to the driver."
   - q: "Is the ISBT bus stand closer to Red Wood Farm than the railway station?"
     a: "Yes. OSRM puts ISBT Ludhiana about 8.2 km away by road, roughly 13 minutes with no traffic, against 10.7 km from the railway station."
   - q: "Which building is Red Wood Farm opposite?"
@@ -53,9 +53,9 @@ Most people arriving by train will book a cab or an auto on a ride-hailing app. 
 
 We can't quote a fare. It depends on the app, the vehicle and the time of day.
 
-### Send "share location" on WhatsApp first
+### Send "share location" first
 
-Before you leave the platform, message us on WhatsApp at 096467 13555 and ask us to share our location. Open the pin in your maps app, or forward it straight to your driver. It saves a roadside phone call and points the car at the right gate.
+Before you leave the platform, message us at 096467 13555 and ask us to share our location. Open the pin in your maps app, or forward it straight to your driver. It saves a roadside phone call and points the car at the right gate.
 
 ## Driving your own car
 
@@ -70,7 +70,7 @@ A note for families travelling with an older relative or a wheelchair user: Red 
 ## Before you head out from the station
 
 - We are open from 10:00 AM to 11:00 PM, every day.
-- For a table or a party, send your date, time and number of guests on WhatsApp or call 096467 13555.
+- For a table or a party, send your date, time and number of guests to 096467 13555, or call the same number.
 - Hungry after a long journey: our [full menu](../../menu/) lists every dish with its price, GST included.
 - Coming in from the Ferozepur Road side instead: the [Bharat Nagar Chowk route](../from-ferozepur-road/) shares most of these roads.
 - For the bigger picture of the road we sit on, read the [Pakhowal Road guide](../pakhowal-road-guide/).

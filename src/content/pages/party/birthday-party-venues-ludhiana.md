@@ -4,7 +4,7 @@ seoTitle: "Birthday Party Places in Ludhiana: A Guide | Red Wood Farm"
 description: "How to pick a birthday party place in Ludhiana for kids or adults, what to ask about price, and how a birthday on Red Wood Farm's garden lawn is booked."
 cluster: party
 query: "birthday party places in ludhiana"
-summary: "In short: pick a birthday venue in Ludhiana by guest count, time of day and the food cost per head, then check the space and the drive for most guests. Red Wood Farm hosts birthdays on its garden lawn on outer Pakhowal Road, open 10 AM to 11 PM daily. Party prices depend on your menu, so ask on WhatsApp at 096467 13555."
+summary: "In short: pick a birthday venue in Ludhiana by guest count, time of day and the food cost per head, then check the space and the drive for most guests. Red Wood Farm hosts birthdays on its garden lawn on outer Pakhowal Road, open 10 AM to 11 PM daily. Party prices depend on your menu, so ask at 096467 13555."
 updated: 2026-11-17
 images:
   - src: venue/birthday-arch.jpg
@@ -13,11 +13,11 @@ images:
     alt: "Pink and blue balloon frame around a Happy Birthday backdrop inside a draped tent set up for a birthday at Red Wood Farm"
 faq:
   - q: "Can we celebrate a child's birthday at Red Wood Farm?"
-    a: "Yes. Children's birthdays run on the garden lawn, where kids have space on the grass. The menu has simple picks like French Fries (₹195) and Hakka Noodles (₹255). Send the date and guest count on WhatsApp to 096467 13555."
+    a: "Yes. Children's birthdays run on the garden lawn, where kids have space on the grass. The menu has simple picks like French Fries (₹195) and Hakka Noodles (₹255). Send the date and guest count to 096467 13555."
   - q: "How much does a birthday party cost at Red Wood Farm?"
-    a: "It depends on what you order and how many guests come. Menu prices include GST and run from ₹20 to ₹925 a dish. For a party quote on your date, ask us on WhatsApp at 096467 13555."
+    a: "It depends on what you order and how many guests come. Menu prices include GST and run from ₹20 to ₹925 a dish. For a party quote on your date, ask us at 096467 13555."
   - q: "Can I bring my own cake and balloons?"
-    a: "Ask us on WhatsApp (096467 13555) when you book. We confirm what is allowed for your date and where the cake table can go."
+    a: "Ask us on 096467 13555 when you book. We confirm what is allowed for your date and where the cake table can go."
   - q: "Is Red Wood Farm wheelchair accessible?"
     a: "No. Red Wood Farm has no wheelchair access at the moment, so please check with older or less mobile guests before you book."
 related:
@@ -45,7 +45,7 @@ Search results for this lean on directory sites that list banquet halls, cafes a
 
 Most venues in the city quote a price per guest, often bundled with decoration, that moves with the date and the guest count. Before you compare quotes, ask each venue what is included: starters, dessert, decoration, the time slot and taxes. Two quotes that look far apart often cover different things.
 
-At Red Wood Farm the party price depends on the menu you pick and how many guests come, so we quote it on WhatsApp for your date. What we can show up front is the full [menu with prices](../../menu/), GST included, so you can see what a table of food costs before you call. For a rough sense of what a party adds up to, read our [birthday party budget guide](../../guides/birthday-party-budget/).
+At Red Wood Farm the party price depends on the menu you pick and how many guests come, so we quote it for your date. What we can show up front is the full [menu with prices](../../menu/), GST included, so you can see what a table of food costs before you call. For a rough sense of what a party adds up to, read our [birthday party budget guide](../../guides/birthday-party-budget/).
 
 ## Birthday places for kids: space and food
 
@@ -73,7 +73,7 @@ Around the set-up, the grounds do a lot of the work:
 - Tables sit on the open lawn, under palm trees, and in a low lounge corner under string lights.
 - A covered tent dining area with chandeliers has been set up for past events. Ask whether one is possible for your date.
 
-Who arranges the decoration, us or your own decorator, is something to settle on WhatsApp when you book.
+Who arranges the decoration, us or your own decorator, is something to settle when you book.
 
 Guests on Google have called it a "Great place for family party and social events" (Kala Chahal). Our rating there was 4.2 from 72 reviews on 14 Nov 2026.
 
@@ -87,11 +87,11 @@ There is no wheelchair access. Check with older relatives before you send the in
 
 1. Message or call 096467 13555 with the date, the start time and the number of guests.
 2. We reply with what is possible that day and the menu options for your group.
-3. Agree the menu, the slot and any decoration plans in one WhatsApp thread, so nobody has to remember a phone call.
+3. Agree the menu, the slot and any decoration plans in one message thread, so nobody has to remember a phone call.
 4. Share the location pin in your family group.
 
-Nothing is booked or stored through the website. It all happens on WhatsApp or phone.
+Nothing is booked or stored through the website. It all happens or phone.
 
 ## Plan your birthday with us
 
-We are open every day from 10:00 AM to 11:00 PM, so a lunch party and a late dinner are both on the table. Send your date and guest count on WhatsApp to 096467 13555, and see more real set-ups on our [party page](../).
+We are open every day from 10:00 AM to 11:00 PM, so a lunch party and a late dinner are both on the table. Send your date and guest count to 096467 13555, and see more real set-ups on our [party page](../).

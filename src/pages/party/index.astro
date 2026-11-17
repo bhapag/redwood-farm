@@ -7,7 +7,7 @@ import Icon from '../../components/Icon.astro';
 import { Picture, getImage } from 'astro:assets';
 import BlurHeading from '../../components/BlurHeading.astro';
 import ScrollWords from '../../components/ScrollWords.astro';
-import PartyStack from '../../components/rb/PartyStack';
+import CardStack from '../../components/CardStack.astro';
 import Spark from '../../components/rb/Spark';
 import { site, waLink } from '../../data/site.js';
 import { partyFaq, faqSchema } from '../../data/faq.js';
@@ -29,23 +29,19 @@ const types = [
   { img: family, alt: 'A draped tent with dining tables and chandeliers set up for a family function', h: 'Family functions', p: 'Anniversaries, get-togethers and family celebrations, with food from our own kitchen.', msg: 'Family function' },
   { img: corporate, alt: 'Long wooden tables set up on the lawn for a daytime gathering', h: 'Corporate lunches', p: 'Team lunches and office get-togethers, away from the city, from 10 AM.', msg: 'Corporate lunch' },
 ];
-const typeCards = await Promise.all(types.map(async (t) => ({
-  h: t.h, p: t.p, alt: t.alt, cta: `Ask about a ${t.msg.toLowerCase()}`,
-  href: waLink(`Hello Red Wood Farm, I would like to plan a ${t.msg.toLowerCase()}. Date: , Time: , Guests: `),
-  img: (await getImage({ src: t.img, width: 760, height: 570, fit: 'cover', format: 'webp', quality: 72 })).src,
-})));
+const typeCards = types.map((t) => ({ img: t.img, alt: t.alt, h: t.h, p: t.p, cta: `Ask about a ${t.msg.toLowerCase()}`, href: waLink(`Hello Red Wood Farm, I would like to plan a ${t.msg.toLowerCase()}. Date: , Time: , Guests: `) }));
 const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
   { '@type': 'ListItem', position: 1, name: 'Home', item: abs(`/`) },
   { '@type': 'ListItem', position: 2, name: 'Parties & Events', item: pageUrl },
 ] };
 ---
-<Base title="Birthday & Kitty Party Venue in Ludhiana | Red Wood Farm Lawn" description="Birthday parties, kitty parties, family functions and team lunches on a fairy-lit garden lawn on Pakhowal Road, Ludhiana. Food from our own kitchen. Enquire on WhatsApp." schema={[faqSchema(partyFaq), crumbs]} og="og-party.jpg" current="Parties">
+<Base title="Birthday & Kitty Party Venue in Ludhiana | Red Wood Farm Lawn" description="Birthday parties, kitty parties, family functions and team lunches on a fairy-lit garden lawn on Pakhowal Road, Ludhiana. Food from our own kitchen. Enquire with a message." schema={[faqSchema(partyFaq), crumbs]} og="og-party.jpg" current="Parties">
   <section class="p-hero tone-night">
     <div class="p-hero-copy">
       <BlurHeading as="h1" class="p-title" text="Birthday, kitty and family parties on the lawn" />
-      <p class="p-lede">Red Wood Farm is a garden party venue on outer Pakhowal Road, Ludhiana. We host birthday parties, kitty parties, family functions and corporate lunches on a fairy-lit lawn, with food from our own kitchen. To book, send your date, time and guest count on WhatsApp.</p>
+      <p class="p-lede">Red Wood Farm is a garden party venue on outer Pakhowal Road, Ludhiana. We host birthday parties, kitty parties, family functions and corporate lunches on a fairy-lit lawn, with food from our own kitchen. To book, send your date, time and guest count.</p>
       <div class="btns">
-        <a class="btn red" href="#enquire"><Icon name="wa" />Enquire on WhatsApp</a>
+        <a class="btn red" href="#enquire"><Icon name="wa" />Plan your party</a>
         <a class="btn ghost" href={site.tel}><Icon name="call" />Call {site.phoneDisplay}</a>
       </div>
     </div>
@@ -55,17 +51,17 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', it
   <section class="section tone-paper" aria-labelledby="types-h">
     <div class="wrap">
       <ScrollWords id="types-h" class="p-h2" text="What we host" />
-      <PartyStack client:visible items={typeCards} />
+      <CardStack items={typeCards} />
     </div>
   </section>
 
   <section class="section tone-green" aria-labelledby="how-h">
     <div class="wrap">
       <ScrollWords id="how-h" class="p-h2" text="How booking works" />
-      <p class="muted">Four messages on WhatsApp. There are no forms to fill in on this website.</p>
+      <p class="muted">Four messages. There are no forms to fill in on this website.</p>
       <ol class="steps">
         <li data-reveal><b>Tell us the occasion</b><span>Birthday, kitty party, family function or team lunch.</span></li>
-        <li data-reveal><b>Share date, time and guests</b><span>We reply on WhatsApp with what is possible on that day.</span></li>
+        <li data-reveal><b>Share date, time and guests</b><span>We reply by message with what is possible on that day.</span></li>
         <li data-reveal><b>Choose the menu</b><span>Pick dishes from our menu, veg and non-veg. We confirm the price per plate for your group.</span></li>
         <li data-reveal><b>Come and celebrate</b><span>The lawn and the lights are ready when your guests arrive.</span></li>
       </ol>
@@ -75,9 +71,9 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', it
   <section id="enquire" class="section tone-night enquire" aria-labelledby="enq-h">
     <div class="wrap split">
       <div>
-        <ScrollWords id="enq-h" class="p-h2" text="Plan your party on WhatsApp" />
-        <p class="muted">Fill this in and it opens WhatsApp with your message ready to send. Nothing is saved on this website.</p>
-        <p class="muted">Guest capacity, per-plate prices and packages: ask us on WhatsApp and we will share current details for your date.</p>
+        <ScrollWords id="enq-h" class="p-h2" text="Plan your party" />
+        <p class="muted">Fill this in and it opens a chat with your message ready ready to send. Nothing is saved on this website.</p>
+        <p class="muted">Guest capacity, per-plate prices and packages: ask us and we will share current details for your date.</p>
       </div>
       <form class="enq" data-enquiry action={site.wa} method="get" target="_blank">
         <label>Occasion
@@ -96,7 +92,7 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', it
         <label>Number of guests<input type="number" name="guests" min="1" max="2000" inputmode="numeric" required placeholder="e.g. 40" /></label>
         <label>Anything else (optional)<textarea name="note" rows="3" maxlength="400" placeholder="Veg only, a theme, a cake table..."></textarea></label>
         <input type="hidden" name="text" />
-        <Spark client:interact><button class="btn red" type="submit"><Icon name="wa" />Send on WhatsApp</button></Spark>
+        <Spark client:interact><button class="btn red" type="submit"><Icon name="wa" />Send your request</button></Spark>
       </form>
     </div>
   </section>
@@ -185,21 +181,9 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', it
   @media (min-width: 900px) { .gal { grid-template-columns: 3fr 4fr; } .gal .g-b, .gal .g-d { grid-column: auto; aspect-ratio: 4 / 3; } .gal .g-a, .gal .g-c { aspect-ratio: 4 / 3; } }
   .faq-wrap { display: grid; gap: 24px; }
   @media (min-width: 900px) { .faq-wrap { grid-template-columns: 4fr 7fr; gap: 64px; } }
-  /* React Bits islands on Parties */
+  /* Parties */
   .p-hero :global(.p-title) { font-size: var(--t-1); max-width: 14ch; line-height: 1.04; margin: 0 0 0.45em; }
   :global(.p-h2.scroll-words) { font-size: var(--t-2); }
-  section :global(.pstack) { margin-top: 32px; }
-  section :global(.scroll-stack__inner) { padding-inline: 0; }
-  section :global(.pstack-card) { height: auto; padding: 0; border-radius: 14px; overflow: hidden; background: #fff; color: var(--ink); display: grid; }
-  section :global(.pstack-card img) { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
-  section :global(.pstack-panel) { padding: 18px 20px 22px; }
-  section :global(.pstack-panel h3) { font-size: var(--t-3); margin: 0 0 6px; }
-  section :global(.pstack-panel p) { color: var(--ink-mute); margin: 0 0 10px; }
-  @media (min-width: 900px) {
-    section :global(.pstack) { max-width: 1000px; margin-inline: auto; }
-    section :global(.pstack-card) { grid-template-columns: 1.2fr 1fr; align-items: center; }
-    section :global(.pstack-card img) { height: 100%; aspect-ratio: auto; min-height: 380px; }
-  }
   .enq :global(.rb-spark) { justify-self: start; }
 
 </style>

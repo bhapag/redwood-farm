@@ -4,7 +4,7 @@ seoTitle: "Corporate Team Lunch Venue in Ludhiana | Red Wood Farm"
 description: "For an office team lunch in Ludhiana, see real Red Wood Farm menu prices for platters, half and full curries and breads, plus Wi-Fi and a 10 AM opening."
 cluster: party
 query: "corporate team lunch venue ludhiana"
-summary: "In short: for a corporate team lunch in Ludhiana, pick a place that opens early, seats the team together and shows its prices. Red Wood Farm serves from 10 AM daily on outer Pakhowal Road, has Wi-Fi, platters from ₹525 and half portions on many curries. Book the table on WhatsApp at 096467 13555."
+summary: "In short: for a corporate team lunch in Ludhiana, pick a place that opens early, seats the team together and shows its prices. Red Wood Farm serves from 10 AM daily on outer Pakhowal Road, has Wi-Fi, platters from ₹525 and half portions on many curries. Book the table at 096467 13555."
 updated: 2026-11-17
 images:
   - src: venue/day-long-tables.jpg
@@ -17,11 +17,11 @@ faq:
   - q: "Does Red Wood Farm have Wi-Fi for a working lunch?"
     a: "Yes. Wi-Fi is available, which helps if part of the team needs to stay online during a lunch meeting."
   - q: "Can our office order takeaway instead of coming in?"
-    a: "Yes. Takeaway orders are taken by phone or WhatsApp on 096467 13555, and you collect them from the restaurant on Pakhowal Road."
+    a: "Yes. Takeaway orders are taken by phone or message on 096467 13555, and you collect them from the restaurant on Pakhowal Road."
   - q: "Do the menu prices include GST?"
     a: "Yes. Every price on the Red Wood Farm menu is in rupees and already includes GST, which keeps the office expense claim simple."
   - q: "Is there a set corporate lunch menu or a fixed price per person?"
-    a: "Corporate pricing depends on the dishes and the size of the team. Ask us on WhatsApp at 096467 13555 for what applies to your date."
+    a: "Corporate pricing depends on the dishes and the size of the team. Ask us at 096467 13555 for what applies to your date."
 related:
   - /party/
   - /menu/
@@ -35,7 +35,7 @@ For a corporate team lunch in Ludhiana, choose a venue that opens before noon, s
 
 ## What a team lunch costs here
 
-We don't publish a per-person corporate rate. Your bill is simply what the table orders from the [full menu](../../menu/), and every price there is final, GST included. That makes it easy for whoever holds the budget to estimate the spend before booking. If you need a quote for a large team or a fixed menu, ask us on WhatsApp.
+We don't publish a per-person corporate rate. Your bill is simply what the table orders from the [full menu](../../menu/), and every price there is final, GST included. That makes it easy for whoever holds the budget to estimate the spend before booking. If you need a quote for a large team or a fixed menu, ask us.
 
 The sections below pull the dishes that work best for a group, with exact prices.
 
@@ -105,11 +105,11 @@ For a team coming from several offices, share the pin in the group chat and ask 
 - Note how many are vegetarian and any dish someone avoids.
 - Fix a start time and a hard stop if people have afternoon meetings.
 - Decide in advance whether the team orders from the menu at the table or you agree a short list of dishes when you book.
-- Keep the booking details in one WhatsApp chat so a colleague can take over if you are out.
+- Keep the booking details in one chat so a colleague can take over if you are out.
 
 ## Ordering for a group
 
-When you book, send the date, the arrival time, the headcount and how many are vegetarian. That lets us tell you what is possible for the slot. If part of the team can't make the trip, takeaway is also an option: order by phone or WhatsApp and collect.
+When you book, send the date, the arrival time, the headcount and how many are vegetarian. That lets us tell you what is possible for the slot. If part of the team can't make the trip, takeaway is also an option: order by phone or message and collect.
 
 Red Wood Farm held a Google rating of 4.2 from 72 reviews on 14 Nov 2026, if your admin team likes to check before booking.
 

@@ -4,7 +4,7 @@ seoTitle: "How Much to Order for a Group, Half vs Full | Red Wood Farm"
 description: "How Half and Full portions work on the Red Wood Farm menu, with sample orders for 4, 8 and 15 people using real dishes and GST-inclusive prices."
 cluster: food
 query: "how much to order for a group, half vs full"
-summary: "At Red Wood Farm, 24 main-course dishes come in Half and Full; everything else has one price. As general guidance, order one starter or platter and one main for every three or four people, about two breads each, and add rice and raita for larger tables. Takeaway group orders go by phone or WhatsApp."
+summary: "At Red Wood Farm, 24 main-course dishes come in Half and Full; everything else has one price. As general guidance, order one starter or platter and one main for every three or four people, about two breads each, and add rice and raita for larger tables. Takeaway group orders go by phone or message."
 updated: 2026-11-17
 images:
   - src: food/nonveg_platter.jpg
@@ -16,8 +16,8 @@ faq:
     a: "The menu doesn't print portion weights, so we can't promise an exact ratio. On price, a Full costs less than two Halves for every dish except Shahi Mutton. Ask us how much a Full serves before a big order."
   - q: "Does Dal Makhni come in a Half portion?"
     a: "No. Dal Makhni has one price, ₹275. So do the other dals: Yellow Dal Tadka, Dal Missi Tadka and Dal Handi are ₹245 each."
-  - q: "Can I place a group takeaway order on WhatsApp?"
-    a: "Yes. Send the dish names, Half or Full where it applies, and your pickup time to 096467 13555 on WhatsApp, or call the same number."
+  - q: "Can I place a group takeaway order?"
+    a: "Yes. Send the dish names, Half or Full where it applies, and your pickup time to 096467 13555, or call the same number."
   - q: "Do the sample totals include GST?"
     a: "Yes. Every menu price already includes GST, so the totals on this page are the sum of menu prices with nothing added for tax."
 related:
@@ -134,7 +134,7 @@ Breads have one price each, from ₹20 for a Tandoori Roti or Tawa Roti up to �
 
 ## How do you order a group takeaway?
 
-Takeaway is ordered by phone or WhatsApp on 096467 13555. To get it right the first time:
+Takeaway is ordered by phone or message on 096467 13555. To get it right the first time:
 
 1. Write each dish as it appears on the menu.
 2. Mark Half or Full for every main that has both.
@@ -143,4 +143,4 @@ Takeaway is ordered by phone or WhatsApp on 096467 13555. To get it right the fi
 
 ## Get help with a big order
 
-If you're unsure how much to order, send us your headcount and the mix of veg and non-veg eaters on [WhatsApp](https://wa.me/919646713555). We'll help you trim or add before you place it. Find us at 676, VPO Daad, Pakhowal Road, near Omaxe Flats.
+If you're unsure how much to order, send us your headcount and the mix of veg and non-veg eaters on [message us](https://wa.me/919646713555). We'll help you trim or add before you place it. Find us at 676, VPO Daad, Pakhowal Road, near Omaxe Flats.

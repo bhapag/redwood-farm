@@ -19,7 +19,7 @@ faq:
   - q: "Is there vegetarian tandoori food at Red Wood Farm?"
     a: "Yes. The Tandoori section has eight veg dishes, from Aloo Nazakat (₹245) to Mushroom Tikka (₹395), and the Champ section adds ten soya chaap dishes. Every dish carries a veg or non-veg mark."
   - q: "Can I order tandoori food for takeaway?"
-    a: "Yes. Call or WhatsApp 096467 13555 with your order and a pickup time. We are open every day from 10:00 AM to 11:00 PM."
+    a: "Yes. Call or message 096467 13555 with your order and a pickup time. We are open every day from 10:00 AM to 11:00 PM."
 related:
   - /food/
   - /menu/
@@ -78,7 +78,7 @@ The platters suit a table that wants to share. Two are tandoori platters by name
 - **Tandoori Veg Platter** ₹525
 - **Tandoori Non-Veg** ₹725
 
-The same section also lists a **Non-Veg Platter** at ₹775 and a **Chinese Veg Platter** at ₹575. The menu doesn't spell out which items go on each platter. If you want to know before you order, ask us on WhatsApp (096467 13555) or ask your server at the table.
+The same section also lists a **Non-Veg Platter** at ₹775 and a **Chinese Veg Platter** at ₹575. The menu doesn't spell out which items go on each platter. If you want to know before you order, ask us on 096467 13555 or ask your server at the table.
 
 A platter costs more than a single tandoori dish, so it makes most sense for four or more people, or for a group that can't settle on one starter.
 
@@ -118,8 +118,8 @@ For a bigger group, such as a birthday or a family dinner of fifteen, message us
 
 Red Wood Farm has tables on an open garden lawn under string lights. A plate of tandoori starters is an easy way to begin a meal outside. Read more about the lawn on our [open-air dining page](../../garden/open-air-dining-ludhiana/).
 
-If you'd rather eat at home, takeaway is available. Call or WhatsApp your order to 096467 13555 and tell us when you'll pick it up.
+If you'd rather eat at home, takeaway is available. Call or message your order to 096467 13555 and tell us when you'll pick it up.
 
 ## Plan your visit
 
-Red Wood Farm is at 676, VPO Daad, Pakhowal Road, opposite Cerajot Tiles and near Omaxe Flats. We're open every day from 10:00 AM to 11:00 PM. To book a table, send the date, time and number of people on WhatsApp to 096467 13555. Directions are on the [Visit page](../../visit/), and every dish with its price is on the [full menu](../../menu/). For the rest of our food guides, go to the [food hub](../).
+Red Wood Farm is at 676, VPO Daad, Pakhowal Road, opposite Cerajot Tiles and near Omaxe Flats. We're open every day from 10:00 AM to 11:00 PM. To book a table, send the date, time and number of people to 096467 13555. Directions are on the [Visit page](../../visit/), and every dish with its price is on the [full menu](../../menu/). For the rest of our food guides, go to the [food hub](../).

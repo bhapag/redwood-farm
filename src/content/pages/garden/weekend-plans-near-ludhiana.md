@@ -78,7 +78,7 @@ With children along, our page on a [family outing with kids](../family-outing-wi
 
 ## Planning a weekend get-together with friends
 
-A weekend lunch is a good excuse to gather old classmates or the cousins who never make it to the same city at once. For a group, send us the date, time and number of guests on WhatsApp, and tell us if it is a reunion or a celebration. Our page on [reunions and get-togethers](../../party/reunion-get-together/) explains how we host groups on the lawn.
+A weekend lunch is a good excuse to gather old classmates or the cousins who never make it to the same city at once. For a group, send us the date, time and number of guests, and tell us if it is a reunion or a celebration. Our page on [reunions and get-togethers](../../party/reunion-get-together/) explains how we host groups on the lawn.
 
 ## What about a weekend getaway near Ludhiana?
 
@@ -89,5 +89,5 @@ Searches for weekend getaways near Ludhiana usually turn up hill towns that take
 - Address: 676, VPO Daad, Pakhowal Road, opposite Cerajot Tiles, near Omaxe Flats, Ludhiana 142022.
 - Open 10:00 AM to 11:00 PM, every day of the week.
 - There is no wheelchair access.
-- Weekend tables are booked on WhatsApp or by phone at 096467 13555.
+- Weekend tables are booked by message or phone at 096467 13555.
 - Takeaway orders go the same way if you would rather eat at home.

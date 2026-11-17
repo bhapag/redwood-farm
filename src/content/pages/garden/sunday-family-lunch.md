@@ -1,10 +1,10 @@
 ---
 title: "Sunday family lunch in Ludhiana on a garden lawn"
 seoTitle: "Sunday Lunch in Ludhiana for Families | Red Wood Farm"
-description: "Sunday lunch in Ludhiana for the family: open from 10 AM daily, daytime tables on a garden lawn, Half and Full curries for sharing and WhatsApp booking."
+description: "Sunday lunch in Ludhiana for the family: open from 10 AM daily, daytime tables on a garden lawn, Half and Full curries for sharing and table booking."
 cluster: garden
 query: "sunday lunch ludhiana family"
-summary: "In short: Red Wood Farm opens at 10 AM every day, Sunday included, and serves lunch on a daytime garden lawn on outer Pakhowal Road. Many curries come in Half and Full portions, which makes it easy to share across a big table. Large families should book on WhatsApp at 096467 13555 with the date, time and number of guests."
+summary: "In short: Red Wood Farm opens at 10 AM every day, Sunday included, and serves lunch on a daytime garden lawn on outer Pakhowal Road. Many curries come in Half and Full portions, which makes it easy to share across a big table. Large families should book with a message at 096467 13555 with the date, time and number of guests."
 updated: 2026-11-17
 images:
   - src: venue/day-lounge.jpg
@@ -17,7 +17,7 @@ faq:
   - q: "Can we come for parathas in the late morning?"
     a: "Yes, we open at 10 AM. The menu has Aloo Paratha with Butter at ₹50, Cheese Paratha with Butter at ₹60 and omelettes with 2 slices from ₹70."
   - q: "How many people does a Full portion feed?"
-    a: "We do not publish serving counts, because appetites differ. Tell us your group size on WhatsApp and we can suggest how many Halfs or Fulls to order."
+    a: "We do not publish serving counts, because appetites differ. Tell us your group size and we can suggest how many Halfs or Fulls to order."
   - q: "Do vegetarians and non-vegetarians eat at the same table?"
     a: "Yes. Every dish on our menu is marked veg or non-veg, so a mixed family can order with confidence."
 related:
@@ -28,7 +28,7 @@ related:
   - /menu/
 ---
 
-For a Sunday family lunch in Ludhiana, Red Wood Farm opens at 10 AM every day, Sundays included, with tables on a daytime garden lawn on outer Pakhowal Road. Many curries come in Half and Full portions, so a big family can share more dishes. For a large group, book on WhatsApp at 096467 13555.
+For a Sunday family lunch in Ludhiana, Red Wood Farm opens at 10 AM every day, Sundays included, with tables on a daytime garden lawn on outer Pakhowal Road. Many curries come in Half and Full portions, so a big family can share more dishes. For a large group, book with a message at 096467 13555.
 
 ## What time should you arrive for Sunday lunch?
 
@@ -77,10 +77,10 @@ Every dish on our menu carries a veg or non-veg mark, which helps when grandpare
 
 ## Booking a Sunday table for a big family
 
-Send three things on WhatsApp to 096467 13555: the date, the time you plan to arrive and the number of guests. We will confirm what we can arrange. A few practical points:
+Send three things to 096467 13555: the date, the time you plan to arrive and the number of guests. We will confirm what we can arrange. A few practical points:
 
 - Red Wood Farm has no wheelchair access, so plan accordingly if an older relative uses one.
-- If someone cannot make it, takeaway orders go by phone or WhatsApp.
+- If someone cannot make it, takeaway orders go by phone or message.
 - If the lunch is really a celebration, such as a roka or an anniversary, our page on [small family functions](../../party/small-family-functions/) covers how we host those.
 
 To find us, head for VPO Daad on Pakhowal Road. We are at number 676, facing Cerajot Tiles, with Omaxe Flats close by. You can check every price before you come on our [menu page](../../menu/).

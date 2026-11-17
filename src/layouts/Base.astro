@@ -32,7 +32,7 @@ const venue = {
   servesCuisine: ['North Indian', 'Tandoor', 'Indo-Chinese'],
   hasMenu: abs(`/menu/`),
   acceptsReservations: site.wa,
-  potentialAction: { '@type': 'ReserveAction', target: { '@type': 'EntryPoint', urlTemplate: site.wa, actionPlatform: ['http://schema.org/DesktopWebPlatform', 'http://schema.org/MobileWebPlatform'] }, result: { '@type': 'FoodEstablishmentReservation', name: 'Table or party enquiry on WhatsApp' } },
+  potentialAction: { '@type': 'ReserveAction', target: { '@type': 'EntryPoint', urlTemplate: site.wa, actionPlatform: ['http://schema.org/DesktopWebPlatform', 'http://schema.org/MobileWebPlatform'] }, result: { '@type': 'FoodEstablishmentReservation', name: 'Table or party enquiry' } },
   amenityFeature: [
     { '@type': 'LocationFeatureSpecification', name: 'Takeaway', value: true },
     { '@type': 'LocationFeatureSpecification', name: 'Wi-Fi', value: true },
@@ -43,11 +43,14 @@ const venue = {
 };
 const graphs = [venue, ...schema];
 const nav = [
+  ['Home', '/'],
   ['Menu', '/menu/'],
   ['Parties', '/party/'],
   ['Visit', '/visit/'],
   ['Guides', '/guides/'],
 ];
+const isHome = Astro.url.pathname.replace(/\/+$/, '') === import.meta.env.BASE_URL.replace(/\/+$/, '');
+const isCur = (l) => current === l || (l === 'Home' && isHome);
 const sheetMore = [
   ['Food guides', '/food/'],
   ['The garden', '/garden/'],
@@ -91,6 +94,7 @@ const bookMsg = 'Hello Red Wood Farm, I would like to book a table.';
   <!-- Analytics placeholder: Google Analytics is not set up yet. Add the GA4 tag here after the owner approves it. -->
 </head>
 <body>
+  <div class="scroll-line" aria-hidden="true"></div>
   <a class="skip" href="#main">Skip to content</a>
   <header class="site-head" data-head data-solid={overHero ? undefined : ''}>
     <a class="brand" href={u('/')} aria-label="Red Wood Farm, home">
@@ -98,8 +102,8 @@ const bookMsg = 'Hello Red Wood Farm, I would like to book a table.';
       <span>Red Wood Farm</span>
     </a>
     <nav class="nav" aria-label="Main">
-      {nav.map(([l, h]) => <a href={u(h)} aria-current={current === l ? 'page' : undefined}>{l}</a>)}
-      <Magnet client:media="(hover: hover) and (pointer: fine)" padding={60} magnetStrength={4}><a class="btn red" href={waLink(bookMsg)} target="_blank" rel="noopener"><Icon name="wa" />Book on WhatsApp</a></Magnet>
+      {nav.map(([l, h]) => <a href={u(h)} aria-current={isCur(l) ? 'page' : undefined}>{l}</a>)}
+      <Magnet client:media="(hover: hover) and (pointer: fine)" padding={60} magnetStrength={4}><a class="btn red" href={waLink(bookMsg)} target="_blank" rel="noopener"><Icon name="wa" />Book a table</a></Magnet>
     </nav>
     <button class="menu-btn" type="button" aria-haspopup="dialog" aria-controls="sheet" data-sheet-open><Icon name="burger" />Menu</button>
   </header>
@@ -112,14 +116,14 @@ const bookMsg = 'Hello Red Wood Farm, I would like to book a table.';
     <nav aria-label="Site">
       <ul>
         <li><a href={u('/')}>Home <Icon name="arrow" /></a></li>
-        {nav.map(([l, h]) => <li><a href={u(h)} aria-current={current === l ? 'page' : undefined}>{l === 'Menu' ? 'Menu and prices' : l} <Icon name="arrow" /></a></li>)}
+        {nav.map(([l, h]) => <li><a href={u(h)} aria-current={isCur(l) ? 'page' : undefined}>{l === 'Menu' ? 'Menu and prices' : l} <Icon name="arrow" /></a></li>)}
       </ul>
       <ul class="sheet-small">
         {sheetMore.map(([l, h]) => <li><a href={u(h)}>{l} <Icon name="arrow" /></a></li>)}
       </ul>
     </nav>
     <div class="sheet-actions">
-      <a class="btn" href={waLink(bookMsg)} target="_blank" rel="noopener"><Icon name="wa" />WhatsApp</a>
+      <a class="btn" href={waLink(bookMsg)} target="_blank" rel="noopener"><Icon name="wa" />Book a table</a>
       <a class="btn" href={site.tel}><Icon name="call" />Call</a>
     </div>
   </dialog>
@@ -133,7 +137,7 @@ const bookMsg = 'Hello Red Wood Farm, I would like to book a table.';
         <p>{site.story}, Ludhiana.</p>
         <address>
           {site.address.full}<br />
-          <a href={site.tel}>{site.phoneDisplay}</a> (call or WhatsApp)<br />
+          <a href={site.tel}>{site.phoneDisplay}</a> (call or message)<br />
           {site.hoursDisplay}
         </address>
       </div>
@@ -170,7 +174,7 @@ const bookMsg = 'Hello Red Wood Farm, I would like to book a table.';
     <a href={u('/menu/')}><Icon name="menu" />Menu</a>
     <a href={site.tel}><Icon name="call" />Call</a>
     <a href={site.directionsUrl} target="_blank" rel="noopener"><Icon name="pin" />Directions</a>
-    <a class="wa" href={waLink(bookMsg)} target="_blank" rel="noopener"><Icon name="wa" />WhatsApp</a>
+    <a class="wa" href={waLink(bookMsg)} target="_blank" rel="noopener"><Icon name="wa" />Book a table</a>
   </nav>
 
   <script>

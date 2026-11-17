@@ -21,7 +21,7 @@ faq:
   - q: "Is the tunnel wheelchair accessible?"
     a: "No. Red Wood Farm has no wheelchair access, so plan around that before you travel."
   - q: "Do I need to book to see the tunnel in the evening?"
-    a: "We take table bookings on WhatsApp or by phone at 096467 13555. Send the date, time and number of guests."
+    a: "We take table bookings by message or phone at 096467 13555. Send the date, time and number of guests."
 related:
   - /garden/
   - /garden/an-evening-on-the-lawn/
@@ -80,7 +80,7 @@ Other parts of the grounds light up too. Palms along the driveway are wrapped in
 
 ## Can the tunnel be part of a party evening?
 
-Our own photos show birthday set-ups and small family functions on the lawn. If you're planning one, ask us on WhatsApp how the lit garden and the tunnel fit into your evening, and how timing works for photos before guests sit down to eat. Our [party page](../../party/) explains how bookings work.
+Our own photos show birthday set-ups and small family functions on the lawn. If you're planning one, ask us how the lit garden and the tunnel fit into your evening, and how timing works for photos before guests sit down to eat. Our [party page](../../party/) explains how bookings work.
 
 ## What should you know before you go?
 
@@ -91,4 +91,4 @@ Our own photos show birthday set-ups and small family functions on the lawn. If 
 
 ## Book an evening table
 
-Send your date, time and number of guests to [WhatsApp 096467 13555](https://wa.me/919646713555) to book a table after dark. For directions, see our [visit page](../../visit/). We're at 676, VPO Daad, Pakhowal Road, opposite Cerajot Tiles.
+Send your date, time and number of guests to [096467 13555](https://wa.me/919646713555) to book a table after dark. For directions, see our [visit page](../../visit/). We're at 676, VPO Daad, Pakhowal Road, opposite Cerajot Tiles.

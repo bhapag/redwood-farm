@@ -4,7 +4,7 @@ seoTitle: "School College Farewell Party Venue Ludhiana | Red Wood Farm"
 description: "Plan a school or college farewell in Ludhiana on a daytime garden lawn. Student-friendly menu prices from ₹20, group ordering tips and notes for parents."
 cluster: party
 query: "school college farewell party venue ludhiana"
-summary: "Red Wood Farm on outer Pakhowal Road hosts school and college farewells on its garden lawn, and its 10 AM opening suits a daytime party. Students order from the regular menu, where breads start at ₹20 and every price includes GST. It is a family restaurant, so parents and teachers are welcome too. Book on WhatsApp at 096467 13555."
+summary: "Red Wood Farm on outer Pakhowal Road hosts school and college farewells on its garden lawn, and its 10 AM opening suits a daytime party. Students order from the regular menu, where breads start at ₹20 and every price includes GST. It is a family restaurant, so parents and teachers are welcome too. Book at 096467 13555."
 updated: 2026-11-17
 images:
   - src: venue/day-lounge.jpg
@@ -15,11 +15,11 @@ faq:
   - q: "Can teachers come to a student farewell at Red Wood Farm?"
     a: "Yes. Red Wood Farm is a family restaurant, and teachers and parents are welcome. Include staff in the total number when you book."
   - q: "Is there a minimum spend for a student group?"
-    a: "We don't publish one. Ask us on WhatsApp at 096467 13555 with your date and group size, and we will tell you what applies."
+    a: "We don't publish one. Ask us at 096467 13555 with your date and group size, and we will tell you what applies."
   - q: "How early can a farewell party start?"
     a: "The kitchen opens at 10 AM every day, so a late-morning start works well for a daytime farewell."
   - q: "Can a parent or teacher make the booking?"
-    a: "Yes. Anyone can book by WhatsApp or phone on 096467 13555 with the date, time and number of guests."
+    a: "Yes. Anyone can book by message or phone on 096467 13555 with the date, time and number of guests."
 related:
   - /party/
   - /menu/
@@ -28,7 +28,7 @@ related:
   - /visit/
 ---
 
-For a school or college farewell party in Ludhiana, Red Wood Farm offers a daytime garden lawn on outer Pakhowal Road, open from 10 AM, with a menu where breads start at ₹20 and every price includes GST. Students order as a group from the regular menu, and teachers or parents can join them. Book on WhatsApp at 096467 13555.
+For a school or college farewell party in Ludhiana, Red Wood Farm offers a daytime garden lawn on outer Pakhowal Road, open from 10 AM, with a menu where breads start at ₹20 and every price includes GST. Students order as a group from the regular menu, and teachers or parents can join them. Book at 096467 13555.
 
 ## Why hold a farewell in the daytime?
 
@@ -47,7 +47,7 @@ Low-cost basics on our menu:
 - French Fries (₹195), Honey Chilli Potato (₹255) and Hakka Noodles (₹255)
 - Gulab Jamun (₹35), Rasmalai (₹45) and Vanilla ice cream (₹50 a scoop)
 
-Here is one sample order, priced item by item from the menu, to show how the numbers add up. One Dal Makhni (₹275), one full Kadhai Paneer (₹375), one Honey Chilli Potato (₹255), one Hakka Noodles (₹255), one Jeera Rice (₹230), twelve Butter Naan (₹45 each, so ₹540) and twelve Gulab Jamun (₹35 each, so ₹420). The total is ₹2,350, with GST already in it. This is regular menu pricing and not a package. Ask us on WhatsApp how far each portion goes for your group before you lock the order.
+Here is one sample order, priced item by item from the menu, to show how the numbers add up. One Dal Makhni (₹275), one full Kadhai Paneer (₹375), one Honey Chilli Potato (₹255), one Hakka Noodles (₹255), one Jeera Rice (₹230), twelve Butter Naan (₹45 each, so ₹540) and twelve Gulab Jamun (₹35 each, so ₹420). The total is ₹2,350, with GST already in it. This is regular menu pricing and not a package. Ask us how far each portion goes for your group before you lock the order.
 
 ## How should a big student group order?
 
@@ -72,4 +72,4 @@ Most farewells have all three. Tell us what you are planning, such as a banner, 
 
 ## Booking the farewell
 
-Choose two possible dates, then message 096467 13555 on WhatsApp with the date, the start time and the number of students and staff. A teacher or parent can make the booking if that is easier for the school. For more on picking a place, read [how to choose a party venue in Ludhiana](../../guides/how-to-choose-a-party-venue-ludhiana/), or browse the [party page](../).
+Choose two possible dates, then message 096467 13555 with the date, the start time and the number of students and staff. A teacher or parent can make the booking if that is easier for the school. For more on picking a place, read [how to choose a party venue in Ludhiana](../../guides/how-to-choose-a-party-venue-ludhiana/), or browse the [party page](../).

@@ -4,7 +4,7 @@ seoTitle: "Kitty Party Venue in Ludhiana: Garden Lunch | Red Wood Farm"
 description: "What to look for in a kitty party venue or restaurant in Ludhiana, how pricing usually works, and how to book a daytime kitty lunch at Red Wood Farm."
 cluster: party
 query: "kitty party venue ludhiana"
-summary: "In short: a kitty party venue in Ludhiana should give your group a daytime slot, one table for everyone and a menu with prices you can read. Red Wood Farm opens at 10 AM every day on outer Pakhowal Road, with lawn seating and veg and non-veg dishes. For party prices on your date, ask on WhatsApp at 096467 13555."
+summary: "In short: a kitty party venue in Ludhiana should give your group a daytime slot, one table for everyone and a menu with prices you can read. Red Wood Farm opens at 10 AM every day on outer Pakhowal Road, with lawn seating and veg and non-veg dishes. For party prices on your date, ask at 096467 13555."
 updated: 2026-11-17
 images:
   - src: venue/day-lounge.jpg
@@ -19,9 +19,9 @@ faq:
   - q: "Can our kitty group order only vegetarian food?"
     a: "Yes. Every dish on the Red Wood Farm menu is marked veg or non-veg, and there are veg platters, champ, paneer dishes and veg starters to choose from."
   - q: "Do you have a fixed kitty party menu?"
-    a: "Party pricing depends on the dishes you pick and the size of your group. Ask us on WhatsApp at 096467 13555 for what applies to your date."
+    a: "Party pricing depends on the dishes you pick and the size of your group. Ask us at 096467 13555 for what applies to your date."
   - q: "Can we bring our own theme decoration?"
-    a: "Tell us your theme when you book on WhatsApp (096467 13555). We confirm what can be set up and where."
+    a: "Tell us your theme when you book with a message (096467 13555). We confirm what can be set up and where."
 related:
   - /party/
   - /party/kitty-party-themes-and-games/
@@ -50,7 +50,7 @@ The finer points, such as who invites, how the kitty draw runs and how the host 
 
 Banquet halls in the city usually quote a fixed price per guest with a set menu, and some ask for a minimum number of guests. That suits a large group that wants one bill and no choices. A restaurant lets a smaller group order what it likes and pay for what it eats.
 
-We quote party prices on WhatsApp because they depend on your menu and group size. Our [menu](../../menu/) shows every dish price up front, GST included, which lets the host work out a rough spend before booking. When you compare a hall quote with a restaurant, check what the hall price covers: starters, dessert and taxes are the usual gaps.
+We quote party prices because they depend on your menu and group size. Our [menu](../../menu/) shows every dish price up front, GST included, which lets the host work out a rough spend before booking. When you compare a hall quote with a restaurant, check what the hall price covers: starters, dessert and taxes are the usual gaps.
 
 ## Kitty party restaurants: what makes one work
 
@@ -72,7 +72,7 @@ In daylight the lawn offers:
 - lounge seating on the lawn for the chat after lunch
 - tables under palm trees, a quieter spot for a smaller group
 
-Ask us which area suits your group size, and what the plan is if the weather turns on the day. A covered tent with chandeliers has been used at past events, and whether it fits your date is a WhatsApp question.
+Ask us which area suits your group size, and what the plan is if the weather turns on the day. A covered tent with chandeliers has been used at past events, and whether it fits your date is a quick question for us.
 
 ## A kitty menu from our kitchen
 
@@ -110,4 +110,4 @@ A Google reviewer, Sanjeev Kumar, wrote that the "staff is also friendly". We'd 
 
 ## Booking your kitty party
 
-Send three details on WhatsApp or call 096467 13555: the date, your arrival time and how many members are coming. We reply with what is possible that day and the menu options. Keep the final menu and timing in the same chat so the next month's host can copy it. More set-ups from real events are on our [party page](../).
+Message three details to 096467 13555, or call the same number: the date, your arrival time and how many members are coming. We reply with what is possible that day and the menu options. Keep the final menu and timing in the same chat so the next month's host can copy it. More set-ups from real events are on our [party page](../).

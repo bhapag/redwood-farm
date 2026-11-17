@@ -1,10 +1,10 @@
 ---
 title: "How to Host a Kitty Party: The Host's Job, Step by Step"
 seoTitle: "How to Host a Kitty Party: A Host's Guide | Red Wood Farm"
-description: "How to host a kitty party: run the rotation, collect and record the money, send the WhatsApp invite, plan a shared menu and keep the afternoon on time."
+description: "How to host a kitty party: run the rotation, collect and record the money, send the invite, plan a shared menu and keep the afternoon on time."
 cluster: guides
 query: "how to host a kitty party"
-summary: "To host a kitty party, book the venue for your turn, send the invitation on the group's WhatsApp with a reply-by date, collect every member's contribution and record it, hand the month's kitty to the member whose turn it is, and keep the food and the games on a simple timetable. The host manages two things: the money and the clock."
+summary: "To host a kitty party, book the venue for your turn, send the invitation on the group's chat with a reply-by date, collect every member's contribution and record it, hand the month's kitty to the member whose turn it is, and keep the food and the games on a simple timetable. The host manages two things: the money and the clock."
 updated: 2026-11-17
 images:
   - src: venue/day-lounge.jpg
@@ -18,8 +18,8 @@ faq:
     a: "Groups decide this at the start. Common rules are that the host pays, that the bill comes out of the month's collection, or that members split it equally. Pick one and write it down."
   - q: "What happens if a member misses her month?"
     a: "Most groups agree she still pays her share on time, even if she can't attend. Settle this rule at the first meeting so nobody argues later."
-  - q: "Can we book a kitty party table at Red Wood Farm on WhatsApp?"
-    a: "Yes. Send your date, time and number of guests to 096467 13555 on WhatsApp, or call the same number. We're open from 10:00 AM to 11:00 PM every day."
+  - q: "Can we book a kitty party table at Red Wood Farm?"
+    a: "Yes. Send your date, time and number of guests to 096467 13555, or call the same number. We're open from 10:00 AM to 11:00 PM every day."
 related:
   - /guides/
   - /party/kitty-party-venues-ludhiana/
@@ -29,7 +29,7 @@ related:
   - /visit/
 ---
 
-Hosting a kitty party comes down to five jobs: book the venue for your month, send the invitation on the group's WhatsApp with a reply-by date, collect every member's contribution and write it down, hand the kitty to the right member, and keep lunch and games on time. Get the money and the timetable right and the rest follows.
+Hosting a kitty party comes down to five jobs: book the venue for your month, send the invitation on the group's chat with a reply-by date, collect every member's contribution and write it down, hand the kitty to the right member, and keep lunch and games on time. Get the money and the timetable right and the rest follows.
 
 This page covers the host's side of it. For picking a place, see our page on [kitty party venues in Ludhiana](../../party/kitty-party-venues-ludhiana/). For ideas to fill the afternoon, see [kitty party themes and games](../../party/kitty-party-themes-and-games/).
 
@@ -72,7 +72,7 @@ Use one register or one shared spreadsheet for the whole cycle. For every meetin
 
 At the end of the meeting, take a photo of the page and post it in the group. That one photo settles most questions before they start. Agree up front what happens if someone pays late or leaves the group mid-cycle, and put that rule at the top of the register.
 
-## How to send the kitty invitation on WhatsApp
+## How to send the kitty invitation
 
 Send it one to two weeks before the date, and pin it in the group. Keep it to the facts members need. A simple format:
 
@@ -121,4 +121,4 @@ Keep the draw near the end. Members who arrive late still get to see it, and it 
 
 Red Wood Farm is a garden family restaurant and party lawn at 676, VPO Daad, on Pakhowal Road near Omaxe Flats. In daytime the lawn has long wooden tables and lounge seating, and our photos show a kite-theme backdrop set up for a daytime party. We're open every day from 10:00 AM to 11:00 PM.
 
-To book your turn, send the date, time and number of guests on WhatsApp to 096467 13555, or call. Directions from Sarabha Nagar, Dugri and Model Town are on our [visit page](../../visit/). More guides for hosts are in our [guides section](../).
+To book your turn, send the date, time and number of guests to 096467 13555, or call. Directions from Sarabha Nagar, Dugri and Model Town are on our [visit page](../../visit/). More guides for hosts are in our [guides section](../).

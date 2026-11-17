@@ -4,7 +4,7 @@
 const { chromium, devices } = require('playwright');
 (async () => {
   const [url, sels, secs = '24', exe] = process.argv.slice(2);
-  const b = await chromium.launch({ executablePath: exe || undefined });
+  const b = await chromium.launch({ executablePath: exe || undefined, args: ['--use-gl=angle', '--use-angle=swiftshader', '--enable-unsafe-swiftshader'] });
   const ctx = await b.newContext({ ...devices['Pixel 7'] });
   const pg = await ctx.newPage();
   // Optional: BLOCK=Name1,Name2 blocks those island chunks, to find which effect costs frames.

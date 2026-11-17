@@ -19,8 +19,8 @@ const groups = [
   ] },
   { h: 'Parties and events', items: partyFaq },
   { h: 'This website', items: [
-    { q: 'Do you store my details when I send an enquiry?', a: 'No. The enquiry form only opens WhatsApp with your message filled in. Nothing is saved on this website.' },
-    { q: 'Why are party prices not listed?', a: 'They depend on the menu, the number of guests and the set-up, and they change. We share current prices on WhatsApp.' },
+    { q: 'Do you store my details when I send an enquiry?', a: 'No. The enquiry form only opens a chat with your message ready filled in. Nothing is saved on this website.' },
+    { q: 'Why are party prices not listed?', a: 'They depend on the menu, the number of guests and the set-up, and they change. We share current prices.' },
   ] },
 ];
 const all = groups.flatMap((g) => g.items);
@@ -32,7 +32,7 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', it
 <Base title="Red Wood Farm FAQ: Hours, Menu, Parties & Directions" description="Answers about Red Wood Farm, Pakhowal Road, Ludhiana: opening hours, menu and prices, vegetarian food, takeaway, party bookings, wheelchair access and directions." schema={[faqSchema(all), crumbs]} og="og-home.jpg" current="FAQ">
   <header class="fq-head wrap">
     <h1 data-split>Everything people ask us, answered</h1>
-    <p class="answer">Red Wood Farm is open every day from 10 AM to 11 PM at 676, VPO Daad, Pakhowal Road, Ludhiana. We serve {menu.count} North Indian, tandoor and Indo-Chinese dishes, offer takeaway and Wi-Fi, and host parties on the lawn. We do not have wheelchair access. Bookings are on WhatsApp at {site.phoneDisplay}.</p>
+    <p class="answer">Red Wood Farm is open every day from 10 AM to 11 PM at 676, VPO Daad, Pakhowal Road, Ludhiana. We serve {menu.count} North Indian, tandoor and Indo-Chinese dishes, offer takeaway and Wi-Fi, and host parties on the lawn. We do not have wheelchair access. Bookings are taken at {site.phoneDisplay}.</p>
   </header>
   <div class="wrap fq-body">
     {groups.map((g) => (
@@ -42,7 +42,7 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', it
       </section>
     ))}
     <div class="btns fq-cta">
-      <a class="btn red" href={waLink('Hello Red Wood Farm, I have a question.')} target="_blank" rel="noopener"><Icon name="wa" />Ask on WhatsApp</a>
+      <a class="btn red" href={waLink('Hello Red Wood Farm, I have a question.')} target="_blank" rel="noopener"><Icon name="wa" />Ask us a question</a>
       <a class="btn ghost" href={u('/menu/')}><Icon name="menu" />See the menu</a>
     </div>
   </div>

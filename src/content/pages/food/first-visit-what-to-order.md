@@ -17,7 +17,7 @@ faq:
   - q: "What is Atta Chicken?"
     a: "It's chicken cooked sealed inside wheat-flour dough. At ₹925 it's the highest-priced dish on the menu, so it suits a table that wants to share one showpiece."
   - q: "Do I need to book a table for a first visit?"
-    a: "You can book on WhatsApp or by phone at 096467 13555. Send the date, time and number of guests. Booking ahead means your table is planned before you arrive."
+    a: "You can book by message or phone at 096467 13555. Send the date, time and number of guests. Booking ahead means your table is planned before you arrive."
   - q: "Is there a good vegetarian first order?"
     a: "Yes. 131 of the 187 dishes are veg. A simple first order is Tomato Shorba, Paneer Tikka, Dal Makhni, a Half Paneer Lababdar, naan and Paneer Jalebi with Rabri."
 related:
@@ -128,4 +128,4 @@ We're open every day from 10 AM to 11 PM. In daytime the lawn is set with long w
 
 ## Book your first table
 
-To book, send the date, time and number of guests to [WhatsApp 096467 13555](https://wa.me/919646713555), or call the same number. We're on outer Pakhowal Road at Daad, opposite Cerajot Tiles. The whole menu, with every price, is on our [menu page](../../menu/).
+To book, send the date, time and number of guests to [096467 13555](https://wa.me/919646713555), or call the same number. We're on outer Pakhowal Road at Daad, opposite Cerajot Tiles. The whole menu, with every price, is on our [menu page](../../menu/).

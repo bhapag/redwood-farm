@@ -21,7 +21,7 @@ faq:
   - q: "Is Chilli Paneer a starter or a main course here?"
     a: "On our menu Chilli Paneer sits in the vegetarian main course at ₹375 for a Full. It is cooked in the Indo-Chinese chilli style, so it also works as a shared plate before the other mains."
   - q: "Are Cheese Chilli and Cheese Tomato made with paneer?"
-    a: "The menu calls them cheese and does not say more. Ask us on WhatsApp at 096467 13555 and we'll tell you what goes into them."
+    a: "The menu calls them cheese and does not say more. Ask us at 096467 13555 and we'll tell you what goes into them."
 related:
   - /food/
   - /menu/
@@ -91,7 +91,7 @@ The menu gives no recipes, so here is what each name usually means in North Indi
 
 ### Names that don't explain themselves
 
-Paneer Lababdar and Lahori Paneer sit at the top of the paneer price list, at ₹395 for a Full. Lahori refers to the city of Lahore, but neither name tells you much about the gravy. Ask us on WhatsApp and we'll describe them.
+Paneer Lababdar and Lahori Paneer sit at the top of the paneer price list, at ₹395 for a Full. Lahori refers to the city of Lahore, but neither name tells you much about the gravy. Ask us and we'll describe them.
 
 ## Paneer outside the main course
 
@@ -115,4 +115,4 @@ Two dishes on the menu say cheese in the name: Cheese Chilli (₹325) in the app
 
 ## Booking a table or ordering paneer to take home
 
-Red Wood Farm is at 676, VPO Daad, Pakhowal Road, opposite Cerajot Tiles near Omaxe Flats, and we're open every day from 10 AM to 11 PM. Send your order or table request to 096467 13555 on WhatsApp with the time and the number of people. You can see every section with prices on our [menu page](../../menu/).
+Red Wood Farm is at 676, VPO Daad, Pakhowal Road, opposite Cerajot Tiles near Omaxe Flats, and we're open every day from 10 AM to 11 PM. Send your order or table request to 096467 13555 with the time and the number of people. You can see every section with prices on our [menu page](../../menu/).

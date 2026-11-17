@@ -4,7 +4,7 @@ seoTitle: "Anniversary Dinner in Ludhiana for Couples | Red Wood Farm"
 description: "An honest guide to an anniversary dinner in Ludhiana: garden tables under palms and string lights, what to order for two, and family anniversaries on the lawn."
 cluster: party
 query: "anniversary dinner ludhiana"
-summary: "In short: for an anniversary dinner with an outdoor feel, book an evening table on Red Wood Farm's garden lawn on Pakhowal Road, under palms and string lights, with a full North Indian menu. We don't offer private dining or candle set-ups. Family anniversaries for bigger groups can be planned on the lawn through WhatsApp."
+summary: "In short: for an anniversary dinner with an outdoor feel, book an evening table on Red Wood Farm's garden lawn on Pakhowal Road, under palms and string lights, with a full North Indian menu. We don't offer private dining or candle set-ups. Family anniversaries for bigger groups can be planned on the lawn by message."
 updated: 2026-11-17
 images:
   - src: venue/palm-table.jpg
@@ -17,9 +17,9 @@ faq:
   - q: "What time should we book an anniversary dinner?"
     a: "Book for after sunset if you want the lights at their best. We're open until 11:00 PM every day."
   - q: "Can we celebrate our parents' anniversary on the lawn?"
-    a: "Yes. Send the date, time and number of guests on WhatsApp (096467 13555), and we'll tell you what set-up is possible that evening."
+    a: "Yes. Send the date, time and number of guests on 096467 13555, and we'll tell you what set-up is possible that evening."
   - q: "Is the dinner outdoors in winter?"
-    a: "The tables are on the open lawn, so dress warmly on winter evenings. Ask on WhatsApp what seating is available for your date."
+    a: "The tables are on the open lawn, so dress warmly on winter evenings. Ask us what seating is available for your date."
 related:
   - /party/
   - /garden/open-air-dining-ludhiana/
@@ -42,11 +42,11 @@ What you do get is the garden itself:
 - the walk-through fairy-light tunnel over a red carpet
 - the green neon RED WOOD FARM sign
 
-If a quiet evening matters to you, ask us on WhatsApp whether a party is booked on your date. Then pick another night if one is.
+If a quiet evening matters to you, ask us whether a party is booked on your date. Then pick another night if one is.
 
 ## Candle light dinner for couples in Ludhiana: our honest answer
 
-Plenty of couples search for a candle light dinner. We don't sell one. Our light comes from fairy lights in the trees, string lights over the lounge seating and lamp posts along the garden paths. It's warm and soft after dark. If you want to bring a small candle for your own table, ask us on WhatsApp first.
+Plenty of couples search for a candle light dinner. We don't sell one. Our light comes from fairy lights in the trees, string lights over the lounge seating and lamp posts along the garden paths. It's warm and soft after dark. If you want to bring a small candle for your own table, ask us first.
 
 ## Choosing your table
 
@@ -81,7 +81,7 @@ If you want something different from your usual order, try our house signature d
 
 ## Family anniversaries on the lawn
 
-Many anniversary dinners aren't for two. A parents' 25th or grandparents' 50th brings the whole family, and the lawn has the space a restaurant table doesn't. Real photos from Red Wood Farm show function set-ups with drapes, buffet counters on the lawn and decorated entry gates. What's possible for your evening depends on the date and your numbers, so send both on WhatsApp.
+Many anniversary dinners aren't for two. A parents' 25th or grandparents' 50th brings the whole family, and the lawn has the space a restaurant table doesn't. Real photos from Red Wood Farm show function set-ups with drapes, buffet counters on the lawn and decorated entry gates. What's possible for your evening depends on the date and your numbers, so send both.
 
 One guest summed up the lawn as a "Great place for family party and social events" (Kala Chahal, Google review).
 
@@ -100,4 +100,4 @@ We're at 676, VPO Daad, Pakhowal Road, opposite Cerajot Tiles and near Omaxe Fla
 
 ## Reserving your table
 
-Message 096467 13555 on WhatsApp or call with your date, the time and how many of you are coming. Dinner tables are available until we close at 11:00 PM. More photos of the lawn are on our [party page](../).
+Message 096467 13555 or call with your date, the time and how many of you are coming. Dinner tables are available until we close at 11:00 PM. More photos of the lawn are on our [party page](../).

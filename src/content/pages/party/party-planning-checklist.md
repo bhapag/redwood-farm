@@ -4,7 +4,7 @@ seoTitle: "How Much Food Per Guest for an Indian Party | Red Wood Farm"
 description: "General per-guest food quantities for an Indian party, from starters and dal makhani to rice and breads, plus a planning timeline and questions to ask a venue."
 cluster: party
 query: "how much food per guest indian party"
-summary: "In short: a common rule of thumb for an Indian party is 6 to 8 starter pieces, 2 to 3 breads, a small bowl of dal and about 100 to 150 grams of each main dish per adult, with children under ten counted as half. These are general planning figures. For ordering at Red Wood Farm, ask us on WhatsApp at 096467 13555."
+summary: "In short: a common rule of thumb for an Indian party is 6 to 8 starter pieces, 2 to 3 breads, a small bowl of dal and about 100 to 150 grams of each main dish per adult, with children under ten counted as half. These are general planning figures. For ordering at Red Wood Farm, ask us at 096467 13555."
 updated: 2026-11-17
 images:
   - src: venue/buffet-lawn.jpg
@@ -19,7 +19,7 @@ faq:
   - q: "How many rotis or naans should I plan per guest?"
     a: "Plan about 2 to 3 breads per adult as general guidance. Naan is heavier than roti, so lean lower if the bread is mostly naan."
   - q: "How do I work out how much to order at Red Wood Farm?"
-    a: "Send us your headcount and the veg and non-veg split on WhatsApp at 096467 13555. Many mains come in half and full portions, and our group ordering guide explains how to size them."
+    a: "Send us your headcount and the veg and non-veg split at 096467 13555. Many mains come in half and full portions, and our group ordering guide explains how to size them."
 related:
   - /party/
   - /food/group-ordering-guide/
@@ -103,4 +103,4 @@ Our [group ordering guide](../../food/group-ordering-guide/) walks through sizin
 
 ## Next step
 
-Send your date, time, headcount and veg split on WhatsApp to 096467 13555, and we'll reply with what works for your party. We are open every day from 10 AM to 11 PM. See past set-ups on our [party page](../).
+Send your date, time, headcount and veg split to 096467 13555, and we'll reply with what works for your party. We are open every day from 10 AM to 11 PM. See past set-ups on our [party page](../).

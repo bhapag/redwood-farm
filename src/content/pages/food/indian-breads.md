@@ -86,7 +86,7 @@ The menu doesn't say how the other breads are cooked, so here is what usually ha
 - **Roomali Roti** is a very thin roti. The name compares it to a handkerchief, a reference to how thin and soft it is.
 - **Missi Roti** is usually made with gram flour mixed into the dough with spices, which gives it a yellow color and more flavor.
 
-If you want to know exactly how a bread is cooked in our kitchen, ask us on WhatsApp. For more on the clay oven, read our [tandoor guide](../tandoor-guide/).
+If you want to know exactly how a bread is cooked in our kitchen, ask us. For more on the clay oven, read our [tandoor guide](../tandoor-guide/).
 
 ## Which bread goes with which dish?
 
@@ -129,4 +129,4 @@ As a rough guide, most adults eat two or three pieces of bread with a curry meal
 
 ## Coming in or ordering bread with your takeaway
 
-Red Wood Farm is at 676, VPO Daad, Pakhowal Road, across from Cerajot Tiles and close to Omaxe Flats. We're open from 10 AM to 11 PM, all week. To book a table or add breads to a takeaway order, message 096467 13555 on WhatsApp. Every bread and dish is listed on the [menu](../../menu/).
+Red Wood Farm is at 676, VPO Daad, Pakhowal Road, across from Cerajot Tiles and close to Omaxe Flats. We're open from 10 AM to 11 PM, all week. To book a table or add breads to a takeaway order, message 096467 13555. Every bread and dish is listed on the [menu](../../menu/).

@@ -11,13 +11,13 @@ images:
     alt: "A pot of non-veg biryani with long-grain rice, fried onions and pieces of meat"
 faq:
   - q: "Which meat is in the Non-Veg Biryani?"
-    a: "The menu lists it as Non-Veg Biryani at ₹375 without naming the meat. Ask us on WhatsApp at 096467 13555 and we'll tell you what is in it."
+    a: "The menu lists it as Non-Veg Biryani at ₹375 without naming the meat. Ask us at 096467 13555 and we'll tell you what is in it."
   - q: "Is there a Half portion of biryani?"
     a: "No. Both biryanis and every rice dish on our menu come in one size, so the price you see is for the whole plate."
   - q: "What is the cheapest rice dish at Red Wood Farm?"
     a: "Steamed Rice at ₹180. Jeera Rice is next at ₹230."
   - q: "Can I order biryani for a party at the lawn?"
-    a: "Yes, you can include it in a party order. Message us the date, time and number of guests on WhatsApp and we'll help you work out quantities."
+    a: "Yes, you can include it in a party order. Message us the date, time and number of guests and we'll help you work out quantities."
 related:
   - /food/
   - /menu/
@@ -34,9 +34,9 @@ Red Wood Farm on Pakhowal Road makes two biryanis: Veg Biryani at ₹325 and Non
 Biryani is rice cooked with spiced meat or vegetables, usually layered and finished with steam so the flavors soak into every grain. It is a meal in itself, which makes it an easy order when you don't want to share a spread of curries.
 
 - **Veg Biryani, ₹325.** Marked veg.
-- **Non-Veg Biryani, ₹375.** Marked non-veg. The menu doesn't name the meat, so ask us on WhatsApp if you want to know before you order.
+- **Non-Veg Biryani, ₹375.** Marked non-veg. The menu doesn't name the meat, so ask us if you want to know before you order.
 
-Biryani works well for a quick lunch on the lawn, and it travels well for takeaway too. Order by phone or WhatsApp and collect it from us at the time you choose.
+Biryani works well for a quick lunch on the lawn, and it travels well for takeaway too. Order by phone or message and collect it from us at the time you choose.
 
 ## Every rice dish and its price
 
@@ -108,8 +108,8 @@ With a spicy biryani, Cucumber Raita or Curd Pudina Jeera cools each mouthful. B
 
 ## Ordering rice for a group or party
 
-Rice dishes are one size, so the question for a group is how many plates to order. A simple start is one rice dish for every one or two gravies on the table, then a second round if the plates empty fast. We haven't published serving sizes, so tell us the number of people and the other dishes on WhatsApp and we'll suggest an amount. Our [group ordering guide](../group-ordering-guide/) helps you plan the whole order, and if you are booking an event, start with the [party page](../../party/).
+Rice dishes are one size, so the question for a group is how many plates to order. A simple start is one rice dish for every one or two gravies on the table, then a second round if the plates empty fast. We haven't published serving sizes, so tell us the number of people and the other dishes and we'll suggest an amount. Our [group ordering guide](../group-ordering-guide/) helps you plan the whole order, and if you are booking an event, start with the [party page](../../party/).
 
 ## Visiting or ordering takeaway
 
-Red Wood Farm is at 676, VPO Daad, Pakhowal Road, opposite Cerajot Tiles near Omaxe Flats. We're open every day from 10 AM to 11 PM. Book a table or order biryani to go by phone or WhatsApp on 096467 13555. All sections and prices are on the [menu](../../menu/).
+Red Wood Farm is at 676, VPO Daad, Pakhowal Road, opposite Cerajot Tiles near Omaxe Flats. We're open every day from 10 AM to 11 PM. Book a table or order biryani to go by phone or message on 096467 13555. All sections and prices are on the [menu](../../menu/).

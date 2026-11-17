@@ -83,10 +83,10 @@ Our gate opens off the road opposite Cerajot Tiles. Inside you will find a green
 
 ## What Red Wood Farm is, for anyone new to this end of the road
 
-Red Wood Farm is a garden family restaurant first and a party lawn second. We serve North Indian, tandoor and Indo-Chinese food from 10:00 AM to 11:00 PM, every day, on an open lawn with tables under palm trees and string lights. Takeaway can be ordered by phone or WhatsApp. On Google we had a rating of 4.2 from 72 reviews when we checked on 14 Nov 2026.
+Red Wood Farm is a garden family restaurant first and a party lawn second. We serve North Indian, tandoor and Indo-Chinese food from 10:00 AM to 11:00 PM, every day, on an open lawn with tables under palm trees and string lights. Takeaway can be ordered by phone or message. On Google we had a rating of 4.2 from 72 reviews when we checked on 14 Nov 2026.
 
 There is no wheelchair access at Red Wood Farm, which matters if you are planning a visit for someone who uses a wheelchair.
 
 ## Before you set out on Pakhowal Road
 
-Send us a WhatsApp message at 096467 13555 and ask us to share our location. A pin is more reliable than any road name on this stretch, and it saves guests from asking for directions on the roadside. Forward it to anyone joining you, especially relatives who don't know this end of the city. To book a table or a party, include your date, time and number of guests, or simply call. The [Visit page](../) has the address, hours and a summary of every route.
+Send us a message at 096467 13555 and ask us to share our location. A pin is more reliable than any road name on this stretch, and it saves guests from asking for directions on the roadside. Forward it to anyone joining you, especially relatives who don't know this end of the city. To book a table or a party, include your date, time and number of guests, or simply call. The [Visit page](../) has the address, hours and a summary of every route.

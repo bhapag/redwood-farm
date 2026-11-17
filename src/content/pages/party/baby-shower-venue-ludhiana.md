@@ -13,11 +13,11 @@ faq:
   - q: "What time of day suits a baby shower?"
     a: "Late morning to mid-afternoon usually suits the mother-to-be best. Red Wood Farm opens at 10:00 AM every day."
   - q: "Can we bring our own decorations for a baby shower?"
-    a: "Tell us your theme and what you plan to bring when you book on WhatsApp (096467 13555), and we'll confirm what works for your date."
+    a: "Tell us your theme and what you plan to bring when you book with a message (096467 13555), and we'll confirm what works for your date."
   - q: "Is there comfortable seating for a pregnant guest?"
     a: "The lawn has dining tables and low lounge seating. Ask for a regular dining chair for the mother-to-be, since low seats are harder to get up from."
   - q: "Do you have baby shower packages?"
-    a: "We don't publish packages. Food is ordered from our menu, where every price includes GST, and we'll answer questions about your date on WhatsApp."
+    a: "We don't publish packages. Food is ordered from our menu, where every price includes GST, and we'll answer questions about your date."
 related:
   - /party/
   - /party/small-family-functions/
@@ -46,7 +46,7 @@ There is no single normal figure. The total depends mostly on how many people co
 
 Start by fixing the guest count, then set a ceiling for each of those four items. A small lunch and a large party are different budgets, even at the same venue.
 
-We don't publish package or per-plate prices. As a reference, our [menu](../../menu/) lists every dish with its exact price, GST included. Send your date and guest count on WhatsApp and we'll talk through options.
+We don't publish package or per-plate prices. As a reference, our [menu](../../menu/) lists every dish with its exact price, GST included. Send your date and guest count and we'll talk through options.
 
 ## In which month is a baby shower usually held?
 
@@ -98,4 +98,4 @@ For a backdrop, tell us your theme when you book. A past daytime party on our la
 
 ## Booking the baby shower
 
-Message 096467 13555 on WhatsApp, or phone it, with the date, start time and number of guests. We're at 676, VPO Daad, Pakhowal Road, opposite Cerajot Tiles, open 10:00 AM to 11:00 PM every day. Directions are on our [Visit page](../../visit/), and photos of the lawn are on our [party page](../).
+Message 096467 13555, or phone it, with the date, start time and number of guests. We're at 676, VPO Daad, Pakhowal Road, opposite Cerajot Tiles, open 10:00 AM to 11:00 PM every day. Directions are on our [Visit page](../../visit/), and photos of the lawn are on our [party page](../).

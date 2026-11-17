@@ -15,7 +15,7 @@ faq:
   - q: "Do I need to go through the city center from Sarabha Nagar?"
     a: "No. In OSRM's route you join Pakhowal Road after a short first stretch and stay on it, so you never go towards the railway station area."
   - q: "Can I order takeaway and pick it up on the way back to Sarabha Nagar?"
-    a: "Yes, takeaway is available. Order by phone or WhatsApp on 096467 13555 and tell us when you will arrive."
+    a: "Yes, takeaway is available. Order by phone or message on 096467 13555 and tell us when you will arrive."
   - q: "Which village is Red Wood Farm closest to?"
     a: "Daad. OpenStreetMap places Daad village (spelled Dad on the map) about 0.8 km from our pin in a straight line."
 related:
@@ -77,7 +77,7 @@ Red Wood Farm does not have wheelchair access, so please plan ahead if someone i
 
 ## Coming by cab or auto
 
-If you are not driving, a cab or an auto booked through an app works well for a trip this short. Ask us on WhatsApp (096467 13555) to share our location, then forward that pin to your driver. It removes any doubt about which side of the road to stop on.
+If you are not driving, a cab or an auto booked through an app works well for a trip this short. Ask us on 096467 13555 to share our location, then forward that pin to your driver. It removes any doubt about which side of the road to stop on.
 
 ## Heading back to Sarabha Nagar
 
@@ -91,4 +91,4 @@ Most visits from the city are a family meal on the lawn or a small party. A few 
 - The [menu](../../menu/) runs from ₹20 for a Tandoori Roti to ₹925 for the Atta Chicken, with GST included in every price.
 - A weekend [Sunday lunch with the family](../../garden/sunday-family-lunch/) is an easy plan from here, since the drive is one of the shorter ones in our route data.
 
-To book a table or ask about a party, send your date, time and number of guests on WhatsApp or call 096467 13555. For other starting points, and for a wider look at the road itself, see the [Pakhowal Road guide](../pakhowal-road-guide/) or go back to the [Visit page](../).
+To book a table or ask about a party, send your date, time and number of guests to 096467 13555, or call the same number. For other starting points, and for a wider look at the road itself, see the [Pakhowal Road guide](../pakhowal-road-guide/) or go back to the [Visit page](../).

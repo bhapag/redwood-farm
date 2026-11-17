@@ -28,10 +28,12 @@ const pages = ['/', '/menu/', '/party/', '/visit/', '/party/birthday-party-venue
           out.heroH1Lines = Math.round(h1.getBoundingClientRect().height / parseFloat(getComputedStyle(h1).lineHeight));
           const n = document.querySelector('.hero-name');
           out.neonOneLine = n.getBoundingClientRect().height < parseFloat(getComputedStyle(n).fontSize) * 1.6 && n.scrollWidth <= n.clientWidth;
-          // Dishes on phones: React Bits Stack (swipe or tap to flip), one card in front.
-          const stack = document.querySelector('.dstack');
-          out.dishStack = !!stack && stack.getBoundingClientRect().height > 200;
-          out.dishCards = document.querySelectorAll('.dstack-card').length;
+          // Dishes on phones: native swipe carousel with a CSS scroll-driven tilt.
+          const row = document.querySelector('.dish-phone');
+          out.dishCarousel = !!row && getComputedStyle(row).display !== 'none' && row.scrollWidth > row.clientWidth;
+          out.dishCards = document.querySelectorAll('.dish-phone .dtilt').length;
+          out.tunnelBand = !!document.querySelector('[data-tunnel]');
+          out.heroPhotoRatio = +(() => { const r = document.querySelector('.hero-photo').getBoundingClientRect(); return (r.width / r.height).toFixed(2); })();
           out.swipeHint = !!document.querySelector('.swipe-hint') && getComputedStyle(document.querySelector('.swipe-hint')).display !== 'none';
           out.reviewRowsShown = [...document.querySelectorAll('.rv-row')].filter((e) => getComputedStyle(e).display !== 'none').length;
           out.reviewsInRow = document.querySelectorAll('.rv-phone .rv-card:not([aria-hidden])').length;

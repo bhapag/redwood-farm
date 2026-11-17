@@ -4,7 +4,7 @@ seoTitle: "First Birthday Party Venue in Ludhiana | Red Wood Farm"
 description: "Plan a first birthday party in Ludhiana around your baby's naps: a short daytime slot, easy seating for elders, and real menu dishes for the adults on the list."
 cluster: party
 query: "first birthday party venue ludhiana"
-summary: "In short: a first birthday works best as a two-hour daytime party timed after the baby's nap, with comfortable seats for grandparents and a proper meal for the adults. Red Wood Farm on outer Pakhowal Road has a garden lawn and a North Indian menu from 10:00 AM daily. Book by WhatsApp with your date and guest count."
+summary: "In short: a first birthday works best as a two-hour daytime party timed after the baby's nap, with comfortable seats for grandparents and a proper meal for the adults. Red Wood Farm on outer Pakhowal Road has a garden lawn and a North Indian menu from 10:00 AM daily. Book by message with your date and guest count."
 updated: 2026-11-17
 images:
   - src: venue/day-lounge.jpg
@@ -19,7 +19,7 @@ faq:
   - q: "Is Red Wood Farm easy for elderly relatives?"
     a: "There is no wheelchair access, so let older relatives know in advance. Ask for regular dining chairs for them, since low lounge seats are harder to get up from."
   - q: "Do you have a first birthday package?"
-    a: "We don't publish packages. Send your date, time and number of adults and children on WhatsApp (096467 13555) and we'll reply with what's possible."
+    a: "We don't publish packages. Send your date, time and number of adults and children on 096467 13555 and we'll reply with what's possible."
 related:
   - /party/
   - /party/kids-birthday-party-ideas/
@@ -40,7 +40,7 @@ Your baby won't remember the day. The family will remember the photos, the bless
 2. **Keep it to about two hours.** That is long enough for a meal and cake, and short enough for a cheerful baby.
 3. **Write the guest list by household.** Grandparents, aunts and uncles, and a few friends with babies of their own. Count adults and children separately when you message us.
 4. **Choose daytime or evening.** By day the lawn has long wooden tables and lounge seating. After dark the string lights and the fairy-light tunnel take over. The evening looks lovely in photos, though it runs later than most babies like.
-5. **Book on WhatsApp.** Send the date, start time and both head counts to 096467 13555.
+5. **Book a table.** Send the date, start time and both head counts to 096467 13555.
 6. **Pack a proper baby bag.** A spare outfit (cake happens), a changing mat, wipes, a light blanket, your baby's own food and spoon, and ear muffs if there will be music.
 
 ## How to make baby's first birthday special
@@ -100,4 +100,4 @@ If the guest list includes a pack of five-to-ten-year-olds, give them their own 
 
 ## Book your baby's first birthday
 
-Message 096467 13555 on WhatsApp, or call, with the date, the time and your number of adults and children. We're open from 10:00 AM to 11:00 PM every day. Photos from past parties on the lawn are on our [party page](../).
+Message 096467 13555, or call, with the date, the time and your number of adults and children. We're open from 10:00 AM to 11:00 PM every day. Photos from past parties on the lawn are on our [party page](../).

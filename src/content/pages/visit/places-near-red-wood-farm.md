@@ -113,4 +113,4 @@ Red Wood Farm is a garden family restaurant and party lawn, open 10:00 AM to 11:
 
 ## Getting to us from any of these places
 
-Everything listed above is within about 3 km of us in a straight line. If you are inviting guests who know one of these places better than they know Pakhowal Road, tell them we are near Daad and Thakarwal, opposite Cerajot Tiles. Ask us on WhatsApp at 096467 13555 to share our location, and your maps app will route you from wherever you are. To book a table or a party, send your date, time and number of guests on WhatsApp or call the same number. More directions are on the [Visit page](../).
+Everything listed above is within about 3 km of us in a straight line. If you are inviting guests who know one of these places better than they know Pakhowal Road, tell them we are near Daad and Thakarwal, opposite Cerajot Tiles. Ask us at 096467 13555 to share our location, and your maps app will route you from wherever you are. To book a table or a party, send your date, time and number of guests to 096467 13555, or call the same number. More directions are on the [Visit page](../).

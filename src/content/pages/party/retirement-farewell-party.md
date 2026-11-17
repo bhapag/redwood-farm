@@ -1,10 +1,10 @@
 ---
 title: "Retirement and Office Farewell Party Venue in Ludhiana"
 seoTitle: "Retirement Farewell Party Venue Ludhiana | Red Wood Farm"
-description: "Plan a retirement or office farewell lunch or dinner on a garden lawn on Pakhowal Road, Ludhiana. Real menu prices, seating ideas and WhatsApp booking."
+description: "Plan a retirement or office farewell lunch or dinner on a garden lawn on Pakhowal Road, Ludhiana. Real menu prices, seating ideas and table booking."
 cluster: party
 query: "retirement / farewell party venue ludhiana"
-summary: "Red Wood Farm hosts retirement and office farewell parties on its garden lawn on outer Pakhowal Road, Ludhiana, open 10 AM to 11 PM every day. You order from the regular menu, and every price includes GST. To book, send the date, time and guest count on WhatsApp to 096467 13555."
+summary: "Red Wood Farm hosts retirement and office farewell parties on its garden lawn on outer Pakhowal Road, Ludhiana, open 10 AM to 11 PM every day. You order from the regular menu, and every price includes GST. To book, send the date, time and guest count to 096467 13555."
 updated: 2026-11-17
 images:
   - src: venue/day-long-tables.jpg
@@ -13,13 +13,13 @@ images:
     alt: "A dining table under the lit palm trees on the lawn at night"
 faq:
   - q: "Do you have a fixed farewell party package?"
-    a: "We don't publish set packages. You order dishes from the regular menu, and every price on it includes GST. For anything beyond the menu, ask us on WhatsApp at 096467 13555."
+    a: "We don't publish set packages. You order dishes from the regular menu, and every price on it includes GST. For anything beyond the menu, ask us at 096467 13555."
   - q: "Is Red Wood Farm suitable for a guest who uses a wheelchair?"
     a: "Red Wood Farm has no wheelchair access. If the guest of honor or a family member uses a wheelchair, talk to us before you book."
   - q: "What time can a farewell lunch start?"
     a: "The kitchen opens at 10 AM every day and we close at 11 PM, so a late-morning lunch and an evening dinner both fit."
   - q: "Can the retiring person's family join the office group?"
-    a: "Yes. Red Wood Farm is a family restaurant first. Include family members in the guest count you send on WhatsApp so we can plan the seating."
+    a: "Yes. Red Wood Farm is a family restaurant first. Include family members in the guest count you send so we can plan the seating."
 related:
   - /party/
   - /party/office-team-lunch-ludhiana/
@@ -28,7 +28,7 @@ related:
   - /visit/
 ---
 
-Red Wood Farm on outer Pakhowal Road works as a retirement or office farewell party venue in Ludhiana. You get a garden lawn with dining tables, string lights after dark and a North Indian and Indo-Chinese menu with GST-inclusive prices. Open 10 AM to 11 PM daily. Send your date and guest count on WhatsApp to 096467 13555.
+Red Wood Farm on outer Pakhowal Road works as a retirement or office farewell party venue in Ludhiana. You get a garden lawn with dining tables, string lights after dark and a North Indian and Indo-Chinese menu with GST-inclusive prices. Open 10 AM to 11 PM daily. Send your date and guest count to 096467 13555.
 
 ## Should a retirement party be a lunch or a dinner?
 
@@ -60,7 +60,7 @@ Many main-course dishes come in half portions, so a smaller table can still try 
 
 Most retirement parties follow a short program. The boss says a few words, the person retiring replies, someone hands over a shawl or a framed memento, and a cake gets cut. Run the program before the food arrives, while everyone is still seated and listening. Once the main course lands, attention drifts to the plates.
 
-In your WhatsApp message, mention the cake, any banner or memento, and the time the speeches will start. If you want a microphone or music, ask about that too. We will tell you what is possible and where it can go.
+In your message, mention the cake, any banner or memento, and the time the speeches will start. If you want a microphone or music, ask about that too. We will tell you what is possible and where it can go.
 
 ## What about older guests and the drive out?
 
@@ -74,4 +74,4 @@ A farewell for a colleague moving to another city or company is usually smaller 
 
 ## Booking the farewell
 
-Message 096467 13555 on WhatsApp, or call, with the date, the start time and roughly how many guests. Add whether it is a lunch or a dinner and whether there will be speeches or a cake. We reply with what is possible that day. Bookings don't go through the website, so WhatsApp is the quickest route. You can see more of the lawn on the [party page](../).
+Message 096467 13555, or call, with the date, the start time and roughly how many guests. Add whether it is a lunch or a dinner and whether there will be speeches or a cake. We reply with what is possible that day. Bookings don't go through the website, so a message is the quickest route. You can see more of the lawn on the [party page](../).

@@ -4,7 +4,7 @@ seoTitle: "Evening Dinner on a Garden Lawn in Ludhiana | Red Wood Farm"
 description: "Evening dinner on a garden lawn in Ludhiana: walk through the fairy-light tunnel, pick a table under the palms or string lights, and order from the tandoor."
 cluster: garden
 query: "evening dinner lawn ludhiana"
-summary: "In short: an evening at Red Wood Farm on outer Pakhowal Road means dinner on an open garden lawn after a walk through a tunnel of warm white fairy lights. You can sit on the grass, under lit palms or in a lounge corner under string lights, and order from the tandoor and the curry menu. We are open every day until 11 PM, and tables are booked on WhatsApp at 096467 13555."
+summary: "In short: an evening at Red Wood Farm on outer Pakhowal Road means dinner on an open garden lawn after a walk through a tunnel of warm white fairy lights. You can sit on the grass, under lit palms or in a lounge corner under string lights, and order from the tandoor and the curry menu. We are open every day until 11 PM, and tables are booked by message at 096467 13555."
 updated: 2026-11-17
 images:
   - src: venue/tunnel.jpg
@@ -19,7 +19,7 @@ faq:
   - q: "Is Red Wood Farm only for parties in the evening?"
     a: "No. Red Wood Farm is a family restaurant first, and the lawn is open for ordinary dinners every evening, with parties booked separately."
   - q: "Can a couple ask for a quieter table?"
-    a: "Yes, ask for a table under the palm trees when you book on WhatsApp at 096467 13555, and we will tell you what we can arrange."
+    a: "Yes, ask for a table under the palm trees when you book with a message at 096467 13555, and we will tell you what we can arrange."
   - q: "Is there Wi-Fi at Red Wood Farm?"
     a: "Yes, Wi-Fi is available for guests."
 related:
@@ -66,8 +66,8 @@ On Google, Red Wood Farm showed a 4.2 rating from 72 reviews on 14 November 2026
 ## Good to know before you go
 
 - **Hours:** 10:00 AM to 11:00 PM, every day.
-- **Booking:** message the date, time and number of guests to 096467 13555 on WhatsApp, or call the same number.
-- **Takeaway:** order by phone or WhatsApp and collect.
+- **Booking:** message the date, time and number of guests to 096467 13555, or call the same number.
+- **Takeaway:** order by phone or message and collect.
 - **Wi-Fi:** available.
 - **Access:** there is no wheelchair access.
 - **Cold months:** December and January nights get cold on an open lawn. Our page on [winter evenings on the lawn](../winter-evenings-on-the-lawn/) covers what to wear and what to order.

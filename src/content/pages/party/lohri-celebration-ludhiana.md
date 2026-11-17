@@ -1,10 +1,10 @@
 ---
 title: "Lohri Party Venue in Ludhiana on a Garden Lawn"
 seoTitle: "Lohri Party Venue in Ludhiana | Red Wood Farm Garden Lawn"
-description: "Hold your Lohri party on a garden lawn on Pakhowal Road, Ludhiana. Winter dishes like Saag and Gajrela when in season, real menu prices and WhatsApp booking."
+description: "Hold your Lohri party on a garden lawn on Pakhowal Road, Ludhiana. Winter dishes like Saag and Gajrela when in season, real menu prices and table booking."
 cluster: party
 query: "lohri party venue ludhiana"
-summary: "Red Wood Farm on outer Pakhowal Road hosts Lohri get-togethers on its garden lawn in mid-January, with food from the regular menu, including seasonal winter dishes such as Saag and Gajrela when available. Prices are listed per dish and include GST. For anything on the lawn beyond seating and food, ask us on WhatsApp at 096467 13555."
+summary: "Red Wood Farm on outer Pakhowal Road hosts Lohri get-togethers on its garden lawn in mid-January, with food from the regular menu, including seasonal winter dishes such as Saag and Gajrela when available. Prices are listed per dish and include GST. For anything on the lawn beyond seating and food, ask us at 096467 13555."
 updated: 2026-11-17
 images:
   - src: venue/function-night.jpg
@@ -15,11 +15,11 @@ faq:
   - q: "When is Lohri celebrated?"
     a: "Lohri falls in mid-January, usually on 13 January, the evening before Maghi. Check the exact date for the year when you plan."
   - q: "Are there Lohri party venues in Ludhiana with prices?"
-    a: "Red Wood Farm publishes every dish price on its menu page, with GST included. There are no set packages. You order from the menu, and we confirm what is possible for your date on WhatsApp."
+    a: "Red Wood Farm publishes every dish price on its menu page, with GST included. There are no set packages. You order from the menu, and we confirm what is possible for your date."
   - q: "Is Saag on the menu all year?"
-    a: "No. Saag is marked seasonal on the menu, at ₹275. Ask us on WhatsApp whether it is available on your date."
+    a: "No. Saag is marked seasonal on the menu, at ₹275. Ask us whether it is available on your date."
   - q: "Can we celebrate a baby's or a newly married couple's first Lohri here?"
-    a: "Yes, family gatherings are what the lawn is for. Send the date, time and guest count on WhatsApp, and ask us what is possible on the lawn for anything you plan beyond food and seating."
+    a: "Yes, family gatherings are what the lawn is for. Send the date, time and guest count, and ask us what is possible on the lawn for anything you plan beyond food and seating."
 related:
   - /party/
   - /menu/
@@ -28,7 +28,7 @@ related:
   - /garden/winter-evenings-on-the-lawn/
 ---
 
-Red Wood Farm on outer Pakhowal Road is a Lohri party venue in Ludhiana with an open garden lawn, fairy lights after dark and winter dishes like Saag and Gajrela when in season. You order by the dish, at prices that include GST. Book on WhatsApp at 096467 13555 and ask us what is possible on the lawn.
+Red Wood Farm on outer Pakhowal Road is a Lohri party venue in Ludhiana with an open garden lawn, fairy lights after dark and winter dishes like Saag and Gajrela when in season. You order by the dish, at prices that include GST. Book at 096467 13555 and ask us what is possible on the lawn.
 
 ## What is Lohri, and why do families gather for it?
 
@@ -48,7 +48,7 @@ After sunset the garden is lit. A walk-through tunnel of warm white fairy lights
 
 ## What winter food is on the menu for Lohri?
 
-Lohri food is winter food: greens, butter, jaggery and milk sweets. Our menu has several dishes that suit a January table. Anything marked seasonal depends on availability, so confirm it on WhatsApp a few days ahead.
+Lohri food is winter food: greens, butter, jaggery and milk sweets. Our menu has several dishes that suit a January table. Anything marked seasonal depends on availability, so confirm it a few days ahead.
 
 **Seasonal dishes**
 
@@ -65,7 +65,7 @@ The menu has no corn roti. Missi Roti (₹30), Tandoori Roti (₹20) and Butter 
 - Butter Chicken (₹415 half, ₹695 full) and Mutton Rogan Josh (₹345 half, ₹645 full)
 - Gulab Jamun (₹35) and Kheer (₹65)
 
-Sesame sweets, peanuts and popcorn are not on our menu. If you want to bring your own to hand out, ask us on WhatsApp first. The [full menu](../../menu/) lists every dish with its price, and our guide to [Punjabi winter food](../../guides/punjabi-winter-food/) covers more of the season's dishes.
+Sesame sweets, peanuts and popcorn are not on our menu. If you want to bring your own to hand out, ask us first. The [full menu](../../menu/) lists every dish with its price, and our guide to [Punjabi winter food](../../guides/punjabi-winter-food/) covers more of the season's dishes.
 
 ## How do you plan a Lohri party for a big family?
 
@@ -81,4 +81,4 @@ If the party is for a first Lohri, put the couple or the baby's parents at the c
 
 ## Booking Lohri at Red Wood Farm
 
-Message 096467 13555 on WhatsApp, or call, with your date, start time and number of guests. Mention whether it is a first Lohri, and ask us what is possible on the lawn for anything beyond food and seating. See other events on the [party page](../), or read about [winter evenings on the lawn](../../garden/winter-evenings-on-the-lawn/).
+Message 096467 13555, or call, with your date, start time and number of guests. Mention whether it is a first Lohri, and ask us what is possible on the lawn for anything beyond food and seating. See other events on the [party page](../), or read about [winter evenings on the lawn](../../garden/winter-evenings-on-the-lawn/).

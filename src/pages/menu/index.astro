@@ -124,13 +124,13 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', it
         </section>
       );
     })}
-    <p class="m-empty" hidden data-empty>No dish matches that search. Try another word, or ask us on WhatsApp.</p>
+    <p class="m-empty" hidden data-empty>No dish matches that search. Try another word, or ask us.</p>
 
     <aside class="m-foot tone-green">
       <p>All prices are in ₹ and inclusive of GST. <span class="mark v" aria-hidden="true"></span> Veg <span class="mark nv" aria-hidden="true"></span> Non-veg. Ice Cream with Brownie is marked non-veg until we confirm the brownie is eggless.</p>
       <p>Open daily, 10 AM to 11 PM. Dine-in and takeaway.</p>
       <div class="btns">
-        <a class="btn red" href={waLink('Hello Red Wood Farm, I would like to order a takeaway.')} target="_blank" rel="noopener"><Icon name="wa" />Order takeaway on WhatsApp</a>
+        <a class="btn red" href={waLink('Hello Red Wood Farm, I would like to order a takeaway.')} target="_blank" rel="noopener"><Icon name="wa" />Order a takeaway</a>
         <a class="btn ghost" href={site.tel}><Icon name="call" />Call {site.phoneDisplay}</a>
       </div>
     </aside>
@@ -189,10 +189,10 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', it
 
   // Back to top: shows once the visitor is well into the list.
   const top = document.querySelector('[data-top]');
-  const showTop = () => top.classList.toggle('on', window.scrollY > 1400);
-  window.addEventListener('scroll', showTop, { passive: true });
+  // No scroll listener: the button appears once the first two categories have scrolled away.
+  const sentinel = document.querySelector('#appetizers');
+  if (sentinel) new IntersectionObserver(([e]) => top.classList.toggle('on', e.boundingClientRect.top < 0)).observe(sentinel);
   top.addEventListener('click', (e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' }); q.blur(); });
-  showTop();
 </script>
 
 <style>
@@ -219,7 +219,7 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', it
 
   .m-body { padding-block: 20px 96px; }
   .m-count { font-size: var(--t-small); margin-bottom: 4px; }
-  .m-sec { padding-top: 44px; scroll-margin-top: 150px; display: grid; gap: 20px 64px; content-visibility: auto; contain-intrinsic-size: auto 1200px; }
+  .m-sec { padding-top: 44px; scroll-margin-top: 150px; display: grid; gap: 20px 64px; }
   @media (min-width: 900px) { .m-sec { grid-template-columns: 1fr 1.6fr; } .m-sec-head, .m-fig { grid-column: 1; } .m-groups { grid-column: 2; grid-row: 1 / span 3; } .m-fig { position: sticky; top: 160px; align-self: start; } }
   .m-sec h2 { font-size: var(--t-2); margin: 0; }
   .m-sec-head p { margin: 8px 0 0; }

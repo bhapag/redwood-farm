@@ -51,7 +51,7 @@ Yes. Every price on the menu includes GST. A Butter Naan listed at ₹45 is ₹4
 
 The full range runs from ₹20 for a Tandoori Roti or a Tawa Roti up to ₹925 for Atta Chicken, our chicken cooked sealed inside wheat-flour dough.
 
-If you have a question about anything else on a bill, ask us at the table or on WhatsApp.
+If you have a question about anything else on a bill, ask us at the table or.
 
 ## How do the Half and Full columns work?
 
@@ -75,7 +75,7 @@ A dish marked seasonal isn't on every day of the year. These are the seasonal it
 - Malpua Rabri (seasonal): ₹65
 - The whole Fish (seasonal) group of eight dishes, from Fish Manchurian at ₹555 to Fish Curry at ₹595
 
-If you're coming for one of these, send us a WhatsApp message on the day to check.
+If you're coming for one of these, send us a message on the day to check.
 
 ## Why are ice creams priced per scoop?
 
@@ -99,4 +99,4 @@ A few search tips:
 
 ## Ask about anything you can't find
 
-If a mark, a price or a seasonal dish isn't clear, message us on [WhatsApp at 096467 13555](https://wa.me/919646713555). We're open from 10 AM to 11 PM every day for dine-in and takeaway, and the rest of our food guides are on the [food page](../).
+If a mark, a price or a seasonal dish isn't clear, message us on [096467 13555](https://wa.me/919646713555). We're open from 10 AM to 11 PM every day for dine-in and takeaway, and the rest of our food guides are on the [food page](../).

@@ -1,10 +1,10 @@
 ---
 title: "Reunion and Get-Together Venue in Ludhiana"
 seoTitle: "Reunion Get-Together Venue in Ludhiana | Red Wood Farm"
-description: "A garden lawn on Pakhowal Road for school batch, college and family reunions in Ludhiana. Distances from the city, real menu prices and WhatsApp booking."
+description: "A garden lawn on Pakhowal Road for school batch, college and family reunions in Ludhiana. Distances from the city, real menu prices and table booking."
 cluster: party
 query: "reunion get together venue ludhiana"
-summary: "For a school, college or family reunion in Ludhiana, Red Wood Farm offers a garden lawn with dining tables, a fairy-light tunnel for the group photo and a full menu with GST-inclusive prices. It is on outer Pakhowal Road, about 6.5 to 6.9 km from Dugri, Sarabha Nagar and Model Town. Book on WhatsApp at 096467 13555."
+summary: "For a school, college or family reunion in Ludhiana, Red Wood Farm offers a garden lawn with dining tables, a fairy-light tunnel for the group photo and a full menu with GST-inclusive prices. It is on outer Pakhowal Road, about 6.5 to 6.9 km from Dugri, Sarabha Nagar and Model Town. Book at 096467 13555."
 updated: 2026-11-17
 images:
   - src: venue/tunnel.jpg
@@ -15,7 +15,7 @@ faq:
   - q: "How far is Red Wood Farm from Ludhiana Railway Station?"
     a: "About 10.7 km by road, roughly 16 minutes without traffic, by way of Ferozepur Road and Pakhowal Road. Allow extra time at busy hours."
   - q: "Can we bring a banner or a cake to the reunion?"
-    a: "Tell us on WhatsApp at 096467 13555 what you want to bring, and we will tell you what is possible for your date."
+    a: "Tell us at 096467 13555 what you want to bring, and we will tell you what is possible for your date."
   - q: "Is there space for children at a family reunion?"
     a: "There is space on the grass for children to move around. There is no play area and there are no rides, so an adult should keep an eye on the little ones."
   - q: "What are Red Wood Farm's opening hours?"
@@ -28,7 +28,7 @@ related:
   - /garden/fairy-light-tunnel/
 ---
 
-Red Wood Farm is a garden restaurant and party lawn on outer Pakhowal Road that suits school batch, college and family reunions in Ludhiana. Your group gets tables on an open lawn, a lit tunnel for the group photo and a menu covering veg, chicken, mutton and Indo-Chinese dishes. Book on WhatsApp at 096467 13555 with your date and numbers.
+Red Wood Farm is a garden restaurant and party lawn on outer Pakhowal Road that suits school batch, college and family reunions in Ludhiana. Your group gets tables on an open lawn, a lit tunnel for the group photo and a menu covering veg, chicken, mutton and Indo-Chinese dishes. Book at 096467 13555 with your date and numbers.
 
 ## Which kinds of reunions does the lawn suit?
 
@@ -85,4 +85,4 @@ For a daytime shot, the green hedge entrance arch and the "Red Wood Farm" name a
 
 ## Planning the reunion with us
 
-Send the date, a start time and a rough headcount on WhatsApp to 096467 13555, or call the same number. If the count is still moving, give us a range and update it two days before. Mention anything you plan to bring, like a banner or a cake, and we will tell you what is possible. More on events at Red Wood Farm is on the [party page](../).
+Send the date, a start time and a rough headcount to 096467 13555, or call the same number. If the count is still moving, give us a range and update it two days before. Mention anything you plan to bring, like a banner or a cake, and we will tell you what is possible. More on events at Red Wood Farm is on the [party page](../).

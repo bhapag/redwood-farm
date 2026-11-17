@@ -4,7 +4,7 @@ seoTitle: "Dal Makhani Ludhiana: ₹275 on Pakhowal Road | Red Wood Farm"
 description: "Dal Makhni costs ₹275 at Red Wood Farm on Pakhowal Road, Ludhiana, GST included. See the other dals, the breads and rice to pair, and how much to order."
 cluster: food
 query: "dal makhani ludhiana"
-summary: "In short: Red Wood Farm on Pakhowal Road, Ludhiana serves Dal Makhni at ₹275 for one Full portion, GST included. Pair it with Butter Naan (₹45), Laccha Paratha (₹45) or Jeera Rice (₹230). We are open every day from 10 AM to 11 PM, and you can order it for takeaway on WhatsApp at 096467 13555."
+summary: "In short: Red Wood Farm on Pakhowal Road, Ludhiana serves Dal Makhni at ₹275 for one Full portion, GST included. Pair it with Butter Naan (₹45), Laccha Paratha (₹45) or Jeera Rice (₹230). We are open every day from 10 AM to 11 PM, and you can order it for takeaway at 096467 13555."
 updated: 2026-11-17
 images:
   - src: food/dal_makhni.jpg
@@ -17,7 +17,7 @@ faq:
   - q: "Is Dal Makhni vegetarian at Red Wood Farm?"
     a: "Yes. Dal Makhni carries the green veg mark on our menu, as do all the other dals: Yellow Dal Tadka, Dal Missi Tadka and Dal Handi."
   - q: "Can I get dal makhani for takeaway?"
-    a: "Yes. Order by phone or WhatsApp on 096467 13555, tell us the time you will collect it, and pick it up from 676, VPO Daad, Pakhowal Road."
+    a: "Yes. Order by phone or message on 096467 13555, tell us the time you will collect it, and pick it up from 676, VPO Daad, Pakhowal Road."
   - q: "Why is the menu spelling Dal Makhni and not dal makhani?"
     a: "Both spellings mean the same dish. Our printed menu spells it Dal Makhni, so use that name when you order."
 related:
@@ -29,13 +29,13 @@ related:
   - /party/party-planning-checklist/
 ---
 
-Dal Makhni costs ₹275 at Red Wood Farm, our garden family restaurant on Pakhowal Road in Ludhiana. That is the price for one Full portion with GST included; the menu has no Half size for it. Eat it on the lawn with Butter Naan at ₹45, or order it for takeaway by phone or WhatsApp on 096467 13555.
+Dal Makhni costs ₹275 at Red Wood Farm, our garden family restaurant on Pakhowal Road in Ludhiana. That is the price for one Full portion with GST included; the menu has no Half size for it. Eat it on the lawn with Butter Naan at ₹45, or order it for takeaway by phone or message on 096467 13555.
 
 ## What is dal makhani?
 
 Dal makhani is a slow-cooked lentil dish from Punjab. It is usually made with whole black lentils and a smaller share of kidney beans, simmered for a long time and finished with butter and cream. The long cooking makes it thick and dark brown, with a soft, almost silky texture. The name itself refers to the butter.
 
-On our menu the dish is spelled Dal Makhni, so look for that name when you order. If you want to know how our kitchen cooks it, or how spicy it is on a given day, ask us on WhatsApp and we'll tell you.
+On our menu the dish is spelled Dal Makhni, so look for that name when you order. If you want to know how our kitchen cooks it, or how spicy it is on a given day, ask us and we'll tell you.
 
 ## Which state is famous for dal makhani?
 
@@ -47,7 +47,7 @@ Because it comes from this region, people here tend to have firm opinions about 
 
 For a home party where dal is one of several dishes, a common rule of thumb is one small side bowl per adult. Plan for more if dal and rice are the main meal. Plan for less when two or three other gravies share the table.
 
-At Red Wood Farm the menu lists Dal Makhni in one Full size only. We haven't published how many people a Full portion serves, so send us your group size on WhatsApp and we'll suggest how many to order. If you are hosting something bigger at home or on our lawn, our [party planning checklist](../../party/party-planning-checklist/) covers food per guest across the whole meal.
+At Red Wood Farm the menu lists Dal Makhni in one Full size only. We haven't published how many people a Full portion serves, so send us your group size and we'll suggest how many to order. If you are hosting something bigger at home or on our lawn, our [party planning checklist](../../party/party-planning-checklist/) covers food per guest across the whole meal.
 
 ## Is dal makhani healthy?
 
@@ -100,4 +100,4 @@ Dal Makhni sits well beside a paneer or chicken gravy. Kadhai Paneer costs Half 
 
 ## Ordering Dal Makhni at Red Wood Farm
 
-We're at 676, VPO Daad, Pakhowal Road, opposite Cerajot Tiles and near Omaxe Flats. We're open from 10 AM to 11 PM every day. To book a table or place a takeaway order, send the dishes, the time and the number of people on WhatsApp to 096467 13555. Every price on the [full menu](../../menu/) includes GST.
+We're at 676, VPO Daad, Pakhowal Road, opposite Cerajot Tiles and near Omaxe Flats. We're open from 10 AM to 11 PM every day. To book a table or place a takeaway order, send the dishes, the time and the number of people to 096467 13555. Every price on the [full menu](../../menu/) includes GST.

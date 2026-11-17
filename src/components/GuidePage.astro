@@ -93,10 +93,10 @@ const schema = [article, crumbs, ...(d.faq.length ? [faqSchema(d.faq)] : [])];
         )}
 
         <section class="g-cta tone-night" aria-label="Book or ask">
-          <h2>Ask us on WhatsApp</h2>
+          <h2>Ask us</h2>
           <p>Send the date, time and number of guests. For anything not on this page, such as capacity or party prices, we reply with current details.</p>
           <div class="btns">
-            <a class="btn red" href={waLink(`Hello Red Wood Farm, I read "${d.title}" on your website and have a question.`)} target="_blank" rel="noopener"><Icon name="wa" />WhatsApp {site.phoneDisplay}</a>
+            <a class="btn red" href={waLink(`Hello Red Wood Farm, I read "${d.title}" on your website and have a question.`)} target="_blank" rel="noopener"><Icon name="wa" />Book a table</a>
             <a class="btn ghost" href={u('/visit/')}><Icon name="pin" />Getting here</a>
           </div>
         </section>

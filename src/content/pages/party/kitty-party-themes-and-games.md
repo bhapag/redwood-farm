@@ -15,7 +15,7 @@ faq:
   - q: "What prizes work for kitty party games?"
     a: "Small things wrapped before the party, such as a scented candle, a small plant or a box of sweets. Keep every prize close to the same value so nobody feels short-changed."
   - q: "Can we put up our own theme backdrop at Red Wood Farm?"
-    a: "Tell us your theme when you book on WhatsApp (096467 13555) and we'll confirm what can be set up. A daytime party here has used a kite-theme backdrop on the lawn."
+    a: "Tell us your theme when you book with a message (096467 13555) and we'll confirm what can be set up. A daytime party here has used a kite-theme backdrop on the lawn."
   - q: "What time should a kitty party start?"
     a: "Most groups meet in the late morning or early afternoon. Red Wood Farm opens at 10:00 AM every day."
 related:
@@ -85,4 +85,4 @@ This page is about what to play. For what to ask a venue about the time slot, se
 
 ## Booking a daytime kitty party
 
-Send your date, start time, group size and theme to 096467 13555 on WhatsApp. We're open from 10:00 AM every day at VPO Daad on Pakhowal Road, near Omaxe Flats. More photos of the lawn are on our [party page](../).
+Send your date, start time, group size and theme to 096467 13555. We're open from 10:00 AM every day at VPO Daad on Pakhowal Road, near Omaxe Flats. More photos of the lawn are on our [party page](../).

@@ -17,7 +17,7 @@ faq:
   - q: "Does Red Wood Farm sell pinni or panjiri?"
     a: "No. Neither is on our menu. For a warm winter dessert, try Malpua Rabri (seasonal) at ₹65 or Kesar Kheer at ₹75."
   - q: "Can I take saag home from Red Wood Farm?"
-    a: "We do takeaway when you order by phone or WhatsApp on 096467 13555. Saag is seasonal, so ask first whether it's being cooked that day."
+    a: "We do takeaway when you order by phone or message on 096467 13555. Saag is seasonal, so ask first whether it's being cooked that day."
   - q: "Which month does saag season start in Punjab?"
     a: "Mustard greens are a cold-season crop in Punjab, so homes start cooking saag as the weather turns cool in late autumn and keep at it through the winter."
 related:
@@ -88,7 +88,7 @@ Straight from the tandoor, Tandoori Chicken (₹375) and Paneer Tikka (₹375) a
 
 ## What does "seasonal" mean on our menu?
 
-A few dishes on our [menu](../../menu/) carry the word seasonal: Saag, Bhindi, Gajrela, Malpua Rabri and the fish dishes. It means they're cooked when the ingredients are right, and availability can change from week to week. If you're driving out for one particular dish, send us a WhatsApp on 096467 13555 first and we'll tell you whether it's on.
+A few dishes on our [menu](../../menu/) carry the word seasonal: Saag, Bhindi, Gajrela, Malpua Rabri and the fish dishes. It means they're cooked when the ingredients are right, and availability can change from week to week. If you're driving out for one particular dish, send us a message on 096467 13555 first and we'll tell you whether it's on.
 
 All our prices include GST.
 
@@ -96,4 +96,4 @@ All our prices include GST.
 
 Red Wood Farm is a garden restaurant with dining tables on an open lawn, under string lights and palms wrapped in fairy lights. On winter evenings that's part of the appeal. Dress warmly and bring a shawl for older relatives. Our page on [winter evenings on the lawn](../../garden/winter-evenings-on-the-lawn/) has more on dining outdoors after dark.
 
-You'll find us at 676, VPO Daad, on Pakhowal Road, opposite Cerajot Tiles. We're open every day from 10:00 AM to 11:00 PM. Book a table by WhatsApp or phone with your date, time and number of guests. For the year-round Punjabi favorites, see our [Ludhiana food guide](../ludhiana-food-guide/).
+You'll find us at 676, VPO Daad, on Pakhowal Road, opposite Cerajot Tiles. We're open every day from 10:00 AM to 11:00 PM. Book a table by message or phone with your date, time and number of guests. For the year-round Punjabi favorites, see our [Ludhiana food guide](../ludhiana-food-guide/).

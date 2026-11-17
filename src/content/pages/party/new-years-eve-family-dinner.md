@@ -1,10 +1,10 @@
 ---
 title: "New Year's Eve Family Dinner in Ludhiana"
 seoTitle: "New Year Eve Party in Ludhiana for Families | Red Wood Farm"
-description: "Plan a New Year's Eve family dinner in Ludhiana on a fairy-lit garden lawn on Pakhowal Road. Regular hours to 11 PM, real menu prices, WhatsApp booking."
+description: "Plan a New Year's Eve family dinner in Ludhiana on a fairy-lit garden lawn on Pakhowal Road. Regular hours to 11 PM, real menu prices, table booking."
 cluster: party
 query: "new year eve party ludhiana family"
-summary: "Red Wood Farm on outer Pakhowal Road suits a New Year's Eve family dinner on its fairy-lit garden lawn. Regular hours are 10 AM to 11 PM, so plan an evening meal and see in midnight at home, and ask us on WhatsApp at 096467 13555 about New Year's Eve itself. You order from the regular menu, with GST included."
+summary: "Red Wood Farm on outer Pakhowal Road suits a New Year's Eve family dinner on its fairy-lit garden lawn. Regular hours are 10 AM to 11 PM, so plan an evening meal and see in midnight at home, and ask us at 096467 13555 about New Year's Eve itself. You order from the regular menu, with GST included."
 updated: 2026-11-17
 images:
   - src: venue/name-arch.jpg
@@ -13,9 +13,9 @@ images:
     alt: "Dining tables set out on the open grass lawn"
 faq:
   - q: "Does Red Wood Farm stay open past midnight on New Year's Eve?"
-    a: "Our regular hours are 10 AM to 11 PM. Ask us on WhatsApp at 096467 13555 about New Year's Eve before you plan around a later time."
+    a: "Our regular hours are 10 AM to 11 PM. Ask us at 096467 13555 about New Year's Eve before you plan around a later time."
   - q: "Is there a New Year's Eve package or entry fee?"
-    a: "We don't publish any package. You order from the regular menu, where every price includes GST. Ask us on WhatsApp about anything specific to the night."
+    a: "We don't publish any package. You order from the regular menu, where every price includes GST. Ask us about anything specific to the night."
   - q: "Is the lawn comfortable for grandparents on 31 December?"
     a: "Older guests should know there is no wheelchair access and that the lawn is open air, so warm clothes help on a December night."
   - q: "How far ahead should we book for New Year's Eve?"
@@ -28,7 +28,7 @@ related:
   - /party/christmas-lunch-ludhiana/
 ---
 
-For a New Year's Eve family dinner in Ludhiana, Red Wood Farm on outer Pakhowal Road offers tables on a garden lawn lit with fairy lights and a full menu with GST-inclusive prices. Regular hours run from 10 AM to 11 PM, so treat it as an evening meal and ask us on WhatsApp at 096467 13555 about the night.
+For a New Year's Eve family dinner in Ludhiana, Red Wood Farm on outer Pakhowal Road offers tables on a garden lawn lit with fairy lights and a full menu with GST-inclusive prices. Regular hours run from 10 AM to 11 PM, so treat it as an evening meal and ask us at 096467 13555 about the night.
 
 ## What can we do on New Year's Eve with family?
 
@@ -39,7 +39,7 @@ Plenty of families skip the loud ticketed party and want a good dinner together,
 3. **Stop at the name arch.** The "Red Wood Farm" name arch and the green neon sign give you two more backdrops.
 4. **See in midnight at home.** Our regular hours end at 11 PM, which leaves time to drive home and watch the countdown together on TV or from the roof.
 
-For the night itself, ask us on WhatsApp what we have planned for New Year's Eve. This page doesn't promise a countdown or late opening.
+For the night itself, ask us what we have planned for New Year's Eve. This page doesn't promise a countdown or late opening.
 
 ## What should three generations order?
 
@@ -65,7 +65,7 @@ The address for your map is 676, VPO Daad, Pakhowal Road, opposite Cerajot Tiles
 
 ## What if we would rather eat at home?
 
-Takeaway works for New Year's Eve too. Order by phone or WhatsApp on 096467 13555, collect the food on your way home and serve it as midnight gets close. A Veg Biryani (₹325) or Non-Veg Biryani (₹375) is an easy one-pot order for a home table, with Boondi Raita (₹165) on the side. Place the order early in the evening, since our regular hours end at 11 PM.
+Takeaway works for New Year's Eve too. Order by phone or message on 096467 13555, collect the food on your way home and serve it as midnight gets close. A Veg Biryani (₹325) or Non-Veg Biryani (₹375) is an easy one-pot order for a home table, with Boondi Raita (₹165) on the side. Place the order early in the evening, since our regular hours end at 11 PM.
 
 ## Could New Year's Day lunch work better?
 
@@ -73,8 +73,8 @@ Some families find the evening of 31 December too crowded, with relatives at oth
 
 ## What should we wear and bring?
 
-The lawn is open air and the last night of December is cold in Punjab. Dress the children in layers and bring a shawl or blanket for the grandparents. If you want to bring a cake to cut for the new year, tell us on WhatsApp and we will tell you what is possible at your table. The same applies to balloons or any small decoration you have in mind.
+The lawn is open air and the last night of December is cold in Punjab. Dress the children in layers and bring a shawl or blanket for the grandparents. If you want to bring a cake to cut for the new year, tell us and we will tell you what is possible at your table. The same applies to balloons or any small decoration you have in mind.
 
 ## Booking the last dinner of the year
 
-WhatsApp or call 096467 13555 with the date, your preferred time and the number of guests, and ask what is on for New Year's Eve. If the family is still choosing between Christmas and New Year's Eve for the big meal, our [Christmas lunch page](../christmas-lunch-ludhiana/) has ideas for 25 December. More group events are on the [party page](../).
+Message or call 096467 13555 with the date, your preferred time and the number of guests, and ask what is on for New Year's Eve. If the family is still choosing between Christmas and New Year's Eve for the big meal, our [Christmas lunch page](../christmas-lunch-ludhiana/) has ideas for 25 December. More group events are on the [party page](../).

@@ -17,7 +17,7 @@ faq:
   - q: "What time does Red Wood Farm close?"
     a: "We are open from 10:00 AM to 11:00 PM every day."
   - q: "How do I book a table if I am coming from Dugri?"
-    a: "Send your date, time and number of guests on WhatsApp or call 096467 13555. Bookings are made by phone or WhatsApp only."
+    a: "Send your date, time and number of guests to 096467 13555, or call the same number. Bookings are made by phone or message only."
 related:
   - /visit/
   - /visit/places-near-red-wood-farm/
@@ -64,10 +64,10 @@ Coming back after dinner, the same roads in reverse take you home: outer Pakhowa
 
 ## No car: cab or auto from Dugri
 
-A cab or an auto booked on an app is an easy option for a 6.5 km ride. Some drivers may know Pakhowal Road well but not this outer stretch. To avoid a wrong turn, ask us on WhatsApp (096467 13555) to share our location and pass the pin to your driver before you set off.
+A cab or an auto booked on an app is an easy option for a 6.5 km ride. Some drivers may know Pakhowal Road well but not this outer stretch. To avoid a wrong turn, ask us on 096467 13555 to share our location and pass the pin to your driver before you set off.
 
 ## Making a trip of it
 
 Because the drive is short, it is easy to treat the trip as an outing rather than a journey. There is open grass on the lawn for children to move about, and the fairy-light tunnel is the spot guests photograph most. For ideas on a half day out with children, read [family outings with kids](../../garden/family-outing-with-kids/). If you want to see what else sits around Daad, we keep a list of [places near Red Wood Farm](../places-near-red-wood-farm/) drawn from OpenStreetMap.
 
-Hungry already: the [menu](../../menu/) lists all 187 dishes with exact prices, and every price includes GST. For a table or a party, send your date, time and guest count on WhatsApp or call 096467 13555. All other routes are on the [Visit page](../).
+Hungry already: the [menu](../../menu/) lists all 187 dishes with exact prices, and every price includes GST. For a table or a party, send your date, time and guest count to 096467 13555, or call the same number. All other routes are on the [Visit page](../).

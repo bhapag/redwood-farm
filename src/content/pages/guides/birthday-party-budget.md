@@ -4,7 +4,7 @@ seoTitle: "Birthday Party Budget Planning in Ludhiana | Red Wood Farm"
 description: "Plan a birthday party budget with one formula: headcount times per-plate quote, plus decor, cake and extras. How to compare quotes and spot hidden costs."
 cluster: guides
 query: "birthday party budget planning"
-summary: "A birthday party budget is your confirmed headcount multiplied by the venue's per-plate quote, plus decor, cake, return gifts and a buffer for late changes. Get every quote in writing with the same questions answered. Red Wood Farm shares per-plate prices on WhatsApp, and our à la carte prices are public on the menu page."
+summary: "A birthday party budget is your confirmed headcount multiplied by the venue's per-plate quote, plus decor, cake, return gifts and a buffer for late changes. Get every quote in writing with the same questions answered. Red Wood Farm shares per-plate prices, and our à la carte prices are public on the menu page."
 updated: 2026-11-17
 images:
   - src: venue/birthday-arch.jpg
@@ -15,7 +15,7 @@ faq:
   - q: "What is a normal budget for a birthday party in Ludhiana?"
     a: "There's no honest single figure. The total depends almost entirely on how many people come and the per-plate rate, so collect two or three written quotes for your guest count and compare them line by line."
   - q: "Does Red Wood Farm publish per-plate prices?"
-    a: "No. Per-plate prices are shared on WhatsApp (096467 13555) once you send your date, time and guest count. Our à la carte menu prices are public on the menu page."
+    a: "No. Per-plate prices are shared on 096467 13555 once you send your date, time and guest count. Our à la carte menu prices are public on the menu page."
   - q: "Do Red Wood Farm menu prices include GST?"
     a: "Yes. Every price on our menu includes GST. When you get a per-plate quote from any venue, ask in writing whether tax is included."
   - q: "How can I keep a birthday party budget low?"
@@ -48,7 +48,7 @@ Say 40 guests confirm and the per-plate quote is P. Food alone is 40 × P. If 6 
 
 ## How do you count heads honestly?
 
-Send the invitation on WhatsApp with a clear reply-by date, then make your own list from the replies. A WhatsApp poll with "coming", "not coming" and "maybe" options makes the count easier to read.
+Send the invitation with a clear reply-by date, then make your own list from the replies. A group-chat poll with "coming", "not coming" and "maybe" options makes the count easier to read.
 
 Treat every "maybe" as half a guest when you estimate. Ask parents of small children whether the kids are coming. Then give the venue a final number a few days before the party and ask what happens if the count goes up or down after that.
 
@@ -65,7 +65,7 @@ Venues quote in different ways, which makes comparing them hard. Fix that by sen
 7. Is there a charge for music or a speaker.
 8. What changes if the guest count drops or rises.
 
-Ask for the answers on WhatsApp, in writing. A quote you can scroll back to is worth more than one you heard on a call. Lay the replies side by side in a notebook or spreadsheet, one row per venue, and the real differences show up fast.
+Ask for the answers, in writing. A quote you can scroll back to is worth more than one you heard on a call. Lay the replies side by side in a notebook or spreadsheet, one row per venue, and the real differences show up fast.
 
 ## Where do party costs hide?
 
@@ -98,16 +98,16 @@ For a small family birthday, ordering from a menu can be easier than a per-plate
 | Gulab Jamun × 8 | ₹35 each |
 | **Total for this order** | **₹3,055** |
 
-Our prices include GST, so that total is the food bill for that order. How far it stretches depends on the group, so ask us on WhatsApp how many people each dish usually serves before you lock the order.
+Our prices include GST, so that total is the food bill for that order. How far it stretches depends on the group, so ask us how many people each dish usually serves before you lock the order.
 
 ## Budgeting a birthday at Red Wood Farm
 
 Red Wood Farm is a garden family restaurant and party lawn on Pakhowal Road. Here is what you can plan with today:
 
-- **Per-plate prices** for party menus are given on WhatsApp at 096467 13555. Send your date, time and guest count and we'll reply with a quote.
+- **Per-plate prices** for party menus are given at 096467 13555. Send your date, time and guest count and we'll reply with a quote.
 - **À la carte prices** are public on our menu page, and they include GST.
-- **Decor.** Our own photos show balloon arches on the lawn, including one for a 21st birthday. Ask us on WhatsApp who arranges decor and what it costs.
-- **Cake.** Ask on WhatsApp about bringing your own cake.
+- **Decor.** Our own photos show balloon arches on the lawn, including one for a 21st birthday. Ask us who arranges decor and what it costs.
+- **Cake.** Ask us about bringing your own cake.
 
 Guest travel is part of the budget too. We're about 6.5 km from Dugri, 6.8 km from Sarabha Nagar and 6.9 km from Model Town, so most city guests will drive or take a cab. Allow extra time for traffic.
 

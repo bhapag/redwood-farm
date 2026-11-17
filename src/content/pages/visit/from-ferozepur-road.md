@@ -15,9 +15,9 @@ faq:
   - q: "How far is Red Wood Farm from Bharat Nagar Chowk?"
     a: "About 9.5 km by road. OSRM estimates about 14 minutes without traffic, so allow more at peak hours."
   - q: "I am starting farther out on Ferozepur Road. How do I work out the distance?"
-    a: "Add your distance to Bharat Nagar Chowk to our 9.5 km figure, or ask us on WhatsApp (096467 13555) to share our location and let your maps app measure it."
+    a: "Add your distance to Bharat Nagar Chowk to our 9.5 km figure, or ask us on 096467 13555 to share our location and let your maps app measure it."
   - q: "Can Red Wood Farm host an office lunch for a team on Ferozepur Road?"
-    a: "Yes, team lunches are booked on WhatsApp or by phone with the date, time and number of guests. Ask us on WhatsApp for anything beyond the menu."
+    a: "Yes, team lunches are booked by message or phone with the date, time and number of guests. Ask us for anything beyond the menu."
 related:
   - /visit/
   - /visit/from-railway-station/
@@ -85,7 +85,7 @@ We should be clear about access: Red Wood Farm has no wheelchair access. Please 
 
 ## Getting here without driving
 
-A cab or an auto booked on an app will get you here from anywhere on Ferozepur Road. Set Red Wood Farm on Pakhowal Road as the destination, then check the pin. Before you leave, message us on WhatsApp at 096467 13555 and ask us to share our location. Forward that pin to the driver so the outer stretch holds no surprises.
+A cab or an auto booked on an app will get you here from anywhere on Ferozepur Road. Set Red Wood Farm on Pakhowal Road as the destination, then check the pin. Before you leave, message us at 096467 13555 and ask us to share our location. Forward that pin to the driver so the outer stretch holds no surprises.
 
 ## Planning the visit
 
@@ -95,4 +95,4 @@ If you work along Ferozepur Road, the lawn makes a change of scene for a [team l
 - The [menu](../../menu/) lists every dish with its price, GST included, from Tandoori Roti at ₹20 upward.
 - For a wider view of the road we sit on, read the [Pakhowal Road guide](../pakhowal-road-guide/).
 
-To book a table, a team lunch or a party, send the date, time and number of guests on WhatsApp or call 096467 13555. Other starting points are on the [Visit page](../).
+To book a table, a team lunch or a party, send the date, time and number of guests to 096467 13555, or call the same number. Other starting points are on the [Visit page](../).

@@ -17,7 +17,7 @@ faq:
   - q: "Is there a play area for children at Red Wood Farm?"
     a: "No. The lawn is open grass with no play area, rides or kids' zone, so plan supervised games and bring a few simple props from home."
   - q: "Can we bring our own cake and decorations?"
-    a: "Tell us what you plan to bring when you book on WhatsApp (096467 13555), and we'll confirm what works for your date. Birthday set-ups with balloon arches have been done on our lawn before."
+    a: "Tell us what you plan to bring when you book with a message (096467 13555), and we'll confirm what works for your date. Birthday set-ups with balloon arches have been done on our lawn before."
   - q: "What is a good time of day for a kids birthday party?"
     a: "Late morning or mid-afternoon suits most children because it avoids a late bedtime. Red Wood Farm is open from 10:00 AM to 11:00 PM every day."
 related:
@@ -49,18 +49,18 @@ For the venue side of the choice, our page on [birthday party venues in Ludhiana
 
 Indoor games run out of space fast. On grass the children can spread out. Most of these need little more than a phone and a few things from home:
 
-- **Picture-clue treasure hunt.** Draw 8 to 10 clues for children who can't read yet, and write words for older ones. Hide them near your own tables, within sight of the adults. Check with us on WhatsApp before the day about where clues can go.
+- **Picture-clue treasure hunt.** Draw 8 to 10 clues for children who can't read yet, and write words for older ones. Hide them near your own tables, within sight of the adults. Check with us before the day about where clues can go.
 - **Musical statues.** One phone and a small speaker. Everyone freezes when the music stops. It works from about age three up to ten.
 - **Relay races.** Spoon and lemon, a sack race in old pillow covers, or a plain run to the far chair and back. Swap the lemon for a small soft ball with the little ones.
 - **Bedsheet bounce.** Four parents hold an old bedsheet by the corners and bounce a soft ball while the children try to catch it.
 - **Bubble corner.** Two bottles of bubble mix keep toddlers busy while the older kids race.
 - **Card-making table.** Put crayons and paper on one table. Each guest draws a card for the birthday child, and you take home a stack of keepsakes.
 
-For a theme, pick one color and one character, then carry them through the cake, the balloons and the return gifts. Birthday set-ups with balloon arches have been done on our lawn. Tell us what decoration you plan to bring when you book, and we'll confirm on WhatsApp what works.
+For a theme, pick one color and one character, then carry them through the cake, the balloons and the return gifts. Birthday set-ups with balloon arches have been done on our lawn. Tell us what decoration you plan to bring when you book, and we'll confirm what works.
 
 ## Planning a party for about 20 children
 
-Twenty children rarely means twenty guests. Count the parents who will stay, the siblings and the grandparents. Send us both numbers, children and adults, on WhatsApp, and we'll tell you which part of the lawn suits your group on that date. There is no fixed number we quote, because it depends on the set-up.
+Twenty children rarely means twenty guests. Count the parents who will stay, the siblings and the grandparents. Send us both numbers, children and adults,, and we'll tell you which part of the lawn suits your group on that date. There is no fixed number we quote, because it depends on the set-up.
 
 A simple three-hour afternoon plan:
 
@@ -109,4 +109,4 @@ Every dish carries a veg or non-veg mark. Ice Cream with Brownie (₹95) is mark
 
 ## Booking a kids' party with us
 
-Send the date, the start time and your count of children and adults to 096467 13555 on WhatsApp, or call the same number. We're open 10:00 AM to 11:00 PM every day at VPO Daad on Pakhowal Road, opposite Cerajot Tiles. Photos from past parties are on our [party page](../).
+Send the date, the start time and your count of children and adults to 096467 13555, or call the same number. We're open 10:00 AM to 11:00 PM every day at VPO Daad on Pakhowal Road, opposite Cerajot Tiles. Photos from past parties are on our [party page](../).

@@ -57,6 +57,8 @@ if not brownie or brownie[0][1] != "nv":
 # 3. Links, 4. NAP, 5. JSON-LD
 external = set()
 for f in DIST.rglob("*.html"):
+    if f.name.startswith("google") and len(f.read_bytes()) < 200:
+        continue  # Search Console verification file, not a page
     t = f.read_text(encoding="utf8")
     rel = f.relative_to(DIST).as_posix()
     if f.name != "404.html" and "http-equiv=\"refresh\"" not in t:

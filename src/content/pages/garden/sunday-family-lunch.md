@@ -10,7 +10,7 @@ images:
   - src: venue/day-lounge.jpg
     alt: "Wooden sofas with yellow cushions and armchairs under a shaded canopy on the lawn by day"
   - src: food/dal_makhni.jpg
-    alt: "Illustration of a bowl of dal makhani with cream on top"
+    alt: "A bowl of dal makhani with cream on top"
 faq:
   - q: "Is Red Wood Farm open on Sundays?"
     a: "Yes. We are open from 10:00 AM to 11:00 PM every day of the week, Sunday included."

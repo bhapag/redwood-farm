@@ -8,9 +8,9 @@ summary: "On a first visit to Red Wood Farm, start with a soup or a starter, sha
 updated: 2026-11-17
 images:
   - src: food/kadhai_paneer.jpg
-    alt: "Illustrative image of kadhai paneer with peppers and onion in a small wok"
+    alt: "Kadhai paneer with peppers and onion in a small wok"
   - src: food/tandoori_chicken.jpg
-    alt: "Illustrative image of tandoori chicken pieces on a plate with onion rings"
+    alt: "Tandoori chicken pieces on a plate with onion rings"
 faq:
   - q: "What is the house dish at Red Wood Farm?"
     a: "Farm to Table Special Chicken is our house signature chicken. It costs ₹415 for a Half and ₹695 for a Full."

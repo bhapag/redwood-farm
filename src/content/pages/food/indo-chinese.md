@@ -8,7 +8,7 @@ summary: "In short: Red Wood Farm on Pakhowal Road, Ludhiana serves Indo-Chinese
 updated: 2026-11-17
 images:
   - src: food/hakka_noodles.jpg
-    alt: "AI-generated image of hakka noodles tossed with shredded cabbage, carrot and spring onion"
+    alt: "Hakka noodles tossed with shredded cabbage, carrot and spring onion"
 faq:
   - q: "Does Red Wood Farm have veg fried rice?"
     a: "No. The only fried rice on our menu is Chicken Fried Rice at ₹320. For a vegetarian Indo-Chinese meal, pair Manchurian Gravy (₹260) with Hakka Noodles (₹255) or Steamed Rice (₹180)."

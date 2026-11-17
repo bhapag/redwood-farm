@@ -8,11 +8,11 @@ summary: "Ludhiana eats classic Punjabi food: dal makhani, tandoori chicken and 
 updated: 2026-11-17
 images:
   - src: food/dal_makhni.jpg
-    alt: "AI-generated image of a bowl of dal makhani finished with a swirl of cream"
+    alt: "A bowl of dal makhani finished with a swirl of cream"
   - src: food/tandoori_chicken.jpg
-    alt: "AI-generated image of tandoori chicken pieces with onion rings and lemon"
+    alt: "Tandoori chicken pieces with onion rings and lemon"
   - src: food/paneer_jalebi_rabri.jpg
-    alt: "AI-generated image of paneer jalebi served with thick rabri"
+    alt: "Paneer jalebi served with thick rabri"
 faq:
   - q: "Does Red Wood Farm serve lassi?"
     a: "No. Lassi is not on our menu. Our dessert list starts at ₹35 for Gulab Jamun and includes Rasmalai at ₹45 and Kheer at ₹65."

@@ -8,9 +8,9 @@ summary: "In short: Butter Chicken at Red Wood Farm on Pakhowal Road, Ludhiana c
 updated: 2026-11-17
 images:
   - src: food/butter_chicken.jpg
-    alt: "AI-generated image of butter chicken in an orange tomato and cream gravy in a copper bowl"
+    alt: "Butter chicken in an orange tomato and cream gravy in a copper bowl"
   - src: food/naan.jpg
-    alt: "AI-generated image of a basket of naan with charred spots from a clay oven"
+    alt: "A basket of naan with charred spots from a clay oven"
 faq:
   - q: "What is the most expensive chicken dish at Red Wood Farm?"
     a: "Atta Chicken, at ₹925 for a Full. It is chicken cooked sealed inside wheat-flour dough, and it is the highest-priced dish on our whole menu."

@@ -8,11 +8,11 @@ summary: "In short: Red Wood Farm on Pakhowal Road, Ludhiana has 16 dishes with 
 updated: 2026-11-17
 images:
   - src: food/kadhai_paneer.jpg
-    alt: "AI-generated image of kadhai paneer with cubes of paneer, onion and capsicum in a thick red gravy"
+    alt: "Kadhai paneer with cubes of paneer, onion and capsicum in a thick red gravy"
   - src: food/paneer_tikka.jpg
-    alt: "AI-generated image of paneer tikka pieces with charred edges on skewers"
+    alt: "Paneer tikka pieces with charred edges on skewers"
   - src: food/paneer_jalebi_rabri.jpg
-    alt: "AI-generated image of paneer jalebi served with a bowl of thick rabri"
+    alt: "Paneer jalebi served with a bowl of thick rabri"
 faq:
   - q: "Which paneer dishes come in a Half portion?"
     a: "Six do: Palak Paneer, Shahi Paneer, Kadhai Paneer, Paneer Butter Masala and Lahori Paneer at ₹225 for a Half, and Paneer Lababdar at ₹255. The other paneer gravies come in a Full only."

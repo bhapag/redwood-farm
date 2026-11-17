@@ -8,7 +8,7 @@ summary: "Red Wood Farm lists eight desserts from ₹35 to ₹75 and five ice cr
 updated: 2026-11-17
 images:
   - src: food/paneer_jalebi_rabri.jpg
-    alt: "Illustrative image of paneer jalebi served with a bowl of rabri"
+    alt: "Paneer jalebi served with a bowl of rabri"
 faq:
   - q: "How much is Paneer Jalebi with Rabri at Red Wood Farm?"
     a: "It costs ₹75 on the current menu, and that price already includes GST."

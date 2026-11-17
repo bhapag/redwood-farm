@@ -8,9 +8,9 @@ summary: "At Red Wood Farm, 24 main-course dishes come in Half and Full; everyth
 updated: 2026-11-17
 images:
   - src: food/nonveg_platter.jpg
-    alt: "Illustrative image of a mixed non-veg tandoori platter for sharing"
+    alt: "A mixed non-veg tandoori platter for sharing"
   - src: food/dal_makhni.jpg
-    alt: "Illustrative image of a bowl of dal makhni topped with cream"
+    alt: "A bowl of dal makhni topped with cream"
 faq:
   - q: "Is a Full portion double a Half?"
     a: "The menu doesn't print portion weights, so we can't promise an exact ratio. On price, a Full costs less than two Halves for every dish except Shahi Mutton. Ask us how much a Full serves before a big order."

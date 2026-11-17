@@ -10,7 +10,7 @@ images:
   - src: venue/buffet-lawn.jpg
     alt: "Buffet counter with steel serving pots and a marigold-draped stand in front of a green hedge, set up on the lawn at Red Wood Farm"
   - src: food/dal_makhni.jpg
-    alt: "Illustration of a bowl of dal makhni topped with cream and butter"
+    alt: "A bowl of dal makhni topped with cream and butter"
 faq:
   - q: "How many starters should I serve at an Indian party?"
     a: "As general guidance, three or four starter varieties adding up to about 6 to 8 pieces per adult is a common plan when a full meal follows. Serve more if starters run for a long time before dinner."

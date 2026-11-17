@@ -8,9 +8,9 @@ summary: "In short: Red Wood Farm on Pakhowal Road, Ludhiana lists 14 breads, fr
 updated: 2026-11-17
 images:
   - src: food/naan.jpg
-    alt: "AI-generated image of naan with blistered, charred spots brushed with butter"
+    alt: "Naan with blistered, charred spots brushed with butter"
   - src: food/tandoor-glow.jpg
-    alt: "AI-generated image of the glowing mouth of a clay tandoor oven"
+    alt: "The glowing mouth of a clay tandoor oven"
 faq:
   - q: "What is the cheapest bread at Red Wood Farm?"
     a: "Tandoori Roti and Tawa Roti, both at ₹20. They are also the lowest prices anywhere on our menu."

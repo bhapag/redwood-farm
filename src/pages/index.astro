@@ -74,7 +74,7 @@ const strip = [
 // Island data: plain strings only (islands cannot receive image objects).
 const dishCards = await Promise.all(dishes.map(async (d) => ({
   name: d.name, price: price(d.item), veg: d.item.veg, line: d.line, href: u(`/menu/#${d.item.catId}`),
-  alt: `${d.name}, illustrative food photo`,
+  alt: d.name,
   img: (await getImage({ src: d.img, width: 480, height: 600, fit: 'cover', format: 'webp', quality: 72 })).src,
 })));
 const occCards = await Promise.all(occasions.map(async (o) => ({
@@ -126,9 +126,9 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'WebSite', name: sit
         <h2 id="intro-h" class="intro-h" data-reveal>A garden restaurant for the whole family</h2>
         <p class="lede" data-reveal>Red Wood Farm is a garden family restaurant and party lawn at VPO Daad, on outer Pakhowal Road in Ludhiana. We serve tandoor, North Indian and Indo-Chinese food every day from 10 AM to 11 PM, at tables on a fairy-lit lawn.</p>
         <ul class="stats" role="list" data-reveal>
-          <li><span class="stat-n"><CountUp client:interact to={187} duration={1.6} /></span><span class="stat-l">dishes on the menu</span></li>
-          <li><span class="stat-n"><CountUp client:interact to={13} duration={1.2} /></span><span class="stat-l">hours open, every day</span></li>
-          <li><span class="stat-n"><CountUp client:interact to={4.2} decimals={1} duration={1.4} /><span class="stat-star" aria-hidden="true">★</span></span><span class="stat-l">from {site.rating.count} Google reviews</span></li>
+          <li><span class="stat-n"><CountUp client:interact to={187} duration={1.6} /></span><span class="stat-l">dishes</span></li>
+          <li><span class="stat-n"><CountUp client:interact to={13} duration={1.2} /></span><span class="stat-l">hours a day</span></li>
+          <li><span class="stat-n"><CountUp client:interact to={4.2} decimals={1} duration={1.4} /><span class="stat-star" aria-hidden="true">★</span></span><span class="stat-l">Google rating</span></li>
         </ul>
         <a class="link" href={u('/about/')} data-reveal>About Red Wood Farm <Icon name="arrow" /></a>
       </div>
@@ -150,7 +150,7 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'WebSite', name: sit
   <section class="dishes section tone-green" aria-labelledby="dish-h">
     <div class="wrap dish-head">
       <ScrollWords id="dish-h" text="Start with the tandoor" />
-      <p class="muted">Nine dishes from our menu of 187, with their prices. Food photos are illustrative.</p>
+      <p class="muted">Nine dishes from our menu of 187, with their prices.</p>
       <p class="swipe-hint" aria-hidden="true">Swipe or tap the card <Icon name="arrow" /></p>
     </div>
     <div class="dish-phone wrap"><DishStack client:interact dishes={dishCards} /></div>
@@ -390,7 +390,7 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'WebSite', name: sit
   .stats li { display: grid; gap: 4px; align-content: start; }
   .stat-n { font: 400 clamp(2rem, 1.4rem + 2.4vw, 3.2rem)/1 var(--serif); color: var(--redwood); font-variant-numeric: tabular-nums; display: inline-flex; align-items: baseline; gap: 2px; }
   .stat-star { font-size: 0.6em; color: #a8780f; }
-  .stat-l { font-size: var(--t-small); color: var(--mute); line-height: 1.3; }
+  .stat-l { font-size: var(--t-small); color: var(--mute); line-height: 1.3; white-space: normal; overflow-wrap: break-word; }
   /* Dishes: phones get the swipe stack; desktop gets the hover image swap. */
   .dish-phone { margin-top: 28px; }
   .dish-phone :global(.dstack) { height: min(132vw, 560px); max-width: 420px; margin: 0 auto; }

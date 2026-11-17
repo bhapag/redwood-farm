@@ -8,7 +8,7 @@ summary: "In short: Red Wood Farm on Pakhowal Road, Ludhiana serves Veg Biryani 
 updated: 2026-11-17
 images:
   - src: food/nonveg_biryani.jpg
-    alt: "AI-generated image of a pot of non-veg biryani with long-grain rice, fried onions and pieces of meat"
+    alt: "A pot of non-veg biryani with long-grain rice, fried onions and pieces of meat"
 faq:
   - q: "Which meat is in the Non-Veg Biryani?"
     a: "The menu lists it as Non-Veg Biryani at ₹375 without naming the meat. Ask us on WhatsApp at 096467 13555 and we'll tell you what is in it."

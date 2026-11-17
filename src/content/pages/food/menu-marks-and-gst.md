@@ -8,7 +8,7 @@ summary: "On the Red Wood Farm menu, a green square with a dot marks veg and a r
 updated: 2026-11-17
 images:
   - src: food/veg_sizzler.jpg
-    alt: "Illustrative image of a veg sizzler plate with grilled vegetables and rice"
+    alt: "A veg sizzler plate with grilled vegetables and rice"
 faq:
   - q: "Will GST be added on top of the menu price?"
     a: "No. Every price on our menu already includes GST, so tax isn't added on top of the listed price."

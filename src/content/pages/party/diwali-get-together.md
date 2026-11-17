@@ -12,7 +12,7 @@ images:
   - src: venue/garden-path-night.jpg
     alt: "A garden path lit by lamp posts at night"
   - src: food/paneer_jalebi_rabri.jpg
-    alt: "Paneer jalebi with rabri (illustrative image)"
+    alt: "Paneer jalebi with rabri"
 faq:
   - q: "Is Red Wood Farm open on Diwali day?"
     a: "Our regular hours are 10 AM to 11 PM every day. For the festival day itself, confirm on WhatsApp at 096467 13555 before you plan."

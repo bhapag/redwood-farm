@@ -95,7 +95,7 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', it
           </div>
           {ph && (
             <figure class="frame m-fig sd-zoom">
-              <Picture src={photos[ph]} formats={['avif', 'webp']} widths={[400, 700, 1000]} sizes="(min-width: 900px) 34vw, 92vw" alt={`${ph}, illustrative food photo`} loading="lazy" />
+              <Picture src={photos[ph]} formats={['avif', 'webp']} widths={[400, 700, 1000]} sizes="(min-width: 900px) 34vw, 92vw" alt={ph} loading="lazy" />
             </figure>
           )}
           <div class="m-groups">

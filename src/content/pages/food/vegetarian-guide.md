@@ -8,11 +8,11 @@ summary: "In short: Red Wood Farm on Pakhowal Road, Ludhiana serves both veg and
 updated: 2026-11-17
 images:
   - src: food/paneer_tikka.jpg
-    alt: "Illustration of paneer tikka cubes with onion and green capsicum on a slate board, with green chutney and lemon"
+    alt: "Paneer tikka cubes with onion and green capsicum on a slate board, with green chutney and lemon"
   - src: food/dal_makhni.jpg
-    alt: "Illustration of dal makhni in a copper bowl, topped with a swirl of cream, a cube of butter and coriander"
+    alt: "Dal makhni in a copper bowl, topped with a swirl of cream, a cube of butter and coriander"
   - src: food/veg_sizzler.jpg
-    alt: "Illustration of a veg sizzler with paneer, a cutlet, fries and mixed vegetables on a cast-iron plate"
+    alt: "A veg sizzler with paneer, a cutlet, fries and mixed vegetables on a cast-iron plate"
 faq:
   - q: "Is Red Wood Farm a pure vegetarian restaurant?"
     a: "No. Red Wood Farm serves both veg and non-veg food. 131 of the 187 dishes on the menu are marked veg. If a pure-veg kitchen matters to your family, ask us on WhatsApp (096467 13555) before you visit."

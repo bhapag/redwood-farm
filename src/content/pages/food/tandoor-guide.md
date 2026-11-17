@@ -8,9 +8,9 @@ summary: "In short: Red Wood Farm on outer Pakhowal Road serves Tandoori Chicken
 updated: 2026-11-17
 images:
   - src: food/tandoori_chicken.jpg
-    alt: "Illustration of two tandoori chicken legs on a black plate with onion rings, lemon wedges and green chutney"
+    alt: "Two tandoori chicken legs on a black plate with onion rings, lemon wedges and green chutney"
   - src: food/nonveg_platter.jpg
-    alt: "Illustration of a mixed tandoori platter with chicken tikka, seekh kebabs, onion rings and two bowls of green chutney"
+    alt: "A mixed tandoori platter with chicken tikka, seekh kebabs, onion rings and two bowls of green chutney"
 faq:
   - q: "How much is Tandoori Chicken at Red Wood Farm?"
     a: "Tandoori Chicken is ₹375 on our current menu, and the price includes GST. The menu lists one portion size for it, with no half portion."

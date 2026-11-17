@@ -1,6 +1,37 @@
 # DEPLOY: hosting, the domain, and what to do after buying it
 
-## Current state (17 Nov 2026, updated 12:45 IST)
+## Launch status: redwoodfarm.in (18 Nov 2026, 00:30 IST)
+
+The owner bought **redwoodfarm.in** at GoDaddy and approved the hbagga52 Cloudflare account for Red Wood Farm hosting.
+
+| Piece | State |
+|---|---|
+| Source | github.com/bhapag/redwood-farm `main`, clean and pushed. |
+| Cloudflare Pages | Project `redwood-farm` (hbagga52 account) builds `main`: `npx astro build`, output `dist`, env `NODE_VERSION=22`, `PUBLIC_CANONICAL_ORIGIN=https://redwoodfarm.in`. Live at https://redwood-farm.pages.dev (sends `X-Robots-Tag: noindex` via `public/_headers`; only the domain is indexable). |
+| Auto-deploy | The Pages Git link shows "disconnected", so a **deploy hook** (`github-main-push`) is called by a GitHub webhook on every push to `main` (repo Settings, Webhooks). The hook URL is a secret; it lives only in Cloudflare and GitHub. |
+| Cloudflare zone | `redwoodfarm.in` added on the **Free** plan. Status **pending** until the nameservers change. Assigned nameservers: **dexter.ns.cloudflare.com** and **harleigh.ns.cloudflare.com**. Bot Preference Sync is off (our own robots.txt is served). |
+| Zone settings done | SSL/TLS **Full (strict)**; **Always Use HTTPS** on; redirect rule **www to apex 301** (preserves path and query). HSTS: turn on in SSL/TLS, Edge Certificates, only after https://redwoodfarm.in loads with a valid certificate. |
+| DNS records | TXT `@` google-site-verification (Search Console, redwoodfarm7). The apex and www records are created by Pages when the custom domains are added (needs the zone active). |
+| **GoDaddy (blocker)** | The domain is on **Registrar Hold: .IN KYC verification required**. Nameservers cannot be changed until the registrant (Jaspal Singh, +91 74638 81005) verifies with Aadhaar. **Owner action:** GoDaddy, My Domains, redwoodfarm.in, yellow banner, **Validate**, Verify your contact. The details must match the registrant data or it fails. |
+| Search Console | Domain property `redwoodfarm.in` added in redwoodfarm7@gmail.com, **not verified yet** (Verify later). It verifies once the zone is active (the TXT record is already in Cloudflare). |
+| Bing Webmaster + IndexNow | Waits for Search Console verification (import from Search Console). |
+| Google Business Profile | **Verification required** (checked 18 Nov as redwoodfarm7). Per the rules, nothing was edited. After verification, set the website field to https://redwoodfarm.in. |
+| GitHub Pages copy (QR codes) | Still the full site until the domain works. Then run `bash scripts/deploy-gh-redirect.sh`: every path on bhapag.github.io/redwood-farm/ forwards to the same path on https://redwoodfarm.in (meta refresh + JavaScript with query and hash + rel=canonical, 404 catch-all). |
+| Vercel preview | Frozen with noindex. Delete the `redwood-farm` project in the Sales Leak team once the domain works. |
+
+### Remaining steps after KYC (in order)
+1. GoDaddy, redwoodfarm.in, DNS, Nameservers, Change, "I'll use my own nameservers": `dexter.ns.cloudflare.com`, `harleigh.ns.cloudflare.com`. Turn DNSSEC off at GoDaddy if it is on.
+2. Cloudflare, redwoodfarm.in Overview, "Check nameservers now". Wait for **Active** (minutes to a few hours).
+3. Pages project, Custom domains: add `redwoodfarm.in`, then `www.redwoodfarm.in`. Wait for both to show Active with SSL.
+4. Check: `curl -sI https://redwoodfarm.in/` (200, no `x-robots-tag`), `curl -sI https://www.redwoodfarm.in/menu/` (301 to apex), `curl -s https://redwoodfarm.in/sitemap.xml` (domain URLs only).
+5. Turn on HSTS (max-age 6 months, include subdomains, no preload yet).
+6. `bash scripts/deploy-gh-redirect.sh`, then test the QR paths `/redwood-farm/`, `/redwood-farm/party/`, `/redwood-farm/menu/`.
+7. Search Console (redwoodfarm7): Verify the Domain property; submit `https://redwoodfarm.in/sitemap.xml` (it includes the image entries); URL Inspection, Request indexing for Home, Menu, Parties, Visit, FAQ and the top 10 guides; live-test the favicon.
+8. Bing Webmaster Tools: import from Search Console; submit the sitemap; send IndexNow for all URLs.
+9. Google Business Profile: only if verified, set the website to https://redwoodfarm.in.
+10. Delete the Vercel project; remove `vercel.json`.
+
+## Earlier state (17 Nov 2026, kept for history)
 
 | Piece | Where | State |
 |---|---|---|
@@ -33,7 +64,7 @@ Do these in order once the domain is bought. Each step is detailed further down.
 5. **Retire Vercel:** delete `vercel.json` from the repo and delete the Vercel project `redwood-farm` (Project Settings, then Advanced, then Delete). Leave the other Vercel projects alone. Optionally remove `redwood-farm` from the Vercel GitHub app's repository list.
 6. **GitHub copy to redirects:** run `python scripts/make_redirect_site.py https://redwoodfarm.in` and push `dist-redirect/` to `gh-pages`. The printed QR codes then forward to the same page on the domain.
 
-## Cloudflare: why it is not live
+## Cloudflare: why it was not live (superseded 18 Nov: the owner approved the hbagga52 account)
 - **Chrome is signed into Cloudflare as hbagga52@gmail.com.** That account also holds the Samrat and other sites. I didn't sign it out, and I didn't use it for Red Wood Farm, because the plan is a separate redwoodfarm7@gmail.com account.
 - **The in-app browser** had no Google session, so "Continue with Google" asked for the redwoodfarm7 password. Per the rules, that step stopped there.
 

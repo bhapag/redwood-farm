@@ -5,7 +5,7 @@ import SpokeList from '../../components/SpokeList.astro';
 import ReviewBand from '../../components/ReviewBand.astro';
 import Icon from '../../components/Icon.astro';
 import { Picture, getImage } from 'astro:assets';
-import BlurText from '../../components/reactbits/BlurText/BlurText';
+import BlurHeading from '../../components/BlurHeading.astro';
 import Headline from '../../components/rb/Headline';
 import PartyStack from '../../components/rb/PartyStack';
 import Spark from '../../components/rb/Spark';
@@ -42,7 +42,7 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', it
 <Base title="Birthday & Kitty Party Venue in Ludhiana | Red Wood Farm Lawn" description="Birthday parties, kitty parties, family functions and team lunches on a fairy-lit garden lawn on Pakhowal Road, Ludhiana. Food from our own kitchen. Enquire on WhatsApp." schema={[faqSchema(partyFaq), crumbs]} og="og-party.jpg" current="Parties">
   <section class="p-hero tone-night">
     <div class="p-hero-copy">
-      <BlurText client:load as="h1" className="p-title" text="Birthday, kitty and family parties on the lawn" animateBy="words" direction="bottom" delay={70} stepDuration={0.32} />
+      <BlurHeading as="h1" class="p-title" text="Birthday, kitty and family parties on the lawn" />
       <p class="p-lede">Red Wood Farm is a garden party venue on outer Pakhowal Road, Ludhiana. We host birthday parties, kitty parties, family functions and corporate lunches on a fairy-lit lawn, with food from our own kitchen. To book, send your date, time and guest count on WhatsApp.</p>
       <div class="btns">
         <a class="btn red" href="#enquire"><Icon name="wa" />Enquire on WhatsApp</a>

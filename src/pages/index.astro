@@ -4,7 +4,7 @@ import Base from '../layouts/Base.astro';
 import Icon from '../components/Icon.astro';
 import { Picture, getImage } from 'astro:assets';
 import ShinyText from '../components/reactbits/ShinyText/ShinyText';
-import BlurText from '../components/reactbits/BlurText/BlurText';
+import BlurHeading from '../components/BlurHeading.astro';
 import CountUp from '../components/reactbits/CountUp/CountUp';
 import HeroLights from '../components/rb/HeroLights';
 import Headline from '../components/rb/Headline';
@@ -104,10 +104,10 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'WebSite', name: sit
   <section class="hero tone-night" aria-labelledby="hero-title">
     <div class="hero-panel">
       <p class="open-chip" data-open>Open daily, 10 AM to 11 PM</p>
-      <p class="hero-name neon"><ShinyText client:load text="Red Wood Farm" color="#effff5" shineColor="#ffffff" speed={2.6} delay={4} angle={110} shineWidth={18} glow={0} /></p>
-      <BlurText client:load as="h1" id="hero-title" className="hero-title" text={'A garden family restaurant and party lawn'} animateBy="words" direction="bottom" delay={70} stepDuration={0.32} />
+      <p class="hero-name neon"><ShinyText client:idle trigger="view" text="Red Wood Farm" color="#effff5" shineColor="#ffffff" speed={2.6} delay={4} angle={110} shineWidth={18} glow={0} /></p>
+      <BlurHeading as="h1" id="hero-title" class="hero-title" text={'A garden family restaurant and party lawn'} />
       <p class="hero-sub">On outer Pakhowal Road, Ludhiana. Tandoor, North Indian and Indo-Chinese food, every day from 10 AM to 11 PM.</p>
-      <Spark client:visible>
+      <Spark client:idle>
         <div class="hero-ctas">
           <a class="btn" href={u('/menu/')}><Icon name="menu" />See the menu</a>
           <a class="btn ghost" href={u('/party/')}>Plan a party</a>
@@ -379,7 +379,7 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'WebSite', name: sit
 
   /* ---------- React Bits islands on Home ---------- */
   .hero-name :global(.shiny-text) { white-space: nowrap; }
-  .hero :global(.hero-title) { font-size: var(--t-hero); max-width: 18ch; margin: 0 0 14px; line-height: 1.04; column-gap: 0 !important; justify-content: flex-start; }
+  .hero :global(.hero-title) { font-size: var(--t-hero); max-width: 18ch; margin: 0 0 14px; line-height: 1.04; justify-content: flex-start; }
   @media (min-width: 900px) { .hero :global(.hero-title) { font-size: clamp(2.8rem, 1rem + 3.2vw, 4.4rem); max-width: 15ch; } }
   .hero-photo :global(.hero-lights) { position: absolute; inset: 0; pointer-events: none; mix-blend-mode: screen; }
   .intro :global(.rb-headline), .dishes :global(.rb-headline), .occasions :global(.rb-headline), .evening :global(.rb-headline), .guides :global(.rb-headline) { font-size: var(--t-1); }

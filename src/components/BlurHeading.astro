@@ -1,0 +1,18 @@
+---
+// Hero headline with a word-by-word blur-in, done in CSS so it needs no JavaScript and never delays the
+// first paint (the look of React Bits BlurText, which cost too much main-thread time on the hero).
+// Real text in the HTML; under reduced motion the words simply appear.
+const { text, as: Tag = 'h1', id, class: cls = '' } = Astro.props;
+const words = text.split(' ');
+---
+<Tag id={id} class={`blur-heading ${cls}`}>
+  {words.map((w, i) => <><span class="bh-w" style={`--i:${i}`}>{w}</span>{i < words.length - 1 ? ' ' : ''}</>)}
+</Tag>
+<style>
+  .blur-heading { display: flex; flex-wrap: wrap; column-gap: 0.26em; }
+  .bh-w { display: inline-block; white-space: nowrap; }
+  @media (prefers-reduced-motion: no-preference) {
+    .bh-w { animation: bh-in 0.7s cubic-bezier(0.16, 1, 0.3, 1) both; animation-delay: calc(0.08s + var(--i) * 0.07s); }
+  }
+  @keyframes bh-in { from { opacity: 0.001; filter: blur(10px); transform: translateY(0.35em); } to { opacity: 1; filter: blur(0); transform: none; } }
+</style>

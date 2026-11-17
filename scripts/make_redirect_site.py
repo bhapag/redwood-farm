@@ -27,7 +27,7 @@ for page in src.rglob('index.html'):
 <meta name="robots" content="noindex">
 <link rel="canonical" href="{target}">
 <meta http-equiv="refresh" content="0; url={target}">
-<script>location.replace("{origin}{path}" + location.hash);</script>
+<script>location.replace("{origin}{path}" + location.search + location.hash);</script>
 </head><body><p>Red Wood Farm has moved to <a href="{target}">{target}</a>.</p></body></html>
 '''
     dest = out / ('' if rel == '.' else rel) / 'index.html'
@@ -35,7 +35,7 @@ for page in src.rglob('index.html'):
     dest.write_text(doc, encoding='utf8')
     count += 1
 (out / '404.html').write_text(f'''<!doctype html><meta charset="utf-8"><title>Moved</title>
-<script>location.replace("{origin}" + location.pathname.replace(/^\\/redwood-farm/, "") + location.hash);</script>
+<script>location.replace("{origin}" + location.pathname.replace(/^\\/redwood-farm/, "") + location.search + location.hash);</script>
 <p>Red Wood Farm has moved to <a href="{origin}/">{origin}</a>.</p>''', encoding='utf8')
 (out / '.nojekyll').write_text('')
 print(f'wrote {count} redirect pages to {out}')

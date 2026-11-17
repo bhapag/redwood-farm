@@ -1,5 +1,5 @@
 // Fairy-light dots drifting over the tunnel photo (React Bits Particles).
-// 40 particles on phones, 90 on desktop; starts 1.2 s after load; pauses off screen; nothing at all under reduced motion.
+// 40 particles on phones, 90 on desktop; starts after the hero has painted (hydrated with client:after); pauses off screen; nothing at all under reduced motion.
 import { useEffect, useRef, useState } from 'react';
 import Particles from '../reactbits/Particles/Particles';
 
@@ -16,7 +16,7 @@ export default function HeroLights() {
     // Start only after the page has finished loading and painted the hero photo, so the canvas
     // never competes with the first paint.
     let t = 0;
-    const start = () => { t = window.setTimeout(() => setOn(true), 1200); };
+    const start = () => { t = window.setTimeout(() => setOn(true), 200); };
     if (document.readyState === 'complete') start(); else window.addEventListener('load', start, { once: true });
     const io = new IntersectionObserver(([e]) => setPaused(!e.isIntersecting));
     if (box.current) io.observe(box.current);

@@ -3,7 +3,11 @@ import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 
 // client:interact hydrates an island on the first scroll, touch, click or key press (src/directives/interact.js).
-const interact = { name: 'interact-directive', hooks: { 'astro:config:setup': ({ addClientDirective }) => addClientDirective({ name: 'interact', entrypoint: './src/directives/interact.js' }) } };
+// client:after hydrates 2.5 s after load or on first interaction (src/directives/after.js).
+const interact = { name: 'rwf-directives', hooks: { 'astro:config:setup': ({ addClientDirective }) => {
+  addClientDirective({ name: 'interact', entrypoint: './src/directives/interact.js' });
+  addClientDirective({ name: 'after', entrypoint: './src/directives/after.js' });
+} } };
 
 // Two builds from one source:
 //   Cloudflare Pages:  BASE_PATH unset  -> served at "/"

@@ -104,7 +104,7 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'WebSite', name: sit
   <section class="hero tone-night" aria-labelledby="hero-title">
     <div class="hero-panel">
       <p class="open-chip" data-open>Open daily, 10 AM to 11 PM</p>
-      <p class="hero-name neon"><ShinyText client:idle trigger="view" text="Red Wood Farm" color="#effff5" shineColor="#ffffff" speed={2.6} delay={4} angle={110} shineWidth={18} glow={0} /></p>
+      <p class="hero-name neon"><ShinyText client:after trigger="view" text="Red Wood Farm" color="#effff5" shineColor="#ffffff" speed={2.6} delay={4} angle={110} shineWidth={18} glow={0} /></p>
       <BlurHeading as="h1" id="hero-title" class="hero-title" text={'A garden family restaurant and party lawn'} />
       <p class="hero-sub">On outer Pakhowal Road, Ludhiana. Tandoor, North Indian and Indo-Chinese food, every day from 10 AM to 11 PM.</p>
       <Spark client:interact>
@@ -116,7 +116,7 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'WebSite', name: sit
     </div>
     <figure class="hero-photo">
       <Picture src={tunnel} formats={['avif', 'webp']} widths={[480, 768, 1024, 1518]} sizes="(min-width: 900px) 60vw, 100vw" quality={60} alt="The fairy-light tunnel and red carpet at Red Wood Farm, lit at night" loading="eager" fetchpriority="high" />
-      <HeroLights client:idle />
+      <HeroLights client:after />
     </figure>
   </section>
 

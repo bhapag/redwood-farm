@@ -1,5 +1,7 @@
 # DOMAIN-SWITCH: moving the live site to https://redwoodfarm.in
 
+> **DONE on 18 Nov 2026 (morning), Route A.** The site is live on https://redwoodfarm.in and the GitHub Pages copy redirects to it. Current state is in DEPLOY.md. The steps below are kept as the record.
+
 Written 18 Nov 2026 (night). The domain is **pending by the owner's decision**. The live, indexed site stays at **https://bhapag.github.io/redwood-farm/**, because the printed QR codes point there. This file is everything needed to switch later, without Claude.
 
 ## Where things stand now

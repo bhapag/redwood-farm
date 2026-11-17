@@ -1,27 +1,44 @@
 # DEPLOY: hosting, the domain, and what to do after buying it
 
-## Current state (18 Nov 2026, 03:00 IST): GitHub Pages is live, the domain is pending
+## Current state (18 Nov 2026, morning): LIVE ON https://redwoodfarm.in
 
-**Owner decision (18 Nov, night):** the domain is pending. The live, indexed site is **https://bhapag.github.io/redwood-farm/**, deployed with `bash scripts/deploy-gh.sh "message"`. The printed QR codes (`/`, `/party/`, `/menu/`) serve the site directly. To switch to the domain later, follow **docs/DOMAIN-SWITCH.md**.
+The live, indexed site is **https://redwoodfarm.in**, served by Cloudflare Pages (project `redwood-farm`, account hbagga52).
 
-- **One config value:** `SITE_URL` in `site.config.mjs` (now the GitHub Pages address). It drives canonicals, the sitemap and image sitemap, robots.txt, llms.txt / llms-full.txt, OG/Twitter, schema and the base path.
+**To publish a change:**
+1. Edit `site/`.
+2. Run the gates: `npx astro build`, then `python scripts/qa_content.py`, `MSYS_NO_PATHCONV=1 DIST=dist BASE= python scripts/qa_check.py` and `python scripts/seo_audit.py dist`.
+3. Copy the changes into `repo/` and push `main`. Cloudflare rebuilds in about 4 minutes through the deploy hook and webhook.
+4. Run `python scripts/indexnow.py`.
+
+**Do NOT run `deploy-gh.sh` any more.** It would put a full site back on GitHub Pages and break the QR redirects.
+
+- **Printed QR codes:**
+  - `bhapag.github.io/redwood-farm/*` (branch `gh-pages`) is a redirect site built by `bash scripts/deploy-gh-redirect.sh`
+  - every path forwards to the same path on the domain, keeping the query string and #hash (instant meta refresh plus JavaScript plus rel=canonical; unknown paths go through 404.html)
+  - re-run that script only if pages are added or removed
+  - test with `node scripts/qr-test.cjs "C:/Program Files/Google/Chrome/Application/chrome.exe"`
+- **Redirects and security headers:**
+  - `www.redwoodfarm.in/*` and `http://` return a 301 to `https://redwoodfarm.in/*` (Cloudflare redirect rule plus Always Use HTTPS)
+  - HSTS is sent from `public/_headers`
+  - `*.pages.dev` stays noindex
+- **One config value:** `SITE_URL = 'https://redwoodfarm.in'` in `site.config.mjs`. It drives canonicals, the sitemap and image sitemap, robots.txt, llms.txt and llms-full.txt, OG/Twitter, schema and the base path (`/`).
+- **CSP:** `public/_headers` allows the Cloudflare Web Analytics beacon (`static.cloudflareinsights.com`, `cloudflareinsights.com`), which Cloudflare injects on the domain.
 - **Search Console (redwoodfarm7):**
-  - URL-prefix property `https://bhapag.github.io/redwood-farm/` verified with `public/googlece72478a4790fdde.html`
-  - `sitemap.xml` submitted
-  - indexing requested for 15 URLs
-  - the Domain property `redwoodfarm.in` is verified too (TXT record in Cloudflare)
-- **IndexNow:** `python scripts/indexnow.py` sends every sitemap URL (key file `public/<key>.txt`, key in `scripts/indexnow.key`). 63 URLs were accepted on 18 Nov.
-- **Bing Webmaster Tools:** not set up. In Chrome, Bing Webmaster is signed in to a different (non-Red Wood) account, and signing in as redwoodfarm7 needs a password prompt. Owner step: open bing.com/webmasters as redwoodfarm7, then Import from Google Search Console, then submit `sitemap.xml`.
-- **Google Business Profile:** "Verification required" (checked 18 Nov, 02:30). Nothing was edited.
-- **Cloudflare mirror:** redwoodfarm.in and redwood-farm.pages.dev serve the same build with `X-Robots-Tag: noindex` and canonicals pointing at GitHub Pages, so there is no duplicate indexing. Cloudflare builds `main` automatically through the deploy hook and webhook.
-- **Vercel:** frozen preview with noindex.
+  - Domain property `redwoodfarm.in` verified by a TXT record in Cloudflare DNS
+  - `https://redwoodfarm.in/sitemap.xml` submitted on 18 Nov
+  - indexing requested on 18 Nov for Home, Menu and Parties; the daily quota then ran out, so the other 12 pages are listed in REPORT-DOMAIN
+  - the old URL-prefix property `https://bhapag.github.io/redwood-farm/` is kept; its file `googlece72478a4790fdde.html` is still served on gh-pages
+- **IndexNow:** 63 domain URLs were accepted (202) on 18 Nov.
+- **Bing Webmaster Tools:** not set up, because signing in as redwoodfarm7 needs a password. Owner step: open bing.com/webmasters, Import from Google Search Console, then submit the sitemap.
+- **Google Business Profile:** still "Verification required", so nothing was edited. Once it is verified, set the website to https://redwoodfarm.in.
+- **Photos:** the dish, menu-category and guide photos are owner-approved Higgsfield images. The "no AI photos" rule applies to the Google Business Profile only. There is no "representation only" line anywhere.
 
 ## How to redo the whole setup without Claude (records as of 18 Nov 2026)
 
 ### Accounts
 | What | Account |
 |---|---|
-| Code | GitHub `bhapag`, repo `bhapag/redwood-farm` (branch `main` = source, `gh-pages` = QR copy) |
+| Code | GitHub `bhapag`, repo `bhapag/redwood-farm` (branch `main` = source, `gh-pages` = QR redirect site) |
 | Hosting + DNS | Cloudflare account hbagga52@gmail.com (owner-approved for Red Wood Farm hosting), Pages project `redwood-farm`, zone `redwoodfarm.in` (Free) |
 | Domain registrar | GoDaddy (owner's account), domain `redwoodfarm.in`, registered 17 Nov 2026, expires 17 Nov 2027 |
 | Search Console, Bing, Google Business Profile | redwoodfarm7@gmail.com only |

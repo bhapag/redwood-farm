@@ -94,3 +94,28 @@ All are in `report/final/`. The fixed header and bottom bar are hidden in sectio
 - **Menu, 390 px:** `SHEET-menu-390.jpg` and `menu-390/*` (heading, sticky bar, soups, appetizers, tandoori, main course, breads, dessert, footer note).
 - **Visit, 390 px:** `visit-390/*`.
 - **Review band, 1440 and 390 px:** `SHEET-review-band.jpg`; single captures are `home/04-rv_1440.jpg` and `home/04-rv_390.jpg`.
+
+## Update: review band, 4- and 5-star reviews only (17 Nov 2026, later)
+At the owner's request, the moving band now shows only 4- and 5-star reviews with real content.
+- **Shown: 12 reviews.**
+  - Gaurav S., Sanjeev K., Surinder D., Gurveer S., Kala C., Ajmer S., gurvinder k., Gurpreet S., Isha and Keshav S. (5 stars)
+  - Inderpreet S. and RAHUL G. (4 stars)
+- **Removed from the band:**
+  - every 1-, 2- and 3-star review (Jaya S., Mehak S., Harish S., Dalchand N., Sukhjit S., Vishal P.)
+  - filler 5-star reviews ("Nice", "Good", "I was great experience", "Awesome look red wood")
+  - They stay in `src/data/reviews.js` as the record.
+- **Placement:**
+  - Home: two rows of 6 on desktop (12 is 8 or more), one row of 12 on phones.
+  - Parties and Visit: the newest 10, one row.
+  - The loop is slower (10 s per card, at least 60 s per cycle), so repeats aren't obvious.
+- **Unchanged:**
+  - exact quotes, names and dates
+  - the live "4.2 ★ from 72 Google reviews" line
+  - "Read all reviews on Google" and "Leave a review", so the full picture is one click away
+  - no review schema
+- **Live check** (commit e56240d):
+  - none of the removed reviews' text appears on Home, Parties or Visit
+  - the rating line and both links are present on all three pages
+  - the 360 px sweep of all 61 pages shows 0 overflow and 0 errors
+  - `qa_check` and `qa_content` pass
+- **Screenshots:** `report/final/band-v2/` (`SHEET-band-v2.jpg`, Home and Parties at 1440 and 390 px, Visit at 390 px).

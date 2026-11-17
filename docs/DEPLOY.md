@@ -6,13 +6,16 @@
 |---|---|---|
 | Source code | github.com/bhapag/redwood-farm, branch `main` | Live. Every change is a commit. |
 | Live site (QR codes) | https://bhapag.github.io/redwood-farm/ served from branch `gh-pages` | Live. Built with `bash scripts/deploy-gh.sh "message"` (base `/redwood-farm/`). |
-| Vercel (temporary preview) | project "redwood-farm" in the hbagga52-3954 Vercel account, https://redwood-farm.vercel.app | Live. Builds `main` on every push. Sends `X-Robots-Tag: noindex`, so Google doesn't index it. |
+| Vercel (temporary preview) | project "redwood-farm" in the hbagga52-3954 Vercel account, https://redwood-farm.vercel.app | **Frozen** at its last build (redesign, commit 3a48b23). No Git link since GitHub bhapag moved back to the Sales Leak account, so pushes no longer deploy it. Sends `X-Robots-Tag: noindex`. Left in place, not deleted. |
 | Cloudflare Pages | project "redwood-farm" at https://redwood-farm.pages.dev | **Not created yet.** See "Cloudflare: why it is not live" below. |
 | Old one-page site | branch `backup/live-2026-11-17` | Kept for reference. |
 
 Canonical URLs currently point to the GitHub Pages address, because Cloudflare isn't live yet. One value controls this: `PUBLIC_CANONICAL_ORIGIN` (default in `src/data/urls.js`; set in `scripts/deploy-gh.sh` for the GitHub build).
 
-## Vercel: temporary preview only
+## Vercel: temporary preview only (frozen since 17 Nov 2026)
+- **Deploy to GitHub Pages only for now:** `bash scripts/deploy-gh.sh "message"`. The QR address is the live preview until the domain moves to Cloudflare.
+- The Vercel project keeps serving its last build and does not follow `main`. Do not reconnect it to GitHub unless the owner asks.
+
 - **Project:** `redwood-farm` in the Vercel account hbagga52-3954 (the account with the other sites). It is connected to GitHub `bhapag/redwood-farm`, branch `main`. Every push to `main` redeploys it.
 - **Settings live in `vercel.json`** at the repo root, not in the Vercel dashboard:
   - Astro preset; build `PUBLIC_CANONICAL_ORIGIN=https://bhapag.github.io/redwood-farm npx astro build`; output `dist`; served at `/` (`BASE_PATH` unset, the same build as Cloudflare).

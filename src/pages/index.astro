@@ -107,7 +107,7 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'WebSite', name: sit
       <p class="hero-name neon"><ShinyText client:idle trigger="view" text="Red Wood Farm" color="#effff5" shineColor="#ffffff" speed={2.6} delay={4} angle={110} shineWidth={18} glow={0} /></p>
       <BlurHeading as="h1" id="hero-title" class="hero-title" text={'A garden family restaurant and party lawn'} />
       <p class="hero-sub">On outer Pakhowal Road, Ludhiana. Tandoor, North Indian and Indo-Chinese food, every day from 10 AM to 11 PM.</p>
-      <Spark client:idle>
+      <Spark client:interact>
         <div class="hero-ctas">
           <a class="btn" href={u('/menu/')}><Icon name="menu" />See the menu</a>
           <a class="btn ghost" href={u('/party/')}>Plan a party</a>
@@ -123,7 +123,7 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'WebSite', name: sit
   <section class="intro section tone-paper" aria-labelledby="intro-h">
     <div class="wrap intro-grid">
       <div class="intro-copy">
-        <Headline client:visible id="intro-h" text="A garden restaurant for the whole family" />
+        <Headline client:interact id="intro-h" text="A garden restaurant for the whole family" />
         <p class="lede" data-reveal>Red Wood Farm is a garden family restaurant and party lawn at VPO Daad, on outer Pakhowal Road in Ludhiana. We serve tandoor, North Indian and Indo-Chinese food every day from 10 AM to 11 PM, at tables on a fairy-lit lawn.</p>
         <ul class="stats" role="list" data-reveal>
           <li><span class="stat-n"><CountUp client:visible to={187} duration={1.6} /></span><span class="stat-l">dishes on the menu</span></li>
@@ -149,7 +149,7 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'WebSite', name: sit
 
   <section class="dishes section tone-green" aria-labelledby="dish-h">
     <div class="wrap dish-head">
-      <Headline client:visible id="dish-h" text="Start with the tandoor" />
+      <Headline client:interact id="dish-h" text="Start with the tandoor" />
       <p class="muted">Nine dishes from our menu of 187, with their prices. Food photos are illustrative.</p>
       <p class="swipe-hint" aria-hidden="true">Swipe or tap the card <Icon name="arrow" /></p>
     </div>
@@ -180,7 +180,7 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'WebSite', name: sit
   <section class="occasions section tone-paper" aria-labelledby="occ-h">
     <div class="wrap">
       <div class="occ-head">
-        <Headline client:visible id="occ-h" text="Birthdays, kitty parties and family functions" />
+        <Headline client:interact id="occ-h" text="Birthdays, kitty parties and family functions" />
         <div>
           <p data-reveal>The lawn and its lights are yours for the afternoon or the evening. Tell us the date and the number of guests on WhatsApp and we will plan it with you.</p>
           <a class="link" href={u('/party/')} data-reveal>Plan a party <Icon name="arrow" /></a>
@@ -197,7 +197,7 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'WebSite', name: sit
         <figcaption class="cap">A table under the palms on the lawn, after dark.</figcaption>
       </figure>
       <div class="eve-copy">
-        <Headline client:visible id="eve-h" text="The lawn by night" />
+        <Headline client:interact id="eve-h" text="The lawn by night" />
         <p data-reveal>After sunset the lawn, the palms and the tunnel light up. Take a table outside, or book a corner for a birthday or a get-together.</p>
         <a class="btn red" href={waLink('Hello Red Wood Farm, I would like to book a table for this evening.')} target="_blank" rel="noopener" data-reveal><Icon name="wa" />Book a table tonight</a>
       </div>
@@ -218,7 +218,7 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'WebSite', name: sit
 
   <section class="guides section tone-paper" aria-labelledby="ex-h">
     <div class="wrap">
-      <Headline client:visible id="ex-h" text="Guides from our team" />
+      <Headline client:interact id="ex-h" text="Guides from our team" />
       <div class="ex-grid">
         {hubs.map(({ hub, items }) => (
           <div class="ex-col" data-reveal>
@@ -235,7 +235,7 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'WebSite', name: sit
     <div class="wrap split">
       <div class="frame visit-img sd-zoom"><Picture src={entrance} formats={['avif', 'webp']} widths={[480, 800, 1200]} sizes="(min-width: 900px) 45vw, 92vw" alt="The hedge and flower entrance arch at Red Wood Farm, by day" /></div>
       <div>
-        <Headline client:visible id="visit-h" text="Opposite Cerajot Tiles, near Omaxe Flats" />
+        <Headline client:interact id="visit-h" text="Opposite Cerajot Tiles, near Omaxe Flats" />
         <address class="lede">{site.address.full}</address>
         <p class="muted">{site.hoursDisplay}. Takeaway available. No wheelchair access.</p>
         <div class="btns">

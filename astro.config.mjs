@@ -2,6 +2,9 @@ import { defineConfig } from 'astro/config';
 
 import react from '@astrojs/react';
 
+// client:interact hydrates an island on the first scroll, touch, click or key press (src/directives/interact.js).
+const interact = { name: 'interact-directive', hooks: { 'astro:config:setup': ({ addClientDirective }) => addClientDirective({ name: 'interact', entrypoint: './src/directives/interact.js' }) } };
+
 // Two builds from one source:
 //   Cloudflare Pages:  BASE_PATH unset  -> served at "/"
 //   GitHub Pages copy: BASE_PATH=/redwood-farm -> served at bhapag.github.io/redwood-farm/ (printed QR codes)
@@ -26,5 +29,5 @@ export default defineConfig({
   }).map(([from, to]) => [from, (BASE === '/' ? '' : BASE) + to])),
 
   compressHTML: true,
-  integrations: [react()],
+  integrations: [react(), interact],
 });

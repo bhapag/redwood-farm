@@ -54,14 +54,14 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', it
 
   <section class="section tone-paper" aria-labelledby="types-h">
     <div class="wrap">
-      <Headline client:visible id="types-h" className="p-h2" text="What we host" />
+      <Headline client:interact id="types-h" className="p-h2" text="What we host" />
       <PartyStack client:visible items={typeCards} />
     </div>
   </section>
 
   <section class="section tone-green" aria-labelledby="how-h">
     <div class="wrap">
-      <Headline client:visible id="how-h" className="p-h2" text="How booking works" />
+      <Headline client:interact id="how-h" className="p-h2" text="How booking works" />
       <p class="muted">Four messages on WhatsApp. There are no forms to fill in on this website.</p>
       <ol class="steps">
         <li data-reveal><b>Tell us the occasion</b><span>Birthday, kitty party, family function or team lunch.</span></li>
@@ -75,7 +75,7 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', it
   <section id="enquire" class="section tone-night enquire" aria-labelledby="enq-h">
     <div class="wrap split">
       <div>
-        <Headline client:visible id="enq-h" className="p-h2" text="Plan your party on WhatsApp" />
+        <Headline client:interact id="enq-h" className="p-h2" text="Plan your party on WhatsApp" />
         <p class="muted">Fill this in and it opens WhatsApp with your message ready to send. Nothing is saved on this website.</p>
         <p class="muted">Guest capacity, per-plate prices and packages: ask us on WhatsApp and we will share current details for your date.</p>
       </div>
@@ -96,14 +96,14 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', it
         <label>Number of guests<input type="number" name="guests" min="1" max="2000" inputmode="numeric" required placeholder="e.g. 40" /></label>
         <label>Anything else (optional)<textarea name="note" rows="3" maxlength="400" placeholder="Veg only, a theme, a cake table..."></textarea></label>
         <input type="hidden" name="text" />
-        <Spark client:visible><button class="btn red" type="submit"><Icon name="wa" />Send on WhatsApp</button></Spark>
+        <Spark client:interact><button class="btn red" type="submit"><Icon name="wa" />Send on WhatsApp</button></Spark>
       </form>
     </div>
   </section>
 
   <section class="section tone-paper" aria-labelledby="gal-h">
     <div class="wrap">
-      <Headline client:visible id="gal-h" className="p-h2" text="From past parties on the lawn" />
+      <Headline client:interact id="gal-h" className="p-h2" text="From past parties on the lawn" />
       <p class="muted">Real set-ups at Red Wood Farm.</p>
       <div class="gal">
         <figure class="frame g-a sd-zoom"><Picture src={gate} formats={['avif', 'webp']} widths={[400, 700]} sizes="(min-width: 900px) 30vw, 46vw" alt="A floral entry gate decorated for an evening event" /></figure>

@@ -135,7 +135,7 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'WebSite', name: sit
         <ul class="stats" role="list" data-reveal>
           <li><span class="stat-n"><span class="cnt" style="--to:187">187</span></span><span class="stat-l">dishes</span></li>
           <li><span class="stat-n"><span class="cnt" style="--to:13">13</span></span><span class="stat-l">hours a day</span></li>
-          <li><span class="stat-n"><span class="cnt cnt-dec" style="--to:42">4.2</span><span class="stat-star" aria-hidden="true">★</span></span><span class="stat-l">Google rating</span></li>
+          <li><span class="stat-n"><span>4.2</span><span class="stat-star" aria-hidden="true">★</span></span><span class="stat-l">Google rating</span></li>
         </ul>
         <a class="link" href={u('/about/')} data-reveal>About Red Wood Farm <Icon name="arrow" /></a>
       </div>
@@ -272,6 +272,9 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'WebSite', name: sit
 
 
 <script>
+  // Stats count up once, when they are well in view (no scroll listener; IntersectionObserver only).
+  const stats = document.querySelector('.stats');
+  if (stats) { const io = new IntersectionObserver(([e]) => { if (e.isIntersecting) { stats.classList.add('counting'); io.disconnect(); } }, { threshold: 0.6 }); io.observe(stats); }
   document.querySelectorAll('[data-dswap]').forEach((box) => {
     const links = [...box.querySelectorAll('.dswap-list a')];
     const figs = [...box.querySelectorAll('.dswap-fig')];
@@ -457,14 +460,12 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'WebSite', name: sit
     .dswap-fig figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 14px 18px; background: var(--night); color: var(--cream); font-size: var(--t-small); }
   }
 
-  /* Counters: CSS-only count-up as the stats scroll into view (falls back to the plain number). */
+  /* Counters: the real numbers show by default. When the stats are well in view, a one-time 1.3 s count-up
+     plays (an @property integer); it is time-based, so a visitor who stops scrolling never sees a half-way value. */
   @property --n { syntax: '<integer>'; inherits: false; initial-value: 0; }
-  @supports (animation-timeline: view()) {
-    @media (prefers-reduced-motion: no-preference) {
-      .cnt { color: transparent; position: relative; display: inline-block; }
-      .cnt::after { content: counter(n); counter-reset: n var(--n); position: absolute; left: 0; top: 0; color: var(--redwood); animation: cnt-up linear both; animation-timeline: view(); animation-range: entry 20% cover 45%; }
-      .cnt-dec::after { content: counter(n) "." counter(d); counter-reset: n calc(var(--n) / 10 - 0.5) d calc(var(--n) - (var(--n) / 10 - 0.5) * 10); }
-    }
+  @media (prefers-reduced-motion: no-preference) {
+    .stats.counting .cnt { color: transparent; position: relative; display: inline-block; }
+    .stats.counting .cnt::after { content: counter(n); counter-reset: n var(--n); position: absolute; left: 0; top: 0; color: var(--redwood); animation: cnt-up 1.3s cubic-bezier(0.16, 1, 0.3, 1) both; }
   }
   @keyframes cnt-up { from { --n: 0; } to { --n: var(--to); } }
   /* Phone dishes: native swipe carousel; each card tilts in 3D by its position in the row (scroll-driven). */

@@ -4,7 +4,8 @@ Usage: python scripts/seo_audit.py [dist] [origin]
 """
 import json, pathlib, re, sys, collections
 DIST = pathlib.Path(sys.argv[1] if len(sys.argv) > 1 else 'dist')
-ORIGIN = (sys.argv[2] if len(sys.argv) > 2 else 'https://redwoodfarm.in').rstrip('/')
+ORIGIN = (sys.argv[2] if len(sys.argv) > 2 else __import__('re').search(r"export const SITE_URL = '([^']+)'", pathlib.Path('site.config.mjs').read_text()).group(1)).rstrip('/')
+BASEPATH = re.sub(r'^https?://[^/]+', '', ORIGIN)
 pages = {}
 for f in DIST.rglob('index.html'):
     rel = f.parent.relative_to(DIST).as_posix()
@@ -37,6 +38,7 @@ for path, h in pages.items():
     for img in re.findall(r'<img\b[^>]*>', h):
         if not re.search(r'\salt(="|\s|>)', img): fails['img alt present'].append(path); break
     for href in re.findall(r'href="(/[^"#?]*)', h):
+        if BASEPATH and href.startswith(BASEPATH): href = href[len(BASEPATH):] or '/'
         if not href.endswith('/') and '.' not in href.split('/')[-1]: href += '/'
         links[href].add(path)
     if not re.search(r'<title>[^<]{10,}</title>', h): fails['title'].append(path)

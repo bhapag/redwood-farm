@@ -2,7 +2,7 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": "astro",
   "installCommand": "npm ci",
-  "buildCommand": "PUBLIC_CANONICAL_ORIGIN=https://redwoodfarm.in npx astro build",
+  "buildCommand": "BASE_PATH=/ npx astro build",
   "outputDirectory": "dist",
   "trailingSlash": true,
   "redirects": [

@@ -1,7 +1,8 @@
 // One place for every URL.
-// CANONICAL_ORIGIN: where search engines index the site: https://redwoodfarm.in (Cloudflare Pages).
+// CANONICAL_ORIGIN: the public address of the site. It comes from SITE_URL in /site.config.mjs (one value).
 // BASE_URL comes from the build: "/" on Cloudflare Pages, "/redwood-farm/" for the GitHub Pages copy.
-export const CANONICAL_ORIGIN = (import.meta.env.PUBLIC_CANONICAL_ORIGIN || 'https://redwoodfarm.in').replace(/\/$/, '');
+import { SITE_URL } from '../../site.config.mjs';
+export const CANONICAL_ORIGIN = SITE_URL.replace(/\/$/, '');
 export const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 /** Link inside the current build (respects the base path). */
 export const u = (p) => `${base}${p}`;

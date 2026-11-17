@@ -1,17 +1,15 @@
 #!/usr/bin/env bash
 # Build the GitHub Pages copy (base /redwood-farm/) and push it to branch gh-pages.
 # Usage: bash scripts/deploy-gh.sh "commit message"
-# CANONICAL: while Cloudflare is not live, canonical URLs point at the GitHub Pages address.
-# Once Cloudflare (or the custom domain) is live, set CANONICAL to that origin.
+# The address and base path come from SITE_URL in site.config.mjs (one value).
 set -euo pipefail
 cd "$(dirname "$0")/.."
 SITE_DIR="$(pwd)"
 REPO="${REPO:-$SITE_DIR/../repo}"
-CANONICAL="${CANONICAL:-https://redwoodfarm.in}"
 MSG="${1:-Deploy GitHub Pages copy}"
 
 python scripts/build_menu.py
-MSYS_NO_PATHCONV=1 BASE_PATH=/redwood-farm PUBLIC_CANONICAL_ORIGIN="$CANONICAL" npx astro build --outDir dist-gh
+npx astro build --outDir dist-gh
 # QA runs against the GitHub build layout.
 MSYS_NO_PATHCONV=1 PYTHONIOENCODING=utf8 DIST=dist-gh BASE=/redwood-farm python scripts/qa_check.py | tail -1
 

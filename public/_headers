@@ -20,3 +20,10 @@ https://:project.pages.dev/*
   X-Robots-Tag: noindex
 https://:version.:project.pages.dev/*
   X-Robots-Tag: noindex
+
+# Domain pending (owner, 18 Nov 2026): the Cloudflare mirror on redwoodfarm.in stays out of search until the
+# switch. DOMAIN-SWITCH.md step: delete these two blocks when SITE_URL becomes https://redwoodfarm.in.
+https://redwoodfarm.in/*
+  X-Robots-Tag: noindex
+https://www.redwoodfarm.in/*
+  X-Robots-Tag: noindex

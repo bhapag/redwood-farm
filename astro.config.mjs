@@ -1,6 +1,7 @@
 import { defineConfig } from 'astro/config';
 
 import react from '@astrojs/react';
+import { SITE_URL } from './site.config.mjs';
 
 // client:interact hydrates an island on the first scroll, touch, click or key press (src/directives/interact.js).
 // client:after hydrates 2.5 s after load or on first interaction (src/directives/after.js).
@@ -9,12 +10,14 @@ const interact = { name: 'rwf-directives', hooks: { 'astro:config:setup': ({ add
   addClientDirective({ name: 'after', entrypoint: './src/directives/after.js' });
 } } };
 
-// Two builds from one source:
-//   Cloudflare Pages:  BASE_PATH unset  -> served at "/"
-//   GitHub Pages copy: BASE_PATH=/redwood-farm -> served at bhapag.github.io/redwood-farm/ (printed QR codes)
-// Canonical URLs come from PUBLIC_CANONICAL_ORIGIN, default https://redwoodfarm.in (src/data/urls.js).
-const BASE = process.env.BASE_PATH || '/';
-const SITE = process.env.PUBLIC_CANONICAL_ORIGIN || 'https://redwoodfarm.in';
+// The public address is SITE_URL in site.config.mjs (one value). The base path follows it:
+//   SITE_URL https://bhapag.github.io/redwood-farm -> base /redwood-farm/  (GitHub Pages, printed QR codes)
+//   SITE_URL https://redwoodfarm.in                 -> base /
+// BASE_PATH (env) overrides the base only for the Cloudflare preview mirror, which is served at "/"
+// with noindex and canonical URLs pointing at SITE_URL.
+const siteUrl = new URL(SITE_URL);
+const BASE = process.env.BASE_PATH || siteUrl.pathname.replace(/\/$/, '') || '/';
+const SITE = siteUrl.origin;
 
 export default defineConfig({
   site: SITE,

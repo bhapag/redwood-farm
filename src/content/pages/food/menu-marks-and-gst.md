@@ -7,8 +7,8 @@ query: "veg non veg mark, gst included restaurant prices"
 summary: "On the Red Wood Farm menu, a green square with a dot marks veg and a reddish-brown square with a triangle marks non-veg. Every price is in rupees and already includes GST. Half and Full columns appear only on some main courses, and ice creams are priced per scoop."
 updated: 2026-11-17
 images:
-  - src: venue/lawn-tables.jpg
-    alt: "Dining tables with orange cloths set out on the lawn at night"
+  - src: food/veg_sizzler.jpg
+    alt: "A veg sizzler plate with grilled vegetables and rice"
 faq:
   - q: "Will GST be added on top of the menu price?"
     a: "No. Every price on our menu already includes GST, so tax isn't added on top of the listed price."

@@ -7,8 +7,12 @@ query: "what is famous to eat in ludhiana"
 summary: "Ludhiana eats classic Punjabi food: dal makhani, tandoori chicken and paneer tikka, saag with makki di roti in winter, chole, stuffed parathas with butter, and lassi. At Red Wood Farm you can order most of the curries, tandoor dishes and parathas at listed prices, while lassi, kulcha, bhature and makki di roti are not on our menu."
 updated: 2026-11-17
 images:
-  - src: venue/buffet-lawn.jpg
-    alt: "Buffet counters with lit food warmers set out on the lawn for a function"
+  - src: food/dal_makhni.jpg
+    alt: "A bowl of dal makhani finished with a swirl of cream"
+  - src: food/tandoori_chicken.jpg
+    alt: "Tandoori chicken pieces with onion rings and lemon"
+  - src: food/paneer_jalebi_rabri.jpg
+    alt: "Paneer jalebi served with thick rabri"
 faq:
   - q: "Does Red Wood Farm serve lassi?"
     a: "No. Lassi is not on our menu. Our dessert list starts at ₹35 for Gulab Jamun and includes Rasmalai at ₹45 and Kheer at ₹65."

@@ -7,8 +7,8 @@ query: "indo chinese food ludhiana"
 summary: "In short: Red Wood Farm on Pakhowal Road, Ludhiana serves Indo-Chinese dishes beside its North Indian menu. Hakka Noodles cost ₹255, Manchurian Dry ₹275, Manchow Soup ₹155 and Chilli Paneer ₹375, and chicken versions such as Chicken Manchurian start at ₹355. All prices include GST."
 updated: 2026-11-17
 images:
-  - src: venue/palm-table.jpg
-    alt: "A dining table under the lit palm trees on the lawn at night"
+  - src: food/hakka_noodles.jpg
+    alt: "Hakka noodles tossed with shredded cabbage, carrot and spring onion"
 faq:
   - q: "Does Red Wood Farm have veg fried rice?"
     a: "No. The only fried rice on our menu is Chicken Fried Rice at ₹320. For a vegetarian Indo-Chinese meal, pair Manchurian Gravy (₹260) with Hakka Noodles (₹255) or Steamed Rice (₹180)."

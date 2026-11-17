@@ -7,8 +7,8 @@ query: "paneer jalebi rabri / indian desserts ludhiana"
 summary: "Red Wood Farm lists eight desserts from ₹35 to ₹75 and five ice creams priced per scoop from ₹50. Paneer Jalebi with Rabri is ₹75. Gajrela and Malpua Rabri are seasonal, and every price includes GST."
 updated: 2026-11-17
 images:
-  - src: venue/tent-dining.jpg
-    alt: "Tables under a draped tent with chandeliers at an evening event"
+  - src: food/paneer_jalebi_rabri.jpg
+    alt: "Paneer jalebi served with a bowl of rabri"
 faq:
   - q: "How much is Paneer Jalebi with Rabri at Red Wood Farm?"
     a: "It costs ₹75 on the current menu, and that price already includes GST."

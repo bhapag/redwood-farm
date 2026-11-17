@@ -19,7 +19,6 @@ import { pagesIn, pathOf } from '../data/pages.js';
 
 import heroPortrait from '../assets/venue/hero-path-portrait.jpg';
 import heroLandscape from '../assets/venue/hero-path-landscape.jpg';
-import buffetLawn from '../assets/venue/buffet-lawn.jpg';
 import Tunnel3D from '../components/Tunnel3D.astro';
 import palmTable from '../assets/venue/palm-table.jpg';
 import birthday from '../assets/venue/birthday-arch.jpg';
@@ -35,18 +34,27 @@ import canopy from '../assets/venue/canopy.jpg';
 import blossom from '../assets/venue/blossom-path.jpg';
 import palmsDusk from '../assets/venue/palms-dusk.jpg';
 
+import paneerTikka from '../assets/food/paneer_tikka.jpg';
+import tandooriChicken from '../assets/food/tandoori_chicken.jpg';
+import dalMakhni from '../assets/food/dal_makhni.jpg';
+import butterChicken from '../assets/food/butter_chicken.jpg';
+import kadhaiPaneer from '../assets/food/kadhai_paneer.jpg';
+import biryani from '../assets/food/nonveg_biryani.jpg';
+import hakka from '../assets/food/hakka_noodles.jpg';
+import roganJosh from '../assets/food/mutton_rogan_josh.jpg';
+import jalebi from '../assets/food/paneer_jalebi_rabri.jpg';
 
 const dishes = [
-  ['Paneer Tikka', 'From the tandoor, with mint chutney and onion.'],
-  ['Tandoori Chicken', 'Charred in the clay oven. Half or full.'],
-  ['Dal Makhni', 'Black lentils, slow-cooked, finished with butter and cream.'],
-  ['Butter Chicken', 'Tandoori chicken in a smooth tomato and butter gravy.'],
-  ['Kadhai Paneer', 'Paneer, peppers and onion tossed in the kadhai.'],
-  ['Non-Veg Biryani', 'Long-grain rice layered with spiced chicken.'],
-  ['Hakka Noodles', 'Our Indo-Chinese favourite, wok-tossed.'],
-  ['Mutton Rogan Josh', 'Slow-cooked mutton in a deep red gravy.'],
-  ['Paneer Jalebi with Rabri', 'A house dessert to finish.'],
-].map(([name, line]) => ({ name, line, item: find(name) }));
+  [paneerTikka, 'Paneer Tikka', 'From the tandoor, with mint chutney and onion.'],
+  [tandooriChicken, 'Tandoori Chicken', 'Charred in the clay oven. Half or full.'],
+  [dalMakhni, 'Dal Makhni', 'Black lentils, slow-cooked, finished with butter and cream.'],
+  [butterChicken, 'Butter Chicken', 'Tandoori chicken in a smooth tomato and butter gravy.'],
+  [kadhaiPaneer, 'Kadhai Paneer', 'Paneer, peppers and onion tossed in the kadhai.'],
+  [biryani, 'Non-Veg Biryani', 'Long-grain rice layered with spiced chicken.'],
+  [hakka, 'Hakka Noodles', 'Our Indo-Chinese favourite, wok-tossed.'],
+  [roganJosh, 'Mutton Rogan Josh', 'Slow-cooked mutton in a deep red gravy.'],
+  [jalebi, 'Paneer Jalebi with Rabri', 'A house dessert to finish.'],
+].map(([img, name, line]) => ({ img, name, line, item: find(name) }));
 
 const occasions = [
   { img: birthday, alt: 'A birthday balloon arch set up on the lawn at night', h: 'Birthday parties', p: 'Balloons, a cake table and dinner under the lights, for children or grown-ups.', msg: 'birthday party' },
@@ -156,6 +164,7 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'WebSite', name: sit
       {dishes.map((d) => (
         <li class="dtilt">
           <a href={u(`/menu/#${d.item.catId}`)}>
+            <div class="dtilt-img"><Picture src={d.img} formats={['avif', 'webp']} widths={[320, 480, 640]} sizes="(min-width: 900px) 1px, 74vw" alt={d.name} /></div>
             <div class="dtilt-panel">
               <h3>{d.name}</h3>
               <p class="dtilt-meta"><span class={`mark ${d.item.veg ? 'v' : 'nv'}`} role="img" aria-label={d.item.veg ? 'Veg' : 'Non-veg'}></span><span class="dtilt-price">{price(d.item)}</span></p>
@@ -165,20 +174,24 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'WebSite', name: sit
         </li>
       ))}
     </ul>
-    <div class="dswap wrap">
+    <div class="dswap wrap" data-dswap>
       <ol class="dswap-list" role="list">
         {dishes.map((d, i) => (
-          <li><a href={u(`/menu/#${d.item.catId}`)} data-i={i}>
+          <li><a href={u(`/menu/#${d.item.catId}`)} data-i={i} aria-current={i === 0 ? 'true' : undefined}>
             <span class="dswap-name">{d.name}</span>
             <span class="dswap-price">{price(d.item)}</span>
           </a></li>
         ))}
       </ol>
       <Tilt client:media="(hover: hover) and (pointer: fine)">
-      <figure class="dswap-stage dswap-real">
-        <Picture src={buffetLawn} formats={['avif', 'webp']} widths={[480, 760, 1000]} sizes="40vw" alt="Buffet counters with lit food warmers set out on the lawn for a function" loading="lazy" />
-        <figcaption>Buffet counters on the lawn at a function. Every dish on the list is cooked in our own kitchen.</figcaption>
-      </figure>
+      <div class="dswap-stage" aria-hidden="true">
+        {dishes.map((d, i) => (
+          <figure class={`dswap-fig${i === 0 ? ' on' : ''}`} data-i={i}>
+            <Picture src={d.img} formats={['avif', 'webp']} widths={[480, 760, 1000]} sizes="40vw" alt="" loading="lazy" />
+            <figcaption>{d.line}</figcaption>
+          </figure>
+        ))}
+      </div>
       </Tilt>
     </div>
     <div class="wrap dish-all-wrap"><a class="btn" href={u('/menu/')}><Icon name="menu" />See all {menu.count} dishes</a><p class="da-r">Every price on the menu, {range}.</p></div>
@@ -478,16 +491,5 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'WebSite', name: sit
     50% { transform: rotateY(0) scale(1); }
     100% { transform: rotateY(-28deg) scale(0.9); }
   }
-
-  /* Dishes as menu cards: no food photos (owner rule: real photos only), so the type carries the card. */
-  .dtilt > a { display: flex; flex-direction: column; background: var(--paper); border-top: 5px solid var(--redwood); }
-  .dtilt-panel { padding: 24px 22px 22px; display: flex; flex-direction: column; flex: 1; }
-  .dtilt-panel h3 { font-size: clamp(1.7rem, 7vw, 2.1rem); line-height: 1.05; margin: 0 0 16px; min-height: 2.1em; }
-  .dtilt-line { order: 2; margin-top: 8px; }
-  .dtilt-meta { order: 1; margin: 0; padding-top: 14px; border-top: 1px solid var(--line); }
-  .dtilt-price { font: 400 1.6rem/1 var(--serif); color: var(--redwood); }
-  .dswap-real { margin: 0; }
-  .dswap-real :global(img) { width: 100%; height: 100%; object-fit: cover; }
-  .dswap-real figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 14px 18px; background: var(--night); color: var(--cream); font-size: var(--t-small); }
 
 </style>

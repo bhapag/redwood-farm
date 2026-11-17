@@ -7,8 +7,10 @@ query: "butter chicken ludhiana"
 summary: "In short: Butter Chicken at Red Wood Farm on Pakhowal Road, Ludhiana costs ₹415 for a Half and ₹695 for a Full, GST included. It is one of 15 chicken curries on our menu, which also has two house dishes: Farm to Table Special Chicken (Half ₹415, Full ₹695) and Atta Chicken, cooked sealed inside wheat-flour dough, at ₹925."
 updated: 2026-11-17
 images:
-  - src: venue/palm-table.jpg
-    alt: "A dining table under the lit palm trees on the lawn at night"
+  - src: food/butter_chicken.jpg
+    alt: "Butter chicken in an orange tomato and cream gravy in a copper bowl"
+  - src: food/naan.jpg
+    alt: "A basket of naan with charred spots from a clay oven"
 faq:
   - q: "What is the most expensive chicken dish at Red Wood Farm?"
     a: "Atta Chicken, at ₹925 for a Full. It is chicken cooked sealed inside wheat-flour dough, and it is the highest-priced dish on our whole menu."

@@ -7,8 +7,8 @@ query: "biryani pakhowal road ludhiana"
 summary: "In short: Red Wood Farm on Pakhowal Road, Ludhiana serves Veg Biryani at ₹325 and Non-Veg Biryani at ₹375, GST included. The Rice section has eight dishes in all, from Steamed Rice at ₹180, and the Curd & Raita section has seven raitas and curds from ₹125 to ₹200 to eat with them."
 updated: 2026-11-17
 images:
-  - src: venue/buffet-lawn.jpg
-    alt: "Buffet counters with lit food warmers set out on the lawn for a function"
+  - src: food/nonveg_biryani.jpg
+    alt: "A pot of non-veg biryani with long-grain rice, fried onions and pieces of meat"
 faq:
   - q: "Which meat is in the Non-Veg Biryani?"
     a: "The menu lists it as Non-Veg Biryani at ₹375 without naming the meat. Ask us at 096467 13555 and we'll tell you what is in it."

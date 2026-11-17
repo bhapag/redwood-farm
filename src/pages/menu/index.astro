@@ -7,8 +7,28 @@ import BlurHeading from '../../components/BlurHeading.astro';
 import { site, waLink } from '../../data/site.js';
 import { menu } from '../../data/menu.js';
 
+import paneerTikka from '../../assets/food/paneer_tikka.jpg';
+import tandooriChicken from '../../assets/food/tandoori_chicken.jpg';
+import dalMakhni from '../../assets/food/dal_makhni.jpg';
+import butterChicken from '../../assets/food/butter_chicken.jpg';
+import kadhaiPaneer from '../../assets/food/kadhai_paneer.jpg';
+import biryani from '../../assets/food/nonveg_biryani.jpg';
+import hakka from '../../assets/food/hakka_noodles.jpg';
+import roganJosh from '../../assets/food/mutton_rogan_josh.jpg';
+import jalebi from '../../assets/food/paneer_jalebi_rabri.jpg';
+import platter from '../../assets/food/nonveg_platter.jpg';
+import sizzler from '../../assets/food/veg_sizzler.jpg';
+import naan from '../../assets/food/naan.jpg';
 
 
+// One photo per category where a matching dish exists; the same photos power the hover preview.
+const photos = {
+  'Paneer Tikka': paneerTikka, 'Tandoori Chicken': tandooriChicken, 'Dal Makhni': dalMakhni,
+  'Butter Chicken': butterChicken, 'Kadhai Paneer': kadhaiPaneer, 'Non-Veg Biryani': biryani,
+  'Hakka Noodles': hakka, 'Mutton Rogan Josh': roganJosh, 'Paneer Jalebi with Rabri': jalebi,
+  'Non-Veg Platter': platter, 'Veg Sizzler': sizzler, 'Butter Naan': naan,
+};
+const catPhoto = { appetizers: 'Hakka Noodles', tandoori: 'Paneer Tikka', platters: 'Non-Veg Platter', sizzlers: 'Veg Sizzler', 'main-course': 'Dal Makhni', breads: 'Butter Naan', rice: 'Non-Veg Biryani', dessert: 'Paneer Jalebi with Rabri' };
 
 const menuUrl = abs(`/menu/`);
 const menuSchema = {
@@ -66,12 +86,18 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', it
   <div class="wrap m-body">
     <p class="m-count muted" aria-live="polite" data-count></p>
     {menu.categories.map((c) => {
+      const ph = catPhoto[c.id];
       return (
         <section id={c.id} class="m-sec" data-sec>
           <div class="m-sec-head">
             <h2>{c.name}</h2>
             {c.note && <p class="muted">{c.note}</p>}
           </div>
+          {ph && (
+            <figure class="frame m-fig sd-zoom">
+              <Picture src={photos[ph]} formats={['avif', 'webp']} widths={[400, 700, 1000]} sizes="(min-width: 900px) 34vw, 92vw" alt={ph} loading="lazy" />
+            </figure>
+          )}
           <div class="m-groups">
             {c.groups.map((g) => {
               const hasHalf = g.items.some((i) => i.half);

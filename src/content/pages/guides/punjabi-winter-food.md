@@ -9,6 +9,8 @@ updated: 2026-11-17
 images:
   - src: venue/string-lounge.jpg
     alt: "Low lounge seating on the Red Wood Farm lawn under warm string lights after dark"
+  - src: food/naan.jpg
+    alt: "Tandoor naan brushed with butter"
 faq:
   - q: "Is gajrela the same as gajar halwa?"
     a: "Yes. Gajrela is the Punjabi name for the slow-cooked carrot and milk dessert. Ours is sold as Gajrela, 100 g (seasonal) at ₹75."

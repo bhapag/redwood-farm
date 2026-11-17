@@ -7,8 +7,10 @@ query: "what to order at red wood farm"
 summary: "On a first visit to Red Wood Farm, start with a soup or a starter, share one tandoor plate, then order Dal Makhni (₹275), one curry, a round of breads and a dessert. Non-veg tables should try the house Farm to Table Special Chicken (Half ₹415, Full ₹695)."
 updated: 2026-11-17
 images:
-  - src: venue/day-long-tables.jpg
-    alt: "Long wooden tables and lounge seating on the lawn in the daytime"
+  - src: food/kadhai_paneer.jpg
+    alt: "Kadhai paneer with peppers and onion in a small wok"
+  - src: food/tandoori_chicken.jpg
+    alt: "Tandoori chicken pieces on a plate with onion rings"
 faq:
   - q: "What is the house dish at Red Wood Farm?"
     a: "Farm to Table Special Chicken is our house signature chicken. It costs ₹415 for a Half and ₹695 for a Full."

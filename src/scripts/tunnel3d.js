@@ -113,9 +113,9 @@ export function startTunnel(root) {
     if (!visible) return;
     // Phones draw at most 30 frames a second; desktop runs at the display rate.
     if (!desktop && (moving || now - last < 32)) { if (moving) last = now; raf = requestAnimationFrame(frame); return; }
-    if (!desktop) { walked += Math.min(now - last, 64); target = Math.min(1, walked / 9000); } // a 9-second walk, then rest at the exit
+    if (!desktop) { walked += Math.min(now - last, 250); target = Math.min(1, walked / 9000); } // a 9-second walk by the clock, then rest at the exit
     last = now;
-    progress += (target - progress) * (desktop ? 0.12 : 0.08);
+    progress = desktop ? progress + (target - progress) * 0.12 : target; // phones: time-based, so slow frame rates still arrive on time
     const e = 1 - Math.pow(1 - progress, 2);
     cam.position.set(tiltX * 0.25 + Math.sin(now / 2400) * 0.04, 1.25 - tiltY * 0.15, START_Z + (endZ - START_Z) * e);
     cam.lookAt(tiltX * 0.4, 1.3, cam.position.z - 4);

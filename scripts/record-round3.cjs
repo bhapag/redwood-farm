@@ -17,8 +17,8 @@ const { chromium, devices } = require('playwright');
   await pg.waitForTimeout(3500);                       // first screen
   await flick(500); await pg.waitForTimeout(1500);      // fast flick into the photo
   // bring the tunnel band into view and hold while the walk plays
-  const top = await pg.evaluate(() => document.querySelector('[data-tunnel]').getBoundingClientRect().top + scrollY - 60);
-  await pg.evaluate((y) => scrollTo({ top: y, behavior: 'smooth' }), top);
+  await pg.waitForTimeout(800);
+  await pg.evaluate(() => { const t = document.querySelector('[data-tunnel]'); scrollTo({ top: t.getBoundingClientRect().top + scrollY - 64, behavior: 'smooth' }); });
   await pg.waitForTimeout(10500);
   for (let i = 0; i < 9; i++) { await flick(650); await pg.waitForTimeout(900); } // fast flicks down the page
   await pg.waitForTimeout(1500);

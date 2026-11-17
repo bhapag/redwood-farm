@@ -3,6 +3,7 @@ import { base, u, abs, sitePath, CANONICAL_ORIGIN } from '../../data/urls.js';
 import Base from '../../layouts/Base.astro';
 import Icon from '../../components/Icon.astro';
 import { Picture } from 'astro:assets';
+import BlurText from '../../components/reactbits/BlurText/BlurText';
 import { site, waLink } from '../../data/site.js';
 import { menu } from '../../data/menu.js';
 
@@ -58,7 +59,7 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', it
 ---
 <Base title="Menu and Prices | Red Wood Farm, Pakhowal Road, Ludhiana" description={`Full menu with prices: ${menu.count} dishes, tandoor, North Indian, Indo-Chinese, breads and desserts. Half and full portions, veg and non-veg marked. Prices include GST.`} schema={[menuSchema, crumbs]} og="og-menu.jpg" current="Menu">
   <header class="m-head wrap page-top">
-    <h1>Everything we cook, with prices</h1>
+    <BlurText client:load as="h1" className="m-title" text="Everything we cook, with prices" animateBy="words" direction="bottom" delay={70} stepDuration={0.32} />
     <p class="answer">Red Wood Farm serves {menu.count} dishes: soups, appetizers, tandoor, champ, platters, sizzlers, North Indian mains, breads, rice and desserts. Prices are in rupees and include GST. Many mains come in half and full portions. Open daily, 10 AM to 11 PM, for dine-in and takeaway.</p>
   </header>
 
@@ -93,7 +94,7 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', it
             {c.note && <p class="muted">{c.note}</p>}
           </div>
           {ph && (
-            <figure class="frame m-fig">
+            <figure class="frame m-fig sd-zoom">
               <Picture src={photos[ph]} formats={['avif', 'webp']} widths={[400, 700, 1000]} sizes="(min-width: 900px) 34vw, 92vw" alt={`${ph}, illustrative food photo`} loading="lazy" />
             </figure>
           )}
@@ -245,4 +246,5 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', it
   .to-top svg { width: 18px; height: 18px; }
   .to-top.on { opacity: 1; transform: none; pointer-events: auto; }
   @media (min-width: 900px) { .to-top { bottom: 28px; right: 28px; } }
+  .m-head :global(.m-title) { font-size: var(--t-1); max-width: 15ch; line-height: 1.04; margin: 0 0 0.45em; }
 </style>

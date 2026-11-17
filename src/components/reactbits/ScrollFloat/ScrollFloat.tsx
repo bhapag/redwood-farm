@@ -26,6 +26,7 @@ type ScrollFloatDirection = 'up' | 'down';
 type ScrollFloatOrder = 'start' | 'end' | 'center' | 'edges' | 'random';
 
 interface ScrollFloatProps {
+  id?: string; // RWF: heading id for aria-labelledby
   children: ReactNode;
   scrollContainerRef?: RefObject<HTMLElement | null>;
   containerClassName?: string;
@@ -79,6 +80,7 @@ const getDelays = (count: number, order: ScrollFloatOrder, stagger: number) => {
 };
 
 const ScrollFloat: React.FC<ScrollFloatProps> = ({
+  id, // RWF
   children,
   scrollContainerRef,
   containerClassName = '',
@@ -276,6 +278,7 @@ const ScrollFloat: React.FC<ScrollFloatProps> = ({
 
   return (
     <h2
+      id={id}
       ref={containerRef}
       className={`scroll-float ${effect === 'float' ? '' : 'scroll-float--open'} ${containerClassName}`}
     >

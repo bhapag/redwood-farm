@@ -12,6 +12,8 @@ export type BlurTextStaggerFrom = 'start' | 'center' | 'end' | 'random';
 export type BlurTextTrigger = 'view' | 'load' | 'hover' | 'click';
 
 type BlurTextProps = {
+  as?: 'p' | 'h1' | 'h2' | 'span'; // RWF: render a real heading tag
+  id?: string; // RWF
   text?: string;
   delay?: number;
   className?: string;
@@ -228,6 +230,8 @@ const startPhase = (trigger: BlurTextTrigger): Phase =>
   trigger === 'load' ? 'in' : trigger === 'hover' || trigger === 'click' ? 'rest' : 'from';
 
 const BlurText = ({
+  as: Tag = 'p', // RWF
+  id, // RWF
   text = '',
   delay = 200,
   className = '',
@@ -427,8 +431,9 @@ const BlurText = ({
 
   return (
     <MotionConfig reducedMotion="user">
-      <p
-        ref={ref}
+      <Tag
+        ref={ref as never}
+        id={id}
         className={className}
         style={{ display: 'flex', flexWrap: 'wrap', color, cursor: trigger === 'click' ? 'pointer' : undefined }}
         onPointerEnter={trigger === 'hover' ? handleEnter : undefined}
@@ -445,7 +450,7 @@ const BlurText = ({
             {indices.map(renderPiece)}
           </span>
         ))}
-      </p>
+      </Tag>
     </MotionConfig>
   );
 };

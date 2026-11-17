@@ -2,6 +2,7 @@
 import { base, u, abs, sitePath } from '../data/urls.js';
 import '../styles/global.css';
 import Icon from '../components/Icon.astro';
+import Magnet from '../components/reactbits/Magnet/Magnet';
 import { site, waLink } from '../data/site.js';
 import monogram from '../assets/rw-monogram.png';
 import { getImage } from 'astro:assets';
@@ -98,7 +99,7 @@ const bookMsg = 'Hello Red Wood Farm, I would like to book a table.';
     </a>
     <nav class="nav" aria-label="Main">
       {nav.map(([l, h]) => <a href={u(h)} aria-current={current === l ? 'page' : undefined}>{l}</a>)}
-      <a class="btn red" href={waLink(bookMsg)} target="_blank" rel="noopener"><Icon name="wa" />Book on WhatsApp</a>
+      <Magnet client:media="(hover: hover) and (pointer: fine)" padding={60} magnetStrength={4}><a class="btn red" href={waLink(bookMsg)} target="_blank" rel="noopener"><Icon name="wa" />Book on WhatsApp</a></Magnet>
     </nav>
     <button class="menu-btn" type="button" aria-haspopup="dialog" aria-controls="sheet" data-sheet-open><Icon name="burger" />Menu</button>
   </header>

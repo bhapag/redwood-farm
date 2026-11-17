@@ -2,7 +2,15 @@
 import { u, abs } from '../data/urls.js';
 import Base from '../layouts/Base.astro';
 import Icon from '../components/Icon.astro';
-import { Picture } from 'astro:assets';
+import { Picture, getImage } from 'astro:assets';
+import ShinyText from '../components/reactbits/ShinyText/ShinyText';
+import BlurText from '../components/reactbits/BlurText/BlurText';
+import CountUp from '../components/reactbits/CountUp/CountUp';
+import HeroLights from '../components/rb/HeroLights';
+import Headline from '../components/rb/Headline';
+import DishStack from '../components/rb/DishStack';
+import PartyStack from '../components/rb/PartyStack';
+import Spark from '../components/rb/Spark';
 import { site, waLink } from '../data/site.js';
 import { find, price, menu, allItems } from '../data/menu.js';
 import ReviewBand from '../components/ReviewBand.astro';
@@ -63,6 +71,18 @@ const strip = [
   [palmsDusk, 'The palm driveway lit at dusk', 'The palm drive at dusk'],
 ];
 
+// Island data: plain strings only (islands cannot receive image objects).
+const dishCards = await Promise.all(dishes.map(async (d) => ({
+  name: d.name, price: price(d.item), veg: d.item.veg, line: d.line, href: u(`/menu/#${d.item.catId}`),
+  alt: `${d.name}, illustrative food photo`,
+  img: (await getImage({ src: d.img, width: 480, height: 600, fit: 'cover', format: 'webp', quality: 72 })).src,
+})));
+const occCards = await Promise.all(occasions.map(async (o) => ({
+  h: o.h, p: o.p, alt: o.alt, cta: `Ask about a ${o.msg}`,
+  href: waLink(`Hello Red Wood Farm, I would like to plan a ${o.msg}. Date: , Time: , Guests: `),
+  img: (await getImage({ src: o.img, width: 760, height: 570, fit: 'cover', format: 'webp', quality: 72 })).src,
+})));
+
 const featured = {
   party: ['birthday-party-venues-ludhiana', 'kitty-party-venues-ludhiana', 'office-team-lunch-ludhiana'],
   food: ['tandoor-guide', 'vegetarian-guide', 'group-ordering-guide'],
@@ -84,24 +104,32 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'WebSite', name: sit
   <section class="hero tone-night" aria-labelledby="hero-title">
     <div class="hero-panel">
       <p class="open-chip" data-open>Open daily, 10 AM to 11 PM</p>
-      <p class="hero-name neon" aria-hidden="true">Red Wood Farm</p>
-      <h1 id="hero-title"><span class="sr-only">Red Wood Farm: </span>A garden family restaurant&nbsp;and party lawn</h1>
+      <p class="hero-name neon"><ShinyText client:load text="Red Wood Farm" color="#effff5" shineColor="#ffffff" speed={2.6} delay={4} angle={110} shineWidth={18} glow={0} /></p>
+      <BlurText client:load as="h1" id="hero-title" className="hero-title" text={'A garden family restaurant and party lawn'} animateBy="words" direction="bottom" delay={70} stepDuration={0.32} />
       <p class="hero-sub">On outer Pakhowal Road, Ludhiana. Tandoor, North Indian and Indo-Chinese food, every day from 10 AM to 11 PM.</p>
-      <div class="hero-ctas">
-        <a class="btn" href={u('/menu/')}><Icon name="menu" />See the menu</a>
-        <a class="btn ghost" href={u('/party/')}>Plan a party</a>
-      </div>
+      <Spark client:visible>
+        <div class="hero-ctas">
+          <a class="btn" href={u('/menu/')}><Icon name="menu" />See the menu</a>
+          <a class="btn ghost" href={u('/party/')}>Plan a party</a>
+        </div>
+      </Spark>
     </div>
     <figure class="hero-photo">
       <Picture src={tunnel} formats={['avif', 'webp']} widths={[480, 768, 1024, 1518]} sizes="(min-width: 900px) 60vw, 100vw" alt="The fairy-light tunnel and red carpet at Red Wood Farm, lit at night" loading="eager" fetchpriority="high" />
+      <HeroLights client:idle />
     </figure>
   </section>
 
   <section class="intro section tone-paper" aria-labelledby="intro-h">
     <div class="wrap intro-grid">
       <div class="intro-copy">
-        <h2 id="intro-h" data-split>A garden restaurant for the whole family</h2>
+        <Headline client:visible id="intro-h" text="A garden restaurant for the whole family" />
         <p class="lede" data-reveal>Red Wood Farm is a garden family restaurant and party lawn at VPO Daad, on outer Pakhowal Road in Ludhiana. We serve tandoor, North Indian and Indo-Chinese food every day from 10 AM to 11 PM, at tables on a fairy-lit lawn.</p>
+        <ul class="stats" role="list" data-reveal>
+          <li><span class="stat-n"><CountUp client:visible to={187} duration={1.6} /></span><span class="stat-l">dishes on the menu</span></li>
+          <li><span class="stat-n"><CountUp client:visible to={13} duration={1.2} /></span><span class="stat-l">hours open, every day</span></li>
+          <li><span class="stat-n"><CountUp client:visible to={4.2} decimals={1} duration={1.4} /><span class="stat-star" aria-hidden="true">★</span></span><span class="stat-l">from {site.rating.count} Google reviews</span></li>
+        </ul>
         <a class="link" href={u('/about/')} data-reveal>About Red Wood Farm <Icon name="arrow" /></a>
       </div>
       <aside class="card tone-green" aria-label="Hours and address" data-reveal>
@@ -121,23 +149,30 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'WebSite', name: sit
 
   <section class="dishes section tone-green" aria-labelledby="dish-h">
     <div class="wrap dish-head">
-      <h2 id="dish-h" data-split>Start with the tandoor</h2>
+      <Headline client:visible id="dish-h" text="Start with the tandoor" />
       <p class="muted">Nine dishes from our menu of 187, with their prices. Food photos are illustrative.</p>
-      <p class="swipe-hint" data-swipe-hint="dishes" aria-hidden="true">Swipe for more <Icon name="arrow" /></p>
+      <p class="swipe-hint" aria-hidden="true">Swipe or tap the card <Icon name="arrow" /></p>
     </div>
-    <ul class="dish-row" role="list" data-swipe="dishes">
-      {dishes.map((d) => (
-        <li class="dish">
-          <a href={u(`/menu/#${d.item.catId}`)}>
-            <div class="frame dish-img"><Picture src={d.img} formats={['avif', 'webp']} widths={[240, 360, 480, 640]} sizes="(min-width: 900px) 18vw, 58vw" alt={`${d.name}, illustrative food photo`} /></div>
-            <h3>{d.name}</h3>
-            <p class="dish-meta"><span class={`mark ${d.item.veg ? 'v' : 'nv'}`} role="img" aria-label={d.item.veg ? 'Veg' : 'Non-veg'}></span><span class="dish-price">{price(d.item)}</span></p>
-            <p class="dish-line">{d.line}</p>
-          </a>
-        </li>
-      ))}
-      <li class="dish dish-all"><a href={u('/menu/')}><span class="da-h">All {menu.count} dishes, with prices</span><span class="da-c">{catNames} and more.</span><span class="da-r">{range}</span><Icon name="arrow" /></a></li>
-    </ul>
+    <div class="dish-phone wrap"><DishStack client:visible dishes={dishCards} /></div>
+    <div class="dswap wrap" data-dswap>
+      <ol class="dswap-list" role="list">
+        {dishes.map((d, i) => (
+          <li><a href={u(`/menu/#${d.item.catId}`)} data-i={i} aria-current={i === 0 ? 'true' : undefined}>
+            <span class="dswap-name">{d.name}</span>
+            <span class="dswap-price">{price(d.item)}</span>
+          </a></li>
+        ))}
+      </ol>
+      <div class="dswap-stage" aria-hidden="true">
+        {dishes.map((d, i) => (
+          <figure class={`dswap-fig${i === 0 ? ' on' : ''}`} data-i={i}>
+            <Picture src={d.img} formats={['avif', 'webp']} widths={[480, 760, 1000]} sizes="40vw" alt="" loading="lazy" />
+            <figcaption>{d.line}</figcaption>
+          </figure>
+        ))}
+      </div>
+    </div>
+    <div class="wrap dish-all-wrap"><a class="btn" href={u('/menu/')}><Icon name="menu" />See all {menu.count} dishes</a><p class="da-r">Every price on the menu, {range}.</p></div>
   </section>
 
   <ReviewBand />
@@ -145,33 +180,24 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'WebSite', name: sit
   <section class="occasions section tone-paper" aria-labelledby="occ-h">
     <div class="wrap">
       <div class="occ-head">
-        <h2 id="occ-h" data-split>Birthdays, kitty parties and family functions</h2>
+        <Headline client:visible id="occ-h" text="Birthdays, kitty parties and family functions" />
         <div>
           <p data-reveal>The lawn and its lights are yours for the afternoon or the evening. Tell us the date and the number of guests on WhatsApp and we will plan it with you.</p>
           <a class="link" href={u('/party/')} data-reveal>Plan a party <Icon name="arrow" /></a>
         </div>
       </div>
-      <ul class="occ-grid" role="list">
-        {occasions.map((o) => (
-          <li class="occ" data-reveal>
-            <div class="frame occ-img"><Picture src={o.img} formats={['avif', 'webp']} widths={[360, 540, 760]} sizes="(min-width: 900px) 30vw, 92vw" alt={o.alt} /></div>
-            <h3>{o.h}</h3>
-            <p class="muted">{o.p}</p>
-            <a class="link" href={waLink(`Hello Red Wood Farm, I would like to plan a ${o.msg}. Date: , Time: , Guests: `)} target="_blank" rel="noopener">Ask about a {o.msg} <Icon name="arrow" /></a>
-          </li>
-        ))}
-      </ul>
+      <PartyStack client:visible items={occCards} />
     </div>
   </section>
 
   <section class="evening section tone-night" aria-labelledby="eve-h">
     <div class="wrap eve-grid">
       <figure class="eve-fig">
-        <div class="frame eve-img"><div data-parallax="8"><Picture src={palmTable} formats={['avif', 'webp']} widths={[480, 760, 1100]} sizes="(min-width: 900px) 58vw, 92vw" alt="A dining table under the lit palm trees on the lawn at night" /></div></div>
+        <div class="frame eve-img sd-zoom"><div data-parallax="8"><Picture src={palmTable} formats={['avif', 'webp']} widths={[480, 760, 1100]} sizes="(min-width: 900px) 58vw, 92vw" alt="A dining table under the lit palm trees on the lawn at night" /></div></div>
         <figcaption class="cap">A table under the palms on the lawn, after dark.</figcaption>
       </figure>
       <div class="eve-copy">
-        <h2 id="eve-h" data-split>The lawn by night</h2>
+        <Headline client:visible id="eve-h" text="The lawn by night" />
         <p data-reveal>After sunset the lawn, the palms and the tunnel light up. Take a table outside, or book a corner for a birthday or a get-together.</p>
         <a class="btn red" href={waLink('Hello Red Wood Farm, I would like to book a table for this evening.')} target="_blank" rel="noopener" data-reveal><Icon name="wa" />Book a table tonight</a>
       </div>
@@ -183,7 +209,7 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'WebSite', name: sit
       </div>
       <ul class="strip" role="list" data-strip data-swipe="strip">
         {strip.map(([img, alt, cap]) => (
-          <li><figure><div class="frame"><Picture src={img} formats={['avif', 'webp']} widths={[240, 360, 520]} sizes="(min-width: 900px) 22vw, 62vw" alt={alt} /></div><figcaption class="cap">{cap}</figcaption></figure></li>
+          <li><figure><div class="frame sd-zoom"><Picture src={img} formats={['avif', 'webp']} widths={[240, 360, 520]} sizes="(min-width: 900px) 22vw, 62vw" alt={alt} /></div><figcaption class="cap">{cap}</figcaption></figure></li>
         ))}
       </ul>
     </div>
@@ -192,7 +218,7 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'WebSite', name: sit
 
   <section class="guides section tone-paper" aria-labelledby="ex-h">
     <div class="wrap">
-      <h2 id="ex-h" data-split>Guides from our team</h2>
+      <Headline client:visible id="ex-h" text="Guides from our team" />
       <div class="ex-grid">
         {hubs.map(({ hub, items }) => (
           <div class="ex-col" data-reveal>
@@ -207,9 +233,9 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'WebSite', name: sit
 
   <section class="visit section tone-night" aria-labelledby="visit-h">
     <div class="wrap split">
-      <div class="frame visit-img" data-reveal><Picture src={entrance} formats={['avif', 'webp']} widths={[480, 800, 1200]} sizes="(min-width: 900px) 45vw, 92vw" alt="The hedge and flower entrance arch at Red Wood Farm, by day" /></div>
+      <div class="frame visit-img sd-zoom"><Picture src={entrance} formats={['avif', 'webp']} widths={[480, 800, 1200]} sizes="(min-width: 900px) 45vw, 92vw" alt="The hedge and flower entrance arch at Red Wood Farm, by day" /></div>
       <div>
-        <h2 id="visit-h" data-split>Opposite Cerajot Tiles, near Omaxe Flats</h2>
+        <Headline client:visible id="visit-h" text="Opposite Cerajot Tiles, near Omaxe Flats" />
         <address class="lede">{site.address.full}</address>
         <p class="muted">{site.hoursDisplay}. Takeaway available. No wheelchair access.</p>
         <div class="btns">
@@ -221,6 +247,18 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'WebSite', name: sit
   </section>
 </Base>
 
+
+<script>
+  document.querySelectorAll('[data-dswap]').forEach((box) => {
+    const links = [...box.querySelectorAll('.dswap-list a')];
+    const figs = [...box.querySelectorAll('.dswap-fig')];
+    const show = (i) => {
+      figs.forEach((f) => f.classList.toggle('on', f.dataset.i === i));
+      links.forEach((a) => (a.dataset.i === i ? a.setAttribute('aria-current', 'true') : a.removeAttribute('aria-current')));
+    };
+    links.forEach((a) => { a.addEventListener('pointerenter', () => show(a.dataset.i)); a.addEventListener('focus', () => show(a.dataset.i)); });
+  });
+</script>
 
 <style>
   /* ---------- Hero: phones stack name, headline and actions above the real tunnel photo ---------- */
@@ -338,5 +376,61 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'WebSite', name: sit
   .visit-img { aspect-ratio: 1; }
   @media (min-width: 900px) { .visit-img { aspect-ratio: 4 / 3; } }
   .visit address { font-style: normal; margin-bottom: 12px; }
+
+  /* ---------- React Bits islands on Home ---------- */
+  .hero-name :global(.shiny-text) { white-space: nowrap; }
+  .hero :global(.hero-title) { font-size: var(--t-hero); max-width: 18ch; margin: 0 0 14px; line-height: 1.04; column-gap: 0 !important; justify-content: flex-start; }
+  @media (min-width: 900px) { .hero :global(.hero-title) { font-size: clamp(2.8rem, 1rem + 3.2vw, 4.4rem); max-width: 15ch; } }
+  .hero-photo :global(.hero-lights) { position: absolute; inset: 0; pointer-events: none; mix-blend-mode: screen; }
+  .intro :global(.rb-headline), .dishes :global(.rb-headline), .occasions :global(.rb-headline), .evening :global(.rb-headline), .guides :global(.rb-headline) { font-size: var(--t-1); }
+  .intro :global(.rb-headline) { max-width: 14ch; }
+  .occasions :global(.rb-headline) { max-width: 16ch; }
+  .visit :global(.rb-headline) { font-size: var(--t-2); }
+  .stats { list-style: none; padding: 18px 0 0; margin: 4px 0 26px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; border-top: 1px solid var(--line); }
+  .stats li { display: grid; gap: 4px; align-content: start; }
+  .stat-n { font: 400 clamp(2rem, 1.4rem + 2.4vw, 3.2rem)/1 var(--serif); color: var(--redwood); font-variant-numeric: tabular-nums; display: inline-flex; align-items: baseline; gap: 2px; }
+  .stat-star { font-size: 0.6em; color: #a8780f; }
+  .stat-l { font-size: var(--t-small); color: var(--mute); line-height: 1.3; }
+  /* Dishes: phones get the swipe stack; desktop gets the hover image swap. */
+  .dish-phone { margin-top: 28px; }
+  .dish-phone :global(.dstack) { height: min(132vw, 560px); max-width: 420px; margin: 0 auto; }
+  .dish-phone :global(.dstack-card) { height: 100%; display: flex; flex-direction: column; background: var(--paper); color: var(--ink); }
+  .dish-phone :global(.dstack-card img) { height: 64%; flex: none; object-fit: cover; width: 100%; }
+  .dish-phone :global(.dstack-panel) { padding: 16px 18px; display: grid; gap: 6px; align-content: start; }
+  .dish-phone :global(.dstack-panel h3) { font-size: 1.45rem; margin: 0; }
+  .dish-phone :global(.dstack-meta) { display: flex; align-items: center; gap: 10px; margin: 0; }
+  .dish-phone :global(.dstack-price) { font: 700 1.25rem/1 var(--sans); }
+  .dish-phone :global(.dstack-line) { margin: 0; font-size: var(--t-small); color: var(--ink-mute); }
+  .dswap { display: none; }
+  .dish-all-wrap { margin-top: 28px; display: grid; justify-items: center; gap: 8px; }
+  .dish-all-wrap .da-r { margin: 0; font-size: var(--t-small); color: var(--mute); }
+  @media (min-width: 900px) {
+    .dish-phone, .swipe-hint { display: none; }
+    .dswap { display: grid; grid-template-columns: 5fr 7fr; gap: 56px; margin-top: 48px; align-items: center; }
+    .dswap-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+    .dswap-list a { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--line); text-decoration: none; transition: padding 0.4s var(--ease), color 0.3s; }
+    .dswap-name { font: 400 clamp(1.4rem, 1rem + 1vw, 2rem)/1.1 var(--serif); }
+    .dswap-price { font: 700 1.05rem/1 var(--sans); color: var(--gold); font-variant-numeric: tabular-nums; }
+    .dswap-list a[aria-current], .dswap-list a:hover, .dswap-list a:focus-visible { padding-left: 14px; color: var(--gold); }
+    .dswap-stage { position: relative; aspect-ratio: 4 / 5; border-radius: 10px; overflow: hidden; background: var(--night-2); }
+    .dswap-fig { position: absolute; inset: 0; margin: 0; clip-path: inset(0 0 100% 0); transition: clip-path 0.7s var(--ease); }
+    .dswap-fig.on { clip-path: inset(0 0 0 0); z-index: 1; }
+    .dswap-fig :global(img) { width: 100%; height: 100%; object-fit: cover; transform: scale(1.06); transition: transform 1.2s var(--ease); }
+    .dswap-fig.on :global(img) { transform: none; }
+    .dswap-fig figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 14px 18px; background: var(--night); color: var(--cream); font-size: var(--t-small); }
+  }
+  /* Parties: React Bits ScrollStack cards. */
+  .occasions :global(.pstack) { margin-top: 36px; }
+  .occasions :global(.scroll-stack__inner) { padding-inline: 0; }
+  .occasions :global(.pstack-card) { height: auto; padding: 0; border-radius: 14px; overflow: hidden; background: #fff; color: var(--ink); display: grid; }
+  .occasions :global(.pstack-card img) { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+  .occasions :global(.pstack-panel) { padding: 18px 20px 22px; }
+  .occasions :global(.pstack-panel h3) { font-size: var(--t-3); margin: 0 0 6px; }
+  .occasions :global(.pstack-panel p) { color: var(--ink-mute); margin: 0 0 10px; }
+  @media (min-width: 900px) {
+    .occasions :global(.pstack) { max-width: 1000px; margin-inline: auto; }
+    .occasions :global(.pstack-card) { grid-template-columns: 1.2fr 1fr; align-items: center; }
+    .occasions :global(.pstack-card img) { height: 100%; aspect-ratio: auto; min-height: 380px; }
+  }
 
 </style>

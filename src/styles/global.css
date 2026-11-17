@@ -78,7 +78,6 @@ h1 em, h2 em, h3 em { font-style: normal; color: inherit; }
 .skip:focus { left: 8px; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 @view-transition { navigation: auto; }
-::view-transition-old(root), ::view-transition-new(root) { animation-duration: 0.4s; animation-timing-function: var(--ease); }
 
 /* ---------- Layout ---------- */
 .wrap { width: min(100% - 2 * var(--gutter), var(--max)); margin-inline: auto; }
@@ -224,3 +223,26 @@ figure { margin: 0; }
   .js [data-reveal] { transform: none; }
   ::view-transition-old(root), ::view-transition-new(root) { animation: none; }
 }
+
+/* ---------- React Bits islands: shared looks ---------- */
+/* ScrollFloat headlines keep the site's type, not the component's demo styling. */
+.scroll-float.rb-headline { margin: 0 0 0.45em; overflow: visible; overflow-x: clip; line-height: 1.04; }
+.rb-headline .scroll-float-text { display: inline; font: inherit; font-size: inherit; font-weight: 400; line-height: inherit; text-align: left; }
+.rb-headline .scroll-float-word { white-space: nowrap; }
+/* ClickSpark wrapper: layout-neutral. */
+.rb-spark { display: block; position: relative; }
+/* Scroll-driven image entrances (phones and desktop): compositor-only, no JavaScript, no pinning. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .sd-zoom img { animation: sd-zoom linear both; animation-timeline: view(); animation-range: entry 0% cover 45%; }
+  }
+}
+@keyframes sd-zoom { from { transform: scale(1.14); } to { transform: scale(1); } }
+/* Page transition: a brand-green wipe between pages (cross-document view transitions). */
+@media (prefers-reduced-motion: no-preference) {
+  ::view-transition-image-pair(root) { background: var(--green-deep); }
+  ::view-transition-old(root) { animation: vt-out 0.28s var(--ease) both; }
+  ::view-transition-new(root) { animation: vt-in 0.55s var(--ease) 0.08s both; }
+}
+@keyframes vt-out { to { opacity: 0; transform: translateY(-2%); } }
+@keyframes vt-in { from { clip-path: inset(100% 0 0 0); } to { clip-path: inset(0 0 0 0); } }

@@ -73,7 +73,7 @@ const speed = (n) => `${Math.max(60, n * 10)}s`;
   .rv-links { display: flex; flex-wrap: wrap; gap: 10px; align-self: end; }
   @media (min-width: 900px) { .rv-head { grid-template-columns: 1fr auto; align-items: end; } }
 
-  .rv-row { overflow: hidden; padding-block: 8px; }
+  .rv-row { overflow: hidden; padding-block: 8px; -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent); mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent); }
   .rv-row + .rv-row { margin-top: 12px; }
   .rv-track { list-style: none; margin: 0; padding: 0; display: flex; gap: 16px; width: max-content; animation: rv-left var(--dur) linear infinite; }
   .rv-b .rv-track { animation-name: rv-right; }

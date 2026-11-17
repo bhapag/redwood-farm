@@ -1,5 +1,7 @@
 import { defineConfig } from 'astro/config';
 
+import react from '@astrojs/react';
+
 // Two builds from one source:
 //   Cloudflare Pages:  BASE_PATH unset  -> served at "/"
 //   GitHub Pages copy: BASE_PATH=/redwood-farm -> served at bhapag.github.io/redwood-farm/ (printed QR codes)
@@ -13,6 +15,7 @@ export default defineConfig({
   trailingSlash: 'always',
   build: { format: 'directory', inlineStylesheets: 'always' },
   image: { responsiveStyles: false },
+
   redirects: Object.fromEntries(Object.entries({
     '/parties/': '/party/',
     '/notes/': '/guides/',
@@ -21,5 +24,7 @@ export default defineConfig({
     '/notes/tandoor-what-to-order-first/': '/food/tandoor-guide/',
     '/notes/an-evening-on-the-lawn/': '/garden/an-evening-on-the-lawn/',
   }).map(([from, to]) => [from, (BASE === '/' ? '' : BASE) + to])),
+
   compressHTML: true,
+  integrations: [react()],
 });

@@ -4,7 +4,11 @@ import Base from '../../layouts/Base.astro';
 import SpokeList from '../../components/SpokeList.astro';
 import ReviewBand from '../../components/ReviewBand.astro';
 import Icon from '../../components/Icon.astro';
-import { Picture } from 'astro:assets';
+import { Picture, getImage } from 'astro:assets';
+import BlurText from '../../components/reactbits/BlurText/BlurText';
+import Headline from '../../components/rb/Headline';
+import PartyStack from '../../components/rb/PartyStack';
+import Spark from '../../components/rb/Spark';
 import { site, waLink } from '../../data/site.js';
 import { partyFaq, faqSchema } from '../../data/faq.js';
 
@@ -25,6 +29,11 @@ const types = [
   { img: family, alt: 'A draped tent with dining tables and chandeliers set up for a family function', h: 'Family functions', p: 'Anniversaries, get-togethers and family celebrations, with food from our own kitchen.', msg: 'Family function' },
   { img: corporate, alt: 'Long wooden tables set up on the lawn for a daytime gathering', h: 'Corporate lunches', p: 'Team lunches and office get-togethers, away from the city, from 10 AM.', msg: 'Corporate lunch' },
 ];
+const typeCards = await Promise.all(types.map(async (t) => ({
+  h: t.h, p: t.p, alt: t.alt, cta: `Ask about a ${t.msg.toLowerCase()}`,
+  href: waLink(`Hello Red Wood Farm, I would like to plan a ${t.msg.toLowerCase()}. Date: , Time: , Guests: `),
+  img: (await getImage({ src: t.img, width: 760, height: 570, fit: 'cover', format: 'webp', quality: 72 })).src,
+})));
 const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
   { '@type': 'ListItem', position: 1, name: 'Home', item: abs(`/`) },
   { '@type': 'ListItem', position: 2, name: 'Parties & Events', item: pageUrl },
@@ -33,7 +42,7 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', it
 <Base title="Birthday & Kitty Party Venue in Ludhiana | Red Wood Farm Lawn" description="Birthday parties, kitty parties, family functions and team lunches on a fairy-lit garden lawn on Pakhowal Road, Ludhiana. Food from our own kitchen. Enquire on WhatsApp." schema={[faqSchema(partyFaq), crumbs]} og="og-party.jpg" current="Parties">
   <section class="p-hero tone-night">
     <div class="p-hero-copy">
-      <h1>Birthday, kitty and family parties on the lawn</h1>
+      <BlurText client:load as="h1" className="p-title" text="Birthday, kitty and family parties on the lawn" animateBy="words" direction="bottom" delay={70} stepDuration={0.32} />
       <p class="p-lede">Red Wood Farm is a garden party venue on outer Pakhowal Road, Ludhiana. We host birthday parties, kitty parties, family functions and corporate lunches on a fairy-lit lawn, with food from our own kitchen. To book, send your date, time and guest count on WhatsApp.</p>
       <div class="btns">
         <a class="btn red" href="#enquire"><Icon name="wa" />Enquire on WhatsApp</a>
@@ -45,23 +54,14 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', it
 
   <section class="section tone-paper" aria-labelledby="types-h">
     <div class="wrap">
-      <h2 id="types-h" class="p-h2" data-split>What we host</h2>
-      <ul class="types" role="list">
-        {types.map((t) => (
-          <li class="type" data-reveal>
-            <div class="frame type-img"><Picture src={t.img} formats={['avif', 'webp']} widths={[360, 600, 900]} sizes="(min-width: 900px) 44vw, 92vw" alt={t.alt} /></div>
-            <h3>{t.h}</h3>
-            <p class="muted">{t.p}</p>
-            <a class="link" href={waLink(`Hello Red Wood Farm, I would like to plan a ${t.msg.toLowerCase()}. Date: , Time: , Guests: `)} target="_blank" rel="noopener">Ask about a {t.msg.toLowerCase()} <Icon name="arrow" /></a>
-          </li>
-        ))}
-      </ul>
+      <Headline client:visible id="types-h" className="p-h2" text="What we host" />
+      <PartyStack client:visible items={typeCards} />
     </div>
   </section>
 
   <section class="section tone-green" aria-labelledby="how-h">
     <div class="wrap">
-      <h2 id="how-h" class="p-h2" data-split>How booking works</h2>
+      <Headline client:visible id="how-h" className="p-h2" text="How booking works" />
       <p class="muted">Four messages on WhatsApp. There are no forms to fill in on this website.</p>
       <ol class="steps">
         <li data-reveal><b>Tell us the occasion</b><span>Birthday, kitty party, family function or team lunch.</span></li>
@@ -75,7 +75,7 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', it
   <section id="enquire" class="section tone-night enquire" aria-labelledby="enq-h">
     <div class="wrap split">
       <div>
-        <h2 id="enq-h" class="p-h2" data-split>Plan your party on WhatsApp</h2>
+        <Headline client:visible id="enq-h" className="p-h2" text="Plan your party on WhatsApp" />
         <p class="muted">Fill this in and it opens WhatsApp with your message ready to send. Nothing is saved on this website.</p>
         <p class="muted">Guest capacity, per-plate prices and packages: ask us on WhatsApp and we will share current details for your date.</p>
       </div>
@@ -96,20 +96,20 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', it
         <label>Number of guests<input type="number" name="guests" min="1" max="2000" inputmode="numeric" required placeholder="e.g. 40" /></label>
         <label>Anything else (optional)<textarea name="note" rows="3" maxlength="400" placeholder="Veg only, a theme, a cake table..."></textarea></label>
         <input type="hidden" name="text" />
-        <button class="btn red" type="submit"><Icon name="wa" />Send on WhatsApp</button>
+        <Spark client:visible><button class="btn red" type="submit"><Icon name="wa" />Send on WhatsApp</button></Spark>
       </form>
     </div>
   </section>
 
   <section class="section tone-paper" aria-labelledby="gal-h">
     <div class="wrap">
-      <h2 id="gal-h" class="p-h2" data-split>From past parties on the lawn</h2>
+      <Headline client:visible id="gal-h" className="p-h2" text="From past parties on the lawn" />
       <p class="muted">Real set-ups at Red Wood Farm.</p>
       <div class="gal">
-        <figure class="frame g-a" data-reveal><Picture src={gate} formats={['avif', 'webp']} widths={[400, 700]} sizes="(min-width: 900px) 30vw, 46vw" alt="A floral entry gate decorated for an evening event" /></figure>
-        <figure class="frame g-c" data-reveal><Picture src={palmTable} formats={['avif', 'webp']} widths={[400, 700]} sizes="(min-width: 900px) 30vw, 46vw" alt="A dining table under the lit palm trees on the lawn at night" /></figure>
-        <figure class="frame g-b" data-reveal><Picture src={buffet} formats={['avif', 'webp']} widths={[400, 800, 1200]} sizes="(min-width: 900px) 40vw, 92vw" alt="Buffet counters on the lawn for a function" /></figure>
-        <figure class="frame g-d" data-reveal><Picture src={birthdaySetup} formats={['avif', 'webp']} widths={[400, 800, 1200]} sizes="(min-width: 900px) 40vw, 92vw" alt="A birthday party set-up with balloons" /></figure>
+        <figure class="frame g-a sd-zoom"><Picture src={gate} formats={['avif', 'webp']} widths={[400, 700]} sizes="(min-width: 900px) 30vw, 46vw" alt="A floral entry gate decorated for an evening event" /></figure>
+        <figure class="frame g-c sd-zoom"><Picture src={palmTable} formats={['avif', 'webp']} widths={[400, 700]} sizes="(min-width: 900px) 30vw, 46vw" alt="A dining table under the lit palm trees on the lawn at night" /></figure>
+        <figure class="frame g-b sd-zoom"><Picture src={buffet} formats={['avif', 'webp']} widths={[400, 800, 1200]} sizes="(min-width: 900px) 40vw, 92vw" alt="Buffet counters on the lawn for a function" /></figure>
+        <figure class="frame g-d sd-zoom"><Picture src={birthdaySetup} formats={['avif', 'webp']} widths={[400, 800, 1200]} sizes="(min-width: 900px) 40vw, 92vw" alt="A birthday party set-up with balloons" /></figure>
       </div>
     </div>
   </section>
@@ -185,4 +185,21 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', it
   @media (min-width: 900px) { .gal { grid-template-columns: 3fr 4fr; } .gal .g-b, .gal .g-d { grid-column: auto; aspect-ratio: 4 / 3; } .gal .g-a, .gal .g-c { aspect-ratio: 4 / 3; } }
   .faq-wrap { display: grid; gap: 24px; }
   @media (min-width: 900px) { .faq-wrap { grid-template-columns: 4fr 7fr; gap: 64px; } }
+  /* React Bits islands on Parties */
+  .p-hero :global(.p-title) { font-size: var(--t-1); max-width: 14ch; line-height: 1.04; margin: 0 0 0.45em; }
+  :global(.p-h2.rb-headline) { font-size: var(--t-2); }
+  section :global(.pstack) { margin-top: 32px; }
+  section :global(.scroll-stack__inner) { padding-inline: 0; }
+  section :global(.pstack-card) { height: auto; padding: 0; border-radius: 14px; overflow: hidden; background: #fff; color: var(--ink); display: grid; }
+  section :global(.pstack-card img) { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+  section :global(.pstack-panel) { padding: 18px 20px 22px; }
+  section :global(.pstack-panel h3) { font-size: var(--t-3); margin: 0 0 6px; }
+  section :global(.pstack-panel p) { color: var(--ink-mute); margin: 0 0 10px; }
+  @media (min-width: 900px) {
+    section :global(.pstack) { max-width: 1000px; margin-inline: auto; }
+    section :global(.pstack-card) { grid-template-columns: 1.2fr 1fr; align-items: center; }
+    section :global(.pstack-card img) { height: 100%; aspect-ratio: auto; min-height: 380px; }
+  }
+  .enq :global(.rb-spark) { justify-self: start; }
+
 </style>

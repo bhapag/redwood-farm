@@ -4,7 +4,7 @@ import Base from '../layouts/Base.astro';
 import Icon from '../components/Icon.astro';
 import { Picture } from 'astro:assets';
 import { site, waLink } from '../data/site.js';
-import { find, price } from '../data/menu.js';
+import { find, price, menu, allItems } from '../data/menu.js';
 import { reviews } from '../data/reviews.js';
 import { clusters } from '../data/clusters.js';
 import { pagesIn, pathOf } from '../data/pages.js';
@@ -13,7 +13,7 @@ import tunnel from '../assets/venue/tunnel-hero.jpg';
 import palmTable from '../assets/venue/palm-table.jpg';
 import birthday from '../assets/venue/birthday-arch.jpg';
 import kitty from '../assets/venue/day-lounge.jpg';
-import family from '../assets/venue/family-function.jpg';
+import family from '../assets/venue/function-night.jpg';
 import entrance from '../assets/venue/entrance-arch.jpg';
 import fairyTree from '../assets/venue/fairy-tree.jpg';
 import pathNight from '../assets/venue/garden-path-night.jpg';
@@ -49,7 +49,7 @@ const dishes = [
 const occasions = [
   { img: birthday, alt: 'A birthday balloon arch set up on the lawn at night', h: 'Birthday parties', p: 'Balloons, a cake table and dinner under the lights, for children or grown-ups.', msg: 'birthday party' },
   { img: kitty, alt: 'Daytime lounge seating on the lawn with cushions and low tables', h: 'Kitty parties', p: 'Daytime on the lawn from 10 AM, with the full menu and room to sit long.', msg: 'kitty party' },
-  { img: family, alt: 'A decorated stage on the lawn for a family function', h: 'Family functions', p: 'Anniversaries and get-togethers, with food from our own kitchen.', msg: 'family function' },
+  { img: family, alt: 'An evening function on the lawn with a buffet line and draped tent', h: 'Family functions', p: 'Anniversaries and get-togethers, with food from our own kitchen.', msg: 'family function' },
 ];
 
 const strip = [
@@ -74,6 +74,9 @@ const hubs = await Promise.all(Object.entries(featured).map(async ([c, slugs]) =
   return { c, hub: clusters[c], items: slugs.map((sl) => list.find((p) => pathOf(p) === `/${c}/${sl}/`)).filter(Boolean) };
 }));
 const [lead, ...more] = reviews;
+const allPrices = allItems.flatMap((i) => [i.half, i.full]).filter(Boolean);
+const range = `₹${Math.min(...allPrices)} to ₹${Math.max(...allPrices)}`;
+const catNames = menu.categories.map((c) => c.name).slice(0, 9).join(', ');
 const title = 'Red Wood Farm: Garden Family Restaurant & Party Lawn, Ludhiana';
 const description = 'Garden family restaurant and party lawn on outer Pakhowal Road, Ludhiana. Tandoor, North Indian and Indo-Chinese, open daily 10 AM to 11 PM. Book on WhatsApp.';
 const crumbs = { '@context': 'https://schema.org', '@type': 'WebSite', name: site.name, url: abs(`/`) };
@@ -83,7 +86,7 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'WebSite', name: sit
     <div class="hero-panel">
       <p class="open-chip" data-open>Open daily, 10 AM to 11 PM</p>
       <p class="hero-name neon" aria-hidden="true">Red Wood Farm</p>
-      <h1 id="hero-title"><span class="sr-only">Red Wood Farm: </span>A garden family restaurant and party lawn</h1>
+      <h1 id="hero-title"><span class="sr-only">Red Wood Farm: </span>A garden family restaurant&nbsp;and party lawn</h1>
       <p class="hero-sub">On outer Pakhowal Road, Ludhiana. Tandoor, North Indian and Indo-Chinese food, every day from 10 AM to 11 PM.</p>
       <div class="hero-ctas">
         <a class="btn" href={u('/menu/')}><Icon name="menu" />See the menu</a>
@@ -134,7 +137,7 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'WebSite', name: sit
           </a>
         </li>
       ))}
-      <li class="dish dish-all"><a href={u('/menu/')}><span>All 187 dishes, with prices</span><Icon name="arrow" /></a></li>
+      <li class="dish dish-all"><a href={u('/menu/')}><span class="da-h">All {menu.count} dishes, with prices</span><span class="da-c">{catNames} and more.</span><span class="da-r">{range}</span><Icon name="arrow" /></a></li>
     </ul>
   </section>
 
@@ -285,10 +288,13 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'WebSite', name: sit
   .dish a:hover .dish-img :global(img) { transform: scale(1.04); }
   .dish h3 { font-size: 1.3rem; margin: 14px 0 6px; line-height: 1.15; }
   .dish-meta { display: flex; align-items: center; gap: 10px; margin: 0 0 4px; }
-  .dish-price { font: 700 1.0625rem/1 var(--sans); color: var(--price); font-variant-numeric: tabular-nums; }
+  .dish-price { font: 700 1.2rem/1 var(--sans); color: var(--price); font-variant-numeric: tabular-nums; }
   .dish-line { font-size: var(--t-small); color: var(--mute); margin: 0; }
-  .dish-all > a { height: 100%; min-height: 200px; aspect-ratio: 4 / 5; border: 1.5px solid var(--line); border-radius: 6px; display: flex; flex-direction: column; justify-content: space-between; padding: 22px; font: 400 1.6rem/1.1 var(--serif); }
-  .dish-all :global(svg) { width: 28px; height: 28px; color: var(--accent); }
+  .dish-all > a { height: 100%; min-height: 320px; background: var(--paper); color: var(--ink); border-radius: 6px; display: flex; flex-direction: column; gap: 12px; padding: 22px; }
+  .da-h { font: 400 1.6rem/1.1 var(--serif); }
+  .da-c { font-size: var(--t-small); color: var(--ink-mute); }
+  .da-r { font: 700 1.2rem/1 var(--sans); margin-top: auto; }
+  .dish-all :global(svg) { width: 28px; height: 28px; color: var(--redwood); }
   @media (min-width: 900px) {
     .swipe-hint { display: none; }
     .dish-row { width: min(100% - 2 * var(--gutter), var(--max)); margin-inline: auto; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 40px 24px; overflow: visible; }
@@ -298,7 +304,7 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'WebSite', name: sit
   /* ---------- Occasions: three real set-ups, staggered on desktop ---------- */
   .occ-head h2 { font-size: var(--t-1); max-width: 16ch; }
   .occ-grid { list-style: none; padding: 0; margin: 40px 0 0; display: grid; gap: 44px; }
-  .occ-img { aspect-ratio: 4 / 3; }
+  .occ-img { aspect-ratio: 4 / 5; }
   .occ h3 { font-size: var(--t-3); margin: 18px 0 8px; }
   @media (min-width: 900px) {
     .occ-head { display: grid; grid-template-columns: 7fr 5fr; gap: 64px; align-items: end; }
@@ -324,6 +330,8 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'WebSite', name: sit
   .strip::-webkit-scrollbar { display: none; }
   .strip li { flex: 0 0 min(62vw, 300px); scroll-snap-align: start; }
   .strip .frame { aspect-ratio: 3 / 4; }
+  .strip li:nth-child(3n + 2) { flex-basis: min(84vw, 420px); }
+  .strip li:nth-child(3n + 2) .frame { aspect-ratio: 4 / 3; margin-top: 40px; }
   @media (min-width: 900px) { .strip li { flex-basis: 22vw; max-width: 340px; } .strip { padding-left: max(var(--gutter), calc((100vw - var(--max)) / 2)); } }
 
   /* ---------- Quote band ---------- */
@@ -354,7 +362,8 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'WebSite', name: sit
 
   /* ---------- Visit ---------- */
   .visit h2 { font-size: var(--t-2); }
-  .visit-img { aspect-ratio: 4 / 3; }
+  .visit-img { aspect-ratio: 1; }
+  @media (min-width: 900px) { .visit-img { aspect-ratio: 4 / 3; } }
   .visit address { font-style: normal; margin-bottom: 12px; }
 
 </style>

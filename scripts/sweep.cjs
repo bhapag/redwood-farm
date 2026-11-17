@@ -8,7 +8,7 @@ const { chromium } = require('playwright');
   const b = await chromium.launch({ executablePath: exe || undefined });
   let fails = 0;
   for (const w of widths.split(',').map(Number)) {
-    const ctx = await b.newContext({ viewport: { width: w, height: 800 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true });
+    const ctx = await b.newContext({ viewport: { width: w, height: 800 }, deviceScaleFactor: w < 900 ? 2 : 1, isMobile: w < 900, hasTouch: w < 900 });
     let errs = 0, over = 0;
     for (const p of paths) {
       const pg = await ctx.newPage(); const e = [];

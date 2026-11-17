@@ -165,8 +165,8 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', it
   .steps { list-style: none; padding: 0; margin: 32px 0 0; display: grid; gap: 0; counter-reset: s; }
   @media (min-width: 900px) { .steps { grid-template-columns: repeat(4, 1fr); gap: 28px; } }
   .steps li { counter-increment: s; padding: 22px 0; border-top: 1px solid var(--line); display: grid; gap: 8px; }
-  .steps li::before { content: 'Step ' counter(s); font: 650 var(--t-label)/1 var(--sans); color: var(--gold); }
   .steps b { font: 400 1.45rem/1.15 var(--serif); }
+  .steps b::before { content: counter(s) '. '; color: var(--gold); }
   .steps span { color: var(--mute); }
   .enq { display: grid; gap: 16px; background: var(--paper); color: var(--ink); border-radius: 10px; padding: clamp(20px, 3vw, 36px); }
   .enq label { display: grid; gap: 8px; font: 650 0.95rem/1.3 var(--sans); }

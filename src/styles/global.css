@@ -206,7 +206,7 @@ figure { margin: 0; }
 .faq details:last-child { border-bottom: 1px solid var(--line); }
 .faq summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 20px; min-height: 64px; padding: 14px 0; font: 400 clamp(1.15rem, 1rem + 0.5vw, 1.45rem)/1.25 var(--serif); }
 .faq summary::-webkit-details-marker { display: none; }
-.faq summary::after { content: '+'; font: 500 1.5rem/1 var(--sans); color: var(--accent); transition: transform 0.35s var(--ease); flex: none; }
+.faq summary::after { content: ''; width: 16px; height: 16px; flex: none; color: var(--accent); background: linear-gradient(currentColor, currentColor) center / 16px 2px no-repeat, linear-gradient(currentColor, currentColor) center / 2px 16px no-repeat; transition: transform 0.35s var(--ease); }
 .faq details[open] summary::after { transform: rotate(45deg); }
 .faq details p { margin: 0 0 20px; color: var(--mute); }
 
@@ -217,7 +217,7 @@ figure { margin: 0; }
 .prose a { color: var(--accent); }
 
 /* ---------- Reveal: content is visible without JS ---------- */
-.js [data-reveal] { opacity: 0; transform: translateY(22px); transition: opacity 0.7s var(--ease), transform 0.8s var(--ease); }
+.js [data-reveal] { opacity: 0.35; transform: translateY(22px); transition: opacity 0.7s var(--ease), transform 0.8s var(--ease); }
 .js [data-reveal].in { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }

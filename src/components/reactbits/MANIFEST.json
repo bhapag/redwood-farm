@@ -1,0 +1,112 @@
+{
+ "retrieved": "2026-11-17",
+ "variant": "TS-CSS",
+ "method": "registry JSON (same files the shadcn/jsrepo CLI fetches), written unchanged",
+ "components": {
+  "BlurText": {
+   "registry": "https://reactbits.dev/r/BlurText-TS-CSS.json",
+   "dependencies": [
+    "motion@^12.23.12"
+   ],
+   "files": {
+    "BlurText.tsx": "ff976389990b"
+   }
+  },
+  "BounceCards": {
+   "registry": "https://reactbits.dev/r/BounceCards-TS-CSS.json",
+   "dependencies": [],
+   "files": {
+    "BounceCards.css": "c10a595c3de1",
+    "BounceCards.tsx": "35935d025ba3"
+   }
+  },
+  "CardSwap": {
+   "registry": "https://reactbits.dev/r/CardSwap-TS-CSS.json",
+   "dependencies": [
+    "@hugeicons/react@^1.1.10",
+    "@hugeicons/core-free-icons@^4.3.3"
+   ],
+   "files": {
+    "CardSwap.css": "2331e82e8e19",
+    "CardSwap.tsx": "a478e5d82478"
+   }
+  },
+  "ClickSpark": {
+   "registry": "https://reactbits.dev/r/ClickSpark-TS-CSS.json",
+   "dependencies": [],
+   "files": {
+    "ClickSpark.tsx": "186b0d4d5820"
+   }
+  },
+  "CountUp": {
+   "registry": "https://reactbits.dev/r/CountUp-TS-CSS.json",
+   "dependencies": [
+    "motion@^12.23.12"
+   ],
+   "files": {
+    "CountUp.tsx": "d93f64b067ba"
+   }
+  },
+  "Magnet": {
+   "registry": "https://reactbits.dev/r/Magnet-TS-CSS.json",
+   "dependencies": [],
+   "files": {
+    "Magnet.tsx": "f2f4dcbb666b"
+   }
+  },
+  "Particles": {
+   "registry": "https://reactbits.dev/r/Particles-TS-CSS.json",
+   "dependencies": [],
+   "files": {
+    "Particles.css": "13108261d754",
+    "Particles.tsx": "9adb43048d12"
+   }
+  },
+  "ScrollFloat": {
+   "registry": "https://reactbits.dev/r/ScrollFloat-TS-CSS.json",
+   "dependencies": [
+    "gsap@^3.13.0"
+   ],
+   "files": {
+    "ScrollFloat.css": "0c85f0d097be",
+    "ScrollFloat.tsx": "56a04a102c9e"
+   }
+  },
+  "ScrollReveal": {
+   "registry": "https://reactbits.dev/r/ScrollReveal-TS-CSS.json",
+   "dependencies": [
+    "gsap@^3.13.0"
+   ],
+   "files": {
+    "ScrollReveal.css": "84bf015e3ab9",
+    "ScrollReveal.tsx": "c44ac3693592"
+   }
+  },
+  "ScrollStack": {
+   "registry": "https://reactbits.dev/r/ScrollStack-TS-CSS.json",
+   "dependencies": [],
+   "files": {
+    "ScrollStack.css": "64b2bf8c66a1",
+    "ScrollStack.tsx": "3af19aa6e4bd"
+   }
+  },
+  "ShinyText": {
+   "registry": "https://reactbits.dev/r/ShinyText-TS-CSS.json",
+   "dependencies": [],
+   "files": {
+    "ShinyText.css": "6030200a8885",
+    "ShinyText.tsx": "4748b686d55e"
+   }
+  },
+  "Stack": {
+   "registry": "https://reactbits.dev/r/Stack-TS-CSS.json",
+   "dependencies": [
+    "motion@^12.23.12"
+   ],
+   "files": {
+    "Stack.css": "a399d752bfe7",
+    "Stack.tsx": "eaf18f5c097d"
+   }
+  }
+ }
+}

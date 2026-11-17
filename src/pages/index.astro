@@ -1,22 +1,28 @@
 ---
-import { base, u, abs, sitePath, CANONICAL_ORIGIN } from '../data/urls.js';
+import { u, abs } from '../data/urls.js';
 import Base from '../layouts/Base.astro';
 import Icon from '../components/Icon.astro';
-import { Picture, getImage } from 'astro:assets';
+import { Picture } from 'astro:assets';
 import { site, waLink } from '../data/site.js';
 import { find, price } from '../data/menu.js';
 import { reviews } from '../data/reviews.js';
-import { clusters, clusterOrder } from '../data/clusters.js';
+import { clusters } from '../data/clusters.js';
 import { pagesIn, pathOf } from '../data/pages.js';
 
-import tunnel from '../assets/venue/tunnel.jpg';
+import tunnel from '../assets/venue/tunnel-hero.jpg';
 import palmTable from '../assets/venue/palm-table.jpg';
-import stringWide from '../assets/venue/string-wide.jpg';
 import birthday from '../assets/venue/birthday-arch.jpg';
-import fairyTree from '../assets/venue/fairy-tree.jpg';
-import gardenNight from '../assets/venue/garden-path-night.jpg';
+import kitty from '../assets/venue/day-lounge.jpg';
+import family from '../assets/venue/family-function.jpg';
 import entrance from '../assets/venue/entrance-arch.jpg';
-import tandoorGlow from '../assets/food/tandoor-glow.jpg';
+import fairyTree from '../assets/venue/fairy-tree.jpg';
+import pathNight from '../assets/venue/garden-path-night.jpg';
+import nameArch from '../assets/venue/name-arch.jpg';
+import gate from '../assets/venue/event-gate.jpg';
+import lawnTables from '../assets/venue/lawn-tables.jpg';
+import canopy from '../assets/venue/canopy.jpg';
+import blossom from '../assets/venue/blossom-path.jpg';
+import palmsDusk from '../assets/venue/palms-dusk.jpg';
 
 import paneerTikka from '../assets/food/paneer_tikka.jpg';
 import tandooriChicken from '../assets/food/tandoori_chicken.jpg';
@@ -39,7 +45,23 @@ const dishes = [
   [roganJosh, 'Mutton Rogan Josh', 'Slow-cooked mutton in a deep red gravy.'],
   [jalebi, 'Paneer Jalebi with Rabri', 'A house dessert to finish.'],
 ].map(([img, name, line]) => ({ img, name, line, item: find(name) }));
-const peek = await Promise.all(dishes.map((d) => getImage({ src: d.img, width: 480, format: 'webp' })));
+
+const occasions = [
+  { img: birthday, alt: 'A birthday balloon arch set up on the lawn at night', h: 'Birthday parties', p: 'Balloons, a cake table and dinner under the lights, for children or grown-ups.', msg: 'birthday party' },
+  { img: kitty, alt: 'Daytime lounge seating on the lawn with cushions and low tables', h: 'Kitty parties', p: 'Daytime on the lawn from 10 AM, with the full menu and room to sit long.', msg: 'kitty party' },
+  { img: family, alt: 'A decorated stage on the lawn for a family function', h: 'Family functions', p: 'Anniversaries and get-togethers, with food from our own kitchen.', msg: 'family function' },
+];
+
+const strip = [
+  [fairyTree, 'A tree wrapped in fairy lights beside a lawn table', 'Fairy lights in the trees'],
+  [pathNight, 'The garden path lit at night', 'The garden path after dark'],
+  [nameArch, 'A balloon arch spelling Red Wood Farm', 'The name arch'],
+  [gate, 'A floral entry gate decorated for an evening event', 'An event gate'],
+  [lawnTables, 'Tables set on the lawn at night', 'Tables on the lawn'],
+  [canopy, 'A canopy of string lights over the seating', 'Under the canopy'],
+  [blossom, 'A path of white blossom trees lit at night', 'The blossom path'],
+  [palmsDusk, 'The palm driveway lit at dusk', 'The palm drive at dusk'],
+];
 
 const featured = {
   party: ['birthday-party-venues-ludhiana', 'kitty-party-venues-ludhiana', 'office-team-lunch-ludhiana'],
@@ -51,276 +73,288 @@ const hubs = await Promise.all(Object.entries(featured).map(async ([c, slugs]) =
   const list = await pagesIn(c);
   return { c, hub: clusters[c], items: slugs.map((sl) => list.find((p) => pathOf(p) === `/${c}/${sl}/`)).filter(Boolean) };
 }));
+const [lead, ...more] = reviews;
 const title = 'Red Wood Farm: Garden Family Restaurant & Party Lawn, Ludhiana';
 const description = 'Garden family restaurant and party lawn on outer Pakhowal Road, Ludhiana. Tandoor, North Indian and Indo-Chinese, open daily 10 AM to 11 PM. Book on WhatsApp.';
 const crumbs = { '@context': 'https://schema.org', '@type': 'WebSite', name: site.name, url: abs(`/`) };
 ---
 <Base title={title} description={description} schema={[crumbs]} og="og-home.jpg">
-  <section class="hero" data-hero aria-labelledby="hero-title">
-   <div class="hero-stage">
-    <div class="hero-photo">
-      <Picture src={tunnel} formats={['avif', 'webp']} widths={[640, 960, 1280, 1536]} sizes="100vw" alt="The fairy-light tunnel and red carpet at Red Wood Farm, lit at night" loading="eager" fetchpriority="low" decoding="async" />
-    </div>
-    <canvas aria-hidden="true"></canvas>
-    <div class="hero-shade" aria-hidden="true"></div>
-    <div class="hero-name neon" aria-hidden="true">Red Wood Farm</div>
-    <div class="hero-copy wrap">
-      <p class="hero-open" data-open>Open daily, 10 AM to 11 PM</p>
-      <h1 id="hero-title"><span class="sr-only">Red Wood Farm: </span>Garden family restaurant and party lawn on outer Pakhowal Road</h1>
-      <div class="btns">
-        <a class="btn" data-magnetic href={u('/menu/')}><Icon name="menu" />See the menu</a>
-        <a class="btn ghost" data-magnetic href={u('/party/')}>Plan a party</a>
+  <section class="hero tone-night" aria-labelledby="hero-title">
+    <div class="hero-panel">
+      <p class="open-chip" data-open>Open daily, 10 AM to 11 PM</p>
+      <p class="hero-name neon" aria-hidden="true">Red Wood Farm</p>
+      <h1 id="hero-title"><span class="sr-only">Red Wood Farm: </span>A garden family restaurant and party lawn</h1>
+      <p class="hero-sub">On outer Pakhowal Road, Ludhiana. Tandoor, North Indian and Indo-Chinese food, every day from 10 AM to 11 PM.</p>
+      <div class="hero-ctas">
+        <a class="btn" href={u('/menu/')}><Icon name="menu" />See the menu</a>
+        <a class="btn ghost" href={u('/party/')}>Plan a party</a>
       </div>
     </div>
-    <p class="hero-hint" aria-hidden="true">Scroll to walk through the lights</p>
-   </div>
+    <figure class="hero-photo">
+      <Picture src={tunnel} formats={['avif', 'webp']} widths={[480, 768, 1024, 1518]} sizes="(min-width: 900px) 60vw, 100vw" alt="The fairy-light tunnel and red carpet at Red Wood Farm, lit at night" loading="eager" fetchpriority="high" />
+    </figure>
   </section>
 
-  <section class="section intro wrap" aria-labelledby="intro-h">
-    <h2 id="intro-h" class="sr-only">About Red Wood Farm</h2>
-    <p class="intro-big" data-split>Red Wood Farm is a garden family restaurant and party lawn at VPO Daad, on outer Pakhowal Road in Ludhiana. We serve tandoor, North Indian and Indo-Chinese food every day from 10 AM to 11 PM, at tables on a fairy-lit lawn.</p>
-    <div class="intro-facts" data-reveal>
-      <div><span class="kicker">Hours</span>{site.hoursDisplay}</div>
-      <div><span class="kicker">Also</span>Takeaway and Wi-Fi</div>
-      <div><span class="kicker">Book</span><a href={waLink('Hello Red Wood Farm, I would like to book a table.')} target="_blank" rel="noopener">WhatsApp {site.phoneDisplay}</a></div>
+  <section class="intro section tone-paper" aria-labelledby="intro-h">
+    <div class="wrap intro-grid">
+      <div class="intro-copy">
+        <h2 id="intro-h" data-split>A garden restaurant for the whole family</h2>
+        <p class="lede" data-reveal>Red Wood Farm is a garden family restaurant and party lawn at VPO Daad, on outer Pakhowal Road in Ludhiana. We serve tandoor, North Indian and Indo-Chinese food every day from 10 AM to 11 PM, at tables on a fairy-lit lawn.</p>
+        <a class="link" href={u('/about/')} data-reveal>About Red Wood Farm <Icon name="arrow" /></a>
+      </div>
+      <aside class="card tone-green" aria-label="Hours and address" data-reveal>
+        <p class="open-chip" data-open>Open daily, 10 AM to 11 PM</p>
+        <dl>
+          <div><dt>Hours</dt><dd>{site.hoursDisplay}</dd></div>
+          <div><dt>Address</dt><dd>VPO Daad, Pakhowal Road, opposite Cerajot Tiles, near Omaxe Flats, Ludhiana</dd></div>
+          <div><dt>Also</dt><dd>Takeaway and Wi-Fi. No wheelchair access.</dd></div>
+        </dl>
+        <div class="btns">
+          <a class="btn" href={waLink('Hello Red Wood Farm, I would like to book a table.')} target="_blank" rel="noopener"><Icon name="wa" />Book a table</a>
+          <a class="btn ghost" href={site.directionsUrl} target="_blank" rel="noopener"><Icon name="pin" />Directions</a>
+        </div>
+      </aside>
     </div>
   </section>
 
-  <section class="story" data-story aria-label="Family restaurant first, the lawn by night, parties">
-    <div class="story-media" aria-hidden="true">
-      <div class="frame"><Picture src={tandoorGlow} formats={['avif', 'webp']} widths={[640, 1024, 1500]} sizes="100vw" alt="" /></div>
-      <div class="frame"><video muted playsinline loop preload="none" data-lazy data-poster={u('/media/lawn-poster.webp')}><source data-src={u('/media/lawn-loop.webm')} type="video/webm" /><source data-src={u('/media/lawn-loop.mp4')} type="video/mp4" /></video></div>
-      <div class="frame"><Picture src={birthday} formats={['avif', 'webp']} widths={[640, 960]} sizes="100vw" alt="" /></div>
+  <section class="dishes section tone-green" aria-labelledby="dish-h">
+    <div class="wrap dish-head">
+      <h2 id="dish-h" data-split>Start with the tandoor</h2>
+      <p class="muted">Nine dishes from our menu of 187, with their prices. Food photos are illustrative.</p>
+      <p class="swipe-hint" data-swipe-hint="dishes" aria-hidden="true">Swipe for more <Icon name="arrow" /></p>
     </div>
-    <div class="story-shade" aria-hidden="true"></div>
-    <div class="story-text wrap">
-      <article class="story-step">
-        <span class="kicker">01 / Family restaurant first</span>
-        <h2>The tandoor is lit from ten in the morning</h2>
-        <p>187 dishes, all priced on the menu: tandoor, curries, breads, Indo-Chinese, sizzlers and desserts. Most mains come in half and full portions, so a family can share.</p>
-        <a class="btn ghost" href={u('/menu/')}>Read the full menu</a>
-      </article>
-      <article class="story-step">
-        <span class="kicker">02 / The lawn by night</span>
-        <h2>Dinner under the string lights</h2>
-        <p>After sunset the lawn, the palms and the tunnel light up. Take a table outside, or book the lounge corner for a small group.</p>
-        <a class="btn ghost" href={u('/visit/')}>How to find us</a>
-      </article>
-      <article class="story-step">
-        <span class="kicker">03 / Parties</span>
-        <h2>Birthdays, kitty parties and family functions</h2>
-        <p>The lawn and its lights are yours for the afternoon or the evening. Tell us the date and the number of guests on WhatsApp and we will plan it with you.</p>
-        <a class="btn ghost" href={u('/party/')}>Plan a party</a>
-      </article>
-    </div>
-    <div class="story-progress" aria-hidden="true"><i></i></div>
-  </section>
-
-  <section class="hstrip" data-hstrip aria-labelledby="dish-h">
-    <div class="hstrip-head wrap">
-      <span class="kicker">Signature dishes</span>
-      <h2 id="dish-h" data-skew>What to order <em>first</em></h2>
-    </div>
-    <ul class="hstrip-track" role="list">
-      {dishes.map((d, i) => (
+    <ul class="dish-row" role="list" data-swipe="dishes">
+      {dishes.map((d) => (
         <li class="dish">
-          <a href={u(`/menu/#${d.item.catId}`)} data-peek={peek[i].src}>
-            <div class="frame dish-img"><Picture src={d.img} formats={['avif', 'webp']} widths={[320, 480, 640, 800]} sizes="(min-width: 900px) 400px, 78vw" alt={`${d.name}, illustrative food photo`} /></div>
-            <div class="dish-row"><span class={`mark ${d.item.veg ? 'v' : 'nv'}`} role="img" aria-label={d.item.veg ? 'Veg' : 'Non-veg'}></span><h3>{d.name}</h3><span class="dish-price">{price(d.item)}</span></div>
-            <p class="muted">{d.line}</p>
+          <a href={u(`/menu/#${d.item.catId}`)}>
+            <div class="frame dish-img"><Picture src={d.img} formats={['avif', 'webp']} widths={[240, 360, 480, 640]} sizes="(min-width: 900px) 18vw, 58vw" alt={`${d.name}, illustrative food photo`} /></div>
+            <h3>{d.name}</h3>
+            <p class="dish-meta"><span class={`mark ${d.item.veg ? 'v' : 'nv'}`} role="img" aria-label={d.item.veg ? 'Veg' : 'Non-veg'}></span><span class="dish-price">{price(d.item)}</span></p>
+            <p class="dish-line">{d.line}</p>
           </a>
         </li>
       ))}
-      <li class="dish dish-more"><a class="btn" href={u('/menu/')}>All 187 dishes <Icon name="arrow" /></a></li>
+      <li class="dish dish-all"><a href={u('/menu/')}><span>All 187 dishes, with prices</span><Icon name="arrow" /></a></li>
     </ul>
   </section>
 
-  <section class="section evening wrap" aria-labelledby="eve-h">
-    <div class="split">
-      <div>
-        <span class="kicker">An evening here</span>
-        <h2 id="eve-h" data-split>Walk in through the lights, stay for the <em>food</em></h2>
-        <p data-reveal>Come in through the garden gate and the fairy-light tunnel, and pick a table on the lawn or under the palms. Order from the tandoor while the children run on the grass. Every photo on this page is the real place.</p>
-        <div class="btns" data-reveal><a class="btn red" data-magnetic href={waLink('Hello Red Wood Farm, I would like to book a table for this evening.')} target="_blank" rel="noopener"><Icon name="wa" />Book a table</a></div>
-      </div>
-      <div class="eve-stack">
-        <div class="frame eve-a" data-clip><div data-parallax="10"><Picture src={palmTable} formats={['avif', 'webp']} widths={[480, 800, 1200]} sizes="(min-width: 900px) 40vw, 90vw" alt="A dining table under the lit palm trees on the lawn at night" /></div></div>
-        <div class="frame eve-b" data-clip><Picture src={fairyTree} formats={['avif', 'webp']} widths={[360, 640]} sizes="(min-width: 900px) 20vw, 45vw" alt="A tree wrapped in fairy lights beside a lawn table" /></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="lawn" aria-labelledby="lawn-h">
-    <div class="lawn-bg" data-parallax="14"><Picture src={stringWide} formats={['avif', 'webp']} widths={[800, 1280, 2048]} sizes="100vw" alt="Lounge seating under string lights on the lawn at night" /></div>
-    <div class="lawn-copy wrap">
-      <h2 id="lawn-h" data-split>The lawn by night</h2>
-      <p data-reveal>String lights, low lounge seating and open sky. Families come for dinner; groups book a corner for a birthday or a get-together.</p>
-    </div>
-  </section>
-
-  <section class="section explore wrap" aria-labelledby="ex-h">
-    <span class="kicker">Plan your visit</span>
-    <h2 id="ex-h" data-split>Guides from the <em>Red Wood Farm</em> team</h2>
-    <div class="ex-grid">
-      {hubs.map(({ c, hub, items }) => (
-        <div class="ex-col" data-reveal>
-          <h3><a href={u(hub.path)}>{hub.name}</a></h3>
-          <ul role="list">{items.map((p) => <li><a href={u(pathOf(p))}>{p.data.title}</a></li>)}</ul>
-          <a class="ex-all" href={u(hub.path)}>See all <Icon name="arrow" /></a>
+  <section class="occasions section tone-paper" aria-labelledby="occ-h">
+    <div class="wrap">
+      <div class="occ-head">
+        <h2 id="occ-h" data-split>Birthdays, kitty parties and family functions</h2>
+        <div>
+          <p data-reveal>The lawn and its lights are yours for the afternoon or the evening. Tell us the date and the number of guests on WhatsApp and we will plan it with you.</p>
+          <a class="link" href={u('/party/')} data-reveal>Plan a party <Icon name="arrow" /></a>
         </div>
-      ))}
-    </div>
-  </section>
-
-  <section class="section reviews wood wood-edge" aria-labelledby="rev-h">
-    <div class="wrap rev-head">
-      <div>
-        <span class="kicker">Google reviews</span>
-        <h2 id="rev-h"><span class="rating">{site.rating.value}</span> from {site.rating.count} reviews</h2>
-        <p class="muted">Rating as shown on Google on {site.rating.checked}.</p>
       </div>
-      <a class="btn ghost" href={site.reviewUrl} target="_blank" rel="noopener"><Icon name="star" />Write a review</a>
-    </div>
-    <div class="marquee">
-      <ul class="marquee-track" role="list">
-        {[...reviews, ...reviews].map((r, i) => (
-          <li aria-hidden={i >= reviews.length ? 'true' : undefined}><q>{r.q}</q><span>{r.by}, Google review</span></li>
+      <ul class="occ-grid" role="list">
+        {occasions.map((o) => (
+          <li class="occ" data-reveal>
+            <div class="frame occ-img"><Picture src={o.img} formats={['avif', 'webp']} widths={[360, 540, 760]} sizes="(min-width: 900px) 30vw, 92vw" alt={o.alt} /></div>
+            <h3>{o.h}</h3>
+            <p class="muted">{o.p}</p>
+            <a class="link" href={waLink(`Hello Red Wood Farm, I would like to plan a ${o.msg}. Date: , Time: , Guests: `)} target="_blank" rel="noopener">Ask about a {o.msg} <Icon name="arrow" /></a>
+          </li>
         ))}
       </ul>
     </div>
   </section>
 
-  <section class="section visit-cta wood wood-edge" aria-labelledby="visit-h">
-   <div class="wrap">
-    <div class="split">
-      <div class="frame" data-clip><Picture src={entrance} formats={['avif', 'webp']} widths={[480, 800, 1200]} sizes="(min-width: 900px) 45vw, 92vw" alt="The hedge and flower entrance arch at Red Wood Farm, by day" /></div>
+  <section class="evening section tone-night" aria-labelledby="eve-h">
+    <div class="wrap eve-grid">
+      <figure class="eve-fig">
+        <div class="frame eve-img"><div data-parallax="8"><Picture src={palmTable} formats={['avif', 'webp']} widths={[480, 760, 1100]} sizes="(min-width: 900px) 58vw, 92vw" alt="A dining table under the lit palm trees on the lawn at night" /></div></div>
+        <figcaption class="cap">A table under the palms on the lawn, after dark.</figcaption>
+      </figure>
+      <div class="eve-copy">
+        <h2 id="eve-h" data-split>The lawn by night</h2>
+        <p data-reveal>After sunset the lawn, the palms and the tunnel light up. Take a table outside, or book a corner for a birthday or a get-together.</p>
+        <a class="btn red" href={waLink('Hello Red Wood Farm, I would like to book a table for this evening.')} target="_blank" rel="noopener" data-reveal><Icon name="wa" />Book a table tonight</a>
+      </div>
+    </div>
+    <div class="strip-wrap">
+      <div class="wrap strip-head">
+        <h3>Walk in through the lights</h3>
+        <p class="muted">Come in through the garden gate and the fairy-light tunnel. Every venue photo on this page is the real place.</p>
+      </div>
+      <ul class="strip" role="list" data-strip data-swipe="strip">
+        {strip.map(([img, alt, cap]) => (
+          <li><figure><div class="frame"><Picture src={img} formats={['avif', 'webp']} widths={[240, 360, 520]} sizes="(min-width: 900px) 22vw, 62vw" alt={alt} /></div><figcaption class="cap">{cap}</figcaption></figure></li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="quote section tone-green" aria-labelledby="rev-h">
+    <div class="wrap">
+      <h2 id="rev-h" class="sr-only">What guests say on Google</h2>
+      <figure class="q-lead" data-reveal>
+        <blockquote><p>{lead.q}</p></blockquote>
+        <figcaption>{lead.by}, Google review</figcaption>
+      </figure>
+      <div class="q-foot">
+        <p class="q-rating"><span>{site.rating.value}</span> from {site.rating.count} Google reviews <small>Rating as shown on Google on {site.rating.checked}.</small></p>
+        <a class="btn ghost" href={site.reviewUrl} target="_blank" rel="noopener"><Icon name="star" />Write a review</a>
+      </div>
+      <ul class="q-more" role="list">
+        {more.slice(0, 3).map((r) => <li data-reveal><q>{r.q}</q><span>{r.by}</span></li>)}
+      </ul>
+    </div>
+  </section>
+
+  <section class="guides section tone-paper" aria-labelledby="ex-h">
+    <div class="wrap">
+      <h2 id="ex-h" data-split>Guides from our team</h2>
+      <div class="ex-grid">
+        {hubs.map(({ hub, items }) => (
+          <div class="ex-col" data-reveal>
+            <h3><a href={u(hub.path)}>{hub.name}</a></h3>
+            <ul role="list">{items.map((p) => <li><a href={u(pathOf(p))}>{p.data.title}</a></li>)}</ul>
+            <a class="link" href={u(hub.path)}>See all <Icon name="arrow" /></a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="visit section tone-night" aria-labelledby="visit-h">
+    <div class="wrap split">
+      <div class="frame visit-img" data-reveal><Picture src={entrance} formats={['avif', 'webp']} widths={[480, 800, 1200]} sizes="(min-width: 900px) 45vw, 92vw" alt="The hedge and flower entrance arch at Red Wood Farm, by day" /></div>
       <div>
-        <span class="kicker">Visit</span>
         <h2 id="visit-h" data-split>Opposite Cerajot Tiles, near Omaxe Flats</h2>
-        <address class="lede" data-reveal>{site.address.full}</address>
-        <p class="muted" data-reveal>{site.hoursDisplay}. Takeaway available. No wheelchair access.</p>
-        <div class="btns" data-reveal>
-          <a class="btn" data-magnetic href={site.directionsUrl} target="_blank" rel="noopener"><Icon name="pin" />Directions</a>
+        <address class="lede">{site.address.full}</address>
+        <p class="muted">{site.hoursDisplay}. Takeaway available. No wheelchair access.</p>
+        <div class="btns">
+          <a class="btn" href={site.directionsUrl} target="_blank" rel="noopener"><Icon name="pin" />Directions</a>
           <a class="btn ghost" href={site.tel}><Icon name="call" />Call {site.phoneDisplay}</a>
         </div>
       </div>
     </div>
-   </div>
   </section>
 </Base>
 
+
 <style>
-  .hero { position: relative; height: 100svh; min-height: 560px; background: radial-gradient(ellipse at 50% 56%, var(--green) 0, var(--ink) 64%); }
-  :global(.js) .hero { height: 240svh; }
-  @media (min-width: 900px) { :global(.js) .hero { height: 280svh; } }
-  :global(.js) .hero.is-static { height: 100svh; }
-  @media (prefers-reduced-motion: reduce) { :global(.js) .hero { height: 100svh; } }
-  .hero-stage { position: sticky; top: 0; height: 100svh; min-height: 560px; overflow: hidden; }
-  .hero canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
-  .hero-photo { position: absolute; inset: 0; }
-  .hero-photo :global(img), .hero-photo :global(.hero-video) { width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%; }
-  .hero-photo :global(.hero-video) { position: absolute; inset: 0; opacity: 0; transition: opacity 1.2s var(--ease); }
-  .hero-photo :global(.hero-video.on) { opacity: 1; }
-  :global(.js) .hero-photo { opacity: 0; }
-  .hero-shade { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 40%, transparent 20%, rgb(11 15 12 / 0.7) 75%), linear-gradient(rgb(11 15 12 / 0) 45%, var(--ink) 97%); pointer-events: none; }
-  .hero-name { position: absolute; left: 0; right: 0; top: 26%; text-align: center; font-size: clamp(4rem, 15vw, 11rem); padding-inline: 12px; }
-  :global(.js) .hero-name { opacity: 0; visibility: hidden; }
-  .hero-copy { position: absolute; left: 0; right: 0; bottom: calc(6vh + 8px); margin: 0 auto; text-align: center; }
-  .hero h1 { font-size: clamp(1.45rem, 1.1rem + 1.8vw, 2.6rem); line-height: 1.12; max-width: 20em; margin: 0 auto 26px; }
-  .hero .btns { justify-content: center; }
-  .hero-open { margin: 0 auto 14px; font-size: 0.85rem; letter-spacing: 0.04em; color: var(--ivory-2); display: inline-flex; align-items: center; gap: 8px; }
-  .hero-open::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 10px var(--gold); }
-  .hero-hint { position: absolute; top: 88px; left: 0; right: 0; text-align: center; font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ivory-2); }
-  :global(.no-js) .hero-photo, :global(.no-js) .hero-name, .hero.is-static .hero-photo, .hero.is-static .hero-name { opacity: 1; visibility: visible; }
-  :global(.no-js) .hero canvas, .hero.is-static canvas, :global(.no-js) .hero-hint, .hero.is-static .hero-hint { display: none; }
-
-  .intro-big { font: 400 clamp(1.6rem, 1.1rem + 2.4vw, 3.2rem)/1.18 var(--serif); max-width: 26ch; letter-spacing: -0.01em; }
-  .intro-facts { display: grid; gap: 24px; margin-top: 56px; border-top: 1px solid var(--line); padding-top: 28px; }
-  .intro-facts .kicker { margin-bottom: 10px; }
-  .intro-facts a { color: var(--gold); }
-  @media (min-width: 900px) { .intro-facts { grid-template-columns: repeat(3, 1fr); } }
-
-  .story { position: relative; height: 100svh; overflow: hidden; }
-  .story-media, .story-media > .frame { position: absolute; inset: 0; border-radius: 0; }
-  .story-media :global(img), .story-media video { width: 100%; height: 100%; object-fit: cover; }
-  .story-shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgb(11 15 12 / 0.92) 0, rgb(11 15 12 / 0.55) 55%, rgb(11 15 12 / 0.15) 100%); }
-  @media (max-width: 899px) { .story-shade { background: linear-gradient(rgb(11 15 12 / 0.2) 0, rgb(11 15 12 / 0.9) 60%); } }
-  .story-text { position: relative; height: 100%; display: grid; align-items: end; padding-bottom: 12vh; }
-  @media (min-width: 900px) { .story-text { align-items: center; padding-bottom: 0; } }
-  .story-step { grid-area: 1 / 1; max-width: 34rem; }
-  .story-step h2 { font-size: var(--t-2); }
-  .story-step p { color: var(--ivory-2); }
-  .story-progress { position: absolute; left: var(--gutter); right: var(--gutter); bottom: 4vh; height: 1px; background: var(--line); }
-  .story-progress i { display: block; height: 100%; background: var(--redwood-2); transform: scaleX(0); transform-origin: left; }
-  /* No JS or reduced motion: the three chapters stack, over the first image, with no pinning. */
-  :global(.no-js) .story { height: auto; }
-  :global(.no-js) .story-text { display: block; padding-block: 16vh; }
-  :global(.no-js) .story-step { margin-bottom: 14vh; }
-  :global(.no-js) .story-media > .frame + .frame, :global(.no-js) .story-progress { display: none; }
-  @media (prefers-reduced-motion: reduce) {
-    .story { height: auto; }
-    .story-text { display: block; padding-block: 16vh; }
-    .story-step { margin-bottom: 14vh; }
-    .story-media > .frame + .frame, .story-progress { display: none; }
-    .story-shade { background: rgb(11 15 12 / 0.75); }
+  /* ---------- Hero: phones stack name, headline and actions above the real tunnel photo ---------- */
+  .hero { display: flex; flex-direction: column; min-height: calc(100svh - var(--bar)); }
+  .hero-panel { padding: calc(var(--head) + 14px) var(--gutter) 22px; display: flex; flex-direction: column; }
+  .open-chip { display: inline-flex; align-items: center; gap: 8px; font: 650 var(--t-label)/1 var(--sans); color: var(--mute); margin: 0 0 14px; }
+  .open-chip::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: #5cc46a; box-shadow: 0 0 0 3px rgb(92 196 106 / 0.25); }
+  .open-chip[data-state='closed']::before { background: var(--gold); box-shadow: 0 0 0 3px rgb(242 207 131 / 0.25); }
+  .hero-name { font-size: clamp(3rem, 13vw, 6.6rem); margin: 0 0 10px; animation: flick 1.4s steps(1) 0.2s both; }
+  @keyframes flick { 0% { opacity: 0.2; } 12% { opacity: 1; } 18% { opacity: 0.35; } 26%, 100% { opacity: 1; } }
+  .hero h1 { font-size: var(--t-hero); max-width: 17ch; margin-bottom: 14px; }
+  .hero-sub { color: var(--mute); max-width: 38ch; margin-bottom: 20px; }
+  .hero-ctas { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .hero-ctas .btn { padding: 0 12px; }
+  .hero-photo { flex: 1; min-height: 30svh; position: relative; overflow: hidden; }
+  .hero-photo :global(img) { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 58%; }
+  @media (prefers-reduced-motion: no-preference) { .hero-photo :global(img) { animation: push 26s ease-in-out infinite alternate; } }
+  @keyframes push { to { transform: scale(1.08); } }
+  @media (min-width: 900px) {
+    .hero { display: grid; grid-template-columns: minmax(420px, 5fr) 7fr; min-height: 100svh; }
+    .hero-panel { justify-content: center; padding: calc(var(--head) + 40px) clamp(32px, 4vw, 72px) 56px var(--gutter); }
+    .hero-ctas { display: flex; flex-wrap: wrap; }
+    .hero-ctas .btn { padding: 0 26px; }
+    .hero h1 { font-size: clamp(2.8rem, 1rem + 3.2vw, 4.4rem); max-width: 15ch; }
   }
 
-  .hstrip { padding-block: clamp(72px, 10vw, 120px); overflow: hidden; }
-  .hstrip-head h2 { font-size: var(--t-1); }
-  .hstrip-track { list-style: none; margin: 40px 0 0; padding: 0 var(--gutter); display: flex; gap: clamp(16px, 2vw, 32px); overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain; }
-  .hstrip-track::-webkit-scrollbar { display: none; }
-  @media (min-width: 900px) { .hstrip { height: 100svh; display: flex; flex-direction: column; justify-content: center; } .hstrip-track { overflow: visible; width: max-content; } }
-  @media (prefers-reduced-motion: reduce) { .hstrip { height: auto; } .hstrip-track { overflow-x: auto; width: auto; } }
-  :global(.no-js) .hstrip { height: auto; }
-  :global(.no-js) .hstrip-track { overflow-x: auto; width: auto; }
-  .dish { flex: 0 0 min(78vw, 400px); scroll-snap-align: start; }
-  .dish a { text-decoration: none; display: block; }
-  .dish-img { aspect-ratio: 4 / 3; }
-  .dish-img :global(img) { transition: transform 0.9s var(--ease); }
-  .dish a:hover .dish-img :global(img) { transform: scale(1.05); }
-  .dish-row { display: flex; align-items: center; gap: 10px; margin-top: 16px; }
-  .dish-row h3 { font-size: 1.5rem; margin: 0; flex: 1; }
-  .dish-price { color: var(--gold); font-variant-numeric: tabular-nums; white-space: nowrap; }
-  .dish p { margin: 6px 0 0; font-size: 0.95rem; }
-  .dish-more { flex-basis: 260px; display: grid; place-items: center; }
+  /* ---------- Intro: editorial split with the hours card ---------- */
+  .intro-grid { display: grid; gap: 40px; }
+  .intro h2 { font-size: var(--t-1); max-width: 14ch; }
+  .card { border-radius: 10px; padding: clamp(22px, 3vw, 36px); align-self: start; }
+  .card dl { margin: 0 0 22px; }
+  .card dl div { padding: 12px 0; border-top: 1px solid var(--line); display: grid; gap: 2px; }
+  .card dt { font: 650 var(--t-label)/1.3 var(--sans); color: var(--mute); }
+  .card dd { margin: 0; }
+  @media (min-width: 900px) { .intro-grid { grid-template-columns: 7fr 5fr; gap: clamp(48px, 7vw, 120px); align-items: end; } }
 
-  .evening h2 { font-size: var(--t-1); }
-  .eve-stack { position: relative; padding-bottom: 18%; }
-  .eve-a { aspect-ratio: 4 / 5; width: 82%; }
-  .eve-a > div { height: 118%; margin-top: -9%; }
-  .eve-b { position: absolute; right: 0; bottom: 0; width: 44%; aspect-ratio: 1; border: 6px solid var(--ink); }
+  /* ---------- Dishes: swipe row on phones (under two cards a view), grid on desktop ---------- */
+  .dish-head h2 { font-size: var(--t-1); }
+  .dish-head p { margin-bottom: 0; }
+  .swipe-hint { display: inline-flex; align-items: center; gap: 8px; margin-top: 18px !important; font: 650 var(--t-label)/1 var(--sans); color: var(--accent); transition: opacity 0.4s; }
+  .swipe-hint :global(svg) { width: 18px; height: 18px; animation: nudge 1.6s var(--ease) infinite; }
+  .swipe-hint.gone { opacity: 0; }
+  @keyframes nudge { 50% { transform: translateX(6px); } }
+  .dish-row { list-style: none; margin: 28px 0 0; padding: 0 var(--gutter) 6px; display: flex; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: var(--gutter); scrollbar-width: none; overscroll-behavior-x: contain; }
+  .dish-row::-webkit-scrollbar { display: none; }
+  .dish { flex: 0 0 min(58vw, 260px); scroll-snap-align: start; }
+  .dish > a { display: block; text-decoration: none; }
+  .dish-img { aspect-ratio: 4 / 5; }
+  .dish-img :global(img) { transition: transform 0.8s var(--ease); }
+  .dish a:hover .dish-img :global(img) { transform: scale(1.04); }
+  .dish h3 { font-size: 1.3rem; margin: 14px 0 6px; line-height: 1.15; }
+  .dish-meta { display: flex; align-items: center; gap: 10px; margin: 0 0 4px; }
+  .dish-price { font: 700 1.0625rem/1 var(--sans); color: var(--price); font-variant-numeric: tabular-nums; }
+  .dish-line { font-size: var(--t-small); color: var(--mute); margin: 0; }
+  .dish-all > a { height: 100%; min-height: 200px; aspect-ratio: 4 / 5; border: 1.5px solid var(--line); border-radius: 6px; display: flex; flex-direction: column; justify-content: space-between; padding: 22px; font: 400 1.6rem/1.1 var(--serif); }
+  .dish-all :global(svg) { width: 28px; height: 28px; color: var(--accent); }
+  @media (min-width: 900px) {
+    .swipe-hint { display: none; }
+    .dish-row { width: min(100% - 2 * var(--gutter), var(--max)); margin-inline: auto; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 40px 24px; overflow: visible; }
+    .dish-head { display: grid; grid-template-columns: 1fr 1fr; align-items: end; gap: 40px; }
+  }
 
-  .lawn { position: relative; height: 92svh; min-height: 520px; overflow: hidden; display: flex; align-items: flex-end; }
-  .lawn-bg { position: absolute; inset: -8% 0; }
-  .lawn-bg :global(img) { width: 100%; height: 100%; object-fit: cover; }
-  .lawn::after { content: ''; position: absolute; inset: 0; background: linear-gradient(rgb(11 15 12 / 0) 30%, var(--ink) 96%); }
-  .lawn-copy { position: relative; z-index: 1; padding-bottom: 10vh; }
-  .lawn-copy h2 { font-size: var(--t-hero); line-height: 0.92; }
-  .lawn-copy p { color: var(--ivory-2); max-width: 44ch; }
+  /* ---------- Occasions: three real set-ups, staggered on desktop ---------- */
+  .occ-head h2 { font-size: var(--t-1); max-width: 16ch; }
+  .occ-grid { list-style: none; padding: 0; margin: 40px 0 0; display: grid; gap: 44px; }
+  .occ-img { aspect-ratio: 4 / 3; }
+  .occ h3 { font-size: var(--t-3); margin: 18px 0 8px; }
+  @media (min-width: 900px) {
+    .occ-head { display: grid; grid-template-columns: 7fr 5fr; gap: 64px; align-items: end; }
+    .occ-grid { grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 64px; }
+    .occ-img { aspect-ratio: 4 / 5; }
+    .occ:nth-child(2) { margin-top: 72px; }
+  }
 
-.ex-grid { display: grid; gap: 32px; margin-top: 40px; }
-  @media (min-width: 900px) { .ex-grid { grid-template-columns: repeat(4, 1fr); } }
-  .explore h2 { font-size: var(--t-2); }
-  .ex-col { border-top: 2px solid var(--redwood); padding-top: 18px; }
-  .ex-col h3 { font-size: 1.35rem; }
-  .ex-col h3 a { text-decoration: none; }
-  .ex-col ul { list-style: none; padding: 0; margin: 0 0 16px; display: grid; gap: 12px; }
-  .ex-col li a { text-decoration: none; color: var(--ivory-2); font-size: 0.95rem; line-height: 1.4; }
-  .ex-col li a:hover, .ex-col h3 a:hover { color: var(--red-ink); }
-  .ex-all { display: inline-flex; align-items: center; gap: 8px; color: var(--red-ink); text-decoration: none; font-size: 0.9rem; }
-  .ex-all :global(svg) { width: 16px; height: 16px; }
-  .rev-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 24px; }
-  .rev-head h2 { font-size: var(--t-2); }
-  .rating { color: var(--gold); }
-  .marquee { margin-top: 48px; overflow: hidden; mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
-  .marquee-track { list-style: none; margin: 0; padding: 0; display: flex; gap: 56px; width: max-content; animation: marquee 60s linear infinite; }
-  .marquee:hover .marquee-track { animation-play-state: paused; }
-  .marquee li { display: flex; flex-direction: column; gap: 10px; max-width: 30rem; }
-  .marquee q { font: italic 400 clamp(1.3rem, 1rem + 1vw, 1.9rem)/1.25 var(--serif); quotes: '\201C' '\201D'; }
-  .marquee span { font-size: var(--t-small); color: var(--mute); }
-  @keyframes marquee { to { transform: translateX(calc(-50% - 28px)); } }
-  @media (prefers-reduced-motion: reduce) { .marquee-track { animation: none; flex-wrap: wrap; width: auto; padding-inline: var(--gutter); } .marquee li[aria-hidden] { display: none; } }
+  /* ---------- Evening: one large photo with its caption, then the film strip ---------- */
+  .eve-grid { display: grid; gap: 28px; }
+  .eve-img { aspect-ratio: 4 / 5; }
+  .eve-img > div { height: 112%; margin-top: -6%; }
+  .eve-copy h2 { font-size: var(--t-1); }
+  @media (min-width: 900px) {
+    .eve-grid { grid-template-columns: 7fr 5fr; gap: clamp(40px, 6vw, 96px); align-items: end; }
+    .eve-img { aspect-ratio: 5 / 4; }
+  }
+  .strip-wrap { margin-top: clamp(64px, 9vw, 120px); overflow: clip; }
+  .strip-head { display: grid; gap: 4px 40px; }
+  .strip-head h3 { font-size: var(--t-2); margin: 0; }
+  @media (min-width: 900px) { .strip-head { grid-template-columns: 1fr 1fr; align-items: end; } }
+  .strip { list-style: none; margin: 28px 0 0; padding: 0 var(--gutter); display: flex; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: var(--gutter); scrollbar-width: none; }
+  .strip::-webkit-scrollbar { display: none; }
+  .strip li { flex: 0 0 min(62vw, 300px); scroll-snap-align: start; }
+  .strip .frame { aspect-ratio: 3 / 4; }
+  @media (min-width: 900px) { .strip li { flex-basis: 22vw; max-width: 340px; } .strip { padding-left: max(var(--gutter), calc((100vw - var(--max)) / 2)); } }
 
-  .visit-cta h2 { font-size: var(--t-2); }
-  .visit-cta .frame { aspect-ratio: 4 / 3; }
+  /* ---------- Quote band ---------- */
+  .q-lead blockquote { margin: 0; }
+  .q-lead p { font: 400 clamp(2rem, 1.3rem + 3.6vw, 4.6rem)/1.08 var(--serif); max-width: 22ch; margin: 0; text-wrap: balance; }
+  .q-lead p::before { content: '\201C'; } .q-lead p::after { content: '\201D'; }
+  .q-lead figcaption { margin-top: 18px; color: var(--mute); font-weight: 600; }
+  .q-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; margin-top: 44px; padding-top: 28px; border-top: 1px solid var(--line); }
+  .q-rating { margin: 0; font-weight: 600; }
+  .q-rating span { font: 400 2.4rem/1 var(--serif); color: var(--accent); margin-right: 8px; vertical-align: -4px; }
+  .q-rating small { display: block; font-weight: 400; color: var(--mute); font-size: var(--t-small); margin-top: 6px; }
+  .q-more { list-style: none; padding: 0; margin: 40px 0 0; display: grid; gap: 24px; }
+  .q-more li { display: grid; gap: 8px; }
+  .q-more q { font: 400 1.35rem/1.25 var(--serif); }
+  .q-more span { color: var(--mute); font-size: var(--t-small); font-weight: 600; }
+  @media (min-width: 900px) { .q-more { grid-template-columns: repeat(3, 1fr); gap: 40px; } }
+
+  /* ---------- Guides ---------- */
+  .guides h2 { font-size: var(--t-1); }
+  .ex-grid { display: grid; gap: 36px; margin-top: 36px; }
+  @media (min-width: 700px) { .ex-grid { grid-template-columns: 1fr 1fr; } }
+  @media (min-width: 1100px) { .ex-grid { grid-template-columns: repeat(4, 1fr); } }
+  .ex-col h3 { font-size: 1.45rem; margin-bottom: 6px; }
+  .ex-col h3 a { text-decoration: none; display: inline-flex; min-height: 44px; align-items: center; }
+  .ex-col ul { list-style: none; padding: 0; margin: 0 0 12px; border-top: 1px solid var(--line); }
+  .ex-col li a { display: flex; align-items: center; min-height: 52px; padding: 8px 0; border-bottom: 1px solid var(--line); text-decoration: none; line-height: 1.35; }
+  .ex-col li a:hover { color: var(--accent); }
+
+  /* ---------- Visit ---------- */
+  .visit h2 { font-size: var(--t-2); }
+  .visit-img { aspect-ratio: 4 / 3; }
+  .visit address { font-style: normal; margin-bottom: 12px; }
+
 </style>

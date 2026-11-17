@@ -2,7 +2,7 @@
 import { base, u, abs, sitePath, CANONICAL_ORIGIN } from '../../data/urls.js';
 import Base from '../../layouts/Base.astro';
 import Icon from '../../components/Icon.astro';
-import { Picture, getImage } from 'astro:assets';
+import { Picture } from 'astro:assets';
 import { site, waLink } from '../../data/site.js';
 import { menu } from '../../data/menu.js';
 
@@ -28,7 +28,6 @@ const photos = {
   'Non-Veg Platter': platter, 'Veg Sizzler': sizzler, 'Butter Naan': naan,
 };
 const catPhoto = { appetizers: 'Hakka Noodles', tandoori: 'Paneer Tikka', platters: 'Non-Veg Platter', sizzlers: 'Veg Sizzler', main: 'Dal Makhni', breads: 'Butter Naan', rice: 'Non-Veg Biryani', dessert: 'Paneer Jalebi with Rabri' };
-const peek = Object.fromEntries(await Promise.all(Object.entries(photos).map(async ([k, v]) => [k, (await getImage({ src: v, width: 480, format: 'webp' })).src])));
 
 const menuUrl = abs(`/menu/`);
 const menuSchema = {
@@ -58,9 +57,8 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', it
 ] };
 ---
 <Base title="Menu and Prices | Red Wood Farm, Pakhowal Road, Ludhiana" description={`Full menu with prices: ${menu.count} dishes, tandoor, North Indian, Indo-Chinese, breads and desserts. Half and full portions, veg and non-veg marked. Prices include GST.`} schema={[menuSchema, crumbs]} og="og-menu.jpg" current="Menu">
-  <header class="m-head wrap">
-    <span class="kicker">The menu</span>
-    <h1 data-split>Everything we cook, <em>with prices</em></h1>
+  <header class="m-head wrap page-top">
+    <h1>Everything we cook, with prices</h1>
     <p class="answer">Red Wood Farm serves {menu.count} dishes: soups, appetizers, tandoor, champ, platters, sizzlers, North Indian mains, breads, rice and desserts. Prices are in rupees and include GST. Many mains come in half and full portions. Open daily, 10 AM to 11 PM, for dine-in and takeaway.</p>
   </header>
 
@@ -111,7 +109,7 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', it
                     {g.items.map((i) => (
                       <li class="m-item" data-veg={i.veg ? 'v' : 'nv'} data-name={i.name.toLowerCase()}>
                         <span class={`mark ${i.veg ? 'v' : 'nv'}`} role="img" aria-label={i.veg ? 'Veg' : 'Non-veg'}></span>
-                        <span class="m-name" data-peek={peek[i.name]}>{i.name}{i.desc && <small class="m-desc">{i.desc}</small>}</span>
+                        <span class="m-name">{i.name}{i.desc && <small class="m-desc">{i.desc}</small>}</span>
                         <span class="m-dots" aria-hidden="true"></span>
                         {hasHalf && <span class="m-p m-half">{i.half ? <><span class="sr-only">Half </span>₹{i.half}</> : ''}</span>}
                         <span class="m-p">{i.half && <span class="sr-only">Full </span>}₹{i.full}</span>
@@ -127,7 +125,7 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', it
     })}
     <p class="m-empty" hidden data-empty>No dish matches that search. Try another word, or ask us on WhatsApp.</p>
 
-    <aside class="m-foot wood" style="padding: 28px; border-radius: 6px;">
+    <aside class="m-foot tone-green">
       <p>All prices are in ₹ and inclusive of GST. <span class="mark v" aria-hidden="true"></span> Veg <span class="mark nv" aria-hidden="true"></span> Non-veg. Ice Cream with Brownie is marked non-veg until we confirm the brownie is eggless.</p>
       <p>Open daily, 10 AM to 11 PM. Dine-in and takeaway.</p>
       <div class="btns">
@@ -136,6 +134,7 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', it
       </div>
     </aside>
   </div>
+  <a class="to-top" href="#main" data-top aria-label="Back to the top of the menu"><Icon name="up" /><span>Top</span></a>
 </Base>
 
 <script>
@@ -186,51 +185,64 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', it
   }, { rootMargin: '-35% 0px -60% 0px' });
   secs.forEach((s) => io.observe(s));
   setActive(secs[0].id);
+
+  // Back to top: shows once the visitor is well into the list.
+  const top = document.querySelector('[data-top]');
+  const showTop = () => top.classList.toggle('on', window.scrollY > 1400);
+  window.addEventListener('scroll', showTop, { passive: true });
+  top.addEventListener('click', (e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' }); q.blur(); });
+  showTop();
 </script>
 
 <style>
-  .m-head { padding-top: clamp(110px, 16vw, 200px); padding-bottom: 40px; }
-  .m-head h1 { font-size: var(--t-1); }
-  .m-bar { position: sticky; top: 0; z-index: 55; background: rgb(11 15 12 / 0.97); border-bottom: 1px solid var(--line); }
-  .m-tools { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; padding-block: 12px 8px; }
+  .m-head { padding-bottom: 28px; }
+  .m-head h1 { font-size: var(--t-1); max-width: 15ch; }
+  .m-head .answer { font-size: 1rem; }
+  .m-bar { position: sticky; top: 0; z-index: 55; background: var(--paper); border-bottom: 1px solid var(--line); box-shadow: 0 10px 24px -18px rgb(22 21 15 / 0.35); }
+  .m-tools { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; padding-block: 10px 6px; }
   .m-search { flex: 1 1 220px; }
-  .m-search input { width: 100%; min-height: 44px; padding: 0 16px; border-radius: 999px; border: 1px solid var(--line); background: var(--ink-2); color: var(--ivory); font: inherit; font-size: 1rem; }
-  .m-search input:focus { outline: 2px solid var(--gold); outline-offset: 1px; }
+  .m-search input { width: 100%; min-height: 48px; padding: 0 18px; border-radius: 999px; border: 1.5px solid var(--line); background: #fff; color: var(--ink); font: inherit; font-size: 1.0625rem; }
+  .m-search input::placeholder { color: var(--ink-mute); }
+  .m-search input:focus { outline: 2px solid var(--ink); outline-offset: 1px; }
   .m-diet { display: flex; gap: 6px; }
-  .m-diet button { min-height: 44px; padding: 0 14px; border-radius: 999px; border: 1px solid var(--line); background: transparent; color: var(--ivory); font: inherit; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 8px; cursor: pointer; }
-  .m-diet button[aria-pressed='true'] { background: var(--ivory); color: var(--ink); border-color: var(--ivory); }
+  .m-diet button { min-height: 44px; padding: 0 16px; border-radius: 999px; border: 1.5px solid var(--line); background: #fff; color: var(--ink); font: 650 0.95rem/1 var(--sans); display: inline-flex; align-items: center; gap: 8px; cursor: pointer; }
+  .m-diet button[aria-pressed='true'] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+  .m-diet button[aria-pressed='true'] .mark.v { color: #5cc46a; } .m-diet button[aria-pressed='true'] .mark.nv { color: #e0795c; }
   .m-cats { position: relative; overflow-x: auto; scrollbar-width: none; padding: 0 var(--gutter); }
   .m-cats::-webkit-scrollbar { display: none; }
-  .m-cats ul { list-style: none; display: flex; gap: 22px; margin: 0; padding: 6px 0 12px; width: max-content; }
+  .m-cats ul { list-style: none; display: flex; gap: 6px; margin: 0; padding: 4px 0 10px; width: max-content; }
   @media (min-width: 1360px) { .m-cats { padding-inline: calc((100vw - var(--max)) / 2); } }
-  .m-cats a { text-decoration: none; font-size: 0.92rem; color: var(--mute); white-space: nowrap; display: block; padding: 6px 0; transition: color 0.3s; }
-  .m-cats a[aria-current] { color: var(--ivory); }
-  .m-ind { position: absolute; left: 0; bottom: 8px; height: 2px; background: var(--redwood-2); transition: transform 0.5s var(--ease), width 0.5s var(--ease); }
+  .m-cats a { text-decoration: none; font: 650 0.95rem/1 var(--sans); color: var(--ink); white-space: nowrap; display: flex; align-items: center; min-height: 44px; padding: 0 16px; border-radius: 999px; transition: background 0.3s, color 0.3s; }
+  .m-cats a[aria-current] { background: var(--green); color: var(--cream); }
+  .m-ind { display: none; }
 
-  .m-body { padding-block: 32px 80px; }
-  .m-count { font-size: var(--t-small); margin-bottom: 8px; }
-  .m-sec { padding-top: 56px; scroll-margin-top: 140px; display: grid; gap: 24px 64px; content-visibility: auto; contain-intrinsic-size: auto 1200px; }
-  @media (min-width: 900px) { .m-sec { grid-template-columns: 1fr 1.6fr; } .m-sec-head, .m-fig { grid-column: 1; } .m-groups { grid-column: 2; grid-row: 1 / span 3; } .m-fig { position: sticky; top: 150px; align-self: start; } }
+  .m-body { padding-block: 20px 96px; }
+  .m-count { font-size: var(--t-small); margin-bottom: 4px; }
+  .m-sec { padding-top: 44px; scroll-margin-top: 150px; display: grid; gap: 20px 64px; content-visibility: auto; contain-intrinsic-size: auto 1200px; }
+  @media (min-width: 900px) { .m-sec { grid-template-columns: 1fr 1.6fr; } .m-sec-head, .m-fig { grid-column: 1; } .m-groups { grid-column: 2; grid-row: 1 / span 3; } .m-fig { position: sticky; top: 160px; align-self: start; } }
   .m-sec h2 { font-size: var(--t-2); margin: 0; }
-  .m-sec h2::after { content: ''; display: block; width: 48px; height: 2px; background: var(--redwood-2); margin-top: 14px; }
-  .m-fig { box-shadow: 0 0 0 6px var(--wood-1), 0 0 0 7px rgb(168 64 44 / 0.5); }
   .m-sec-head p { margin: 8px 0 0; }
-  .m-fig { margin: 0; aspect-ratio: 4 / 3; }
+  .m-fig { margin: 0; aspect-ratio: 16 / 10; }
+  @media (min-width: 900px) { .m-fig { aspect-ratio: 4 / 3; } }
   .m-group + .m-group { margin-top: 28px; }
-  .m-sub { font: 500 0.8rem/1 var(--sans); letter-spacing: 0.16em; text-transform: uppercase; color: var(--red-ink); display: flex; align-items: center; margin: 0 0 8px; padding-bottom: 10px; border-bottom: 1px solid var(--line); }
-  .m-hf { margin-left: auto; display: flex; gap: 0; }
-  .m-hf span { width: 4.6rem; text-align: right; color: var(--mute); letter-spacing: 0.08em; }
+  .m-sub { font: 700 0.95rem/1.2 var(--sans); color: var(--redwood); display: flex; align-items: flex-end; margin: 0; padding-bottom: 10px; border-bottom: 1.5px solid var(--ink); }
+  .m-hf { margin-left: auto; display: flex; }
+  .m-hf span { width: 4.4rem; text-align: right; color: var(--ink-mute); font-weight: 650; font-size: 0.875rem; }
   .m-group ul { list-style: none; margin: 0; padding: 0; }
-  .m-item { display: flex; align-items: baseline; gap: 10px; padding: 11px 0; border-bottom: 1px solid rgb(247 244 236 / 0.06); }
+  .m-item { display: flex; align-items: baseline; gap: 10px; padding: 13px 0; border-bottom: 1px solid var(--line); }
   .m-item .mark { align-self: center; }
-  .m-name { font-size: 1.02rem; }
-  .m-desc { display: block; font-size: 0.85rem; color: var(--mute); margin-top: 2px; }
-  .m-dots { flex: 1; border-bottom: 1px dotted rgb(247 244 236 / 0.18); transform: translateY(-4px); min-width: 12px; }
-  .m-p { width: 4.6rem; text-align: right; font-variant-numeric: tabular-nums; color: var(--ivory); flex: none; }
-  .m-half { color: var(--ivory-2); }
+  .m-name { font-size: 1.0625rem; font-weight: 600; flex: 1; min-width: 0; }
+  .m-desc { display: block; font-size: 0.9375rem; font-weight: 400; color: var(--ink-mute); margin-top: 2px; }
+  .m-dots { display: none; }
+  .m-p { width: 4.4rem; text-align: right; font: 700 1.0625rem/1.2 var(--sans); font-variant-numeric: tabular-nums; color: var(--ink); flex: none; }
+  .m-half { color: var(--ink-mute); font-weight: 600; }
   .m-item[hidden], .m-sec[hidden], .m-group[hidden] { display: none; }
   .m-empty { padding: 40px 0; font-size: 1.1rem; }
-  .m-foot { margin-top: 72px; padding-top: 28px; border-top: 1px solid var(--line); color: var(--ivory-2); }
+  .m-foot { margin-top: 64px; padding: clamp(22px, 4vw, 40px); border-radius: 10px; }
   .m-foot .mark { vertical-align: -2px; margin-inline: 4px 2px; }
-  @media (max-width: 420px) { .m-p, .m-hf span { width: 3.9rem; } .m-name { font-size: 0.98rem; } }
+  @media (max-width: 400px) { .m-p, .m-hf span { width: 3.9rem; } }
+  .to-top { position: fixed; right: 14px; bottom: calc(var(--bar) + env(safe-area-inset-bottom) + 14px); z-index: 56; display: inline-flex; align-items: center; gap: 6px; min-height: 48px; padding: 0 18px 0 14px; border-radius: 999px; background: var(--ink); color: var(--paper); text-decoration: none; font: 650 0.95rem/1 var(--sans); box-shadow: 0 10px 24px -10px rgb(0 0 0 / 0.5); opacity: 0; transform: translateY(12px); pointer-events: none; transition: opacity 0.3s var(--ease), transform 0.3s var(--ease); }
+  .to-top svg { width: 18px; height: 18px; }
+  .to-top.on { opacity: 1; transform: none; pointer-events: auto; }
+  @media (min-width: 900px) { .to-top { bottom: 28px; right: 28px; } }
 </style>

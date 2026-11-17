@@ -1,19 +1,18 @@
 ---
-import { base, u, abs, sitePath, CANONICAL_ORIGIN } from '../data/urls.js';
+import { base, u, abs, sitePath } from '../data/urls.js';
 import '../styles/global.css';
 import Icon from '../components/Icon.astro';
 import { site, waLink } from '../data/site.js';
 import monogram from '../assets/rw-monogram.png';
-import woodImg from '../assets/wood.jpg';
 import { getImage } from 'astro:assets';
-import bodoniUrl from '@fontsource-variable/bodoni-moda/files/bodoni-moda-latin-wght-normal.woff2?url';
-import sansUrl from '@fontsource/schibsted-grotesk/files/schibsted-grotesk-latin-400-normal.woff2?url';
+import serifUrl from '@fontsource/gloock/files/gloock-latin-400-normal.woff2?url';
+import sansUrl from '@fontsource-variable/hanken-grotesk/files/hanken-grotesk-latin-wght-normal.woff2?url';
 
-const { title, description, og = 'og-home.jpg', schema = [], current = '', noindex = false } = Astro.props;
+// overHero: the header starts transparent over a dark first section (home only); everywhere else it is solid.
+const { title, description, og = 'og-home.jpg', schema = [], current = '', noindex = false, overHero = false } = Astro.props;
 const canonical = abs(sitePath(Astro.url.pathname));
 const ogUrl = abs(`/og/${og}`);
 const mono = await getImage({ src: monogram, width: 64, format: 'webp' });
-const wood = await getImage({ src: woodImg, width: 1200, format: 'webp', quality: 60 });
 
 const venue = {
   '@context': 'https://schema.org',
@@ -48,6 +47,13 @@ const nav = [
   ['Visit', '/visit/'],
   ['Guides', '/guides/'],
 ];
+const sheetMore = [
+  ['Food guides', '/food/'],
+  ['The garden', '/garden/'],
+  ['About us', '/about/'],
+  ['Questions and answers', '/faq/'],
+];
+const bookMsg = 'Hello Red Wood Farm, I would like to book a table.';
 ---
 <!doctype html>
 <html lang="en" class="no-js" data-base={base}>
@@ -57,7 +63,7 @@ const nav = [
   <title>{title}</title>
   <meta name="description" content={description} />
   <link rel="canonical" href={canonical} />
-  <link rel="preload" href={bodoniUrl} as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href={serifUrl} as="font" type="font/woff2" crossorigin />
   <link rel="preload" href={sansUrl} as="font" type="font/woff2" crossorigin />
   <meta name="theme-color" content="#0b0f0c" />
   <meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large'} />
@@ -83,18 +89,39 @@ const nav = [
   <script is:inline>document.documentElement.classList.replace('no-js','js');</script>
   <!-- Analytics placeholder: Google Analytics is not set up yet. Add the GA4 tag here after the owner approves it. -->
 </head>
-<body style={`--wood: url(${wood.src})`}>
+<body>
   <a class="skip" href="#main">Skip to content</a>
-  <header class="site-head" data-head>
+  <header class="site-head" data-head data-solid={overHero ? undefined : ''}>
     <a class="brand" href={u('/')} aria-label="Red Wood Farm, home">
-      <img src={mono.src} alt="" width="30" height="30" />
+      <img src={mono.src} alt="" width="32" height="32" />
       <span>Red Wood Farm</span>
     </a>
     <nav class="nav" aria-label="Main">
-      {nav.map(([l, h]) => <a href={u(h)} class={l === 'Guides' ? 'hide-m' : ''} aria-current={current === l ? 'page' : undefined}>{l}</a>)}
-      <a class="btn red hide-m" data-magnetic href={waLink('Hello Red Wood Farm, I would like to book a table.')} target="_blank" rel="noopener">Book on WhatsApp</a>
+      {nav.map(([l, h]) => <a href={u(h)} aria-current={current === l ? 'page' : undefined}>{l}</a>)}
+      <a class="btn red" href={waLink(bookMsg)} target="_blank" rel="noopener"><Icon name="wa" />Book on WhatsApp</a>
     </nav>
+    <button class="menu-btn" type="button" aria-haspopup="dialog" aria-controls="sheet" data-sheet-open><Icon name="burger" />Menu</button>
   </header>
+
+  <dialog class="sheet" id="sheet" aria-label="Site menu" data-sheet>
+    <div class="sheet-top">
+      <a class="brand" href={u('/')}><img src={mono.src} alt="" width="32" height="32" /><span>Red Wood Farm</span></a>
+      <button class="sheet-close" type="button" data-sheet-close><Icon name="close" />Close</button>
+    </div>
+    <nav aria-label="Site">
+      <ul>
+        <li><a href={u('/')}>Home <Icon name="arrow" /></a></li>
+        {nav.map(([l, h]) => <li><a href={u(h)} aria-current={current === l ? 'page' : undefined}>{l === 'Menu' ? 'Menu and prices' : l} <Icon name="arrow" /></a></li>)}
+      </ul>
+      <ul class="sheet-small">
+        {sheetMore.map(([l, h]) => <li><a href={u(h)}>{l} <Icon name="arrow" /></a></li>)}
+      </ul>
+    </nav>
+    <div class="sheet-actions">
+      <a class="btn" href={waLink(bookMsg)} target="_blank" rel="noopener"><Icon name="wa" />WhatsApp</a>
+      <a class="btn" href={site.tel}><Icon name="call" />Call</a>
+    </div>
+  </dialog>
 
   <main id="main"><slot /></main>
 
@@ -102,7 +129,7 @@ const nav = [
     <div class="wrap foot-grid">
       <div>
         <h2>Red Wood Farm</h2>
-        <p class="muted">{site.story}, Ludhiana.</p>
+        <p>{site.story}, Ludhiana.</p>
         <address>
           {site.address.full}<br />
           <a href={site.tel}>{site.phoneDisplay}</a> (call or WhatsApp)<br />
@@ -110,7 +137,7 @@ const nav = [
         </address>
       </div>
       <div>
-        <h3 class="kicker">Explore</h3>
+        <h3>Explore</h3>
         <ul>
           <li><a href={u('/menu/')}>Menu and prices</a></li>
           <li><a href={u('/party/')}>Parties and events</a></li>
@@ -123,7 +150,7 @@ const nav = [
         </ul>
       </div>
       <div>
-        <h3 class="kicker">Elsewhere</h3>
+        <h3>Elsewhere</h3>
         <ul>
           <li><a href={site.mapsUrl} target="_blank" rel="noopener">Google Maps</a></li>
           <li><a href={site.reviewUrl} target="_blank" rel="noopener">Write a Google review</a></li>
@@ -142,7 +169,7 @@ const nav = [
     <a href={u('/menu/')}><Icon name="menu" />Menu</a>
     <a href={site.tel}><Icon name="call" />Call</a>
     <a href={site.directionsUrl} target="_blank" rel="noopener"><Icon name="pin" />Directions</a>
-    <a class="wa" href={waLink('Hello Red Wood Farm, I would like to book a table.')} target="_blank" rel="noopener"><Icon name="wa" />WhatsApp</a>
+    <a class="wa" href={waLink(bookMsg)} target="_blank" rel="noopener"><Icon name="wa" />WhatsApp</a>
   </nav>
 
   <script>

@@ -18,9 +18,8 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', it
 ] };
 ---
 <Base title="Visit Red Wood Farm | Restaurant on Pakhowal Road, Ludhiana: Hours & Directions" description="Red Wood Farm, 676, VPO Daad, Pakhowal Road, opposite Cerajot Tiles, near Omaxe Flats, Ludhiana. Open daily 10 AM to 11 PM. Takeaway, Wi-Fi, no wheelchair access." schema={[faqSchema(visitFaq), crumbs]} og="og-visit.jpg" current="Visit">
-  <header class="v-head wrap">
-    <span class="kicker">Visit</span>
-    <h1 data-split>Find us on outer <em>Pakhowal Road</em></h1>
+  <header class="v-head wrap page-top">
+    <h1>Find us on outer Pakhowal Road</h1>
     <p class="answer">Red Wood Farm is at 676, VPO Daad, Pakhowal Road, opposite Cerajot Tiles and near Omaxe Flats, Ludhiana, Punjab 142022. We are open every day from 10:00 AM to 11:00 PM for dine-in and takeaway. Call or WhatsApp 096467 13555.</p>
   </header>
 
@@ -28,7 +27,6 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', it
     <div class="v-map frame" data-map>
       <Picture src={palms} formats={['avif', 'webp']} widths={[480, 800, 1200]} sizes="(min-width: 900px) 55vw, 92vw" alt="The fairy-lit palm driveway at Red Wood Farm at dusk" class="v-map-img" loading="eager" fetchpriority="high" />
       <button type="button" class="btn v-map-btn" data-map-load><Icon name="pin" />Show the map</button>
-      <p class="v-map-note">The map loads from Google when you tap.</p>
     </div>
     <dl class="v-facts">
       <div><dt>Address</dt><dd><address>{site.address.full}</address></dd></div>
@@ -40,10 +38,9 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', it
     </dl>
   </section>
 
-  <section class="section wrap" aria-labelledby="dir-h">
-    <div class="split">
+  <section class="section tone-green" aria-labelledby="dir-h">
+    <div class="wrap split">
       <div>
-        <span class="kicker">Directions</span>
         <h2 id="dir-h" class="v-h2" data-split>Look for Cerajot Tiles</h2>
         <ol class="v-steps">
           <li data-reveal>From Ludhiana city, head out on Pakhowal Road towards Daad.</li>
@@ -51,22 +48,24 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', it
           <li data-reveal>Red Wood Farm is on Pakhowal Road, opposite Cerajot Tiles. Turn in at the garden gate.</li>
         </ol>
         <div class="btns" data-reveal>
-          <a class="btn" data-magnetic href={site.directionsUrl} target="_blank" rel="noopener"><Icon name="pin" />Directions in Google Maps</a>
+          <a class="btn" href={site.directionsUrl} target="_blank" rel="noopener"><Icon name="pin" />Directions in Google Maps</a>
           <a class="btn ghost" href={waLink('Hello Red Wood Farm, please share your location.')} target="_blank" rel="noopener"><Icon name="wa" />Ask for our location</a>
         </div>
       </div>
       <div class="v-pics">
-        <figure class="frame" data-clip><Picture src={entrance} formats={['avif', 'webp']} widths={[400, 800, 1200]} sizes="(min-width: 900px) 40vw, 92vw" alt="The green hedge entrance arch, by day" /></figure>
-        <figure class="frame" data-clip><Picture src={pathDay} formats={['avif', 'webp']} widths={[400, 800]} sizes="(min-width: 900px) 25vw, 60vw" alt="The stone garden path through the grounds, by day" /></figure>
+        <figure class="frame" data-reveal><Picture src={entrance} formats={['avif', 'webp']} widths={[400, 800, 1200]} sizes="(min-width: 900px) 40vw, 92vw" alt="The green hedge entrance arch, by day" /></figure>
+        <figure class="frame" data-reveal><Picture src={pathDay} formats={['avif', 'webp']} widths={[400, 800]} sizes="(min-width: 900px) 25vw, 60vw" alt="The stone garden path through the grounds, by day" /></figure>
       </div>
     </div>
   </section>
 
   <SpokeList cluster="visit" heading="Directions from around Ludhiana" />
 
-  <section class="section wrap faq" aria-labelledby="faq-h">
-    <h2 id="faq-h" class="v-h2">Before you come</h2>
-    {visitFaq.map((f) => <details><summary>{f.q}</summary><p>{f.a}</p></details>)}
+  <section class="section tone-night faq" aria-labelledby="faq-h">
+    <div class="wrap v-faq">
+      <h2 id="faq-h" class="v-h2">Before you come</h2>
+      <div>{visitFaq.map((f) => <details><summary>{f.q}</summary><p>{f.a}</p></details>)}</div>
+    </div>
   </section>
 </Base>
 
@@ -82,24 +81,28 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', it
 </script>
 
 <style>
-  .v-head { padding-top: clamp(110px, 16vw, 200px); padding-bottom: 48px; }
-  .v-head h1 { font-size: var(--t-1); }
-  .v-grid { display: grid; gap: 40px; }
-  @media (min-width: 900px) { .v-grid { grid-template-columns: 1.3fr 1fr; align-items: start; } }
-  .v-map { position: relative; aspect-ratio: 4 / 3; display: grid; place-items: center; }
+  .v-head { padding-bottom: 36px; }
+  .v-head h1 { font-size: var(--t-1); max-width: 14ch; }
+  .v-grid { display: grid; gap: 36px; padding-bottom: clamp(56px, 8vw, 110px); }
+  @media (min-width: 900px) { .v-grid { grid-template-columns: 1.3fr 1fr; align-items: start; gap: 64px; } }
+  .v-map { position: relative; aspect-ratio: 4 / 3; display: grid; place-items: end start; padding: 16px; }
   .v-map :global(.v-map-img), .v-map :global(picture) { position: absolute; inset: 0; width: 100%; height: 100%; }
-  .v-map :global(img) { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.55); }
-  .v-map-btn { position: relative; z-index: 1; cursor: pointer; }
-  .v-map-note { position: absolute; bottom: 10px; left: 0; right: 0; text-align: center; font-size: 0.8rem; color: var(--ivory-2); margin: 0 auto; z-index: 1; }
+  .v-map :global(img) { width: 100%; height: 100%; object-fit: cover; }
+  .v-map-btn { position: relative; z-index: 1; --btn-bg: var(--paper); --btn-fg: var(--ink); box-shadow: 0 8px 24px -8px rgb(0 0 0 / 0.5); }
   .v-map :global(iframe) { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
-  .v-facts { margin: 0; display: grid; gap: 0; }
-  .v-facts div { border-top: 1px solid var(--line); padding: 16px 0; display: grid; gap: 4px; }
-  .v-facts dt { font: 500 0.78rem/1 var(--sans); letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); }
-  .v-facts dd { margin: 0; color: var(--ivory-2); }
+  .v-facts { margin: 0; }
+  .v-facts div { border-top: 1px solid var(--line); padding: 14px 0; display: grid; gap: 2px; }
+  .v-facts div:last-child { border-bottom: 1px solid var(--line); }
+  .v-facts dt { font: 650 var(--t-label)/1.3 var(--sans); color: var(--mute); }
+  .v-facts dd { margin: 0; }
+  .v-facts dd a { font-weight: 650; display: inline-flex; align-items: center; min-height: 44px; }
   .v-facts address { font-style: normal; }
   .v-h2 { font-size: var(--t-2); }
-  .v-steps { padding-left: 1.2em; margin: 24px 0 32px; display: grid; gap: 14px; color: var(--ivory-2); }
+  .v-steps { padding-left: 1.3em; margin: 20px 0 30px; display: grid; gap: 14px; color: var(--mute); }
+  .v-steps li::marker { color: var(--gold); font-weight: 700; }
   .v-pics { display: grid; grid-template-columns: 1.4fr 1fr; gap: 14px; align-items: end; }
   .v-pics figure { margin: 0; aspect-ratio: 3 / 4; }
   .v-pics figure + figure { aspect-ratio: 1; }
+  .v-faq { display: grid; gap: 24px; }
+  @media (min-width: 900px) { .v-faq { grid-template-columns: 4fr 7fr; gap: 64px; } }
 </style>

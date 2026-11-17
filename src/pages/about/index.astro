@@ -22,13 +22,12 @@ const schema = [
 ---
 <Base title="About Red Wood Farm | Garden Family Restaurant, Pakhowal Road, Ludhiana" description={`Red Wood Farm is a garden family restaurant and party lawn on outer Pakhowal Road, Ludhiana: ${menu.count} dishes, a fairy-lit lawn, open daily 10 AM to 11 PM.`} schema={schema} og="og-home.jpg" current="About">
   <header class="ab-head wrap">
-    <span class="kicker">About us</span>
-    <h1 data-split>A family restaurant first, a party lawn <em>second</em></h1>
+    <h1 data-split>A family restaurant first, a party lawn second</h1>
     <p class="answer">Red Wood Farm is a garden family restaurant and party lawn at VPO Daad, on outer Pakhowal Road in Ludhiana. We cook North Indian, tandoor and Indo-Chinese food, {menu.count} dishes in all, and serve it at tables on a lawn lit with fairy lights. We are open every day from 10 AM to 11 PM.</p>
   </header>
 
   <section class="wrap ab-grid">
-    <figure class="frame ab-a" data-clip><Picture src={nameArch} formats={['avif', 'webp']} widths={[400, 800]} sizes="(min-width: 900px) 40vw, 92vw" alt="The Red Wood Farm name arch at the entrance" loading="eager" /></figure>
+    <figure class="frame ab-a"><Picture src={nameArch} formats={['avif', 'webp']} widths={[400, 800]} sizes="(min-width: 900px) 40vw, 92vw" alt="The Red Wood Farm name arch at the entrance" loading="eager" /></figure>
     <div class="prose">
       <h2>The name</h2>
       <p>The name is Red Wood Farm, three words, exactly as it is written on the gate. You will find the same name on our arch at the entrance, on the green neon sign and on the small crimson RW monogram we use on our menus and cards.</p>
@@ -53,19 +52,19 @@ const schema = [
       <p>Our Google rating was {site.rating.value} from {site.rating.count} reviews when we last checked on {site.rating.checked}. If you visit, we would be glad to read yours: <a href={site.reviewUrl} target="_blank" rel="noopener">write a Google review</a>.</p>
     </div>
     <div class="ab-stack">
-      <figure class="frame" data-clip><Picture src={tunnel} formats={['avif', 'webp']} widths={[400, 800]} sizes="(min-width: 900px) 40vw, 92vw" alt="The fairy-light tunnel over the red carpet at night" /></figure>
-      <figure class="frame" data-clip><Picture src={longTables} formats={['avif', 'webp']} widths={[400, 800]} sizes="(min-width: 900px) 40vw, 92vw" alt="Long wooden tables set on the lawn for a daytime gathering" /></figure>
-      <figure class="frame" data-clip><Picture src={platter} formats={['avif', 'webp']} widths={[400, 800]} sizes="(min-width: 900px) 40vw, 92vw" alt="A non-veg tandoori platter with mint chutney" /></figure>
+      <figure class="frame" data-reveal><Picture src={tunnel} formats={['avif', 'webp']} widths={[400, 800]} sizes="(min-width: 900px) 40vw, 92vw" alt="The fairy-light tunnel over the red carpet at night" /></figure>
+      <figure class="frame" data-reveal><Picture src={longTables} formats={['avif', 'webp']} widths={[400, 800]} sizes="(min-width: 900px) 40vw, 92vw" alt="Long wooden tables set on the lawn for a daytime gathering" /></figure>
+      <figure class="frame" data-reveal><Picture src={platter} formats={['avif', 'webp']} widths={[400, 800]} sizes="(min-width: 900px) 40vw, 92vw" alt="A non-veg tandoori platter with mint chutney" /></figure>
     </div>
   </section>
 
-  <section class="wood wood-edge ab-cta">
+  <section class="tone-green ab-cta">
     <div class="wrap">
       <h2>Find us</h2>
       <address class="lede">{site.address.full}</address>
       <p class="muted">{site.hoursDisplay}. Takeaway and Wi-Fi. No wheelchair access.</p>
       <div class="btns">
-        <a class="btn red" data-magnetic href={waLink('Hello Red Wood Farm, I would like to book a table.')} target="_blank" rel="noopener"><Icon name="wa" />Book on WhatsApp</a>
+        <a class="btn red" href={waLink('Hello Red Wood Farm, I would like to book a table.')} target="_blank" rel="noopener"><Icon name="wa" />Book on WhatsApp</a>
         <a class="btn ghost" href={u('/visit/')}><Icon name="pin" />Getting here</a>
       </div>
     </div>
@@ -82,8 +81,8 @@ const schema = [
   .prose h2 { font-size: var(--t-3); margin-top: 0; }
   .prose h2 + p { margin-top: 0; }
   .prose p + h2, .prose ul + h2 { margin-top: 1.6em; }
-  .prose p, .prose li { color: var(--ivory-2); }
-  .prose a { color: var(--red-ink); }
+  .prose p, .prose li { color: var(--mute); }
+  .prose a { color: var(--accent); }
   .ab-cta { padding-block: 72px; margin-top: 40px; }
   .ab-cta h2 { font-size: var(--t-2); }
 </style>

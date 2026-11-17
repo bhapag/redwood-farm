@@ -66,3 +66,90 @@ Harman was asleep. Each call below is a sensible default; any of them can be rev
 ## 9. Analytics
 - None installed. There's a commented placeholder in `src/layouts/Base.astro`.
 - No third-party scripts. The Google Maps embed loads only after a tap, so nothing from Google loads by default.
+
+## 10. Added during the build
+- **Google rating:** shown as "4.2 from 72 reviews, as shown on Google on 14 Nov 2026", with the date on the page. I did not re-check it live tonight, because Google search blocks automated checks with a captcha and I don't solve captchas. Update `rating` in `src/data/site.js` when it changes. Never round it up.
+- **Review quotes:** 8 short excerpts from real public Google reviews, quoted as written with the reviewer's public name. Only spacing before punctuation was tidied.
+- **"Open now" line** in the hero, worked out in India time (10:00 to 23:00). Without JavaScript it reads "Open daily, 10 AM to 11 PM".
+- **Desktop hero:** after the first scroll, the still tunnel photo is swapped for the tunnel loop video, which is made from the same real photo. Mobile keeps the still to save data.
+- **Party cards:** they stack as sticky cards. On desktop the card underneath dims as the next one slides over; on mobile they just stack, because each card is taller than the screen.
+- **Map:** shown only after a tap, so no Google request loads by default.
+- **Article links** are relative, so they keep working after the domain move.
+
+## 11. Hosting change (your 2nd brief)
+- **Branches:**
+  - `main` is now the Astro source (Cloudflare would build it).
+  - `gh-pages` is the GitHub Pages copy, served at bhapag.github.io/redwood-farm/ so the printed QR codes keep working.
+  - One env variable switches the base: `BASE_PATH=/redwood-farm` for the GitHub build, unset for Cloudflare.
+- **Cloudflare Pages is not live.**
+  - Chrome is already signed into Cloudflare as hbagga52@gmail.com (the account that holds Samrat and other sites). I didn't sign it out or use it for Red Wood Farm.
+  - The separate in-app browser had no Google session, so "Continue with Google" as redwoodfarm7 asked for a password, and I stopped there.
+  - Following your fallback, I shipped on GitHub Pages only. DEPLOY.md has the 10-minute Cloudflare steps.
+- **Canonical URLs** point to the GitHub Pages address until Cloudflare or the domain is live. Pointing them at redwood-farm.pages.dev before it existed would have sent Google to a dead URL. One value switches it: `PUBLIC_CANONICAL_ORIGIN`.
+- **_headers** (security headers, a CSP limited to what the site uses, immutable cache on /_astro/) and **_redirects** are in place for Cloudflare. GitHub Pages ignores them.
+- **GoDaddy:** I checked 5 domains and bought nothing. redwoodfarm.com is taken. I recommend redwoodfarm.in; see DEPLOY.md.
+
+## 12. Red and wood
+- Redwood red (#8B2E22 / #A8402C, plus #E58468 for small text that has to pass contrast) goes on:
+  - section labels, the main booking buttons, the mobile WhatsApp key and the menu category indicator
+  - rules, the story progress bar and the "In short" boxes
+- A walnut wood grain, generated in code with no AI and no stock image, sits under a dark veil on:
+  - the footer, reviews and Visit band
+  - the party cards and enquiry form
+  - the menu footer and the CTA boxes on every guide
+- Green stays: the night base, the neon name and the lawn photos.
+
+## 13. Content at scale
+- **Pages:** 52 guide pages across 5 hubs (Parties 17, Food 13, Garden 9, Getting here 7, Guides 6), plus hubs, About and FAQ: **61 indexable pages**, all in the sitemap.
+- **How they were written:** 9 parallel writers worked from one fact sheet (`docs/FACTS.md`) and one brief (`docs/WRITING-BRIEF.md`).
+- **Every page passes `scripts/qa_content.py`:**
+  - 700 to 1,400 words, with an answer-first opening
+  - 3 to 6 FAQs and 1 to 3 valid images
+  - no banned words or never-claims
+  - every price checked against the menu (order totals are hand-verified in `scripts/qa_price_allow.txt`)
+  - every internal link resolves
+  - **no shared run of 25+ words between any two pages**
+- **SERP evidence:**
+  - About 25 Google queries were checked live in Chrome (gl=in) before Google began rate-limiting; the rest are marked "not checked live" in CONTENT-MAP.md.
+  - Route pages use real OpenStreetMap/OSRM road names and distances (OSRM times have no traffic, and the pages say so).
+- **Removed** the one real photo with Punjabi script on it (kites reading "Happy Lohri"), to keep the site English-only.
+- **AI dish photos** are labelled as illustrative in their alt text, never as taken at the restaurant.
+- **Old /notes/ URLs** redirect to their new homes.
+
+## 14. Redesign pass (17 Nov 2026): direction A chosen
+
+**Why:** the owner said the UI wasn't good. The live review found a near-black monotone, the same text-over-dark-photo layout in every section, eyebrow labels, italic accent words, a hero that opened on an empty drawn arch, and a cramped phone UI. Content, SEO, menu data, schema, routes and performance were all kept; only the visual design changed.
+
+**Type test** (`report/redesign/directions/type_1440.jpg`, `type_390.jpg`, rendered side by side on ivory, green and night):
+
+| Pairing | Verdict |
+|---|---|
+| A, current: Bodoni Moda 450 + Schibsted Grotesk 400/500 | Elegant at 1440, but the hairlines break up at 360 px and the grotesk has no weight for labels |
+| **B: Gloock + Hanken Grotesk (variable, 400 to 700)** | **Chosen.** Gloock is a sturdy, refined display serif that holds at 32 px on dark and light. Hanken gives real 600/700 weights for labels, prices and buttons. |
+| C: Rozha One + Schibsted Grotesk 400/700 | Festive and heavy, but its swash S and W hurt legibility in long headlines |
+
+**Two homepage directions** (full-page screenshots at 1440 and 390 px in `report/redesign/directions/`):
+
+| | A: "Night and linen" | B: "Green room" |
+|---|---|---|
+| Type | Gloock + Hanken Grotesk | Rozha One + Schibsted Grotesk |
+| Hero | Phones: name, headline and both CTAs on a solid night panel, with the real tunnel photo below. Desktop: night panel left, sharp tunnel photo right. | Photo first with a green panel below (phones); full-bleed photo with an overlaid green card (desktop) |
+| Section rhythm | night, ivory (with a green hours card), green dishes, ivory occasions, night evening and film strip, green quote band, ivory guides, night visit, green footer | green, ivory, night, ivory, night, green, ivory |
+
+**A wins:**
+- **The neon name stays legible on solid night.** B puts it over the busiest part of the photo, which was the original complaint.
+- **The rhythm is even:** ivory reads as the page, green and night as events, rather than green everywhere.
+- **The hero fits one phone screen** with both CTAs visible.
+
+**Fixes carried into the build from the comparison:**
+- the header is solid night on every page, so the links are never over the photo
+- the desktop hero headline is capped at 15ch, down from 5 lines
+- the dish grid columns use `minmax(0, 1fr)` so all ten cards are equal
+- the mobile headline is widened so no word sits alone on a line
+
+**Design rules from now on:**
+1. No eyebrow labels, no numbered labels, no italic or gold accent words.
+2. Text never sits on a photo: it goes on a solid panel, beside or below the image.
+3. Phones get no pinning and no scroll-scrubbing, just short fade-ups. Desktop alone loads GSAP and Lenis, on demand, with no cross-fades.
+4. Real venue photos are used only at sizes where they hold up. The lawn-with-mattress shots (`string-wide`, `string-lounge`) are no longer used.
+5. Higgsfield had 0.62 credits, so there was no AI upscale and no video loop. The tunnel photo was cropped (removing a scrollbar artifact on the right edge) and lightly sharpened locally (`tunnel-hero.jpg`), with a slow CSS push-in.

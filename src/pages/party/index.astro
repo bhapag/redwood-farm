@@ -14,7 +14,7 @@ import family from '../../assets/venue/family-function.jpg';
 import corporate from '../../assets/venue/day-long-tables.jpg';
 import gate from '../../assets/venue/event-gate.jpg';
 import buffet from '../../assets/venue/buffet-lawn.jpg';
-import lounge from '../../assets/venue/string-lounge.jpg';
+import palmTable from '../../assets/venue/palm-table.jpg';
 import birthdaySetup from '../../assets/venue/birthday.jpg';
 
 const pageUrl = abs(`/party/`);
@@ -30,56 +30,53 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', it
 ] };
 ---
 <Base title="Birthday & Kitty Party Venue in Ludhiana | Red Wood Farm Lawn" description="Birthday parties, kitty parties, family functions and team lunches on a fairy-lit garden lawn on Pakhowal Road, Ludhiana. Food from our own kitchen. Enquire on WhatsApp." schema={[faqSchema(partyFaq), crumbs]} og="og-party.jpg" current="Parties">
-  <section class="p-hero">
-    <div class="p-hero-img" data-parallax="10"><Picture src={functionNight} formats={['avif', 'webp']} widths={[640, 1000, 1376]} sizes="100vw" alt="An evening function on the Red Wood Farm lawn with a buffet line" loading="eager" fetchpriority="high" /></div>
-    <div class="p-hero-copy wrap">
-      <span class="kicker">Parties & events</span>
-      <h1 data-split>Birthday, kitty and family parties on the <em>lawn</em></h1>
+  <section class="p-hero tone-night">
+    <div class="p-hero-copy">
+      <h1>Birthday, kitty and family parties on the lawn</h1>
+      <p class="p-lede">Red Wood Farm is a garden party venue on outer Pakhowal Road, Ludhiana. We host birthday parties, kitty parties, family functions and corporate lunches on a fairy-lit lawn, with food from our own kitchen. To book, send your date, time and guest count on WhatsApp.</p>
+      <div class="btns">
+        <a class="btn red" href="#enquire"><Icon name="wa" />Enquire on WhatsApp</a>
+        <a class="btn ghost" href={site.tel}><Icon name="call" />Call {site.phoneDisplay}</a>
+      </div>
+    </div>
+    <figure class="p-hero-img"><Picture src={functionNight} formats={['avif', 'webp']} widths={[480, 800, 1100, 1376]} sizes="(min-width: 900px) 55vw, 100vw" alt="An evening function on the Red Wood Farm lawn with a buffet line" loading="eager" fetchpriority="high" /></figure>
+  </section>
+
+  <section class="section tone-paper" aria-labelledby="types-h">
+    <div class="wrap">
+      <h2 id="types-h" class="p-h2" data-split>What we host</h2>
+      <ul class="types" role="list">
+        {types.map((t) => (
+          <li class="type" data-reveal>
+            <div class="frame type-img"><Picture src={t.img} formats={['avif', 'webp']} widths={[360, 600, 900]} sizes="(min-width: 900px) 44vw, 92vw" alt={t.alt} /></div>
+            <h3>{t.h}</h3>
+            <p class="muted">{t.p}</p>
+            <a class="link" href={waLink(`Hello Red Wood Farm, I would like to plan a ${t.msg.toLowerCase()}. Date: , Time: , Guests: `)} target="_blank" rel="noopener">Ask about a {t.msg.toLowerCase()} <Icon name="arrow" /></a>
+          </li>
+        ))}
+      </ul>
     </div>
   </section>
 
-  <section class="section wrap p-answer">
-    <p class="intro-big" data-reveal>Red Wood Farm is a garden party venue on outer Pakhowal Road, Ludhiana. We host birthday parties, kitty parties, family functions and corporate lunches on a fairy-lit lawn, with food from our own kitchen. To book, send your date, time and guest count on WhatsApp.</p>
-    <div class="btns" data-reveal>
-      <a class="btn red" data-magnetic href="#enquire"><Icon name="wa" />Enquire on WhatsApp</a>
-      <a class="btn ghost" href={site.tel}><Icon name="call" />Call {site.phoneDisplay}</a>
+  <section class="section tone-green" aria-labelledby="how-h">
+    <div class="wrap">
+      <h2 id="how-h" class="p-h2" data-split>How booking works</h2>
+      <p class="muted">Four messages on WhatsApp. There are no forms to fill in on this website.</p>
+      <ol class="steps">
+        <li data-reveal><b>Tell us the occasion</b><span>Birthday, kitty party, family function or team lunch.</span></li>
+        <li data-reveal><b>Share date, time and guests</b><span>We reply on WhatsApp with what is possible on that day.</span></li>
+        <li data-reveal><b>Choose the menu</b><span>Pick dishes from our menu, veg and non-veg. We confirm the price per plate for your group.</span></li>
+        <li data-reveal><b>Come and celebrate</b><span>The lawn and the lights are ready when your guests arrive.</span></li>
+      </ol>
     </div>
   </section>
 
-  <section class="stack wrap" aria-label="Party types">
-    {types.map((t, i) => (
-      <article class="stack-card" style={`--i:${i}`}>
-        <div class="stack-inner">
-          <div class="frame stack-img"><Picture src={t.img} formats={['avif', 'webp']} widths={[480, 800, 1200]} sizes="(min-width: 900px) 50vw, 92vw" alt={t.alt} /></div>
-          <div class="stack-copy">
-            <span class="kicker">0{i + 1}</span>
-            <h2>{t.h}</h2>
-            <p>{t.p}</p>
-            <a class="btn ghost" href={waLink(`Hello Red Wood Farm, I would like to plan a ${t.msg.toLowerCase()}. Date: , Time: , Guests: `)} target="_blank" rel="noopener"><Icon name="wa" />Ask about a {t.msg.toLowerCase()}</a>
-          </div>
-        </div>
-      </article>
-    ))}
-  </section>
-
-  <section class="section wrap" aria-labelledby="how-h">
-    <span class="kicker">How booking works</span>
-    <h2 id="how-h" class="p-h2" data-split>Four messages, <em>no forms</em></h2>
-    <ol class="steps">
-      <li data-reveal><b>1. Tell us the occasion</b><span>Birthday, kitty party, family function or team lunch.</span></li>
-      <li data-reveal><b>2. Share date, time and guests</b><span>We reply on WhatsApp with what is possible on that day.</span></li>
-      <li data-reveal><b>3. Choose the menu</b><span>Pick dishes from our menu, veg and non-veg. We confirm the price per plate for your group.</span></li>
-      <li data-reveal><b>4. Come and celebrate</b><span>The lawn and the lights are ready when your guests arrive.</span></li>
-    </ol>
-  </section>
-
-  <section id="enquire" class="section enquire" aria-labelledby="enq-h">
+  <section id="enquire" class="section tone-night enquire" aria-labelledby="enq-h">
     <div class="wrap split">
       <div>
-        <span class="kicker">Enquire</span>
         <h2 id="enq-h" class="p-h2" data-split>Plan your party on WhatsApp</h2>
-        <p class="muted" data-reveal>Fill this in and it opens WhatsApp with your message ready to send. Nothing is saved on this website.</p>
-        <p class="muted" data-reveal>Guest capacity, per-plate prices and packages: ask us on WhatsApp and we will share current details for your date.</p>
+        <p class="muted">Fill this in and it opens WhatsApp with your message ready to send. Nothing is saved on this website.</p>
+        <p class="muted">Guest capacity, per-plate prices and packages: ask us on WhatsApp and we will share current details for your date.</p>
       </div>
       <form class="enq" data-enquiry action={site.wa} method="get" target="_blank">
         <label>Occasion
@@ -98,27 +95,31 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', it
         <label>Number of guests<input type="number" name="guests" min="1" max="2000" inputmode="numeric" required placeholder="e.g. 40" /></label>
         <label>Anything else (optional)<textarea name="note" rows="3" maxlength="400" placeholder="Veg only, a theme, a cake table..."></textarea></label>
         <input type="hidden" name="text" />
-        <button class="btn red" type="submit" data-magnetic><Icon name="wa" />Send on WhatsApp</button>
+        <button class="btn red" type="submit"><Icon name="wa" />Send on WhatsApp</button>
       </form>
     </div>
   </section>
 
-  <section class="section wrap" aria-labelledby="gal-h">
-    <span class="kicker">Real set-ups at Red Wood Farm</span>
-    <h2 id="gal-h" class="p-h2" data-split>From past parties on the lawn</h2>
-    <div class="gal">
-      <figure class="frame" data-clip><Picture src={gate} formats={['avif', 'webp']} widths={[400, 800]} sizes="(min-width: 900px) 33vw, 92vw" alt="A floral entry gate decorated for an evening event" /></figure>
-      <figure class="frame" data-clip><Picture src={buffet} formats={['avif', 'webp']} widths={[400, 800, 1200]} sizes="(min-width: 900px) 33vw, 92vw" alt="Buffet counters on the lawn for a function" /></figure>
-      <figure class="frame" data-clip><Picture src={lounge} formats={['avif', 'webp']} widths={[400, 800, 1200]} sizes="(min-width: 900px) 33vw, 92vw" alt="Low lounge seating under string lights on the lawn" /></figure>
-      <figure class="frame" data-clip><Picture src={birthdaySetup} formats={['avif', 'webp']} widths={[400, 800, 1200]} sizes="(min-width: 900px) 33vw, 92vw" alt="A birthday party set-up with balloons" /></figure>
+  <section class="section tone-paper" aria-labelledby="gal-h">
+    <div class="wrap">
+      <h2 id="gal-h" class="p-h2" data-split>From past parties on the lawn</h2>
+      <p class="muted">Real set-ups at Red Wood Farm.</p>
+      <div class="gal">
+        <figure class="frame g-a" data-reveal><Picture src={gate} formats={['avif', 'webp']} widths={[400, 700]} sizes="(min-width: 900px) 30vw, 46vw" alt="A floral entry gate decorated for an evening event" /></figure>
+        <figure class="frame g-c" data-reveal><Picture src={palmTable} formats={['avif', 'webp']} widths={[400, 700]} sizes="(min-width: 900px) 30vw, 46vw" alt="A dining table under the lit palm trees on the lawn at night" /></figure>
+        <figure class="frame g-b" data-reveal><Picture src={buffet} formats={['avif', 'webp']} widths={[400, 800, 1200]} sizes="(min-width: 900px) 40vw, 92vw" alt="Buffet counters on the lawn for a function" /></figure>
+        <figure class="frame g-d" data-reveal><Picture src={birthdaySetup} formats={['avif', 'webp']} widths={[400, 800, 1200]} sizes="(min-width: 900px) 40vw, 92vw" alt="A birthday party set-up with balloons" /></figure>
+      </div>
     </div>
   </section>
 
-  <SpokeList cluster="party" heading="Party guides: plan it properly" />
+  <SpokeList cluster="party" heading="Party guides" tone="green" />
 
-  <section class="section wrap faq" aria-labelledby="faq-h">
-    <h2 id="faq-h" class="p-h2">Party questions</h2>
-    {partyFaq.map((f) => <details><summary>{f.q}</summary><p>{f.a}</p></details>)}
+  <section class="section tone-paper faq" aria-labelledby="faq-h">
+    <div class="wrap faq-wrap">
+      <h2 id="faq-h" class="p-h2">Party questions</h2>
+      <div>{partyFaq.map((f) => <details><summary>{f.q}</summary><p>{f.a}</p></details>)}</div>
+    </div>
   </section>
 </Base>
 
@@ -145,43 +146,40 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', it
 </script>
 
 <style>
-  .p-hero { position: relative; height: 88svh; min-height: 520px; overflow: hidden; display: flex; align-items: flex-end; }
-  .p-hero-img { position: absolute; inset: -6% 0; }
+  .p-hero { display: flex; flex-direction: column-reverse; padding-top: var(--head); }
+  .p-hero-img { aspect-ratio: 4 / 3; overflow: hidden; }
   .p-hero-img :global(img) { width: 100%; height: 100%; object-fit: cover; }
-  .p-hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(rgb(11 15 12 / 0.25), rgb(11 15 12 / 0.1) 30%, var(--ink) 96%); }
-  .p-hero-copy { position: relative; z-index: 1; padding-bottom: 8vh; }
+  .p-hero-copy { padding: 26px var(--gutter) 40px; }
   .p-hero h1 { font-size: var(--t-1); max-width: 14ch; }
-  .intro-big { font: 400 clamp(1.4rem, 1rem + 1.8vw, 2.5rem)/1.22 var(--serif); max-width: 32ch; }
-  .p-answer .btns { margin-top: 32px; }
+  .p-lede { color: var(--mute); max-width: 52ch; }
+  @media (min-width: 900px) {
+    .p-hero { display: grid; grid-template-columns: 5fr 6fr; min-height: 86svh; }
+    .p-hero-copy { align-self: center; padding: 56px clamp(32px, 4vw, 72px) 56px var(--gutter); }
+    .p-hero-img { aspect-ratio: auto; }
+  }
   .p-h2 { font-size: var(--t-2); }
-
-  .stack { display: grid; gap: 0; padding-bottom: 40px; }
-  .stack-card { position: sticky; top: calc(84px + var(--i) * 18px); padding-bottom: 28px; z-index: calc(var(--i) + 1); }
-  .stack-inner { background: linear-gradient(rgb(17 24 19 / 0.92), rgb(17 24 19 / 0.96)), var(--wood) center / cover; border: 1px solid var(--line); border-left: 3px solid var(--redwood); border-radius: 6px; overflow: hidden; display: grid; transform-origin: 50% 0; }
-  @media (min-width: 900px) { .stack-inner { grid-template-columns: 1.1fr 1fr; min-height: 62vh; } }
-  .stack-img { aspect-ratio: 4 / 3; border-radius: 0; }
-  @media (min-width: 900px) { .stack-img { aspect-ratio: auto; } }
-  .stack-copy { padding: clamp(24px, 4vw, 56px); align-self: center; }
-  .stack-copy h2 { font-size: var(--t-2); }
-  .stack-copy p { color: var(--ivory-2); }
-
-  .steps { list-style: none; padding: 0; margin: 40px 0 0; display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); }
-  @media (min-width: 900px) { .steps { grid-template-columns: repeat(4, 1fr); } }
-  .steps li { background: var(--ink); padding: 28px 24px; display: grid; gap: 10px; }
-  .steps b { font: 450 1.4rem/1.15 var(--serif); }
-  .steps li { border-top: 2px solid var(--redwood); }
-  .steps span { color: var(--ivory-2); }
-
-  .enquire { border-top: 2px solid var(--redwood); background: linear-gradient(160deg, rgb(29 58 43 / 0.55), rgb(16 10 7 / 0.8) 60%), var(--wood) center / cover; }
-  .enq { display: grid; gap: 16px; background: rgb(11 15 12 / 0.6); border: 1px solid var(--line); border-radius: 6px; padding: clamp(20px, 3vw, 36px); }
-  .enq label { display: grid; gap: 8px; font-size: 0.9rem; color: var(--ivory-2); }
-  .enq input, .enq select, .enq textarea { min-height: 48px; padding: 10px 14px; border-radius: 6px; border: 1px solid rgb(247 244 236 / 0.22); background: var(--ink); color: var(--ivory); font: inherit; font-size: 1rem; }
+  .types { list-style: none; padding: 0; margin: 36px 0 0; display: grid; gap: 44px; }
+  .type-img { aspect-ratio: 4 / 3; }
+  .type h3 { font-size: var(--t-3); margin: 18px 0 8px; }
+  @media (min-width: 800px) { .types { grid-template-columns: 1fr 1fr; gap: 56px 32px; } .type:nth-child(even) { margin-top: 64px; } }
+  .steps { list-style: none; padding: 0; margin: 32px 0 0; display: grid; gap: 0; counter-reset: s; }
+  @media (min-width: 900px) { .steps { grid-template-columns: repeat(4, 1fr); gap: 28px; } }
+  .steps li { counter-increment: s; padding: 22px 0; border-top: 1px solid var(--line); display: grid; gap: 8px; }
+  .steps li::before { content: 'Step ' counter(s); font: 650 var(--t-label)/1 var(--sans); color: var(--gold); }
+  .steps b { font: 400 1.45rem/1.15 var(--serif); }
+  .steps span { color: var(--mute); }
+  .enq { display: grid; gap: 16px; background: var(--paper); color: var(--ink); border-radius: 10px; padding: clamp(20px, 3vw, 36px); }
+  .enq label { display: grid; gap: 8px; font: 650 0.95rem/1.3 var(--sans); }
+  .enq input, .enq select, .enq textarea { min-height: 50px; padding: 10px 14px; border-radius: 8px; border: 1.5px solid rgb(22 21 15 / 0.25); background: #fff; color: var(--ink); font: 400 1.0625rem/1.3 var(--sans); width: 100%; color-scheme: light; }
+  .enq input:focus, .enq select:focus, .enq textarea:focus { outline: 2px solid var(--ink); outline-offset: 1px; }
   .enq textarea { resize: vertical; }
   .enq-row { display: grid; gap: 16px; grid-template-columns: 1fr 1fr; }
   @media (max-width: 420px) { .enq-row { grid-template-columns: 1fr; } }
-  .enq .btn { justify-self: start; margin-top: 6px; cursor: pointer; }
-
-  .gal { display: grid; gap: 16px; margin-top: 32px; }
-  @media (min-width: 700px) { .gal { grid-template-columns: repeat(2, 1fr); } }
-  .gal figure { margin: 0; aspect-ratio: 4 / 3; }
+  .enq .btn { justify-self: start; margin-top: 4px; }
+  .gal { display: grid; gap: 14px; margin-top: 28px; grid-template-columns: 1fr 1fr; }
+  .gal figure { aspect-ratio: 1; }
+  .gal .g-b, .gal .g-d { grid-column: span 2; aspect-ratio: 16 / 10; }
+  @media (min-width: 900px) { .gal { grid-template-columns: 3fr 4fr; } .gal .g-b, .gal .g-d { grid-column: auto; aspect-ratio: 4 / 3; } .gal .g-a, .gal .g-c { aspect-ratio: 4 / 3; } }
+  .faq-wrap { display: grid; gap: 24px; }
+  @media (min-width: 900px) { .faq-wrap { grid-template-columns: 4fr 7fr; gap: 64px; } }
 </style>

@@ -24,47 +24,48 @@ const schema = [
 ];
 ---
 <Base title={seoTitle} description={description} schema={schema} og={og} current={hub.short}>
-  <header class="h-head">
-    <div class="h-img" data-parallax="10"><Picture src={img(image)} formats={['avif', 'webp']} widths={[640, 1000, 1400]} sizes="100vw" alt={alt} loading="eager" fetchpriority="high" /></div>
-    <div class="h-copy wrap">
-      <span class="kicker">{hub.name}</span>
-      <h1 data-split set:html={title} />
+  <header class="h-head tone-night">
+    <div class="h-copy">
+      <h1 set:html={title} />
+      <p class="h-lede">{answer}</p>
+      <slot />
     </div>
+    <figure class="h-img"><Picture src={img(image)} formats={['avif', 'webp']} widths={[480, 800, 1200]} sizes="(min-width: 900px) 50vw, 100vw" alt={alt} loading="eager" fetchpriority="high" /></figure>
   </header>
-  <section class="wrap h-answer">
-    <p class="h-lede" data-reveal>{answer}</p>
-    <slot />
-  </section>
   <SpokeList cluster={cluster} heading={`Everything in ${hub.name}`} />
   {faq.length > 0 && (
-    <section class="wrap faq h-faq" aria-labelledby="hfaq">
-      <h2 id="hfaq">Quick answers</h2>
-      {faq.map((f) => <details><summary>{f.q}</summary><p>{f.a}</p></details>)}
+    <section class="section tone-green faq" aria-labelledby="hfaq">
+      <div class="wrap h-faq">
+        <h2 id="hfaq">Quick answers</h2>
+        <div>{faq.map((f) => <details><summary>{f.q}</summary><p>{f.a}</p></details>)}</div>
+      </div>
     </section>
   )}
-  <section class="wood wood-edge h-cta">
+  <section class="section tone-paper h-cta">
     <div class="wrap">
       <h2>Questions before you come?</h2>
-      <p>Message us with your date, time and number of guests. Open every day, 10 AM to 11 PM.</p>
+      <p class="muted">Message us with your date, time and number of guests. Open every day, 10 AM to 11 PM.</p>
       <div class="btns">
-        <a class="btn red" data-magnetic href={waLink('Hello Red Wood Farm, I have a question.')} target="_blank" rel="noopener"><Icon name="wa" />WhatsApp {site.phoneDisplay}</a>
+        <a class="btn red" href={waLink('Hello Red Wood Farm, I have a question.')} target="_blank" rel="noopener"><Icon name="wa" />WhatsApp {site.phoneDisplay}</a>
         <a class="btn ghost" href={u('/menu/')}><Icon name="menu" />See the menu</a>
       </div>
     </div>
   </section>
 </Base>
 <style>
-  .h-head { position: relative; height: 72svh; min-height: 460px; overflow: hidden; display: flex; align-items: flex-end; }
-  .h-img { position: absolute; inset: -6% 0; }
+  .h-head { display: flex; flex-direction: column-reverse; padding-top: var(--head); }
+  .h-img { aspect-ratio: 4 / 3; overflow: hidden; }
   .h-img :global(img) { width: 100%; height: 100%; object-fit: cover; }
-  .h-head::after { content: ''; position: absolute; inset: 0; background: linear-gradient(rgb(11 15 12 / 0.3), rgb(11 15 12 / 0.15) 35%, var(--ink) 97%); }
-  .h-copy { position: relative; z-index: 1; padding-bottom: 6vh; }
+  .h-copy { padding: 26px var(--gutter) 44px; }
   .h-copy h1 { font-size: var(--t-1); max-width: 15ch; }
-  .h-answer { padding-top: 48px; }
-  .h-lede { font: 400 clamp(1.3rem, 1rem + 1.4vw, 2.2rem)/1.25 var(--serif); max-width: 34ch; }
-  .h-faq { padding-bottom: 80px; }
+  .h-lede { color: var(--mute); font-size: clamp(1.0625rem, 1rem + 0.3vw, 1.25rem); max-width: 52ch; }
+  @media (min-width: 900px) {
+    .h-head { display: grid; grid-template-columns: 1fr 1fr; min-height: 72svh; }
+    .h-copy { align-self: center; padding: 56px clamp(32px, 4vw, 72px) 56px var(--gutter); }
+    .h-img { aspect-ratio: auto; }
+  }
+  .h-faq { display: grid; gap: 24px; }
   .h-faq h2 { font-size: var(--t-2); }
-  .h-cta { padding-block: 72px; }
+  @media (min-width: 900px) { .h-faq { grid-template-columns: 4fr 7fr; gap: 64px; } }
   .h-cta h2 { font-size: var(--t-2); }
-  .h-cta p { color: var(--ivory-2); }
 </style>

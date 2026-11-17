@@ -145,3 +145,32 @@ Avoid: Cinzel and thin Cormorant everywhere (too wedding-invitation), a privacy 
 - **Type pairing ideas:** a display serif with a clean grotesk. Options: Fraunces or Gloock for headlines with Hanken Grotesk or Schibsted Grotesk for body; Instrument Sans also works for body. A premium alternative is PP Editorial New or Reckless with General Sans or Satoshi. Set a serif-over-grotesk split for section titles ("THE / LAWN"), as Lando's "ON / TRACK" does. Banned: Inter, Roboto, Arial, Poppins, Montserrat, and also skip Syne, Clash Display and Cinzel.
 - **Copy tone:** short, warm, confident lines with one running idea, as Disrupt uses "therapy". For example, "Dinner under a thousand lights", "Your party, our lawn", "The tunnel is lit. Your table is ready." Use sentence case for body and capitals only for small labels and the hero headline.
 - **Sections in order:** Hero, then "Tonight at the farm" (hours and a live chip), Signature plates, the pinned evening-to-night story, Parties and lawn events (three cards: Birthdays, Kitty parties, Weddings and functions), Menu, Gallery, Find us (map and parking), and a final full-bleed night photo with one WhatsApp button.
+
+---
+
+## Redesign round (17 Nov 2026): five restaurant sites with light and dark section rhythm
+
+Sources: the Awwwards Hotel & Restaurant and Restaurant listings. Each live homepage was captured full-page at 390 and 1440 px with Playwright; the captures are in `report/redesign/research/`. Fonts were judged by eye from the captures, not checked in code.
+
+| Site | Award | What it does | What we borrow |
+|---|---|---|---|
+| **Ballena** (ballenacabo.com, fine dining, Los Cabos) | Honorable Mention, Jun 2026 | Alternates bone-white editorial blocks with full-bleed photos and solid colour panels: a terracotta menu panel and a sage-green contact card. A big caps grotesk carries the headlines. A four-tile grid links Events, Gallery and Gift cards. | **A solid colour panel holding the text beside a photo**, never text on the photo. A colour block as a section (our deep green). The contact and hours card as its own coloured panel. |
+| **Studenterkilden** (studenterkilden.dk, inn and event venue, Denmark) | Honorable Mention, Aug 2026 | White page with a centred headline, then a large single photo, then a three-up "offering" row (photo, title, two lines), then a dark charcoal story band, then a full-bleed photo, then the FAQ. "Book a table" plus "View packages" in the hero. | **The large single image with a short caption.** A three-up row for occasions (birthdays, kitty, functions) on white. One quiet dark band for the story. A white-ground FAQ for legibility. |
+| **Qissa** (qissa.co.uk, Indian restaurant, UK) | Listed (PRO profile) | Navy and gold throughout, with italic gold accent words in every heading, a dish carousel and stat counters. | **Anti-reference:** the same monotone-dark-plus-italic-accent pattern the owner disliked on our site. Worth keeping: "View menu" and "Reserve a table" side by side in the hero, and category tiles with a photo, a name and one line. |
+| **Burrito Madre** (burritomadre.rs, Serbia) | Honorable Mention, Jul 2026 | Cream ground, food photos cut out on a grid, bold colour blocks (orange, deep green) and a deep-green footer. | **Deep green as a real section colour** (the footer and the "Join the crew" card), next to cream. Dishes as a clean grid with names under them. |
+| **Pier88 Coast** (pier88coast.com, Egypt) | Listed | Full-bleed sea photo and a script title, then mostly empty white with scroll-driven object animation. On mobile the page is near-empty until animations fire. | **Anti-reference for mobile:** scroll-scrubbed content that shows nothing until JavaScript runs. Our phones get content-first stacks with simple reveals. |
+
+### Applied to Red Wood Farm
+1. **Section rhythm:**
+   - night (hero, the tunnel)
+   - ivory (intro, hours card)
+   - deep green (dishes)
+   - ivory (occasions)
+   - night (a full-width quote band)
+   - ivory (visit)
+   - green footer
+2. **Text always sits on a solid panel**, beside or below the photo (Ballena).
+3. **One large single image with a caption** (Studenterkilden) for the tunnel at night.
+4. **Dishes:** a swipe carousel on phones with two cards per view, and a grid on desktop (Burrito Madre and Qissa's tiles).
+5. **No eyebrow labels and no italic accent words** (the Qissa anti-reference); headlines in plain sentence case.
+6. **No scroll-scrubbed content on phones** (the Pier88 anti-reference).

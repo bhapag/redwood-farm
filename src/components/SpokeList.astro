@@ -1,35 +1,46 @@
 ---
 // Lists every page in a cluster (hub to spokes). Used on hub pages.
+import Icon from './Icon.astro';
 import { pagesIn, pathOf } from '../data/pages.js';
 import { u } from '../data/urls.js';
-const { cluster, heading = 'All guides in this section' } = Astro.props;
+const { cluster, heading = 'All guides in this section', tone = 'paper' } = Astro.props;
 const list = await pagesIn(cluster);
 ---
 {list.length > 0 && (
-  <section class="spokes wrap" aria-labelledby={`sp-${cluster}`}>
-    <h2 id={`sp-${cluster}`} class="sp-h">{heading}</h2>
-    <ol class="sp-list" role="list">
-      {list.map((p, i) => (
-        <li data-reveal>
-          <a href={u(pathOf(p))}>
-            <span class="sp-n">{String(i + 1).padStart(2, '0')}</span>
-            <span class="sp-t">{p.data.title}</span>
-            <span class="sp-d">{p.data.description}</span>
-          </a>
-        </li>
-      ))}
-    </ol>
+  <section class={`spokes tone-${tone}`} aria-labelledby={`sp-${cluster}`}>
+    <div class="wrap sp-wrap">
+      <h2 id={`sp-${cluster}`} class="sp-h">{heading}</h2>
+      <ul class="sp-list" role="list">
+        {list.map((p) => (
+          <li>
+            <a href={u(pathOf(p))}>
+              <span class="sp-t">{p.data.title}</span>
+              <span class="sp-d">{p.data.description}</span>
+              <Icon name="arrow" />
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
   </section>
 )}
 <style>
   .spokes { padding-block: clamp(56px, 8vw, 110px); }
   .sp-h { font-size: var(--t-2); }
-  .sp-list { list-style: none; padding: 0; margin: 32px 0 0; }
-  .sp-list a { display: grid; gap: 6px 28px; padding: 24px 0; border-top: 1px solid var(--line); text-decoration: none; transition: padding 0.5s var(--ease); }
+  .sp-list { list-style: none; padding: 0; margin: 24px 0 0; }
+  .sp-list a { display: grid; grid-template-columns: 1fr 22px; gap: 4px 18px; padding: 18px 0; border-top: 1px solid var(--line); text-decoration: none; }
   .sp-list li:last-child a { border-bottom: 1px solid var(--line); }
-  @media (min-width: 900px) { .sp-list a { grid-template-columns: 60px 1fr 1.1fr; align-items: baseline; } .sp-list a:hover { padding-left: 14px; } }
-  .sp-n { color: var(--red-ink); font-size: var(--t-small); }
-  .sp-t { font: 450 clamp(1.25rem, 1rem + 1vw, 1.8rem)/1.2 var(--serif); }
-  .sp-list a:hover .sp-t { color: var(--red-ink); }
-  .sp-d { font-size: 0.93rem; color: var(--mute); }
+  .sp-t { font: 400 clamp(1.2rem, 1.05rem + 0.6vw, 1.55rem)/1.22 var(--serif); grid-column: 1; }
+  .sp-d { font-size: var(--t-small); color: var(--mute); grid-column: 1; }
+  .sp-list :global(svg) { grid-column: 2; grid-row: 1 / span 2; align-self: center; width: 20px; height: 20px; color: var(--accent); transition: transform 0.35s var(--ease); }
+  .sp-list a:hover .sp-t { color: var(--accent); }
+  .sp-list a:hover :global(svg) { transform: translateX(4px); }
+  @media (min-width: 900px) {
+    .sp-wrap { display: grid; grid-template-columns: 4fr 8fr; gap: 64px; align-items: start; }
+    .sp-h { position: sticky; top: calc(var(--head) + 32px); }
+    .sp-list { margin-top: 0; }
+    .sp-list a { grid-template-columns: 1fr 1fr 22px; align-items: baseline; }
+    .sp-d { grid-column: 2; grid-row: 1; }
+    .sp-list :global(svg) { grid-column: 3; grid-row: 1; }
+  }
 </style>

@@ -168,7 +168,7 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'WebSite', name: sit
     <div class="dswap wrap">
       <ol class="dswap-list" role="list">
         {dishes.map((d, i) => (
-          <li><a href={u(`/menu/#${d.item.catId}`)} data-i={i} aria-current={i === 0 ? 'true' : undefined}>
+          <li><a href={u(`/menu/#${d.item.catId}`)} data-i={i}>
             <span class="dswap-name">{d.name}</span>
             <span class="dswap-price">{price(d.item)}</span>
           </a></li>
@@ -480,9 +480,9 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'WebSite', name: sit
   }
 
   /* Dishes as menu cards: no food photos (owner rule: real photos only), so the type carries the card. */
-  .dtilt > a { min-height: 250px; display: flex; flex-direction: column; background: var(--paper); border-top: 5px solid var(--redwood); }
+  .dtilt > a { display: flex; flex-direction: column; background: var(--paper); border-top: 5px solid var(--redwood); }
   .dtilt-panel { padding: 24px 22px 22px; display: flex; flex-direction: column; flex: 1; }
-  .dtilt-panel h3 { font-size: clamp(1.7rem, 7vw, 2.1rem); line-height: 1.05; margin: 0 0 auto; padding-bottom: 18px; }
+  .dtilt-panel h3 { font-size: clamp(1.7rem, 7vw, 2.1rem); line-height: 1.05; margin: 0 0 16px; min-height: 2.1em; }
   .dtilt-line { order: 2; margin-top: 8px; }
   .dtilt-meta { order: 1; margin: 0; padding-top: 14px; border-top: 1px solid var(--line); }
   .dtilt-price { font: 400 1.6rem/1 var(--serif); color: var(--redwood); }

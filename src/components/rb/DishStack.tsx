@@ -1,13 +1,18 @@
 // Phones: the signature dishes as a swipe-to-flip card stack (React Bits Stack).
 // Text sits on a solid panel under each photo, never on it.
+import { useEffect, useState } from 'react';
 import Stack from '../reactbits/Stack/Stack';
 
 export interface Dish { name: string; price: string; veg: boolean; img: string; alt: string; line: string; href: string }
 
 export default function DishStack({ dishes }: { dishes: Dish[] }) {
+  // Photos get their source only after hydration (600 px before the stack scrolls in), so on a slow
+  // connection they never compete with the hero photo during page load.
+  const [ready, setReady] = useState(false);
+  useEffect(() => setReady(true), []);
   const cards = dishes.map((d) => (
     <article className="dstack-card" key={d.name}>
-      <img src={d.img} alt={d.alt} width={480} height={600} loading="lazy" decoding="async" draggable={false} />
+      <img src={ready ? d.img : undefined} alt={d.alt} width={480} height={600} decoding="async" draggable={false} />
       <div className="dstack-panel">
         <h3>{d.name}</h3>
         <p className="dstack-meta">

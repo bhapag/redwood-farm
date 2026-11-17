@@ -1,35 +1,20 @@
 # DEPLOY: hosting, the domain, and what to do after buying it
 
-## Launch status: redwoodfarm.in (18 Nov 2026, 00:30 IST)
+## Current state (18 Nov 2026, 03:00 IST): GitHub Pages is live, the domain is pending
 
-The owner bought **redwoodfarm.in** at GoDaddy and approved the hbagga52 Cloudflare account for Red Wood Farm hosting.
+**Owner decision (18 Nov, night):** the domain is pending. The live, indexed site is **https://bhapag.github.io/redwood-farm/**, deployed with `bash scripts/deploy-gh.sh "message"`. The printed QR codes (`/`, `/party/`, `/menu/`) serve the site directly. To switch to the domain later, follow **docs/DOMAIN-SWITCH.md**.
 
-| Piece | State |
-|---|---|
-| Source | github.com/bhapag/redwood-farm `main`, clean and pushed. |
-| Cloudflare Pages | Project `redwood-farm` (hbagga52 account) builds `main`: `npx astro build`, output `dist`, env `NODE_VERSION=22`, `PUBLIC_CANONICAL_ORIGIN=https://redwoodfarm.in`. Live at https://redwood-farm.pages.dev (sends `X-Robots-Tag: noindex` via `public/_headers`; only the domain is indexable). |
-| Auto-deploy | The Pages Git link shows "disconnected", so a **deploy hook** (`github-main-push`) is called by a GitHub webhook on every push to `main` (repo Settings, Webhooks). The hook URL is a secret; it lives only in Cloudflare and GitHub. |
-| Cloudflare zone | `redwoodfarm.in` added on the **Free** plan. Status **pending** until the nameservers change. Assigned nameservers: **dexter.ns.cloudflare.com** and **harleigh.ns.cloudflare.com**. Bot Preference Sync is off (our own robots.txt is served). |
-| Zone settings done | SSL/TLS **Full (strict)**; **Always Use HTTPS** on; redirect rule **www to apex 301** (preserves path and query). HSTS: turn on in SSL/TLS, Edge Certificates, only after https://redwoodfarm.in loads with a valid certificate. |
-| DNS records | TXT `@` google-site-verification (Search Console, redwoodfarm7). The apex and www records are created by Pages when the custom domains are added (needs the zone active). |
-| **GoDaddy (blocker)** | The domain is on **Registrar Hold: .IN KYC verification required**. Nameservers cannot be changed until the registrant (Jaspal Singh, +91 74638 81005) verifies with Aadhaar. **Owner action:** GoDaddy, My Domains, redwoodfarm.in, yellow banner, **Validate**, Verify your contact. The details must match the registrant data or it fails. |
-| Search Console | Domain property `redwoodfarm.in` added in redwoodfarm7@gmail.com, **not verified yet** (Verify later). It verifies once the zone is active (the TXT record is already in Cloudflare). |
-| Bing Webmaster + IndexNow | Waits for Search Console verification (import from Search Console). |
-| Google Business Profile | **Verification required** (checked 18 Nov as redwoodfarm7). Per the rules, nothing was edited. After verification, set the website field to https://redwoodfarm.in. |
-| GitHub Pages copy (QR codes) | Still the full site until the domain works. Then run `bash scripts/deploy-gh-redirect.sh`: every path on bhapag.github.io/redwood-farm/ forwards to the same path on https://redwoodfarm.in (meta refresh + JavaScript with query and hash + rel=canonical, 404 catch-all). |
-| Vercel preview | Frozen with noindex. Delete the `redwood-farm` project in the Sales Leak team once the domain works. |
-
-### Remaining steps after KYC (in order)
-1. GoDaddy, redwoodfarm.in, DNS, Nameservers, Change, "I'll use my own nameservers": `dexter.ns.cloudflare.com`, `harleigh.ns.cloudflare.com`. Turn DNSSEC off at GoDaddy if it is on.
-2. Cloudflare, redwoodfarm.in Overview, "Check nameservers now". Wait for **Active** (minutes to a few hours).
-3. Pages project, Custom domains: add `redwoodfarm.in`, then `www.redwoodfarm.in`. Wait for both to show Active with SSL.
-4. Check: `curl -sI https://redwoodfarm.in/` (200, no `x-robots-tag`), `curl -sI https://www.redwoodfarm.in/menu/` (301 to apex), `curl -s https://redwoodfarm.in/sitemap.xml` (domain URLs only).
-5. Turn on HSTS (max-age 6 months, include subdomains, no preload yet).
-6. `bash scripts/deploy-gh-redirect.sh`, then test the QR paths `/redwood-farm/`, `/redwood-farm/party/`, `/redwood-farm/menu/`.
-7. Search Console (redwoodfarm7): Verify the Domain property; submit `https://redwoodfarm.in/sitemap.xml` (it includes the image entries); URL Inspection, Request indexing for Home, Menu, Parties, Visit, FAQ and the top 10 guides; live-test the favicon.
-8. Bing Webmaster Tools: import from Search Console; submit the sitemap; send IndexNow for all URLs.
-9. Google Business Profile: only if verified, set the website to https://redwoodfarm.in.
-10. Delete the Vercel project; remove `vercel.json`.
+- **One config value:** `SITE_URL` in `site.config.mjs` (now the GitHub Pages address). It drives canonicals, the sitemap and image sitemap, robots.txt, llms.txt / llms-full.txt, OG/Twitter, schema and the base path.
+- **Search Console (redwoodfarm7):**
+  - URL-prefix property `https://bhapag.github.io/redwood-farm/` verified with `public/googlece72478a4790fdde.html`
+  - `sitemap.xml` submitted
+  - indexing requested for 15 URLs
+  - the Domain property `redwoodfarm.in` is verified too (TXT record in Cloudflare)
+- **IndexNow:** `python scripts/indexnow.py` sends every sitemap URL (key file `public/<key>.txt`, key in `scripts/indexnow.key`). 63 URLs were accepted on 18 Nov.
+- **Bing Webmaster Tools:** not set up. In Chrome, Bing Webmaster is signed in to a different (non-Red Wood) account, and signing in as redwoodfarm7 needs a password prompt. Owner step: open bing.com/webmasters as redwoodfarm7, then Import from Google Search Console, then submit `sitemap.xml`.
+- **Google Business Profile:** "Verification required" (checked 18 Nov, 02:30). Nothing was edited.
+- **Cloudflare mirror:** redwoodfarm.in and redwood-farm.pages.dev serve the same build with `X-Robots-Tag: noindex` and canonicals pointing at GitHub Pages, so there is no duplicate indexing. Cloudflare builds `main` automatically through the deploy hook and webhook.
+- **Vercel:** frozen preview with noindex.
 
 ## How to redo the whole setup without Claude (records as of 18 Nov 2026)
 
@@ -61,7 +46,7 @@ The owner bought **redwoodfarm.in** at GoDaddy and approved the hbagga52 Cloudfl
 ### Cloudflare Pages project redwood-farm
 - Source: GitHub `bhapag/redwood-farm`, production branch `main`.
 - Build command `npx astro build`, output `dist`, root `/`.
-- Environment variables: `NODE_VERSION=22`, `PUBLIC_CANONICAL_ORIGIN=https://redwoodfarm.in`.
+- Environment variables: `NODE_VERSION=22`. A leftover `PUBLIC_CANONICAL_ORIGIN` variable is ignored by the code (the address comes from `SITE_URL`). Because `SITE_URL` is the GitHub Pages address, this mirror builds with base `/redwood-farm/`, and `public/_redirects` (`/redwood-farm/*` to `/:splat`) makes its links work. It is noindex either way.
 - Deploys: the Git link shows "disconnected", so a deploy hook (`github-main-push`, Settings, Builds) is called by a GitHub webhook (repo Settings, Webhooks, push events). To rebuild by hand: Deployments, the latest one, "Retry deployment", or push any commit to `main`.
 - Custom domains: `redwoodfarm.in`, `www.redwoodfarm.in`.
 - `public/_headers` sends `X-Robots-Tag: noindex` on `*.pages.dev` only. `public/_redirects` holds the real 301s.
@@ -71,9 +56,13 @@ The owner bought **redwoodfarm.in** at GoDaddy and approved the hbagga52 Cloudfl
 - Test: open `https://bhapag.github.io/redwood-farm/`, `/party/` and `/menu/`; each must land on the same path on the domain.
 
 ### Everyday changes
-1. Edit the source in `site/`, run `npx astro build`, then `python scripts/qa_check.py`, `python scripts/qa_content.py` and `python scripts/seo_audit.py dist` (all must pass).
-2. Copy into the repo clone and push `main`. Cloudflare builds and deploys in a few minutes.
-3. After content changes, run `python scripts/indexnow.py` to ping Bing and the other IndexNow engines.
+1. Edit the source in `site/`, then run `npx astro build`. Then run these checks, which must all pass:
+   - `MSYS_NO_PATHCONV=1 DIST=dist BASE=/redwood-farm python scripts/qa_check.py`
+   - `python scripts/qa_content.py`
+   - `python scripts/seo_audit.py dist`
+2. Copy into the repo clone and push `main`. This keeps the source and the Cloudflare mirror up to date.
+3. **Publish the live site:** `bash scripts/deploy-gh.sh "message"`. It builds, runs the QA gate and pushes `gh-pages`. Check with `node scripts/qr-test.cjs`.
+4. After content changes, run `python scripts/indexnow.py` to ping Bing and the other IndexNow engines.
 
 ## Earlier state (17 Nov 2026, kept for history)
 

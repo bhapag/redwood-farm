@@ -31,6 +31,50 @@ The owner bought **redwoodfarm.in** at GoDaddy and approved the hbagga52 Cloudfl
 9. Google Business Profile: only if verified, set the website to https://redwoodfarm.in.
 10. Delete the Vercel project; remove `vercel.json`.
 
+## How to redo the whole setup without Claude (records as of 18 Nov 2026)
+
+### Accounts
+| What | Account |
+|---|---|
+| Code | GitHub `bhapag`, repo `bhapag/redwood-farm` (branch `main` = source, `gh-pages` = QR copy) |
+| Hosting + DNS | Cloudflare account hbagga52@gmail.com (owner-approved for Red Wood Farm hosting), Pages project `redwood-farm`, zone `redwoodfarm.in` (Free) |
+| Domain registrar | GoDaddy (owner's account), domain `redwoodfarm.in`, registered 17 Nov 2026, expires 17 Nov 2027 |
+| Search Console, Bing, Google Business Profile | redwoodfarm7@gmail.com only |
+
+### GoDaddy
+- **Nameservers:** custom: `dexter.ns.cloudflare.com`, `harleigh.ns.cloudflare.com` (set 18 Nov 2026, after the .IN KYC cleared).
+- **DNSSEC:** off.
+- The old GoDaddy DNS records (Parked A, www CNAME, `_domainconnect`, `_dmarc`) no longer matter once Cloudflare is authoritative.
+
+### Cloudflare zone redwoodfarm.in: DNS records
+| Type | Name | Content | Proxy | Purpose |
+|---|---|---|---|---|
+| CNAME | `@` (redwoodfarm.in) | `redwood-farm.pages.dev` | Proxied | Site (added by Pages, Custom domains) |
+| CNAME | `www` | `redwood-farm.pages.dev` | Proxied | www, redirected to the apex by the rule below |
+| TXT | `@` | `google-site-verification=…` (exact value: Search Console, Settings, Ownership verification; also visible in Cloudflare DNS) | DNS only | Search Console Domain property (redwoodfarm7) |
+
+### Cloudflare zone settings
+- SSL/TLS: **Full (strict)**. Edge Certificates: **Always Use HTTPS** on. **HSTS** on once HTTPS works (max-age 6 months, include subdomains, no preload).
+- Rules, Redirect Rules: "www to apex 301", request URL `https://www.*`, target `https://${1}`, 301, preserve query string.
+- Bot Preference Sync: off (the site's own robots.txt is served).
+
+### Cloudflare Pages project redwood-farm
+- Source: GitHub `bhapag/redwood-farm`, production branch `main`.
+- Build command `npx astro build`, output `dist`, root `/`.
+- Environment variables: `NODE_VERSION=22`, `PUBLIC_CANONICAL_ORIGIN=https://redwoodfarm.in`.
+- Deploys: the Git link shows "disconnected", so a deploy hook (`github-main-push`, Settings, Builds) is called by a GitHub webhook (repo Settings, Webhooks, push events). To rebuild by hand: Deployments, the latest one, "Retry deployment", or push any commit to `main`.
+- Custom domains: `redwoodfarm.in`, `www.redwoodfarm.in`.
+- `public/_headers` sends `X-Robots-Tag: noindex` on `*.pages.dev` only. `public/_redirects` holds the real 301s.
+
+### QR codes (GitHub Pages copy)
+- `bash scripts/deploy-gh-redirect.sh` publishes `gh-pages` as a redirect site: every path on `https://bhapag.github.io/redwood-farm/` forwards to the same path on `https://redwoodfarm.in` (meta refresh, JavaScript that keeps the query and hash, rel=canonical, 404 catch-all).
+- Test: open `https://bhapag.github.io/redwood-farm/`, `/party/` and `/menu/`; each must land on the same path on the domain.
+
+### Everyday changes
+1. Edit the source in `site/`, run `npx astro build`, then `python scripts/qa_check.py`, `python scripts/qa_content.py` and `python scripts/seo_audit.py dist` (all must pass).
+2. Copy into the repo clone and push `main`. Cloudflare builds and deploys in a few minutes.
+3. After content changes, run `python scripts/indexnow.py` to ping Bing and the other IndexNow engines.
+
 ## Earlier state (17 Nov 2026, kept for history)
 
 | Piece | Where | State |

@@ -62,7 +62,7 @@ VENUE_JOBS = [
     ("2-fairy-light-tunnel/06_light_tunnel.jpg", "tunnel.jpg", NIGHT, None),
     ("2-fairy-light-tunnel/06_light_tunnel.jpg", "tunnel-hero.jpg", NIGHT, (0, 0, 1518, 864)),
     ("2-fairy-light-tunnel/07_lit_garden_path_night.jpg", "garden-path-night.jpg", NIGHT, None),
-    ("2-fairy-light-tunnel/07_lit_garden_path_night.jpg", "hero-path-portrait.jpg", dict(soften=0.5), (220, 0, 1320, 1376)),
+    ("2-fairy-light-tunnel/07_lit_garden_path_night.jpg", "hero-path-portrait.jpg", dict(soften=0.5), (700, 180, 1376, 1376)),  # phones: lamps and path above the copy
     ("2-fairy-light-tunnel/07_lit_garden_path_night.jpg", "hero-path-landscape.jpg", dict(soften=0.5), (0, 248, 1376, 1280)),
     ("2-fairy-light-tunnel/08_lit_palms_path_dusk.jpg", "palms-dusk.jpg", NIGHT, None),
     ("2-fairy-light-tunnel/09_fairy_lit_tree_night.jpg", "fairy-tree.jpg", NIGHT, None),

@@ -17,7 +17,7 @@ import palmTable from '../assets/venue/palm-table.jpg';
 import birthday from '../assets/venue/birthday-arch.jpg';
 import kitty from '../assets/venue/day-lounge.jpg';
 import family from '../assets/venue/function-night.jpg';
-import entrance from '../assets/venue/entrance-arch.jpg';
+import stringWide from '../assets/venue/string-wide.jpg';
 import fairyTree from '../assets/venue/fairy-tree.jpg';
 import pathNight from '../assets/venue/garden-path-night.jpg';
 import nameArch from '../assets/venue/name-arch.jpg';
@@ -78,9 +78,9 @@ const hubs = await Promise.all(Object.entries(featured).map(async ([c, slugs]) =
 }));
 const allPrices = allItems.flatMap((i) => [i.half, i.full]).filter(Boolean);
 const range = `₹${Math.min(...allPrices)} to ₹${Math.max(...allPrices)}`;
-const heroSet = async (src, widths, format) => (await Promise.all(widths.map(async (w) => `${(await getImage({ src, width: w, format, quality: format === 'avif' ? 40 : 60 })).src} ${w}w`))).join(', ');
+const heroSet = async (src, widths, format) => (await Promise.all(widths.map(async (w) => `${(await getImage({ src, width: w, format, quality: format === 'avif' ? 32 : 55 })).src} ${w}w`))).join(', ');
 const hero = {
-  pAvif: await heroSet(heroPortrait, [480, 640, 828, 1100], 'avif'), pWebp: await heroSet(heroPortrait, [480, 640, 828, 1100], 'webp'),
+  pAvif: await heroSet(heroPortrait, [480, 676], 'avif'), pWebp: await heroSet(heroPortrait, [480, 676], 'webp'),
   lAvif: await heroSet(heroLandscape, [960, 1376], 'avif'), lWebp: await heroSet(heroLandscape, [960, 1376], 'webp'),
   img: (await getImage({ src: heroPortrait, width: 720, format: 'jpg', quality: 70 })).src,
 };
@@ -97,7 +97,7 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'WebSite', name: sit
       <source media="(min-width: 900px)" type="image/webp" srcset={hero.lWebp} sizes="100vw" />
       <source type="image/avif" srcset={hero.pAvif} sizes="100vw" />
       <source type="image/webp" srcset={hero.pWebp} sizes="100vw" />
-      <img src={hero.img} width="1100" height="1376" alt="The lit garden path at Red Wood Farm at night, with lamp posts and fairy lights along the walk" loading="eager" fetchpriority="high" decoding="async" />
+      <img src={hero.img} width="676" height="1196" alt="The lit garden path at Red Wood Farm at night, with lamp posts and fairy lights along the walk" loading="eager" fetchpriority="high" decoding="async" />
     </picture>
     <span class="hero-end" data-hero-end aria-hidden="true"></span>
     <p class="hero-open wrap" data-open>Open daily, 10 AM to 11 PM</p>
@@ -120,11 +120,6 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'WebSite', name: sit
         <a class="link" href={u('/about/')} data-reveal>About Red Wood Farm <Icon name="arrow" /></a>
       </div>
       <div class="intro-facts" data-reveal>
-        <ul class="stats" role="list">
-          <li><span class="stat-n">187</span><span class="stat-l">dishes on the menu</span></li>
-          <li><span class="stat-n">13</span><span class="stat-l">hours a day, every day</span></li>
-          <li><span class="stat-n">4.2<span class="stat-star" aria-hidden="true">★</span></span><span class="stat-l">Google rating</span></li>
-        </ul>
         <dl class="facts" aria-label="Hours and address">
           <div><dt>Hours</dt><dd>{site.hoursDisplay}</dd></div>
           <div><dt>Address</dt><dd>VPO Daad, Pakhowal Road, opposite Cerajot Tiles, near Omaxe Flats, Ludhiana</dd></div>
@@ -140,7 +135,7 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'WebSite', name: sit
 
   <!-- The fairy-light tunnel, the real photo, full width -->
   <section class="tunnel bleed parallax" aria-labelledby="tun-h">
-    <Picture src={tunnel} formats={['avif', 'webp']} widths={[640, 960, 1280, 1536]} sizes="100vw" alt="The fairy-light tunnel at Red Wood Farm, an arched walkway covered in thousands of warm lights" loading="lazy" />
+    <Picture src={tunnel} formats={['avif', 'webp']} widths={[640, 960, 1280, 1536]} sizes="(max-width: 899px) 75vw, 100vw" quality={50} alt="The fairy-light tunnel at Red Wood Farm, an arched walkway covered in thousands of warm lights" loading="lazy" />
     <div class="wrap bleed-copy">
       <h2 id="tun-h" data-reveal>Walk in through the lights</h2>
       <p data-reveal>Come in through the garden gate and the fairy-light tunnel. Every venue photo on this page is the real place.</p>
@@ -226,7 +221,7 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'WebSite', name: sit
 
   <section class="visit tone-night" aria-labelledby="visit-h">
     <div class="visit-grid">
-      <div class="visit-photo"><Picture src={entrance} formats={['avif', 'webp']} widths={[640, 960, 1280]} sizes="(min-width: 900px) 50vw, 100vw" alt="The hedge and flower entrance arch at Red Wood Farm" loading="lazy" /></div>
+      <div class="visit-photo"><Picture src={stringWide} formats={['avif', 'webp']} widths={[640, 960, 1280]} sizes="(min-width: 900px) 50vw, 100vw" alt="Strings of warm lights over lounge seating on the lawn at night" loading="lazy" /></div>
       <div class="visit-copy">
         <h2 id="visit-h" data-reveal>Opposite Cerajot Tiles, near Omaxe Flats</h2>
         <address class="lede" data-reveal>{site.address.full}</address>
@@ -246,7 +241,7 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'WebSite', name: sit
   .hero::after { background:
     linear-gradient(180deg, rgb(9 12 10 / 0.8) 0%, rgb(9 12 10 / 0.35) 20%, rgb(9 12 10 / 0.25) 40%),
     linear-gradient(0deg, rgb(9 12 10 / 0.97) 0%, rgb(9 12 10 / 0.85) 34%, rgb(9 12 10 / 0.3) 62%, rgb(9 12 10 / 0) 78%); }
-  .hero :global(img) { object-position: 100% 50%; }
+  .hero :global(img) { object-position: 60% 30%; }
   @media (prefers-reduced-motion: no-preference) {
     .hero :global(img) { animation: arrive 2.8s var(--slow) both; }
     .hero-in > * { animation: rise 1.2s var(--ease) both; }
@@ -272,7 +267,7 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'WebSite', name: sit
   @media (min-width: 900px) {
     .hero { min-height: 100svh; padding-bottom: clamp(48px, 8vh, 96px); }
     .hero::after { background:
-      linear-gradient(180deg, rgb(9 12 10 / 0.6) 0%, rgb(9 12 10 / 0) 18%),
+      linear-gradient(180deg, rgb(9 12 10 / 0.8) 0%, rgb(9 12 10 / 0.35) 12%, rgb(9 12 10 / 0) 24%),
       linear-gradient(90deg, rgb(9 12 10 / 0.92) 0%, rgb(9 12 10 / 0.72) 40%, rgb(9 12 10 / 0.25) 60%, rgb(9 12 10 / 0) 74%),
       linear-gradient(0deg, rgb(9 12 10 / 0.7) 0%, rgb(9 12 10 / 0) 40%); }
     .hero :global(img) { object-position: 50% 60%; }

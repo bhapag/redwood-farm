@@ -75,7 +75,7 @@ const speed = (n) => `${Math.max(60, n * 10)}s`;
 
   .rv-row { overflow: hidden; padding-block: 8px; -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent); mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent); }
   .rv-row + .rv-row { margin-top: 12px; }
-  .rv-track { list-style: none; margin: 0; padding: 0; display: flex; gap: 16px; width: max-content; animation: rv-left var(--dur) linear infinite; }
+  .rv-track { list-style: none; margin: 0; padding: 0; display: flex; align-items: flex-start; gap: 16px; width: max-content; animation: rv-left var(--dur) linear infinite; }
   .rv-b .rv-track { animation-name: rv-right; }
   .rv-row:hover .rv-track, .rv-row:focus-within .rv-track, .rv-row.paused .rv-track { animation-play-state: paused; }
   @keyframes rv-left { from { transform: translateX(0); } to { transform: translateX(calc(-50% - 8px)); } }
@@ -86,7 +86,7 @@ const speed = (n) => `${Math.max(60, n * 10)}s`;
   .rv-stars svg { width: 17px; height: 17px; }
   .rv-stars .on { fill: var(--gold); }
   .rv-stars .off { fill: none; stroke: var(--mute); stroke-width: 1.5; }
-  .rv-card blockquote { margin: 0; flex: 1; }
+  .rv-card blockquote { margin: 0; }
   .rv-card blockquote p { margin: 0; font: 400 1.0625rem/1.42 var(--serif); }
   @media (min-width: 900px) { .rv-card blockquote p { font-size: 1.125rem; } }
   .rv-card blockquote p::before { content: '\201C'; } .rv-card blockquote p::after { content: '\201D'; }

@@ -13,7 +13,7 @@ const { chromium, devices } = require('playwright');
     await pg.waitForTimeout(900);
     await pg.screenshot({ path: `${out}/${prefix}-${w}-first.png` });
     await pg.addStyleTag({ content: '.site-head,.actionbar{visibility:hidden!important}' });
-    const secs = await pg.$$('main > section, main > div > section, footer');
+    const secs = await pg.$$('main > section, main > div > section, main .m-sec, footer');
     let i = 0;
     for (const s of secs) {
       const box = await s.boundingBox();

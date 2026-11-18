@@ -33,7 +33,7 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', it
 ---
 <Base title="Birthday & Kitty Party Venue in Ludhiana | Red Wood Farm Lawn" description="Birthday parties, kitty parties, family functions and team lunches on a fairy-lit garden lawn on Pakhowal Road, Ludhiana. Food from our own kitchen. Enquire with a message." schema={[faqSchema(partyFaq), crumbs]} og="og-party.jpg" current="Parties">
   <section class="p-bleed bleed">
-    <Picture src={functionNight} formats={['avif', 'webp']} widths={[640, 960, 1376]} sizes="100vw" alt="An evening function on the Red Wood Farm lawn with a buffet line" loading="eager" fetchpriority="high" />
+    <Picture src={functionNight} formats={['avif', 'webp']} widths={[480, 828, 1376]} sizes="(max-width: 899px) 75vw, 100vw" quality={48} alt="An evening function on the Red Wood Farm lawn with a buffet line" loading="eager" fetchpriority="high" />
     <div class="wrap">
       <h1>Birthday, kitty and family parties on the lawn</h1>
       <p class="p-lede">Red Wood Farm is a garden party venue on outer Pakhowal Road, Ludhiana. We host birthday parties, kitty parties, family functions and corporate lunches on a fairy-lit lawn, with food from our own kitchen. To book, send your date, time and guest count.</p>
@@ -68,10 +68,10 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', it
     <div class="wrap split">
       <div>
         <h2 id="enq-h" class="p-h2" data-reveal>Plan your party</h2>
-        <p class="muted">Fill this in and it opens a chat with your message ready ready to send. Nothing is saved on this website.</p>
+        <p class="muted">Fill this in and it opens a chat with your message ready to send. Nothing is saved on this website.</p>
         <p class="muted">Guest capacity, per-plate prices and packages: ask us and we will share current details for your date.</p>
       </div>
-      <form class="enq tone-menu" data-enquiry action={site.wa} method="get" target="_blank">
+      <form class="enq tone-green" data-enquiry action={site.wa} method="get" target="_blank">
         <label>Occasion
           <select name="occasion" required>
             <option>Birthday party</option><option>Kitty party</option><option>Family function</option><option>Corporate lunch</option><option>Other</option>
@@ -153,10 +153,11 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', it
   .steps b { font: 400 1.45rem/1.15 var(--serif); }
   .steps b::before { content: counter(s) '. '; color: var(--gold); }
   .steps span { color: var(--mute); }
-  .enq { display: grid; gap: 16px; background: var(--paper); color: var(--ink); border-radius: 4px; padding: clamp(20px, 3vw, 36px); }
+  .enq { display: grid; gap: 16px; border-radius: 4px; padding: clamp(20px, 3vw, 36px); border: 1px solid var(--line); }
   .enq label { display: grid; gap: 8px; font: 650 0.95rem/1.3 var(--sans); }
-  .enq input, .enq select, .enq textarea { min-height: 50px; padding: 10px 14px; border-radius: 8px; border: 1.5px solid rgb(22 21 15 / 0.25); background: #fff; color: var(--ink); font: 400 1.0625rem/1.3 var(--sans); width: 100%; color-scheme: light; }
-  .enq input:focus, .enq select:focus, .enq textarea:focus { outline: 2px solid var(--ink); outline-offset: 1px; }
+  .enq input, .enq select, .enq textarea { min-height: 50px; padding: 10px 14px; border-radius: 8px; border: 1px solid rgb(242 235 220 / 0.28); background: rgb(9 12 10 / 0.55); color: var(--ivory); font: 400 1.0625rem/1.3 var(--sans); width: 100%; color-scheme: dark; }
+  .enq ::placeholder { color: rgb(242 235 220 / 0.55); }
+  .enq input:focus, .enq select:focus, .enq textarea:focus { outline: 2px solid var(--gold); outline-offset: 1px; }
   .enq textarea { resize: vertical; }
   .enq-row { display: grid; gap: 16px; grid-template-columns: 1fr 1fr; }
   @media (max-width: 420px) { .enq-row { grid-template-columns: 1fr; } }

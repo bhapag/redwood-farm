@@ -59,7 +59,7 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', it
 ---
 <Base title="Menu and Prices | Red Wood Farm, Pakhowal Road, Ludhiana" description={`Full menu with prices: ${menu.count} dishes, tandoor, North Indian, Indo-Chinese, breads and desserts. Half and full portions, veg and non-veg marked. Prices include GST.`} schema={[menuSchema, crumbs]} og="og-menu.jpg" current="Menu">
   <header class="m-head bleed">
-    <Picture src={tandoorGlow} formats={['avif', 'webp']} widths={[640, 960, 1400]} sizes="100vw" alt="Skewers cooking inside a glowing clay tandoor" loading="eager" fetchpriority="high" />
+    <Picture src={tandoorGlow} formats={['avif', 'webp']} widths={[480, 828, 1400]} sizes="(max-width: 899px) 75vw, 100vw" quality={48} alt="Skewers cooking inside a glowing clay tandoor" loading="eager" fetchpriority="high" />
     <div class="wrap">
     <h1 class="m-title">Everything we cook, with prices</h1>
     <p class="answer">Red Wood Farm serves {menu.count} dishes: soups, appetizers, tandoor, champ, platters, sizzlers, North Indian mains, breads, rice and desserts. Prices are in rupees and include GST. Many mains come in half and full portions. Open daily, 10 AM to 11 PM, for dine-in and takeaway.</p>
@@ -140,7 +140,6 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', it
     </aside>
   </div>
   </div>
-  <a class="to-top" href="#main" data-top aria-label="Back to the top of the menu"><Icon name="up" /><span>Top</span></a>
 </Base>
 
 <script>
@@ -192,12 +191,6 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', it
   secs.forEach((s) => io.observe(s));
   setActive(secs[0].id);
 
-  // Back to top: shows once the visitor is well into the list.
-  const top = document.querySelector('[data-top]');
-  // No scroll listener: the button appears once the first two categories have scrolled away.
-  const sentinel = document.querySelector('#appetizers');
-  if (sentinel) new IntersectionObserver(([e]) => top.classList.toggle('on', e.boundingClientRect.top < 0)).observe(sentinel);
-  top.addEventListener('click', (e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' }); q.blur(); });
 </script>
 
 <style>

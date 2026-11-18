@@ -106,7 +106,7 @@ const bookMsg = 'Hello Red Wood Farm, I would like to book a table.';
       {nav.map(([l, h]) => <a href={u(h)} aria-current={isCur(l) ? 'page' : undefined}>{l}</a>)}
       <a class="btn gold" href={waLink(bookMsg)} target="_blank" rel="noopener"><Icon name="wa" />Book a table</a>
     </nav>
-    <button class="menu-btn" type="button" aria-haspopup="dialog" aria-controls="sheet" data-sheet-open><Icon name="burger" />Menu</button>
+    <button class="menu-btn" type="button" aria-haspopup="dialog" aria-controls="sheet" data-sheet-open><Icon name="burger" />More</button>
   </header>
 
   <dialog class="sheet" id="sheet" aria-label="Site menu" data-sheet>

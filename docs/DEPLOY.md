@@ -31,6 +31,10 @@ The live, indexed site is **https://redwoodfarm.in**, served by Cloudflare Pages
 - **IndexNow:** 63 domain URLs were accepted (202) on 18 Nov.
 - **Bing Webmaster Tools:** not set up, because signing in as redwoodfarm7 needs a password. Owner step: open bing.com/webmasters, Import from Google Search Console, then submit the sitemap.
 - **Google Business Profile:** still "Verification required", so nothing was edited. Once it is verified, set the website to https://redwoodfarm.in.
+- **Look (night redesign, 18 Nov):**
+  - the design system is in `DESIGN.md` and `.impeccable/design.json`
+  - photos are graded by `python scripts/grade_night.py` from the raw originals; re-run it after adding a photo, then build
+  - menu paper (light) is used only under priced lists
 - **Photos:** the dish, menu-category and guide photos are owner-approved Higgsfield images. The "no AI photos" rule applies to the Google Business Profile only. There is no "representation only" line anywhere.
 
 ## How to redo the whole setup without Claude (records as of 18 Nov 2026)

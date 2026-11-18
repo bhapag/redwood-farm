@@ -1,174 +1,551 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-17T00:00:00Z",
+  "generatedAt": "2026-11-18T03:50:45Z",
   "title": "Design System: Red Wood Farm",
   "extensions": {
     "colorMeta": {
-      "ivory-paper": { "role": "neutral", "displayName": "Ivory Paper", "canonical": "#f7f4ec", "tonalRamp": ["oklch(20% 0.01 90)", "oklch(32% 0.012 90)", "oklch(45% 0.015 90)", "oklch(58% 0.018 90)", "oklch(70% 0.018 90)", "oklch(82% 0.016 90)", "oklch(91% 0.014 90)", "oklch(97% 0.01 90)"] },
-      "ivory-paper-deep": { "role": "neutral", "displayName": "Ivory Paper Deep", "canonical": "#ece6d6" },
-      "ink": { "role": "neutral", "displayName": "Ink", "canonical": "#16150f", "tonalRamp": ["oklch(15% 0.01 100)", "oklch(21% 0.01 100)", "oklch(30% 0.01 100)", "oklch(45% 0.01 100)", "oklch(58% 0.01 100)", "oklch(72% 0.008 100)", "oklch(85% 0.006 100)", "oklch(95% 0.004 100)"] },
-      "ink-mute": { "role": "neutral", "displayName": "Ink Mute", "canonical": "#57564d" },
-      "lawn-green": { "role": "secondary", "displayName": "Lawn Green", "canonical": "#1d3a2b", "tonalRamp": ["oklch(15% 0.03 155)", "oklch(25% 0.04 155)", "oklch(33% 0.045 155)", "oklch(45% 0.05 155)", "oklch(58% 0.045 155)", "oklch(72% 0.035 155)", "oklch(85% 0.025 155)", "oklch(95% 0.012 155)"] },
-      "lawn-green-deep": { "role": "secondary", "displayName": "Lawn Green Deep", "canonical": "#13281d" },
-      "green-mist": { "role": "secondary", "displayName": "Green Mist", "canonical": "#c9d8cd" },
-      "night": { "role": "neutral", "displayName": "Night", "canonical": "#0b0f0c", "tonalRamp": ["oklch(12% 0.01 150)", "oklch(18% 0.012 150)", "oklch(26% 0.014 150)", "oklch(38% 0.014 150)", "oklch(52% 0.012 150)", "oklch(68% 0.01 150)", "oklch(82% 0.008 150)", "oklch(94% 0.005 150)"] },
-      "night-raised": { "role": "neutral", "displayName": "Night Raised", "canonical": "#141a16" },
-      "cream-mute": { "role": "neutral", "displayName": "Cream Mute", "canonical": "#c8c4b6" },
-      "lamp-gold": { "role": "tertiary", "displayName": "Lamp Gold", "canonical": "#f2cf83", "tonalRamp": ["oklch(25% 0.04 85)", "oklch(38% 0.07 85)", "oklch(50% 0.09 85)", "oklch(62% 0.1 85)", "oklch(74% 0.1 85)", "oklch(86% 0.1 85)", "oklch(92% 0.06 85)", "oklch(97% 0.03 85)"] },
-      "redwood": { "role": "primary", "displayName": "Redwood", "canonical": "#8b2e22", "tonalRamp": ["oklch(20% 0.06 32)", "oklch(30% 0.09 32)", "oklch(41% 0.12 32)", "oklch(50% 0.13 32)", "oklch(62% 0.12 32)", "oklch(74% 0.09 32)", "oklch(86% 0.05 32)", "oklch(95% 0.02 32)"] },
-      "redwood-bright": { "role": "primary", "displayName": "Redwood Bright", "canonical": "#a8402c" },
-      "veg-green": { "role": "neutral", "displayName": "Veg Green", "canonical": "#2f8a3c" },
-      "veg-green-on-dark": { "role": "neutral", "displayName": "Veg Green on Dark", "canonical": "#5cc46a" },
-      "nonveg-on-dark": { "role": "neutral", "displayName": "Non-veg on Dark", "canonical": "#e0795c" },
-      "neon-white": { "role": "neutral", "displayName": "Neon White", "canonical": "#effff5" }
+      "night": {
+        "role": "neutral",
+        "displayName": "Night",
+        "canonical": "#090c0a",
+        "tonalRamp": [
+          "#232925",
+          "#3c4a41",
+          "#556c5d",
+          "#6c8f78",
+          "#8ea797",
+          "#b1bfb5",
+          "#d2d9d4",
+          "#f1f3f2"
+        ]
+      },
+      "night-raised": {
+        "role": "neutral",
+        "displayName": "Night Raised",
+        "canonical": "#0e1411",
+        "tonalRamp": [
+          "#222a26",
+          "#3b4c43",
+          "#526f61",
+          "#68947e",
+          "#8baa9b",
+          "#afc1b8",
+          "#d1dad5",
+          "#f1f3f2"
+        ]
+      },
+      "forest": {
+        "role": "neutral",
+        "displayName": "Deep Forest",
+        "canonical": "#102219",
+        "tonalRamp": [
+          "#1e2e26",
+          "#325543",
+          "#437e61",
+          "#51ab7e",
+          "#7bba9b",
+          "#a5cbb8",
+          "#ccded5",
+          "#f0f4f2"
+        ]
+      },
+      "forest-raised": {
+        "role": "neutral",
+        "displayName": "Forest Raised",
+        "canonical": "#17301f",
+        "tonalRamp": [
+          "#1e2e23",
+          "#32543d",
+          "#437e56",
+          "#52aa6e",
+          "#7cba90",
+          "#a6cab1",
+          "#ccded2",
+          "#f0f4f2"
+        ]
+      },
+      "fairy-gold": {
+        "role": "primary",
+        "displayName": "Fairy-Light Gold",
+        "canonical": "#e8c27c",
+        "tonalRamp": [
+          "#362b17",
+          "#654d21",
+          "#9a7227",
+          "#d59826",
+          "#d8ad5e",
+          "#ddc393",
+          "#e7dac4",
+          "#f6f3ee"
+        ]
+      },
+      "fairy-gold-light": {
+        "role": "primary",
+        "displayName": "Light Gold",
+        "canonical": "#f4d9a6",
+        "tonalRamp": [
+          "#382c15",
+          "#694f1e",
+          "#a17420",
+          "#df9c1c",
+          "#dfb057",
+          "#e1c48f",
+          "#e9dbc2",
+          "#f7f4ee"
+        ]
+      },
+      "ivory": {
+        "role": "neutral",
+        "displayName": "Ivory",
+        "canonical": "#f2ebdc",
+        "tonalRamp": [
+          "#302a1c",
+          "#5a4b2d",
+          "#866e3b",
+          "#b79245",
+          "#c3a973",
+          "#d0c1a0",
+          "#e1d9ca",
+          "#f5f3f0"
+        ]
+      },
+      "ivory-mute": {
+        "role": "neutral",
+        "displayName": "Ivory Mute",
+        "canonical": "#bdb6a5",
+        "tonalRamp": [
+          "#2a2823",
+          "#4b463c",
+          "#6d6654",
+          "#91866b",
+          "#a8a08d",
+          "#c0bbb0",
+          "#d9d7d1",
+          "#f3f3f1"
+        ]
+      },
+      "menu-paper": {
+        "role": "neutral",
+        "displayName": "Menu Paper",
+        "canonical": "#efe6d3",
+        "tonalRamp": [
+          "#312a1c",
+          "#5a4b2d",
+          "#876e3a",
+          "#b89244",
+          "#c4a972",
+          "#d0c1a0",
+          "#e1d9c9",
+          "#f5f3f0"
+        ]
+      },
+      "menu-paper-deep": {
+        "role": "neutral",
+        "displayName": "Paper Deep",
+        "canonical": "#e3d8c1",
+        "tonalRamp": [
+          "#2f291e",
+          "#564a31",
+          "#806c41",
+          "#ad8e4f",
+          "#bca67a",
+          "#ccbfa4",
+          "#dfd8cc",
+          "#f4f3f0"
+        ]
+      },
+      "paper-ink": {
+        "role": "neutral",
+        "displayName": "Paper Ink",
+        "canonical": "#1b1813",
+        "tonalRamp": [
+          "#2a2722",
+          "#4c453b",
+          "#6f6452",
+          "#938368",
+          "#aa9f8c",
+          "#c1baaf",
+          "#d9d6d1",
+          "#f3f3f1"
+        ]
+      },
+      "paper-mute": {
+        "role": "neutral",
+        "displayName": "Paper Mute",
+        "canonical": "#5c5446",
+        "tonalRamp": [
+          "#292723",
+          "#4a453d",
+          "#6c6455",
+          "#8f826d",
+          "#a79e8f",
+          "#bfbab1",
+          "#d9d6d2",
+          "#f3f2f1"
+        ]
+      },
+      "paper-accent": {
+        "role": "primary",
+        "displayName": "Paper Accent",
+        "canonical": "#8b5a14",
+        "tonalRamp": [
+          "#372916",
+          "#684a1f",
+          "#9e6b23",
+          "#db8e20",
+          "#dca659",
+          "#dfbf91",
+          "#e8d8c2",
+          "#f7f3ee"
+        ]
+      },
+      "veg-on-paper": {
+        "role": "semantic",
+        "displayName": "Veg on Paper",
+        "canonical": "#2f8a3c",
+        "tonalRamp": [
+          "#1b311e",
+          "#2c5b32",
+          "#388944",
+          "#40bb52",
+          "#70c67c",
+          "#9ed2a6",
+          "#c9e1cc",
+          "#eff5f0"
+        ]
+      },
+      "nonveg-on-paper": {
+        "role": "semantic",
+        "displayName": "Non-veg on Paper",
+        "canonical": "#a8402c",
+        "tonalRamp": [
+          "#331d19",
+          "#603027",
+          "#914030",
+          "#c74c35",
+          "#ce7868",
+          "#d6a399",
+          "#e4cbc6",
+          "#f6f0ef"
+        ]
+      },
+      "veg-on-night": {
+        "role": "semantic",
+        "displayName": "Veg on Night",
+        "canonical": "#5cc46a",
+        "tonalRamp": [
+          "#1c311f",
+          "#2d5a33",
+          "#3a8744",
+          "#43b853",
+          "#72c47d",
+          "#a0d0a6",
+          "#c9e1cd",
+          "#f0f5f0"
+        ]
+      },
+      "nonveg-on-night": {
+        "role": "semantic",
+        "displayName": "Non-veg on Night",
+        "canonical": "#e0795c",
+        "tonalRamp": [
+          "#351e17",
+          "#643123",
+          "#994128",
+          "#d24e29",
+          "#d67a5f",
+          "#dba494",
+          "#e6ccc4",
+          "#f6f0ee"
+        ]
+      },
+      "neon-white": {
+        "role": "primary",
+        "displayName": "Neon White",
+        "canonical": "#fff8ea",
+        "tonalRamp": [
+          "#3c2e10",
+          "#745413",
+          "#b37c0e",
+          "#faa701",
+          "#f2b844",
+          "#ecc984",
+          "#eeddbc",
+          "#f8f4ec"
+        ]
+      }
     },
     "typographyMeta": {
-      "hero": { "displayName": "Hero", "purpose": "Home h1 on phones (--t-hero)." },
-      "display": { "displayName": "Display", "purpose": "Home section h2 and page h1 (--t-1)." },
-      "headline": { "displayName": "Headline", "purpose": "Secondary section heads (--t-2)." },
-      "title": { "displayName": "Title", "purpose": "Card, occasion, FAQ and prose heads (--t-3)." },
-      "body": { "displayName": "Body", "purpose": "Running text, 17px floor on phones, 65ch measure." },
-      "small": { "displayName": "Small", "purpose": "Captions, dish lines, meta (--t-small)." },
-      "label": { "displayName": "Label", "purpose": "Field labels, dt terms, open-now chip. Never above a headline." },
-      "price": { "displayName": "Price", "purpose": "Every price, bold tabular figures." },
-      "neon-name": { "displayName": "Neon Name", "purpose": "The one neon name in the Home hero only." }
+      "display": {
+        "displayName": "Display",
+        "purpose": "The Home hero h1 only."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section h2s and inner-page hero h1s."
+      },
+      "headline-sm": {
+        "displayName": "Headline Small",
+        "purpose": "Review band, footer, menu category heads, party panel titles."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Card and prose subheads."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Running text, 65ch max."
+      },
+      "small": {
+        "displayName": "Small",
+        "purpose": "Captions, meta, dish lines."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Form labels, fact terms, footer column heads, swipe hints; sentence case, never above a heading."
+      },
+      "price": {
+        "displayName": "Price",
+        "purpose": "Every rupee figure; gold on night, ink on paper."
+      },
+      "neon-name": {
+        "displayName": "Neon Name",
+        "purpose": "The name, once, above the Home hero h1."
+      }
     },
-    "tones": [
-      { "name": "tone-paper", "bg": "var(--paper)", "fg": "var(--ink)", "mute": "var(--ink-mute)", "line": "rgb(22 21 15 / 0.14)", "accent": "var(--redwood)", "price": "var(--ink)", "button": "ink on paper", "purpose": "Reading sections." },
-      { "name": "tone-night", "bg": "var(--night)", "fg": "var(--cream)", "mute": "var(--cream-mute)", "line": "rgb(247 244 236 / 0.16)", "accent": "var(--gold)", "price": "var(--gold)", "button": "cream on night", "purpose": "The venue after dark: hero, evening, visit, enquiry." },
-      { "name": "tone-green", "bg": "var(--green)", "fg": "var(--cream)", "mute": "var(--green-soft)", "line": "rgb(247 244 236 / 0.2)", "accent": "var(--gold)", "price": "var(--gold)", "button": "cream with green text", "purpose": "Events and facts: dishes, quotes, steps, cards." }
-    ],
     "shadows": [
-      { "name": "sticky-bar", "value": "0 10px 24px -18px rgb(22 21 15 / 0.35)", "purpose": "Sticky menu search and category bar." },
-      { "name": "floating-pill", "value": "0 10px 24px -10px rgb(0 0 0 / 0.5)", "purpose": "Back-to-top pill." },
-      { "name": "neon-glow", "value": "0 0 1px #effff5, 0 0 8px rgb(140 255 184 / 0.75), 0 0 22px rgb(51 224 127 / 0.45)", "purpose": "text-shadow on the neon name only." }
+      {
+        "name": "gold-hover-glow",
+        "value": "0 10px 26px -14px rgb(232 194 124 / 0.6)",
+        "purpose": "Under a button on hover; removed on press."
+      },
+      {
+        "name": "menu-bar-lift",
+        "value": "0 10px 24px -18px rgb(22 21 15 / 0.35)",
+        "purpose": "Under the sticky menu toolbar on paper."
+      },
+      {
+        "name": "floating-control",
+        "value": "0 10px 24px -10px rgb(0 0 0 / 0.5)",
+        "purpose": "The menu back-to-top pill."
+      },
+      {
+        "name": "neon-glow",
+        "value": "text-shadow: 0 0 1px #fff8ea, 0 0 10px rgb(255 214 150 / 0.55), 0 0 28px rgb(232 194 124 / 0.35)",
+        "purpose": "The neon name only."
+      }
     ],
+    "gradients": [
+      {
+        "name": "bleed",
+        "value": "linear-gradient(180deg, rgb(9 12 10 / 0.35) 0%, rgb(9 12 10 / 0) 28%, rgb(9 12 10 / 0) 45%, rgb(9 12 10 / 0.88) 100%)",
+        "purpose": "Default readable gradient on any full-bleed photo."
+      },
+      {
+        "name": "p-bleed-phone",
+        "value": "linear-gradient(180deg, rgb(9 12 10 / 0.75) 0%, rgb(9 12 10 / 0.2) 20%, rgb(9 12 10 / 0.55) 36%, rgb(9 12 10 / 0.88) 54%, rgb(9 12 10 / 0.97) 100%)",
+        "purpose": "Inner-page hero on phones: copy at the bottom."
+      },
+      {
+        "name": "p-bleed-desktop",
+        "value": "linear-gradient(180deg, rgb(9 12 10 / 0.6) 0%, rgb(9 12 10 / 0) 20%), linear-gradient(90deg, rgb(9 12 10 / 0.9) 0%, rgb(9 12 10 / 0.55) 40%, rgb(9 12 10 / 0) 66%)",
+        "purpose": "Inner-page hero from 900px: copy on the left."
+      }
+    ],
+    "photoGrade": {
+      "source": "scripts/grade_night.py",
+      "purpose": "One warm night grade for every venue and food photo: magenta tamed, soft S-curve with a lifted floor, shadows toward forest-black, highlights toward fairy gold, gentle vignette. Changes colour, contrast and crop only, never content."
+    },
     "motion": [
-      { "name": "ease", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "House ease for every transition." },
-      { "name": "state", "value": "0.3s", "purpose": "Button, chip and pill state changes." },
-      { "name": "reveal", "value": "opacity 0.7s, transform 0.8s, translateY(22px)", "purpose": "Fade-up on enter, all devices, once." },
-      { "name": "sheet-in", "value": "0.35s, translateY(14px) and fade", "purpose": "Menu sheet open." },
-      { "name": "line-reveal", "value": "SplitText lines, yPercent 105, 1s expo.out, stagger 0.07", "purpose": "Desktop-only masked headline rise." },
-      { "name": "parallax", "value": "8% yPercent scrub inside a clipped frame", "purpose": "Desktop only." },
-      { "name": "strip-drift", "value": "x to -overflow, scrub 0.5", "purpose": "Desktop-only film strip drift. Nothing pins." },
-      { "name": "smooth-scroll", "value": "Lenis duration 1.05, cubic out", "purpose": "Desktop only." }
+      {
+        "name": "ease",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "State transitions, buttons, nav underline, sheet."
+      },
+      {
+        "name": "slow",
+        "value": "cubic-bezier(0.22, 0.61, 0.36, 1)",
+        "purpose": "Reveal fades (1.1s) and the Home hero arrival (2.8s)."
+      },
+      {
+        "name": "reveal",
+        "value": "opacity 1.1s, translateY(18px)",
+        "purpose": "Scroll reveal; content stays visible without JS and under reduced motion."
+      },
+      {
+        "name": "parallax",
+        "value": "translateY(-5% to 5%) scale(1.1) on animation-timeline: view()",
+        "purpose": "Inside full-bleed photos only; compositor-only; never pinned."
+      },
+      {
+        "name": "page-transition",
+        "value": "view transition: 0.25s fade out, 0.5s fade in",
+        "purpose": "Between pages; off under reduced motion."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "all durations 0.01ms; reveals shown; review band static",
+        "purpose": "prefers-reduced-motion: reduce."
+      }
     ],
     "breakpoints": [
-      { "name": "small-phone", "value": "420px" },
-      { "name": "tablet", "value": "700px" },
-      { "name": "desktop", "value": "900px" },
-      { "name": "guide-sidebar", "value": "1000px" },
-      { "name": "wide", "value": "1100px" }
+      {
+        "name": "short-phone",
+        "value": "max-height: 680px and max-width: 899px"
+      },
+      {
+        "name": "desktop",
+        "value": "900px"
+      },
+      {
+        "name": "wide",
+        "value": "1360px"
+      }
     ]
   },
   "components": [
     {
-      "name": "Solid Button",
+      "name": "Primary Button",
       "kind": "button",
-      "refersTo": "button-solid-paper",
-      "description": "Primary non-booking action; takes the tone's --btn-bg and --btn-fg.",
-      "html": "<a class=\"ds-btn\" href=\"#\">See the menu</a>",
-      "css": ".ds-btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; padding: 0 24px; border-radius: 999px; background: #16150f; color: #f7f4ec; border: 1.5px solid #16150f; font: 650 1rem/1 'Hanken Grotesk Variable', system-ui, sans-serif; text-decoration: none; transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn:hover { transform: translateY(-1px); } .ds-btn:active { transform: translateY(1px); } .ds-btn:focus-visible { outline: 2px solid #16150f; outline-offset: 3px; }"
-    },
-    {
-      "name": "Book Button",
-      "kind": "button",
-      "refersTo": "button-book",
-      "description": "Redwood pill, only for booking on WhatsApp.",
-      "html": "<a class=\"ds-btn-book\" href=\"#\"><svg viewBox=\"0 0 24 24\" width=\"19\" height=\"19\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"><path d=\"M4 20l1.3-3.9A8 8 0 1 1 8 19z\"/></svg>Book on WhatsApp</a>",
-      "css": ".ds-btn-book { display: inline-flex; align-items: center; gap: 10px; min-height: 50px; padding: 0 24px; border-radius: 999px; background: #8b2e22; color: #f7f4ec; border: 1.5px solid #8b2e22; font: 650 1rem/1 'Hanken Grotesk Variable', system-ui, sans-serif; text-decoration: none; transition: background 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-book:hover { background: #a8402c; border-color: #a8402c; transform: translateY(-1px); } .ds-btn-book:focus-visible { outline: 2px solid #16150f; outline-offset: 3px; }"
+      "refersTo": "button-primary",
+      "description": "Gold pill for the main action on night: Book a table, Directions, Ask about a party.",
+      "html": "<a class=\"ds-btn-gold\" href=\"#\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3Z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/></svg>Book a table</a>",
+      "css": ".ds-btn-gold { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 52px; padding: 0 26px; border-radius: 999px; background: #e8c27c; color: #090c0a; border: 1px solid #e8c27c; font: 650 1rem/1 'Hanken Grotesk Variable', 'Segoe UI', system-ui, sans-serif; letter-spacing: 0.01em; text-decoration: none; transition: background 0.35s cubic-bezier(0.16,1,0.3,1), transform 0.35s cubic-bezier(0.16,1,0.3,1), box-shadow 0.35s cubic-bezier(0.16,1,0.3,1); } .ds-btn-gold svg { width: 19px; height: 19px; } .ds-btn-gold:hover { background: #f4d9a6; border-color: #f4d9a6; transform: translateY(-1px); box-shadow: 0 10px 26px -14px rgb(232 194 124 / 0.6); } .ds-btn-gold:active { transform: translateY(1px); box-shadow: none; } .ds-btn-gold:focus-visible { outline: 2px solid #e8c27c; outline-offset: 3px; }"
     },
     {
       "name": "Ghost Button",
       "kind": "button",
       "refersTo": "button-ghost",
-      "description": "Second action; transparent with a currentColor border.",
-      "html": "<a class=\"ds-btn-ghost\" href=\"#\">Plan a party</a>",
-      "css": ".ds-btn-ghost { display: inline-flex; align-items: center; min-height: 50px; padding: 0 24px; border-radius: 999px; background: transparent; color: #16150f; border: 1.5px solid currentColor; font: 650 1rem/1 'Hanken Grotesk Variable', system-ui, sans-serif; text-decoration: none; transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-ghost:hover { transform: translateY(-1px); } .ds-btn-ghost:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }"
+      "description": "Ivory outline pill, always the second action next to gold.",
+      "html": "<div class=\"ds-ghost-bg\"><a class=\"ds-btn-ghost\" href=\"#\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M5 6h14M5 12h14M5 18h9\" stroke=\"currentColor\" stroke-width=\"1.6\" fill=\"none\"/></svg>See the menu</a></div>",
+      "css": ".ds-ghost-bg { background: #090c0a; padding: 20px; } .ds-btn-ghost { display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 26px; border-radius: 999px; background: transparent; color: #f2ebdc; border: 1px solid rgb(242 235 220 / 0.55); font: 650 1rem/1 'Hanken Grotesk Variable', 'Segoe UI', system-ui, sans-serif; text-decoration: none; transition: border-color 0.35s cubic-bezier(0.16,1,0.3,1), background 0.35s cubic-bezier(0.16,1,0.3,1); } .ds-btn-ghost svg { width: 19px; height: 19px; } .ds-btn-ghost:hover { border-color: #f2ebdc; background: rgb(242 235 220 / 0.06); } .ds-btn-ghost:focus-visible { outline: 2px solid #e8c27c; outline-offset: 3px; }"
     },
     {
-      "name": "Arrow Link",
-      "kind": "custom",
-      "description": "44px text link with a 1.5px accent underline and a sliding arrow.",
-      "html": "<a class=\"ds-link\" href=\"#\">Plan a party <svg viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></a>",
-      "css": ".ds-link { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font: 650 1rem/1.2 'Hanken Grotesk Variable', system-ui, sans-serif; color: #16150f; text-decoration: none; border-bottom: 1.5px solid #8b2e22; } .ds-link svg { transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1); } .ds-link:hover svg { transform: translateX(4px); } .ds-link:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }"
-    },
-    {
-      "name": "Category Chips",
-      "kind": "chip",
-      "refersTo": "chip-category-active",
-      "description": "Sticky menu category row; the active chip is filled green.",
-      "html": "<div class=\"ds-chips\"><a href=\"#\" aria-current=\"true\">Tandoor</a><a href=\"#\">Main course</a><a href=\"#\">Chinese</a></div>",
-      "css": ".ds-chips { display: flex; gap: 6px; } .ds-chips a { display: flex; align-items: center; min-height: 44px; padding: 0 16px; border-radius: 999px; font: 650 0.95rem/1 'Hanken Grotesk Variable', system-ui, sans-serif; color: #16150f; text-decoration: none; transition: background 0.3s, color 0.3s; } .ds-chips a[aria-current] { background: #1d3a2b; color: #f7f4ec; } .ds-chips a:focus-visible { outline: 2px solid #16150f; outline-offset: 3px; }"
-    },
-    {
-      "name": "Enquiry Field",
-      "kind": "input",
-      "refersTo": "input-field",
-      "description": "Party enquiry field on the ivory form panel.",
-      "html": "<label class=\"ds-field\">Number of guests<input type=\"number\" placeholder=\"40\"></label>",
-      "css": ".ds-field { display: grid; gap: 8px; font: 650 0.95rem/1.3 'Hanken Grotesk Variable', system-ui, sans-serif; color: #16150f; } .ds-field input { min-height: 50px; padding: 10px 14px; border-radius: 8px; border: 1.5px solid rgb(22 21 15 / 0.25); background: #fff; color: #16150f; font: 400 1.0625rem/1.3 'Hanken Grotesk Variable', system-ui, sans-serif; } .ds-field input:focus { outline: 2px solid #16150f; outline-offset: 1px; }"
-    },
-    {
-      "name": "Action Bar",
+      "name": "Phone Action Bar",
       "kind": "nav",
-      "refersTo": "actionbar",
-      "description": "Phone-only fixed bottom bar: Menu, Call, Directions, WhatsApp.",
-      "html": "<nav class=\"ds-bar\"><a href=\"#\">Menu</a><a href=\"#\">Call</a><a href=\"#\">Directions</a><a class=\"wa\" href=\"#\">WhatsApp</a></nav>",
-      "css": ".ds-bar { display: grid; grid-template-columns: repeat(4, 1fr); height: 64px; background: #0b0f0c; border-top: 1px solid rgb(247 244 236 / 0.12); } .ds-bar a { display: flex; align-items: center; justify-content: center; font: 600 0.875rem/1 'Hanken Grotesk Variable', system-ui, sans-serif; color: #f7f4ec; text-decoration: none; } .ds-bar a.wa { background: #8b2e22; } .ds-bar a:focus-visible { outline: 2px solid #f7f4ec; outline-offset: -4px; }"
+      "refersTo": "action-bar",
+      "description": "Fixed bottom bar on phones: Menu, Call, Directions and a gold Book a table cell.",
+      "html": "<nav class=\"ds-actionbar\" aria-label=\"Quick actions\"><a href=\"#\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M5 6h14M5 12h14M5 18h9\" stroke=\"currentColor\" stroke-width=\"1.6\" fill=\"none\"/></svg>Menu</a><a href=\"#\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M6 3h3l2 5-2 1a11 11 0 0 0 6 6l1-2 5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 4 5a2 2 0 0 1 2-2Z\" stroke=\"currentColor\" stroke-width=\"1.6\" fill=\"none\"/></svg>Call</a><a href=\"#\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 21s-7-6.2-7-11.5a7 7 0 1 1 14 0C19 14.8 12 21 12 21Z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/><circle cx=\"12\" cy=\"9.5\" r=\"2.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/></svg>Directions</a><a class=\"ds-wa\" href=\"#\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3Z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/></svg>Book a table</a></nav>",
+      "css": ".ds-actionbar { display: grid; grid-template-columns: 1fr 1fr 1fr 1.6fr; height: 64px; max-width: 420px; background: #090c0a; border-top: 1px solid rgb(242 235 220 / 0.1); } .ds-actionbar a { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; text-decoration: none; font: 600 0.8125rem/1 'Hanken Grotesk Variable', 'Segoe UI', system-ui, sans-serif; letter-spacing: 0.01em; color: #f2ebdc; } .ds-actionbar svg { width: 21px; height: 21px; color: #e8c27c; } .ds-actionbar .ds-wa { background: #e8c27c; color: #090c0a; flex-direction: row; gap: 8px; font: 650 0.95rem/1 'Hanken Grotesk Variable', 'Segoe UI', system-ui, sans-serif; } .ds-actionbar .ds-wa svg { width: 20px; height: 20px; color: #090c0a; } .ds-actionbar a:focus-visible { outline: 2px solid #e8c27c; outline-offset: -3px; }"
     },
     {
-      "name": "Dish Card",
+      "name": "Header Nav",
+      "kind": "nav",
+      "description": "Fixed 64px header; ivory links with a gold underline that wipes in; a small gold booking pill.",
+      "html": "<header class=\"ds-head\"><span class=\"ds-brand\">Red Wood Farm</span><nav><a href=\"#\" aria-current=\"page\">Menu</a><a href=\"#\">Parties</a><a href=\"#\">Visit</a><a class=\"ds-nav-btn\" href=\"#\">Book a table</a></nav></header>",
+      "css": ".ds-head { display: flex; align-items: center; justify-content: space-between; height: 64px; padding: 0 24px; background: rgb(9 12 10 / 0.94); border-bottom: 1px solid rgb(242 235 220 / 0.08); color: #f2ebdc; font-family: 'Hanken Grotesk Variable', 'Segoe UI', system-ui, sans-serif; } .ds-brand { font-weight: 600; letter-spacing: 0.02em; } .ds-head nav { display: flex; gap: 28px; align-items: center; } .ds-head nav a:not(.ds-nav-btn) { position: relative; padding: 12px 0; color: rgb(242 235 220 / 0.86); text-decoration: none; font-weight: 500; } .ds-head nav a:not(.ds-nav-btn)::after { content: ''; position: absolute; left: 0; right: 0; bottom: 6px; height: 1px; background: #e8c27c; transform: scaleX(0); transform-origin: right; transition: transform 0.45s cubic-bezier(0.16,1,0.3,1); } .ds-head nav a:not(.ds-nav-btn):hover::after, .ds-head nav a[aria-current]::after { transform: scaleX(1); transform-origin: left; } .ds-head nav a:hover, .ds-head nav a[aria-current] { color: #f2ebdc; } .ds-head a:focus-visible { outline: 2px solid #e8c27c; outline-offset: 3px; } .ds-nav-btn { display: inline-flex; align-items: center; min-height: 44px; padding: 0 20px; border-radius: 999px; background: #e8c27c; color: #090c0a; font-weight: 650; text-decoration: none; } .ds-nav-btn:hover { background: #f4d9a6; }"
+    },
+    {
+      "name": "Full-bleed Photo Panel",
       "kind": "card",
-      "description": "Signature: illustrative food photo, Gloock name, veg mark and gold price on green.",
-      "html": "<a class=\"ds-dish\" href=\"#\"><div class=\"ds-dish-img\"></div><h3>Paneer Tikka</h3><p class=\"ds-dish-meta\"><span class=\"ds-mark\"></span><b>₹280</b></p><p class=\"ds-dish-line\">From the tandoor, with mint chutney.</p></a>",
-      "css": ".ds-dish { display: block; width: 240px; padding: 16px; background: #1d3a2b; color: #f7f4ec; text-decoration: none; } .ds-dish-img { aspect-ratio: 4 / 5; border-radius: 6px; background: #141a16; } .ds-dish h3 { font: 400 1.3rem/1.15 Gloock, Georgia, serif; margin: 14px 0 6px; } .ds-dish-meta { display: flex; align-items: center; gap: 10px; margin: 0 0 4px; } .ds-dish-meta b { font: 700 1.2rem/1 'Hanken Grotesk Variable', system-ui, sans-serif; color: #f2cf83; font-variant-numeric: tabular-nums; } .ds-mark { width: 15px; height: 15px; border: 1.5px solid #5cc46a; border-radius: 2px; display: inline-grid; place-items: center; } .ds-mark::after { content: ''; width: 7px; height: 7px; border-radius: 50%; background: #5cc46a; } .ds-dish-line { font: 400 0.9375rem/1.5 'Hanken Grotesk Variable', system-ui, sans-serif; color: #c9d8cd; margin: 0; } .ds-dish:focus-visible { outline: 2px solid #f7f4ec; outline-offset: 3px; }"
+      "description": "Party panel: the real photo is the ground; title and gold CTA sit on a readable night gradient. (Preview uses a gradient stand-in for the photo.)",
+      "html": "<article class=\"ds-bleed\"><div class=\"ds-bleed-img\"></div><div class=\"ds-bleed-copy\"><h3>Birthday parties</h3><p>Balloons, a cake table and dinner under the lights.</p><a href=\"#\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3Z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/></svg>Ask about a birthday party</a></div></article>",
+      "css": ".ds-bleed { position: relative; isolation: isolate; overflow: hidden; width: 320px; height: 440px; border-radius: 4px; display: flex; align-items: flex-end; background: #0e1411; } .ds-bleed-img { position: absolute; inset: 0; z-index: -2; background: radial-gradient(60% 40% at 50% 30%, rgb(232 194 124 / 0.35), transparent 70%), linear-gradient(160deg, #17301f, #090c0a); } .ds-bleed::after { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgb(9 12 10 / 0) 30%, rgb(9 12 10 / 0.55) 55%, rgb(9 12 10 / 0.94) 100%); } .ds-bleed-copy { padding: 24px 22px; color: #f2ebdc; font-family: 'Hanken Grotesk Variable', 'Segoe UI', system-ui, sans-serif; } .ds-bleed h3 { font: 400 2rem/1.06 'Gilda Display', 'Didot', 'Bodoni 72', Georgia, serif; margin: 0 0 8px; } .ds-bleed p { color: rgb(242 235 220 / 0.86); font-size: 0.9375rem; margin: 0 0 18px; } .ds-bleed a { display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 22px; border-radius: 999px; background: #e8c27c; color: #090c0a; font-weight: 650; text-decoration: none; transition: background 0.35s cubic-bezier(0.16,1,0.3,1); } .ds-bleed a svg { width: 19px; height: 19px; } .ds-bleed a:hover { background: #f4d9a6; } .ds-bleed a:focus-visible { outline: 2px solid #e8c27c; outline-offset: 3px; }"
     },
     {
-      "name": "FAQ Item",
+      "name": "Review Card",
+      "kind": "card",
+      "refersTo": "review-card",
+      "description": "One exact 4 or 5 star Google quote: gold stars, serif quote, name and date.",
+      "html": "<div class=\"ds-rv-bg\"><figure class=\"ds-rv\"><p class=\"ds-stars\" role=\"img\" aria-label=\"5 out of 5 stars\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9L12 3Z\" fill=\"currentColor\"/></svg><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9L12 3Z\" fill=\"currentColor\"/></svg><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9L12 3Z\" fill=\"currentColor\"/></svg><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9L12 3Z\" fill=\"currentColor\"/></svg><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9L12 3Z\" fill=\"currentColor\"/></svg></p><blockquote>The quote, copied exactly as written on Google.</blockquote><figcaption><b>Guest name</b> <span>Google review, a month ago</span></figcaption></figure></div>",
+      "css": ".ds-rv-bg { background: #102219; padding: 24px; } .ds-rv { margin: 0; width: 320px; display: flex; flex-direction: column; gap: 12px; padding: 22px; border-radius: 4px; background: rgb(9 12 10 / 0.35); border: 1px solid rgb(242 235 220 / 0.16); color: #f2ebdc; font-family: 'Hanken Grotesk Variable', 'Segoe UI', system-ui, sans-serif; } .ds-stars { display: flex; gap: 3px; margin: 0; color: #e8c27c; } .ds-stars svg { width: 17px; height: 17px; } .ds-rv blockquote { margin: 0; font: 400 1.0625rem/1.42 'Gilda Display', 'Didot', 'Bodoni 72', Georgia, serif; } .ds-rv figcaption { font-size: 0.9375rem; } .ds-rv figcaption span { color: #c3c4b0; }"
+    },
+    {
+      "name": "Menu Paper List",
       "kind": "custom",
-      "description": "Native details between rules with a rotating accent plus.",
-      "html": "<details class=\"ds-faq\"><summary>Can we bring our own cake?</summary><p>Yes. Ask us on WhatsApp.</p></details>",
-      "css": ".ds-faq { border-top: 1px solid rgb(22 21 15 / 0.14); border-bottom: 1px solid rgb(22 21 15 / 0.14); color: #16150f; } .ds-faq summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 20px; min-height: 64px; padding: 14px 0; font: 400 1.3rem/1.25 Gloock, Georgia, serif; } .ds-faq summary::-webkit-details-marker { display: none; } .ds-faq summary::after { content: ''; width: 16px; height: 16px; flex: none; background: linear-gradient(#8b2e22, #8b2e22) center / 16px 2px no-repeat, linear-gradient(#8b2e22, #8b2e22) center / 2px 16px no-repeat; transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1); } .ds-faq[open] summary::after { transform: rotate(45deg); } .ds-faq summary:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; } .ds-faq p { margin: 0 0 20px; color: #57564d; font: 400 1.0625rem/1.6 'Hanken Grotesk Variable', system-ui, sans-serif; }"
+      "description": "The one light surface: priced menu rows with veg marks, tabular prices and half/full columns.",
+      "html": "<section class=\"ds-paper\"><h4>Tandoor <span>Half</span><span>Full</span></h4><ul><li><i class=\"ds-v\" role=\"img\" aria-label=\"Veg\"></i><span class=\"ds-n\">Paneer Tikka<small>With mint chutney and onion</small></span><b class=\"ds-h\"></b><b>&#8377;320</b></li><li><i class=\"ds-nv\" role=\"img\" aria-label=\"Non-veg\"></i><span class=\"ds-n\">Tandoori Chicken</span><b class=\"ds-h\">&#8377;300</b><b>&#8377;550</b></li></ul></section>",
+      "css": ".ds-paper { background: #efe6d3; color: #1b1813; padding: 24px; width: 380px; font-family: 'Hanken Grotesk Variable', 'Segoe UI', system-ui, sans-serif; } .ds-paper h4 { display: flex; margin: 0; padding-bottom: 10px; border-bottom: 1.5px solid #1b1813; font: 700 0.95rem/1.2 'Hanken Grotesk Variable', 'Segoe UI', system-ui, sans-serif; color: #8b5a14; } .ds-paper h4 span { width: 5rem; text-align: right; color: #5c5446; font-weight: 650; font-size: 0.875rem; } .ds-paper h4 span:first-of-type { margin-left: auto; } .ds-paper ul { list-style: none; margin: 0; padding: 0; } .ds-paper li { display: flex; align-items: baseline; gap: 10px; padding: 13px 0; border-bottom: 1px solid rgb(27 24 19 / 0.14); } .ds-n { flex: 1; font-size: 1.0625rem; font-weight: 600; } .ds-n small { display: block; font-size: 0.9375rem; font-weight: 400; color: #5c5446; margin-top: 2px; } .ds-paper b { width: 5rem; text-align: right; font: 700 1.25rem/1.2 'Hanken Grotesk Variable', 'Segoe UI', system-ui, sans-serif; font-variant-numeric: tabular-nums; } .ds-paper b.ds-h { color: #5c5446; font-weight: 600; } .ds-v, .ds-nv { width: 15px; height: 15px; border: 1.5px solid currentColor; border-radius: 2px; display: inline-grid; place-items: center; align-self: center; flex: none; } .ds-v { color: #2f8a3c; } .ds-nv { color: #a8402c; } .ds-v::after { content: ''; width: 7px; height: 7px; border-radius: 50%; background: currentColor; } .ds-nv::after { content: ''; border-left: 4px solid transparent; border-right: 4px solid transparent; border-bottom: 7px solid currentColor; }"
+    },
+    {
+      "name": "Menu Chips and Search",
+      "kind": "chip",
+      "refersTo": "menu-chip",
+      "description": "White pills on paper; ink when pressed, deep forest for the current category.",
+      "html": "<div class=\"ds-tools\"><input class=\"ds-search\" aria-label=\"Search the menu\" placeholder=\"Search the menu\"><button class=\"ds-chip\" aria-pressed=\"true\">Veg</button><button class=\"ds-chip\" aria-pressed=\"false\">Non-veg</button><a class=\"ds-cat\" aria-current=\"true\" href=\"#\">Tandoor</a><a class=\"ds-cat-off\" href=\"#\">Breads</a></div>",
+      "css": ".ds-tools { background: #efe6d3; padding: 16px; display: flex; flex-wrap: wrap; gap: 8px; font-family: 'Hanken Grotesk Variable', 'Segoe UI', system-ui, sans-serif; } .ds-search { flex: 1 1 220px; min-height: 48px; padding: 0 18px; border-radius: 999px; border: 1.5px solid rgb(27 24 19 / 0.14); background: #fff; color: #1b1813; font: 400 1.0625rem 'Hanken Grotesk Variable', 'Segoe UI', system-ui, sans-serif; } .ds-search::placeholder { color: #5c5446; } .ds-search:focus { outline: 2px solid #1b1813; outline-offset: 1px; } .ds-chip { min-height: 44px; padding: 0 16px; border-radius: 999px; border: 1.5px solid rgb(27 24 19 / 0.14); background: #fff; color: #1b1813; font: 650 0.95rem/1 'Hanken Grotesk Variable', 'Segoe UI', system-ui, sans-serif; cursor: pointer; } .ds-chip[aria-pressed='true'] { background: #1b1813; color: #efe6d3; border-color: #1b1813; } .ds-chip:focus-visible, .ds-cat:focus-visible, .ds-cat-off:focus-visible { outline: 2px solid #1b1813; outline-offset: 2px; } .ds-cat, .ds-cat-off { display: flex; align-items: center; min-height: 44px; padding: 0 16px; border-radius: 999px; font: 650 0.95rem/1 'Hanken Grotesk Variable', 'Segoe UI', system-ui, sans-serif; text-decoration: none; transition: background 0.3s, color 0.3s; } .ds-cat { background: #102219; color: #f2ebdc; } .ds-cat-off { color: #1b1813; }"
+    },
+    {
+      "name": "Night Form Field",
+      "kind": "input",
+      "refersTo": "field-night",
+      "description": "Party enquiry field on night: 8px corner, translucent night fill, gold focus.",
+      "html": "<div class=\"ds-field-bg\"><label class=\"ds-field\">Date<input placeholder=\"Pick a date\"></label></div>",
+      "css": ".ds-field-bg { background: #090c0a; padding: 20px; } .ds-field { display: grid; gap: 8px; color: #f2ebdc; font: 650 0.95rem/1.3 'Hanken Grotesk Variable', 'Segoe UI', system-ui, sans-serif; } .ds-field input { min-height: 50px; padding: 10px 14px; border-radius: 8px; border: 1px solid rgb(242 235 220 / 0.28); background: rgb(9 12 10 / 0.55); color: #f2ebdc; font: 400 1.0625rem/1.3 'Hanken Grotesk Variable', 'Segoe UI', system-ui, sans-serif; color-scheme: dark; } .ds-field input::placeholder { color: rgb(242 235 220 / 0.55); } .ds-field input:focus { outline: 2px solid #e8c27c; outline-offset: 1px; }"
     }
   ],
   "narrative": {
-    "northStar": "The Lit Lawn",
-    "overview": "The site opens the way the venue does after dark: solid night, the green neon name, the real fairy-light tunnel. Then it settles into a calm ivory page, and the evening returns in bands of deep lawn green and night. Each section picks one of three tones and sets every colour inside it from that tone, so a component works anywhere without its own dark-mode logic.\n\nDensity is editorial and phone first. Big Gloock headlines and short Hanken Grotesk paragraphs, thin 1 px rules instead of boxes, real photos in lightly rounded frames, and pill buttons. Every section on a page uses a different composition. The venue photos are the proof, so they are only shown at sizes where they hold up, and text never sits on top of them.",
+    "northStar": "Arriving at the Garden at 8 PM",
+    "overview": "The whole site stands on the real lit garden. Every page is night: near-black and deep forest grounds, ivory text, and a single warm light source, the fairy-light gold of the strings and the tunnel. Photographs are not boxed into a light page; they run edge to edge as the ground itself, graded once with the same warm night treatment, and copy sits on the dark end of a readable gradient. The mood is calm, warm and cinematic, never gimmicky.\n\nThere is exactly one light surface: menu paper, the colour of a printed menu card, used only where guests read prices. Moving from the night into the paper menu is the one deliberate tonal shift in the system. Type is a quiet high-contrast serif (Gilda Display) for headlines over a plain, sturdy grotesk (Hanken Grotesk) for everything else; the neon script appears once, as the name in the Home hero.\n\nDensity is phone-first and generous: big type, 44px+ targets, swipe rows instead of cramped grids on phones, and a fixed action bar so Menu, Call, Directions and Book a table are always one tap away. Motion is slow and soft (fades, a slight rise, gentle parallax inside photos) and is removed entirely under reduced motion. Nothing pins or hijacks the scroll.",
     "keyCharacteristics": [
-      "Three section tones (paper, night, green) that set colour through local custom properties.",
-      "Gloock serif at 400 for every headline; Hanken Grotesk 400 to 700 for UI; Yellowtail only for the neon name.",
-      "Thin rules (1 px at 14 to 20% of the text colour) divide lists, FAQs and fact tables.",
-      "Pill buttons, 6 px photo frames, 10 px cards.",
-      "WhatsApp, Call, Directions and Menu are always one tap away on phones."
+      "One night palette; one paper surface for priced lists only.",
+      "Full-bleed, warm-graded real venue photos with readable gradients.",
+      "Gilda Display headlines, Hanken Grotesk text, Yellowtail neon once.",
+      "Gold pill buttons; ivory ghost pills as the second action.",
+      "Swipe rows on phones, grids on desktop.",
+      "Fixed phone action bar with WhatsApp booking in gold.",
+      "Quiet motion, fully disabled under reduced motion; no pinned sections."
     ],
     "rules": [
-      { "name": "The Gold After Dark Rule", "body": "Gold appears only on night or green. On paper, the same accent role is redwood.", "section": "colors" },
-      { "name": "The Redwood Means Book Rule", "body": "A filled redwood button always starts a booking (WhatsApp). Other actions use the tone's solid or ghost button.", "section": "colors" },
-      { "name": "The One Tone Rule", "body": "Every section carries exactly one of `.tone-paper`, `.tone-night` or `.tone-green`, which sets `--bg`, `--fg`, `--mute`, `--line`, `--accent`, `--price`, `--btn-bg` and `--btn-fg`. Components read those variables and never hard-code a tone.", "section": "colors" },
-      { "name": "The Plain Headline Rule", "body": "Headlines are sentence case, Gloock 400, with no italic, no highlighted or recoloured word, and no eyebrow or numbered label above. `h1 em` renders upright in the inherited colour. A sequence number may sit inline in a step heading (the party steps).", "section": "typography" },
-      { "name": "The One Sign Rule", "body": "Yellowtail with the neon glow appears once, as the name in the Home hero. It is decorative (`aria-hidden`), and the h1 carries the name for screen readers.", "section": "typography" },
-      { "name": "The Reach Rule", "body": "Phones keep a 64px night action bar fixed at the bottom (Menu, Call, Directions, WhatsApp), and the body pads for it plus the safe area. Desktop drops the bar and puts \"Book on WhatsApp\" in the header.", "section": "layout" },
-      { "name": "The 44 Rule", "body": "Every link, chip, button and list row is at least 44px tall. Buttons are 50px, sheet links 58px, list rows 52px.", "section": "layout" },
-      { "name": "The Flat Page Rule", "body": "Cards, frames and sections have no shadow. If something casts a shadow, it floats over the page.", "section": "elevation" }
+      {
+        "name": "The One Light Source Rule",
+        "body": "On night, gold is the only colour that is not black, green or ivory. A second accent hue never enters a night section.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Sheet of Paper Rule",
+        "body": "The light paper tone appears only under a priced list (the menu). Every other section, including guides, parties and visit, stays on night or forest.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Neon Rule",
+        "body": "The Yellowtail neon name appears once on the whole site: above the Home hero h1. Over the Home hero the header hides its wordmark, so the name is never set twice in one viewport.",
+        "section": "typography"
+      },
+      {
+        "name": "The Single Weight Serif Rule",
+        "body": "Headings are always Gilda Display 400: never bold, never italic, with no highlighted word inside a headline.",
+        "section": "typography"
+      },
+      {
+        "name": "The Ground Not Frame Rule",
+        "body": "Signature venue photos are the section's ground (full-bleed with copy on them), not a picture in a box. Small photos in rows and galleries may be framed, at a 4px corner.",
+        "section": "layout"
+      },
+      {
+        "name": "The Never Pinned Rule",
+        "body": "No section pins, stacks or scroll-jacks. Sticky is allowed only for tools: the menu search and category bar, and side columns on desktop (guide sidebar, menu category photo, spoke-list heading).",
+        "section": "layout"
+      },
+      {
+        "name": "The Readable Gradient Rule",
+        "body": "Text never sits on a raw photo. Every full-bleed photo carries a night gradient that reaches 0.85 to 0.97 opacity behind the copy (bottom on phones, left on desktop), plus a light top wash under the header.",
+        "section": "elevation"
+      }
     ],
     "dos": [
-      "**Do** give every section exactly one tone class and let components read `--fg`, `--mute`, `--line`, `--accent` and `--price`.",
-      "**Do** put booking on a redwood pill and send it to WhatsApp; keep WhatsApp, Call and Directions within one tap on phones.",
-      "**Do** keep tap targets at 44px or more and body text at 17px or more on phones.",
-      "**Do** show only real venue photos, in 6px frames, at sizes where they hold up, and label food photos as illustrative.",
-      "**Do** write headlines in sentence case in Gloock 400, and show prices in bold tabular Hanken.",
-      "**Do** give each section on a page its own composition, using the 5/7, 7/5, 4/8 and 4/7 splits and offsets.",
-      "**Do** write in English only, and write the name exactly as \"Red Wood Farm\"."
+      "Do keep every section on night, night raised or deep forest; use menu paper only under a priced list.",
+      "Do run signature venue photos full-bleed, graded with the shared warm night grade (`scripts/grade_night.py`), with a readable night gradient behind any copy.",
+      "Do use only real venue photos for the venue; food photos are the owner-approved images, graded the same way.",
+      "Do make the main action a gold pill and the second an ivory ghost pill; booking goes through WhatsApp.",
+      "Do use swipe rows with a \"Swipe for more\" hint on phones and grids from 900px.",
+      "Do keep the phone action bar (Menu, Call, Directions, gold Book a table) on every page below 900px.",
+      "Do set every price in Hanken 700 with tabular figures: gold on night, ink on paper.",
+      "Do respect `prefers-reduced-motion`: content visible by default, all animation and parallax removed, the review band static.",
+      "Do keep tap targets at 44px or more and contrast at WCAG AA.",
+      "Do show only exact 4 and 5 star Google quotes in the review band, copied with Google's spelling, alongside the rating and the date it was checked."
     ],
     "donts": [
-      "**Don't** put an eyebrow, kicker or numbered label above a headline. A sequence number may sit inline in a step heading.",
-      "**Don't** italicise, highlight or recolour a word inside a headline.",
-      "**Don't** place text on a photo, or repeat a dark text-over-photo hero down the page.",
-      "**Don't** use gold on paper.",
-      "**Don't** pin sections or scroll-scrub motion on phones, and don't cross-fade one image over another.",
-      "**Don't** use Yellowtail or the neon glow anywhere except the one neon name.",
-      "**Don't** add shadows to cards, frames or sections."
+      "Don't set the Yellowtail neon name anywhere except the Home hero.",
+      "Don't bring back a light page with alternating ivory, green and night bands; there is one paper surface, for prices.",
+      "Don't pin, stack or scroll-jack sections.",
+      "Don't add a second accent colour on night.",
+      "Don't add eyebrow or kicker labels above headings, or highlight a single word in a headline.",
+      "Don't write \"Images are for representation only\" or any similar line.",
+      "Don't use bar or liquor wording, or any Hindi or Punjabi text; the site is English only.",
+      "Don't use stock or AI images of the venue, fake people, fake reviews, or invented awards and numbers.",
+      "Don't add Review or AggregateRating schema to the review band.",
+      "Don't set text directly on a photo without its gradient."
     ]
   }
 }

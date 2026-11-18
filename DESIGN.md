@@ -1,48 +1,48 @@
 ---
 name: Red Wood Farm
-description: Garden family restaurant and party lawn; the real light tunnel and neon name on night, then a calm ivory page broken by green and night events.
+description: Garden family restaurant and party lawn; one warm night world built on the real lit garden, with a single paper surface for priced lists.
 colors:
-  ivory-paper: "#f7f4ec"
-  ivory-paper-deep: "#ece6d6"
-  ink: "#16150f"
-  ink-mute: "#57564d"
-  lawn-green: "#1d3a2b"
-  lawn-green-deep: "#13281d"
-  green-mist: "#c9d8cd"
-  night: "#0b0f0c"
-  night-raised: "#141a16"
-  cream-mute: "#c8c4b6"
-  lamp-gold: "#f2cf83"
-  redwood: "#8b2e22"
-  redwood-bright: "#a8402c"
-  veg-green: "#2f8a3c"
-  veg-green-on-dark: "#5cc46a"
-  nonveg-on-dark: "#e0795c"
-  neon-white: "#effff5"
+  night: "#090c0a"
+  night-raised: "#0e1411"
+  forest: "#102219"
+  forest-raised: "#17301f"
+  fairy-gold: "#e8c27c"
+  fairy-gold-light: "#f4d9a6"
+  ivory: "#f2ebdc"
+  ivory-mute: "#bdb6a5"
+  menu-paper: "#efe6d3"
+  menu-paper-deep: "#e3d8c1"
+  paper-ink: "#1b1813"
+  paper-mute: "#5c5446"
+  paper-accent: "#8b5a14"
+  veg-on-paper: "#2f8a3c"
+  nonveg-on-paper: "#a8402c"
+  veg-on-night: "#5cc46a"
+  nonveg-on-night: "#e0795c"
+  neon-white: "#fff8ea"
 typography:
-  hero:
-    fontFamily: "Gloock, 'Bodoni 72', Georgia, serif"
-    fontSize: "clamp(2.1rem, 1.2rem + 4.2vw, 5.4rem)"
-    fontWeight: 400
-    lineHeight: 1.04
-    letterSpacing: "-0.012em"
   display:
-    fontFamily: "Gloock, 'Bodoni 72', Georgia, serif"
-    fontSize: "clamp(2.2rem, 1.5rem + 3.4vw, 4.8rem)"
+    fontFamily: "'Gilda Display', 'Didot', 'Bodoni 72', Georgia, serif"
+    fontSize: "clamp(2.35rem, 1.5rem + 3.9vw, 5.6rem)"
     fontWeight: 400
-    lineHeight: 1.04
-    letterSpacing: "-0.012em"
+    lineHeight: 1.02
+    letterSpacing: "-0.01em"
   headline:
-    fontFamily: "Gloock, 'Bodoni 72', Georgia, serif"
-    fontSize: "clamp(1.9rem, 1.4rem + 2.2vw, 3.5rem)"
+    fontFamily: "'Gilda Display', 'Didot', 'Bodoni 72', Georgia, serif"
+    fontSize: "clamp(2.2rem, 1.5rem + 3.2vw, 4.6rem)"
     fontWeight: 400
-    lineHeight: 1.04
-    letterSpacing: "-0.012em"
+    lineHeight: 1.06
+    letterSpacing: "-0.01em"
+  headline-sm:
+    fontFamily: "'Gilda Display', 'Didot', 'Bodoni 72', Georgia, serif"
+    fontSize: "clamp(1.95rem, 1.45rem + 2.1vw, 3.4rem)"
+    fontWeight: 400
+    lineHeight: 1.06
   title:
-    fontFamily: "Gloock, 'Bodoni 72', Georgia, serif"
-    fontSize: "clamp(1.4rem, 1.2rem + 0.9vw, 2rem)"
+    fontFamily: "'Gilda Display', 'Didot', 'Bodoni 72', Georgia, serif"
+    fontSize: "clamp(1.4rem, 1.2rem + 0.8vw, 1.9rem)"
     fontWeight: 400
-    lineHeight: 1.04
+    lineHeight: 1.1
   body:
     fontFamily: "'Hanken Grotesk Variable', 'Segoe UI', system-ui, sans-serif"
     fontSize: "clamp(1.0625rem, 1rem + 0.2vw, 1.125rem)"
@@ -58,275 +58,252 @@ typography:
     fontSize: "0.875rem"
     fontWeight: 650
     lineHeight: 1.3
-    letterSpacing: "0.01em"
+    letterSpacing: "0.02em"
   price:
     fontFamily: "'Hanken Grotesk Variable', 'Segoe UI', system-ui, sans-serif"
     fontSize: "1.25rem"
     fontWeight: 700
     lineHeight: 1.2
-    fontFeature: "tnum"
+    fontFeature: "'tnum'"
   neon-name:
-    fontFamily: "Yellowtail, cursive"
-    fontSize: "clamp(3rem, 13vw, 6.6rem)"
+    fontFamily: "'Yellowtail', cursive"
+    fontSize: "clamp(2.3rem, 10.5vw, 4.6rem)"
     fontWeight: 400
     lineHeight: 1.05
 rounded:
-  mark: "2px"
-  frame: "6px"
+  photo: "4px"
   field: "8px"
-  card: "10px"
   pill: "999px"
 spacing:
-  gutter: "clamp(18px, 4.5vw, 64px)"
-  max: "1320px"
-  section: "clamp(64px, 10vw, 140px)"
-  header: "64px"
-  actionbar: "64px"
-  tap-min: "44px"
+  gutter: "clamp(20px, 5vw, 72px)"
+  section: "clamp(60px, 9vw, 128px)"
+  max: "1360px"
+  head: "64px"
+  bar: "64px"
 components:
-  button-solid-paper:
-    backgroundColor: "{colors.ink}"
-    textColor: "{colors.ivory-paper}"
-    rounded: "{rounded.pill}"
-    padding: "0 24px"
-    height: "50px"
-  button-solid-dark:
-    backgroundColor: "{colors.ivory-paper}"
+  button-primary:
+    backgroundColor: "{colors.fairy-gold}"
     textColor: "{colors.night}"
+    typography: "{typography.label}"
     rounded: "{rounded.pill}"
-    padding: "0 24px"
-    height: "50px"
-  button-book:
-    backgroundColor: "{colors.redwood}"
-    textColor: "{colors.ivory-paper}"
-    rounded: "{rounded.pill}"
-    padding: "0 24px"
-    height: "50px"
-  button-book-hover:
-    backgroundColor: "{colors.redwood-bright}"
+    padding: "0 26px"
+    height: "52px"
+  button-primary-hover:
+    backgroundColor: "{colors.fairy-gold-light}"
+    textColor: "{colors.night}"
   button-ghost:
-    textColor: "{colors.ink}"
+    backgroundColor: "transparent"
+    textColor: "{colors.ivory}"
     rounded: "{rounded.pill}"
-    padding: "0 24px"
-    height: "50px"
-  chip-category-active:
-    backgroundColor: "{colors.lawn-green}"
-    textColor: "{colors.ivory-paper}"
+    padding: "0 26px"
+    height: "52px"
+  button-on-paper:
+    backgroundColor: "{colors.paper-ink}"
+    textColor: "{colors.menu-paper}"
+    rounded: "{rounded.pill}"
+    padding: "0 26px"
+    height: "52px"
+  action-bar:
+    backgroundColor: "{colors.night}"
+    textColor: "{colors.ivory}"
+    height: "64px"
+  action-bar-book:
+    backgroundColor: "{colors.fairy-gold}"
+    textColor: "{colors.night}"
+  menu-chip:
+    backgroundColor: "#ffffff"
+    textColor: "{colors.paper-ink}"
     rounded: "{rounded.pill}"
     padding: "0 16px"
     height: "44px"
-  input-field:
+  menu-chip-active:
+    backgroundColor: "{colors.paper-ink}"
+    textColor: "{colors.menu-paper}"
+  menu-category-active:
+    backgroundColor: "{colors.forest}"
+    textColor: "{colors.ivory}"
+    rounded: "{rounded.pill}"
+  menu-search:
     backgroundColor: "#ffffff"
-    textColor: "{colors.ink}"
-    rounded: "{rounded.field}"
-    padding: "10px 14px"
-    height: "50px"
-  input-search:
-    backgroundColor: "#ffffff"
-    textColor: "{colors.ink}"
+    textColor: "{colors.paper-ink}"
     rounded: "{rounded.pill}"
     padding: "0 18px"
     height: "48px"
-  card-info:
-    backgroundColor: "{colors.lawn-green}"
-    textColor: "{colors.ivory-paper}"
-    rounded: "{rounded.card}"
-    padding: "clamp(22px, 3vw, 36px)"
-  actionbar:
-    backgroundColor: "{colors.night}"
-    textColor: "{colors.ivory-paper}"
-    height: "64px"
-  menu-sheet:
-    backgroundColor: "{colors.lawn-green-deep}"
-    textColor: "{colors.ivory-paper}"
-  back-to-top:
-    backgroundColor: "{colors.ink}"
-    textColor: "{colors.ivory-paper}"
-    rounded: "{rounded.pill}"
-    padding: "0 18px 0 14px"
-    height: "48px"
+  review-card:
+    backgroundColor: "rgb(9 12 10 / 0.35)"
+    textColor: "{colors.ivory}"
+    rounded: "{rounded.photo}"
+    padding: "22px"
+  field-night:
+    backgroundColor: "rgb(9 12 10 / 0.55)"
+    textColor: "{colors.ivory}"
+    rounded: "{rounded.field}"
+    padding: "10px 14px"
+    height: "50px"
 ---
 
 # Design System: Red Wood Farm
 
 ## Overview
 
-**Creative North Star: "The Lit Lawn"**
+**Creative North Star: "Arriving at the Garden at 8 PM"**
 
-The site opens the way the venue does after dark: solid night, the green neon name, the real fairy-light tunnel. Then it settles into a calm ivory page, and the evening returns in bands of deep lawn green and night. Each section picks one of three tones and sets every colour inside it from that tone, so a component works anywhere without its own dark-mode logic.
+The whole site stands on the real lit garden. Every page is night: near-black and deep forest grounds, ivory text, and a single warm light source, the fairy-light gold of the strings and the tunnel. Photographs are not boxed into a light page; they run edge to edge as the ground itself, graded once with the same warm night treatment, and copy sits on the dark end of a readable gradient. The mood is calm, warm and cinematic, never gimmicky.
 
-Density is editorial and phone first. Big Gloock headlines and short Hanken Grotesk paragraphs, thin 1 px rules instead of boxes, real photos in lightly rounded frames, and pill buttons. Every section on a page uses a different composition. The venue photos are the proof, so they are only shown at sizes where they hold up, and text never sits on top of them.
+There is exactly one light surface: menu paper, the colour of a printed menu card, used only where guests read prices. Moving from the night into the paper menu is the one deliberate tonal shift in the system. Type is a quiet high-contrast serif (Gilda Display) for headlines over a plain, sturdy grotesk (Hanken Grotesk) for everything else; the neon script appears once, as the name in the Home hero.
+
+Density is phone-first and generous: big type, 44px+ targets, swipe rows instead of cramped grids on phones, and a fixed action bar so Menu, Call, Directions and Book a table are always one tap away. Motion is slow and soft (fades, a slight rise, gentle parallax inside photos) and is removed entirely under reduced motion. Nothing pins or hijacks the scroll.
 
 **Key Characteristics:**
-- Three section tones (paper, night, green) that set colour through local custom properties.
-- Gloock serif at 400 for every headline; Hanken Grotesk 400 to 700 for UI; Yellowtail only for the neon name.
-- Thin rules (1 px at 14 to 20% of the text colour) divide lists, FAQs and fact tables.
-- Pill buttons, 6 px photo frames, 10 px cards.
-- WhatsApp, Call, Directions and Menu are always one tap away on phones.
+- One night palette; one paper surface for priced lists only.
+- Full-bleed, warm-graded real venue photos with readable gradients.
+- Gilda Display headlines, Hanken Grotesk text, Yellowtail neon once.
+- Gold pill buttons; ivory ghost pills as the second action.
+- Swipe rows on phones, grids on desktop.
+- Fixed phone action bar with WhatsApp booking in gold.
+- Quiet motion, fully disabled under reduced motion; no pinned sections.
 
 ## Colors
 
-A warm ivory page, near-black ink, and a deep lawn green and night that carry the evening. Gold and redwood are the two accents, and each has one job.
+A night garden lit by one warm source: forest-black grounds, ivory text, fairy-light gold for every action and price, and one sheet of menu paper.
 
 ### Primary
-- **Redwood** (redwood): booking only. Filled "Book on WhatsApp" buttons, the WhatsApp cell of the action bar, and the paper tone's link underline and accent. Hovers to **Redwood Bright** (redwood-bright).
-
-### Secondary
-- **Lawn Green** (lawn-green): the green tone's ground, the active menu category chip and the scrollbar thumb. **Lawn Green Deep** (lawn-green-deep) grounds the footer and the phone menu sheet. **Green Mist** (green-mist) is muted text on green.
-
-### Tertiary
-- **Lamp Gold** (lamp-gold): the accent on night and green only. It colours prices, link underlines, nav underlines, step numbers, the rating figure and text selection.
+- **Fairy-Light Gold** (`fairy-gold`): the only accent on night. Primary buttons, prices on night, focus rings, text selection, the nav underline, action-bar icons, footer column heads, fact terms, star ratings, accordion plus marks, swipe hints. **Light Gold** (`fairy-gold-light`) is its hover state only.
 
 ### Neutral
-- **Ivory Paper** (ivory-paper): the page ground, and also the text colour on night and green (as cream). **Ivory Paper Deep** (ivory-paper-deep) fills empty photo frames on paper.
-- **Ink** (ink): body text and solid buttons on paper. **Ink Mute** (ink-mute) is secondary text on paper.
-- **Night** (night): the hero, the night tone, the solid header and the action bar. **Night Raised** (night-raised) fills empty frames on dark tones. **Cream Mute** (cream-mute) is muted text on night.
-- **Veg marks**: veg green (veg-green) on paper and veg-green-on-dark on dark; non-veg uses redwood-bright on paper and nonveg-on-dark on dark. The bright veg green is also the "open now" dot.
+- **Night** (`night`): the page ground, the solid header, the action bar, and every photo gradient (as `rgb(9 12 10 / a)`).
+- **Night Raised** (`night-raised`): the alternate night section tone and the placeholder behind images while they load.
+- **Deep Forest** (`forest`): the green night tone for review bands, the footer, the phone menu sheet, the guide "In short" and CTA blocks, the menu footer note, and the active menu category chip.
+- **Forest Raised** (`forest-raised`): scrollbar thumb only.
+- **Ivory** (`ivory`): all text on night. Over photos it drops to 82 to 86% opacity for sub-copy.
+- **Ivory Mute** (`ivory-mute`): secondary text on night (meta, captions, descriptions). On forest the mute warms to `#c3c4b0`.
+
+### Menu paper (the one light surface)
+- **Menu Paper** (`menu-paper`) and **Paper Deep** (`menu-paper-deep`): the ground of the priced menu list and its image placeholders.
+- **Paper Ink** (`paper-ink`): text, prices and the solid button on paper.
+- **Paper Mute** (`paper-mute`): descriptions and half-portion prices.
+- **Paper Accent** (`paper-accent`): a darkened gold for subgroup heads on paper, where light gold would fail contrast.
+- **Veg / Non-veg marks**: green and red-brown on paper (`veg-on-paper`, `nonveg-on-paper`); brighter versions on night (`veg-on-night`, `nonveg-on-night`). The non-veg mark is a triangle, so meaning never rests on colour alone.
 
 ### Named Rules
-**The Gold After Dark Rule.** Gold appears only on night or green. On paper, the same accent role is redwood.
+**The One Light Source Rule.** On night, gold is the only colour that is not black, green or ivory. A second accent hue never enters a night section.
 
-**The Redwood Means Book Rule.** A filled redwood button always starts a booking (WhatsApp). Other actions use the tone's solid or ghost button.
-
-**The One Tone Rule.** Every section carries exactly one of `.tone-paper`, `.tone-night` or `.tone-green`, which sets `--bg`, `--fg`, `--mute`, `--line`, `--accent`, `--price`, `--btn-bg` and `--btn-fg`. Components read those variables and never hard-code a tone.
-
-### Tones and when to use each
-- **Paper**: reading. The intro, occasions, guides, party types, gallery, menu body and guide prose.
-- **Night**: the venue after dark. The hero, the evening photo and film strip, visit, the party enquiry and FAQ bands.
-- **Green**: events and facts. The dish carousel, the quote band, party steps, directions, the hours card, the guide "short answer" and the call-to-action boxes.
-- On Home the bands alternate night, paper, green, paper, night, green, paper, night, so no two neighbours share a tone.
+**The One Sheet of Paper Rule.** The light paper tone appears only under a priced list (the menu). Every other section, including guides, parties and visit, stays on night or forest.
 
 ## Typography
 
-**Display Font:** Gloock (with Bodoni 72, Georgia)
+**Display Font:** Gilda Display (with Didot, Bodoni 72, Georgia)
 **Body Font:** Hanken Grotesk Variable (with Segoe UI, system-ui)
-**Script:** Yellowtail, for the neon name only
+**Script Font:** Yellowtail, for the neon name only
 
-**Character:** a high-contrast display serif set large and plain, beside a friendly grotesk that handles prices, labels and buttons. The script appears once, as the sign.
+**Character:** A refined, slightly theatrical serif at a single weight (400) for every heading, set tight (line-height 1.02 to 1.06, -0.01em), over a plain grotesk that carries menus, prices and buttons at 400 to 700.
 
 ### Hierarchy
-- **Hero** (400, `--t-hero`, 1.04): the Home h1 on phones. On desktop the hero h1 is set to clamp(2.8rem, 1rem + 3.2vw, 4.4rem) to fit the 5fr panel.
-- **Display** (400, `--t-1`, 1.04): section h2 on Home, and the page h1 on Menu, Party, Visit and hub pages. Max width 14 to 16ch.
-- **Headline** (400, `--t-2`, 1.04): secondary section heads (visit, film strip, spoke lists, menu categories, footer).
-- **Title** (400, `--t-3`, 1.04): card and occasion heads, FAQ and guide-prose h2. Smaller serif items (dish names 1.3rem, FAQ questions clamp(1.15rem, 1rem + 0.5vw, 1.45rem), sheet links 1.75rem) sit between title and body.
-- **Body** (400, `--t-body`, 1.6): 17 px floor on phones, 18 px max, 65ch measure. The lede runs clamp(1.125rem, 1rem + 0.5vw, 1.375rem) at 42ch.
-- **Small** (400, `--t-small`): captions, dish lines, meta.
-- **Label** (650, `--t-label`, 1.3): field labels, definition-list terms, the open-now chip, footer column heads. It always names the data next to it; it is never placed above a headline.
-- **Price** (700, 1.2 to 1.25rem, tabular figures): every price.
+- **Display** (400, `--t-hero`, 1.02): the Home hero h1 only.
+- **Headline** (400, `--t-1`, 1.06): section h2s and inner-page hero h1s, usually capped at 12 to 16ch.
+- **Headline Small** (400, `--t-2`): review band, footer, menu category heads, party panel titles.
+- **Title** (400, `--t-3`): card and prose subheads; serif accordion and spoke-list rows sit near it (1.2 to 1.55rem).
+- **Body** (400, `--t-body`, 1.6): running text, capped at 65ch; ledes at 1.125 to 1.375rem, 44ch.
+- **Small** (400, 0.9375rem): captions, meta, dish lines.
+- **Label** (650, 0.875rem, +0.02em, sentence case): form labels, fact terms, footer column heads, swipe hints. Never uppercase, never above a heading.
+- **Price** (700, 1.15 to 1.25rem, tabular figures): every rupee figure, gold on night and ink on paper.
+- **Neon Name** (Yellowtail 400, near-white with a warm three-layer glow): once.
 
 ### Named Rules
-**The Plain Headline Rule.** Headlines are sentence case, Gloock 400, with no italic, no highlighted or recoloured word, and no eyebrow or numbered label above. `h1 em` renders upright in the inherited colour. A sequence number may sit inline in a step heading (the party steps).
+**The One Neon Rule.** The Yellowtail neon name appears once on the whole site: above the Home hero h1. Over the Home hero the header hides its wordmark, so the name is never set twice in one viewport.
 
-**The One Sign Rule.** Yellowtail with the neon glow appears once, as the name in the Home hero. It is decorative (`aria-hidden`), and the h1 carries the name for screen readers.
+**The Single Weight Serif Rule.** Headings are always Gilda Display 400: never bold, never italic, with no highlighted word inside a headline.
 
 ## Layout
 
-A single centred column, `min(100% - 2 * gutter, 1320px)`, with a fluid gutter of clamp(18px, 4.5vw, 64px). Sections pad clamp(64px, 10vw, 140px) top and bottom. Everything stacks on phones; the desktop layouts start at 900px.
+A full-width night page with a centred content column of `min(100% - 2 * gutter, 1360px)`; gutters scale from 20px to 72px and section padding from 60px to 128px. One breakpoint does the real work: **900px**. Below it the site is a single column with swipe rows, the fixed 64px action bar and a full-screen menu sheet; from 900px the desktop nav appears, the action bar is removed, and rows become 3 or 4 column grids.
 
-Asymmetric splits do most of the work:
-- **Hero, 5fr / 7fr**: night panel (min 420px) left, the tunnel photo right, at full viewport height. On phones the panel stacks above the photo, which fills the rest of the screen above the action bar (min 30svh). The two CTAs sit side by side in a 1fr 1fr grid.
-- **Editorial 7fr / 5fr**: the intro with the hours card, the occasions head, and the evening photo with its copy, aligned to the end.
-- **Page heroes**: Party 5fr / 6fr and hubs 1fr / 1fr, copy beside a photo; on phones the photo comes first at 4:3 and the copy follows.
-- **FAQ, 4fr / 7fr**: heading left, questions right, on Party, Visit and hubs.
-- **Spoke list, 4fr / 8fr**: a sticky heading left, linked rows right.
-- **Menu, 1fr / 1.6fr**: category head and a sticky photo left, priced lists right.
-- **Guide, 1fr / 300px**: prose plus a sticky sidebar from 1000px.
+Heroes are full-bleed photos: Home at `100svh` minus the action bar on phones (full `100svh` on desktop); inner pages at 74svh (84svh desktop); the menu at 62 to 70svh; the tunnel band at 78 to 92svh. On phones the copy sits at the bottom on a dark lower gradient; on desktop it moves to the left on a horizontal gradient.
 
-Grids break symmetry with offsets: the middle occasion drops 72px, even party types drop 64px, and every third film-strip frame is landscape and drops 40px.
-
-**Home section rhythm:** night hero (split) → paper intro (7/5 with green card) → green dish carousel → paper occasions (three portraits, staggered) → night evening (7/5 photo, then film strip) → green quote band → paper guides (four columns) → night visit (1/1 split).
+Swipe rows (dishes, party panels, the garden strip, and reviews under reduced motion) use scroll-snap with the gutter as scroll padding, hide the scrollbar, and carry a gold "Swipe for more" hint that fades once the row is used. Split sections are 1fr / 1fr or 7fr / 5fr on desktop and stack on phones.
 
 ### Named Rules
-**The Reach Rule.** Phones keep a 64px night action bar fixed at the bottom (Menu, Call, Directions, WhatsApp), and the body pads for it plus the safe area. Desktop drops the bar and puts "Book on WhatsApp" in the header.
+**The Ground Not Frame Rule.** Signature venue photos are the section's ground (full-bleed with copy on them), not a picture in a box. Small photos in rows and galleries may be framed, at a 4px corner.
 
-**The 44 Rule.** Every link, chip, button and list row is at least 44px tall. Buttons are 50px, sheet links 58px, list rows 52px.
+**The Never Pinned Rule.** No section pins, stacks or scroll-jacks. Sticky is allowed only for tools: the menu search and category bar, and side columns on desktop (guide sidebar, menu category photo, spoke-list heading).
 
 ## Elevation & Depth
 
-The system is flat. Depth comes from tone changes between sections, photo frames and thin rules. Shadows appear only on elements that float over scrolling content.
+The system is flat. Depth comes from photographs and gradients, not shadows: tone shifts between night, night raised and forest, 1px hairlines in ivory at 8 to 16% opacity, and dark gradient overlays that pull text off the image. Shadows appear only as state or on floating utilities.
 
 ### Shadow Vocabulary
-- **Sticky bar** (`box-shadow: 0 10px 24px -18px rgb(22 21 15 / 0.35)`): the sticky menu search and category bar.
-- **Floating pill** (`box-shadow: 0 10px 24px -10px rgb(0 0 0 / 0.5)`): back-to-top.
-- **Neon glow** (`text-shadow: 0 0 1px #effff5, 0 0 8px rgb(140 255 184 / 0.75), 0 0 22px rgb(51 224 127 / 0.45)`): the neon name only.
+- **Gold hover glow** (`box-shadow: 0 10px 26px -14px rgb(232 194 124 / 0.6)`): under a button on hover, removed on press.
+- **Menu bar lift** (`box-shadow: 0 10px 24px -18px rgb(22 21 15 / 0.35)`): under the sticky menu toolbar on paper.
+- **Floating control** (`box-shadow: 0 10px 24px -10px rgb(0 0 0 / 0.5)`): the menu's back-to-top pill.
+- **Neon glow** (`text-shadow: 0 0 1px #fff8ea, 0 0 10px rgb(255 214 150 / 0.55), 0 0 28px rgb(232 194 124 / 0.35)`): the neon name only.
 
 ### Named Rules
-**The Flat Page Rule.** Cards, frames and sections have no shadow. If something casts a shadow, it floats over the page.
+**The Readable Gradient Rule.** Text never sits on a raw photo. Every full-bleed photo carries a night gradient that reaches 0.85 to 0.97 opacity behind the copy (bottom on phones, left on desktop), plus a light top wash under the header.
 
 ## Shapes
 
-Pills (999px) for every button, chip, search field and the header menu button. Photo frames are 6px, clipped (`overflow: hidden`), with a tone-matched fill while loading. Cards, the enquiry form and call-to-action boxes are 10px. Form fields are 8px. Veg marks are 15px squares at 2px with a dot (veg) or triangle (non-veg). Dividers are 1px rules in `--line`; 1.5px ink or gold underlines mark emphasis (menu group heads, links, nav).
+Two shapes do almost everything: the pill (999px) for every button, chip, search field, menu toggle and floating control, and a near-square 4px corner for photos, cards and panels. Form fields on night use 8px. Circles appear only for the monogram and the accordion plus mark. Hairlines are 1px; the menu subgroup rule is 1.5px ink.
 
 ## Components
 
 ### Buttons
-- **Shape:** pill (999px), 50px tall, 24px side padding, Hanken 650 at 1rem, 19px icon with a 10px gap.
-- **Solid:** fills with the tone's `--btn-bg` and `--btn-fg`: ink on paper, cream on night, cream with green text on green.
-- **Book (`.red`):** redwood with cream text, hovering to redwood bright. Only for WhatsApp booking.
-- **Ghost:** transparent with a 1.5px currentColor border, for the second action.
-- **Hover / Active:** lifts 1px on hover and presses 1px on active, over 0.3s on the house ease. Focus is a 2px currentColor outline at a 3px offset.
+Warm, solid and calm: a lit pill, not a slab.
+- **Shape:** full pill (999px), 52px tall (44px in the header nav), 26px side padding, Hanken 650 at 1rem, 19px icon with a 10px gap.
+- **Primary:** fairy gold with night text. Hover lifts 1px, shifts to light gold and adds the gold glow; press drops 1px and removes it.
+- **Ghost:** transparent, ivory text, ivory border at 55%. Hover brightens the border and adds a 6% ivory wash. On paper the border is ink at 40%.
+- **On paper:** the primary inverts to paper ink with paper text.
+- **Pairing:** gold first (Book a table, Directions, Ask about a party), ghost second (See the menu, Call). On the Home hero the pair sits in a 2-column grid on phones.
+- **Text link:** 650 weight, gold underline, and a gold arrow that slides 4px on hover.
 
-### Link
-Inline-flex, 44px tall, Hanken 650, with a 1.5px underline in the tone accent (redwood on paper, gold on dark). The trailing arrow slides 4px on hover.
+### Chips (menu only)
+- **Style:** white pill, ink text, 1.5px hairline border, 44px tall.
+- **State:** diet toggles fill with ink when pressed; the current category chip fills with deep forest and ivory text.
 
-### Header and navigation
-Fixed, 64px, cream text. Transparent over the hero, then solid night after 40px of scroll; it hides when scrolling down past 500px and returns on scroll up. Desktop nav links are Hanken 550 with a 1.5px gold underline that wipes in from the left on hover and for the current page, plus a book button. Phones show a "Menu" pill instead.
+### Cards / Containers
+- **Party panel:** a full-bleed photo card (4px corner, up to 72svh tall on phones), title and line on a bottom gradient, gold WhatsApp button inside. 86vw swipe cards on phones, 3 or 4 across on desktop.
+- **Dish card:** 4:5 photo (5:4 on desktop), serif name, veg mark and gold price, one muted line. The photo scales 4% on hover.
+- **Review card:** 340px max, 22px padding, translucent night fill with a hairline border, gold stars, the quote in Gilda at 1.0625 to 1.125rem, the name in bold and "Google review, date" in mute.
+- **Forest block:** guide "In short", guide CTA and the menu footer note sit on deep forest with a 4px corner.
 
-### Menu sheet
-A native `<dialog>`, full screen in lawn green deep with a 60% night backdrop; it rises 14px and fades in over 0.35s. Main links are Gloock 1.75rem in 58px rows with rules; secondary links are Hanken 1.0625rem. A two-column WhatsApp and Call row sits at the bottom. The action bar hides while the sheet is open.
+### Inputs / Fields
+- **Night form (party enquiry):** 50px, 8px corner, ivory border at 28% on a 55% night fill, ivory text; focus is a 2px gold outline.
+- **Menu search:** a white 48px pill with a 1.5px hairline; focus is a 2px ink outline.
 
-### Action bar
-Phones only: a 64px night bar with four equal cells (Menu, Call, Directions, WhatsApp), a 22px icon over a 0.875rem label. The WhatsApp cell is filled redwood.
+### Navigation
+- **Header:** fixed, 64px, transparent over a hero, turning solid night at 94% with a hairline once scrolled; it hides on scroll down. Links are Hanken 500 in ivory at 86%, with a 1px gold underline that wipes in on hover and marks the current page. The nav booking link is a smaller gold pill.
+- **Phone menu:** a pill "Menu" button opens a full-screen forest sheet: Gilda links at 1.8rem with gold arrows, smaller utility links, and a two-button footer (gold plus ghost). The action bar hides while the sheet is open.
 
-### Cards
-- **Hours card:** green tone on paper, 10px, clamp(22px, 3vw, 36px) padding, a definition list split by rules, then two buttons.
-- **Short answer and call-to-action boxes:** the same 10px shape in green or night.
+### Phone Action Bar (signature)
+Fixed to the bottom below 900px, 64px plus the safe area, solid night with a hairline. Four cells: Menu, Call and Directions (gold icon over a 0.8125rem label) and a wider gold Book a table cell with the WhatsApp icon. The body pads its bottom so nothing hides under it.
 
-### Dish card (signature)
-A 4:5 framed food photo, labelled illustrative, that scales to 1.04 on hover. Below it sit the Gloock name (1.3rem), a veg mark with a bold tabular price in `--price`, and a small muted line. On phones the cards form a snap-scrolling row (58vw, max 260px) with a "Swipe for more" hint whose arrow nudges until the first swipe. On desktop they become a five-column grid. The row ends with an ivory "All 187 dishes" card.
+### Review Band (signature)
+A slow marquee of real Google quotes (two opposing rows on desktop, one on phones), edge-masked, paused on hover, focus or a tap. Under reduced motion it becomes a static snap row with duplicates removed. Its header shows the rating as a large serif number with a gold star and the date it was checked.
 
-### Film strip (signature)
-A row of real venue frames on night: 3:4 portraits, with every third frame a 4:3 landscape that drops 40px, each with a caption. It swipes with snap on phones; on desktop it drifts left as the section scrolls past.
-
-### Quote band
-On green: one large Gloock quote (clamp(2rem, 1.3rem + 3.6vw, 4.6rem), 22ch) in curly quotes, the reviewer below, then a rule, the gold rating figure with its source and date, and a ghost "Write a review" button. Three shorter quotes (1.35rem) follow in a row of three on desktop.
-
-### FAQ
-Native `<details>` between rules. Questions are Gloock clamp(1.15rem, 1rem + 0.5vw, 1.45rem) in 64px rows, with a 16px accent plus that turns 45 degrees when open. Answers are muted.
-
-### Menu list and sticky chips
-A sticky paper bar holds a pill search field, Veg and Non-veg toggle pills (pressed state is filled ink), and a horizontally scrolling row of 44px category chips; the active chip is filled green. Each group head is redwood Hanken 700 over a 1.5px ink rule, with Half and Full column headings. Items are rows split by rules: veg mark, name in 600 with a muted description, then 5rem right-aligned tabular prices.
-
-### Back to top
-A floating ink pill, 48px, fixed above the action bar (bottom right, 28px on desktop). It fades and rises in once shown.
-
-### Forms
-The party enquiry sits on an ivory 10px panel inside the night tone. Labels are Hanken 650; fields are 50px, 8px radius, white, with a 1.5px border at 25% ink, 1.0625rem text, and a 2px ink focus outline. Paired fields sit two across, stacking below 420px. Submitting opens WhatsApp.
-
-### Spoke list
-Rows between rules: a Gloock title, a small muted description and an accent arrow. On desktop the title and description sit side by side and the heading is sticky in a 4fr column.
-
-### Motion
-- **All devices:** blocks marked for reveal fade up 22px (0.7 to 0.8s, cubic-bezier(0.16, 1, 0.3, 1)) once, via IntersectionObserver. Without JavaScript the content is fully visible. The neon name flickers on once, and the hero photo pushes in slowly to 1.08.
-- **Desktop only** (900px+, fine pointer, motion allowed, loaded on idle): Lenis smooth scroll; headlines rise line by line from a mask (expo.out, 1s, 0.07s stagger), skipping any already on screen; 8% parallax inside a clipped frame; the film strip drift.
-- **Never:** pinned sections, cross-fading images, or scroll-scrubbed motion on phones. Reduced motion turns every reveal and animation off.
+### Veg Marks
+A 15px square outline with a dot (veg) or a triangle (non-veg), in the night or paper colour pair, always with an accessible label.
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** give every section exactly one tone class and let components read `--fg`, `--mute`, `--line`, `--accent` and `--price`.
-- **Do** put booking on a redwood pill and send it to WhatsApp; keep WhatsApp, Call and Directions within one tap on phones.
-- **Do** keep tap targets at 44px or more and body text at 17px or more on phones.
-- **Do** show only real venue photos, in 6px frames, at sizes where they hold up, and label food photos as illustrative.
-- **Do** write headlines in sentence case in Gloock 400, and show prices in bold tabular Hanken.
-- **Do** give each section on a page its own composition, using the 5/7, 7/5, 4/8 and 4/7 splits and offsets.
-- **Do** write in English only, and write the name exactly as "Red Wood Farm".
+- **Do** keep every section on night, night raised or deep forest; use menu paper only under a priced list.
+- **Do** run signature venue photos full-bleed, graded with the shared warm night grade (`scripts/grade_night.py`), with a readable night gradient behind any copy.
+- **Do** use only real venue photos for the venue; food photos are the owner-approved images, graded the same way.
+- **Do** make the main action a gold pill and the second an ivory ghost pill; booking goes through WhatsApp.
+- **Do** use swipe rows with a "Swipe for more" hint on phones and grids from 900px.
+- **Do** keep the phone action bar (Menu, Call, Directions, gold Book a table) on every page below 900px.
+- **Do** set every price in Hanken 700 with tabular figures: gold on night, ink on paper.
+- **Do** respect `prefers-reduced-motion`: content visible by default, all animation and parallax removed, the review band static.
+- **Do** keep tap targets at 44px or more and contrast at WCAG AA.
+- **Do** show only exact 4 and 5 star Google quotes in the review band, copied with Google's spelling, alongside the rating and the date it was checked.
 
 ### Don't:
-- **Don't** put an eyebrow, kicker or numbered label above a headline. A sequence number may sit inline in a step heading.
-- **Don't** italicise, highlight or recolour a word inside a headline.
-- **Don't** place text on a photo, or repeat a dark text-over-photo hero down the page.
-- **Don't** use gold on paper.
-- **Don't** pin sections or scroll-scrub motion on phones, and don't cross-fade one image over another.
-- **Don't** use Yellowtail or the neon glow anywhere except the one neon name.
-- **Don't** add shadows to cards, frames or sections.
+- **Don't** set the Yellowtail neon name anywhere except the Home hero.
+- **Don't** bring back a light page with alternating ivory, green and night bands; there is one paper surface, for prices.
+- **Don't** pin, stack or scroll-jack sections.
+- **Don't** add a second accent colour on night.
+- **Don't** add eyebrow or kicker labels above headings, or highlight a single word in a headline.
+- **Don't** write "Images are for representation only" or any similar line.
+- **Don't** use bar or liquor wording, or any Hindi or Punjabi text; the site is English only.
+- **Don't** use stock or AI images of the venue, fake people, fake reviews, or invented awards and numbers.
+- **Don't** add Review or AggregateRating schema to the review band.
+- **Don't** set text directly on a photo without its gradient.

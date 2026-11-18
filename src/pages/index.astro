@@ -3,28 +3,21 @@ import { u, abs } from '../data/urls.js';
 import Base from '../layouts/Base.astro';
 import Icon from '../components/Icon.astro';
 import { Picture, getImage } from 'astro:assets';
-import ShinyText from '../components/reactbits/ShinyText/ShinyText';
-import BlurHeading from '../components/BlurHeading.astro';
-import HeroLights from '../components/rb/HeroLights';
-import ScrollWords from '../components/ScrollWords.astro';
-import CardStack from '../components/CardStack.astro';
-import Spark from '../components/rb/Spark';
-import Tilt from '../components/rb/Tilt';
-import VenueDome from '../components/rb/VenueDome';
 import { site, waLink } from '../data/site.js';
 import { find, price, menu, allItems } from '../data/menu.js';
 import ReviewBand from '../components/ReviewBand.astro';
+import PartyPanels from '../components/PartyPanels.astro';
 import { clusters } from '../data/clusters.js';
 import { pagesIn, pathOf } from '../data/pages.js';
 
 import heroPortrait from '../assets/venue/hero-path-portrait.jpg';
 import heroLandscape from '../assets/venue/hero-path-landscape.jpg';
-import Tunnel3D from '../components/Tunnel3D.astro';
+import tunnel from '../assets/venue/tunnel.jpg';
 import palmTable from '../assets/venue/palm-table.jpg';
 import birthday from '../assets/venue/birthday-arch.jpg';
 import kitty from '../assets/venue/day-lounge.jpg';
 import family from '../assets/venue/function-night.jpg';
-import entrance from '../assets/venue/entrance-arch.jpg';
+import stringWide from '../assets/venue/string-wide.jpg';
 import fairyTree from '../assets/venue/fairy-tree.jpg';
 import pathNight from '../assets/venue/garden-path-night.jpg';
 import nameArch from '../assets/venue/name-arch.jpg';
@@ -57,9 +50,9 @@ const dishes = [
 ].map(([img, name, line]) => ({ img, name, line, item: find(name) }));
 
 const occasions = [
-  { img: birthday, alt: 'A birthday balloon arch set up on the lawn at night', h: 'Birthday parties', p: 'Balloons, a cake table and dinner under the lights, for children or grown-ups.', msg: 'birthday party' },
-  { img: kitty, alt: 'Daytime lounge seating on the lawn with cushions and low tables', h: 'Kitty parties', p: 'Daytime on the lawn from 10 AM, with the full menu and room to sit long.', msg: 'kitty party' },
-  { img: family, alt: 'An evening function on the lawn with a buffet line and draped tent', h: 'Family functions', p: 'Anniversaries and get-togethers, with food from our own kitchen.', msg: 'family function' },
+  { img: birthday, pos: '50% 60%', alt: 'A birthday balloon arch set up on the lawn at night', h: 'Birthday parties', p: 'Balloons, a cake table and dinner under the lights, for children or grown-ups.', msg: 'birthday party' },
+  { img: kitty, pos: '40% 50%', alt: 'Daytime lounge seating on the lawn with cushions and low tables', h: 'Kitty parties', p: 'Daytime on the lawn from 10 AM, with the full menu and room to sit long.', msg: 'kitty party' },
+  { img: family, pos: '55% 50%', alt: 'An evening function on the lawn with a buffet line and draped tent', h: 'Family functions', p: 'Anniversaries and get-togethers, with food from our own kitchen.', msg: 'family function' },
 ];
 
 const strip = [
@@ -73,8 +66,6 @@ const strip = [
   [palmsDusk, 'The palm driveway lit at dusk', 'The palm drive at dusk'],
 ];
 
-const occCards = occasions.map((o) => ({ img: o.img, alt: o.alt, h: o.h, p: o.p, cta: `Ask about a ${o.msg}`, href: waLink(`Hello Red Wood Farm, I would like to plan a ${o.msg}. Date: , Time: , Guests: `) }));
-
 const featured = {
   party: ['birthday-party-venues-ludhiana', 'kitty-party-venues-ludhiana', 'office-team-lunch-ludhiana'],
   food: ['tandoor-guide', 'vegetarian-guide', 'group-ordering-guide'],
@@ -87,161 +78,135 @@ const hubs = await Promise.all(Object.entries(featured).map(async ([c, slugs]) =
 }));
 const allPrices = allItems.flatMap((i) => [i.half, i.full]).filter(Boolean);
 const range = `₹${Math.min(...allPrices)} to ₹${Math.max(...allPrices)}`;
-const catNames = menu.categories.map((c) => c.name).slice(0, 9).join(', ');
-const heroSet = async (src, widths, format) => (await Promise.all(widths.map(async (w) => `${(await getImage({ src, width: w, format, quality: format === 'avif' ? 34 : 56 })).src} ${w}w`))).join(', ');
+const heroSet = async (src, widths, format) => (await Promise.all(widths.map(async (w) => `${(await getImage({ src, width: w, format, quality: format === 'avif' ? 32 : 55 })).src} ${w}w`))).join(', ');
 const hero = {
-  pAvif: await heroSet(heroPortrait, [480, 640, 828, 1100], 'avif'), pWebp: await heroSet(heroPortrait, [480, 640, 828, 1100], 'webp'),
-  lAvif: await heroSet(heroLandscape, [760, 1100, 1376], 'avif'), lWebp: await heroSet(heroLandscape, [760, 1100, 1376], 'webp'),
+  pAvif: await heroSet(heroPortrait, [480, 676], 'avif'), pWebp: await heroSet(heroPortrait, [480, 676], 'webp'),
+  lAvif: await heroSet(heroLandscape, [960, 1376], 'avif'), lWebp: await heroSet(heroLandscape, [960, 1376], 'webp'),
   img: (await getImage({ src: heroPortrait, width: 720, format: 'jpg', quality: 70 })).src,
 };
-const domeImages = await Promise.all(strip.map(async ([img, alt]) => ({ src: (await getImage({ src: img, width: 520, format: 'webp', quality: 62 })).src, alt })));
+const bookMsg = 'Hello Red Wood Farm, I would like to book a table.';
 const title = 'Red Wood Farm: Garden Family Restaurant & Party Lawn, Ludhiana';
 const description = 'Garden family restaurant and party lawn on outer Pakhowal Road, Ludhiana. Tandoor, North Indian and Indo-Chinese, open daily 10 AM to 11 PM. Book a table.';
 const crumbs = { '@context': 'https://schema.org', '@type': 'WebSite', name: site.name, url: abs(`/`) };
 ---
-<Base title={title} description={description} schema={[crumbs]} og="og-home.jpg">
-  <section class="hero tone-night" aria-labelledby="hero-title">
-    <div class="hero-panel">
-      <p class="open-chip" data-open>Open daily, 10 AM to 11 PM</p>
-      <p class="hero-name neon"><ShinyText client:after trigger="view" text="Red Wood Farm" color="#effff5" shineColor="#ffffff" speed={2.6} delay={4} angle={110} shineWidth={18} glow={0} /></p>
-      <BlurHeading as="h1" id="hero-title" class="hero-title" text={'A garden family restaurant and party lawn'} />
+<Base title={title} description={description} schema={[crumbs]} og="og-home.jpg" overHero>
+  <!-- Arrival: the real lit garden path, edge to edge -->
+  <section class="hero bleed" aria-labelledby="hero-title" data-hero>
+    <picture>
+      <source media="(min-width: 900px)" type="image/avif" srcset={hero.lAvif} sizes="100vw" />
+      <source media="(min-width: 900px)" type="image/webp" srcset={hero.lWebp} sizes="100vw" />
+      <source type="image/avif" srcset={hero.pAvif} sizes="100vw" />
+      <source type="image/webp" srcset={hero.pWebp} sizes="100vw" />
+      <img src={hero.img} width="676" height="1196" alt="The lit garden path at Red Wood Farm at night, with lamp posts and fairy lights along the walk" loading="eager" fetchpriority="high" decoding="async" />
+    </picture>
+    <span class="hero-end" data-hero-end aria-hidden="true"></span>
+    <p class="hero-open wrap" data-open>Open daily, 10 AM to 11 PM</p>
+    <div class="hero-in wrap">
+      <p class="hero-name neon" aria-hidden="true">Red Wood Farm</p>
+      <h1 id="hero-title" class="hero-title"><span>A garden family restaurant</span> <span>and party lawn</span></h1>
       <p class="hero-sub">On outer Pakhowal Road, Ludhiana. Tandoor, North Indian and Indo-Chinese food, every day from 10 AM to 11 PM.</p>
-      <Spark client:interact>
-        <div class="hero-ctas">
-          <a class="btn" href={u('/menu/')}><Icon name="menu" />See the menu</a>
-          <a class="btn ghost" href={u('/party/')}>Plan a party</a>
-        </div>
-      </Spark>
+      <div class="hero-ctas">
+        <a class="btn gold" href={waLink(bookMsg)} target="_blank" rel="noopener"><Icon name="wa" />Book a table</a>
+        <a class="btn ghost" href={u('/menu/')}><Icon name="menu" />See the menu</a>
+      </div>
     </div>
-    <figure class="hero-photo">
-      <picture>
-        <source media="(min-width: 900px)" type="image/avif" srcset={hero.lAvif} sizes="52vw" />
-        <source media="(min-width: 900px)" type="image/webp" srcset={hero.lWebp} sizes="52vw" />
-        <source type="image/avif" srcset={hero.pAvif} sizes="86vw" />
-        <source type="image/webp" srcset={hero.pWebp} sizes="86vw" />
-        <img src={hero.img} width="1100" height="1376" alt="The lit garden path at Red Wood Farm at dusk, with lamp posts and fairy lights along the walk" loading="eager" fetchpriority="high" decoding="async" />
-      </picture>
-      <HeroLights client:after />
-    </figure>
   </section>
 
-  <Tunnel3D />
-
-  <section class="intro section tone-paper" aria-labelledby="intro-h">
+  <section class="intro section tone-night" aria-labelledby="intro-h">
     <div class="wrap intro-grid">
       <div class="intro-copy">
-        <h2 id="intro-h" class="intro-h" data-reveal>A garden restaurant for the whole family</h2>
+        <h2 id="intro-h" data-reveal>A garden restaurant for the whole family</h2>
         <p class="lede" data-reveal>Red Wood Farm is a garden family restaurant and party lawn at VPO Daad, on outer Pakhowal Road in Ludhiana. We serve tandoor, North Indian and Indo-Chinese food every day from 10 AM to 11 PM, at tables on a fairy-lit lawn.</p>
-        <ul class="stats" role="list" data-reveal>
-          <li><span class="stat-n"><span class="cnt" style="--to:187">187</span></span><span class="stat-l">dishes</span></li>
-          <li><span class="stat-n"><span class="cnt" style="--to:13">13</span></span><span class="stat-l">hours a day</span></li>
-          <li><span class="stat-n"><span>4.2</span><span class="stat-star" aria-hidden="true">★</span></span><span class="stat-l">Google rating</span></li>
-        </ul>
         <a class="link" href={u('/about/')} data-reveal>About Red Wood Farm <Icon name="arrow" /></a>
       </div>
-      <aside class="card tone-green" aria-label="Hours and address" data-reveal>
-        <p class="open-chip" data-open>Open daily, 10 AM to 11 PM</p>
-        <dl>
+      <div class="intro-facts" data-reveal>
+        <dl class="facts" aria-label="Hours and address">
           <div><dt>Hours</dt><dd>{site.hoursDisplay}</dd></div>
           <div><dt>Address</dt><dd>VPO Daad, Pakhowal Road, opposite Cerajot Tiles, near Omaxe Flats, Ludhiana</dd></div>
           <div><dt>Also</dt><dd>Takeaway and Wi-Fi. No wheelchair access.</dd></div>
         </dl>
         <div class="btns">
-          <a class="btn" href={waLink('Hello Red Wood Farm, I would like to book a table.')} target="_blank" rel="noopener"><Icon name="wa" />Book a table</a>
           <a class="btn ghost" href={site.directionsUrl} target="_blank" rel="noopener"><Icon name="pin" />Directions</a>
+          <a class="btn ghost" href={site.tel}><Icon name="call" />Call {site.phoneDisplay}</a>
         </div>
-      </aside>
+      </div>
     </div>
   </section>
 
-  <section class="dishes section tone-green" aria-labelledby="dish-h">
-    <div class="wrap dish-head">
-      <ScrollWords id="dish-h" text="Start with the tandoor" />
-      <p class="muted">Nine dishes from our menu of 187, with their prices.</p>
-      <p class="swipe-hint" aria-hidden="true">Swipe for more <Icon name="arrow" /></p>
+  <!-- The fairy-light tunnel, the real photo, full width -->
+  <section class="tunnel bleed parallax" aria-labelledby="tun-h">
+    <Picture src={tunnel} formats={['avif', 'webp']} widths={[640, 960, 1280, 1536]} sizes="(max-width: 899px) 75vw, 100vw" quality={50} alt="The fairy-light tunnel at Red Wood Farm, an arched walkway covered in thousands of warm lights" loading="lazy" />
+    <div class="wrap bleed-copy">
+      <h2 id="tun-h" data-reveal>Walk in through the lights</h2>
+      <p data-reveal>Come in through the garden gate and the fairy-light tunnel. Every venue photo on this page is the real place.</p>
     </div>
-    <ul class="dish-phone" role="list" aria-label="Signature dishes">
+  </section>
+
+  <section class="dishes section tone-paper" aria-labelledby="dish-h">
+    <div class="wrap sec-head">
+      <h2 id="dish-h" data-reveal>Start with the tandoor</h2>
+      <div>
+        <p class="muted" data-reveal>Nine dishes from our menu of 187, with their prices.</p>
+        <p class="swipe-hint" data-swipe-hint="dishes" aria-hidden="true">Swipe for more <Icon name="arrow" /></p>
+      </div>
+    </div>
+    <ul class="dish-row swipe" role="list" aria-label="Signature dishes" data-swipe="dishes">
       {dishes.map((d) => (
-        <li class="dtilt">
+        <li class="dish">
           <a href={u(`/menu/#${d.item.catId}`)}>
-            <div class="dtilt-img"><Picture src={d.img} formats={['avif', 'webp']} widths={[320, 480, 640]} sizes="(min-width: 900px) 1px, 74vw" alt={d.name} /></div>
-            <div class="dtilt-panel">
+            <div class="dish-img"><Picture src={d.img} formats={['avif', 'webp']} widths={[360, 540, 760]} sizes="(min-width: 900px) 30vw, 78vw" alt={d.name} loading="lazy" /></div>
+            <div class="dish-body">
               <h3>{d.name}</h3>
-              <p class="dtilt-meta"><span class={`mark ${d.item.veg ? 'v' : 'nv'}`} role="img" aria-label={d.item.veg ? 'Veg' : 'Non-veg'}></span><span class="dtilt-price">{price(d.item)}</span></p>
-              <p class="dtilt-line">{d.line}</p>
+              <p class="dish-meta"><span class={`mark ${d.item.veg ? 'v' : 'nv'}`} role="img" aria-label={d.item.veg ? 'Veg' : 'Non-veg'}></span><span class="dish-price">{price(d.item)}</span></p>
+              <p class="dish-line">{d.line}</p>
             </div>
           </a>
         </li>
       ))}
     </ul>
-    <div class="dswap wrap" data-dswap>
-      <ol class="dswap-list" role="list">
-        {dishes.map((d, i) => (
-          <li><a href={u(`/menu/#${d.item.catId}`)} data-i={i} aria-current={i === 0 ? 'true' : undefined}>
-            <span class="dswap-name">{d.name}</span>
-            <span class="dswap-price">{price(d.item)}</span>
-          </a></li>
-        ))}
-      </ol>
-      <Tilt client:media="(hover: hover) and (pointer: fine)">
-      <div class="dswap-stage" aria-hidden="true">
-        {dishes.map((d, i) => (
-          <figure class={`dswap-fig${i === 0 ? ' on' : ''}`} data-i={i}>
-            <Picture src={d.img} formats={['avif', 'webp']} widths={[480, 760, 1000]} sizes="40vw" alt="" loading="lazy" />
-            <figcaption>{d.line}</figcaption>
-          </figure>
-        ))}
-      </div>
-      </Tilt>
-    </div>
-    <div class="wrap dish-all-wrap"><a class="btn" href={u('/menu/')}><Icon name="menu" />See all {menu.count} dishes</a><p class="da-r">Every price on the menu, {range}.</p></div>
+    <div class="wrap dish-all"><a class="btn gold" href={u('/menu/')}><Icon name="menu" />See all {menu.count} dishes</a><p>Every price on the menu, {range}.</p></div>
   </section>
 
-  <ReviewBand />
-
-  <section class="occasions section tone-paper" aria-labelledby="occ-h">
-    <div class="wrap">
-      <div class="occ-head">
-        <ScrollWords id="occ-h" text="Birthdays, kitty parties and family functions" />
-        <div>
-          <p data-reveal>The lawn and its lights are yours for the afternoon or the evening. Tell us the date and the number of guests and we will plan it with you.</p>
-          <a class="link" href={u('/party/')} data-reveal>Plan a party <Icon name="arrow" /></a>
-        </div>
+  <section class="occasions section tone-night" aria-labelledby="occ-h">
+    <div class="wrap sec-head">
+      <h2 id="occ-h" data-reveal>Birthdays, kitty parties and family functions</h2>
+      <div>
+        <p data-reveal>The lawn and its lights are yours for the afternoon or the evening. Tell us the date and the number of guests and we will plan it with you.</p>
+        <a class="link" href={u('/party/')} data-reveal>Plan a party <Icon name="arrow" /></a>
       </div>
-      <CardStack items={occCards} />
     </div>
+    <PartyPanels items={occasions} />
   </section>
 
-  <section class="evening section tone-night" aria-labelledby="eve-h">
-    <div class="wrap eve-grid">
-      <figure class="eve-fig">
-        <div class="frame eve-img sd-zoom"><div data-parallax="8"><Picture src={palmTable} formats={['avif', 'webp']} widths={[480, 760, 1100]} sizes="(min-width: 900px) 58vw, 92vw" alt="A dining table under the lit palm trees on the lawn at night" /></div></div>
-        <figcaption class="cap">A table under the palms on the lawn, after dark.</figcaption>
+  <ReviewBand tone="green" />
+
+  <section class="evening tone-night" aria-labelledby="eve-h">
+    <div class="eve-grid">
+      <figure class="eve-photo parallax">
+        <Picture src={palmTable} formats={['avif', 'webp']} widths={[640, 960, 1376]} sizes="(min-width: 900px) 60vw, 100vw" alt="A dining table under the lit palm trees on the lawn at night" loading="lazy" />
       </figure>
       <div class="eve-copy">
-        <ScrollWords id="eve-h" text="The lawn by night" />
+        <h2 id="eve-h" data-reveal>The lawn by night</h2>
         <p data-reveal>After sunset the lawn, the palms and the tunnel light up. Take a table outside, or book a corner for a birthday or a get-together.</p>
-        <a class="btn red" href={waLink('Hello Red Wood Farm, I would like to book a table for this evening.')} target="_blank" rel="noopener" data-reveal><Icon name="wa" />Book a table tonight</a>
+        <a class="btn gold" href={waLink('Hello Red Wood Farm, I would like to book a table for this evening.')} target="_blank" rel="noopener" data-reveal><Icon name="wa" />Book a table tonight</a>
       </div>
     </div>
     <div class="strip-wrap">
-      <div class="wrap strip-head">
-        <h3>Walk in through the lights</h3>
-        <p class="muted">Come in through the garden gate and the fairy-light tunnel. Every venue photo on this page is the real place.</p>
+      <div class="wrap sec-head">
+        <h3>Around the garden</h3>
+        <p class="swipe-hint" data-swipe-hint="strip" aria-hidden="true">Swipe for more <Icon name="arrow" /></p>
       </div>
-      <VenueDome client:media="(hover: hover) and (pointer: fine) and (min-width: 900px)" images={domeImages} />
-      <ul class="strip" role="list" data-strip data-swipe="strip">
+      <ul class="strip swipe" role="list" aria-label="Photos of the garden" data-swipe="strip">
         {strip.map(([img, alt, cap]) => (
-          <li><figure><div class="frame sd-zoom"><Picture src={img} formats={['avif', 'webp']} widths={[240, 360, 520]} sizes="(min-width: 900px) 22vw, 62vw" alt={alt} /></div><figcaption class="cap">{cap}</figcaption></figure></li>
+          <li><figure><div class="frame"><Picture src={img} formats={['avif', 'webp']} widths={[360, 540, 760]} sizes="(min-width: 900px) 26vw, 78vw" alt={alt} loading="lazy" /></div><figcaption class="cap">{cap}</figcaption></figure></li>
         ))}
       </ul>
     </div>
   </section>
 
-
   <section class="guides section tone-paper" aria-labelledby="ex-h">
     <div class="wrap">
-      <ScrollWords id="ex-h" text="Guides from our team" />
+      <h2 id="ex-h" data-reveal>Guides from our team</h2>
       <div class="ex-list">
         {hubs.map(({ hub, items }) => (
           <details class="ex-row">
@@ -254,15 +219,15 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'WebSite', name: sit
     </div>
   </section>
 
-  <section class="visit section tone-night" aria-labelledby="visit-h">
-    <div class="wrap split">
-      <div class="frame visit-img sd-zoom"><Picture src={entrance} formats={['avif', 'webp']} widths={[480, 800, 1200]} sizes="(min-width: 900px) 45vw, 92vw" alt="The hedge and flower entrance arch at Red Wood Farm, by day" /></div>
-      <div>
-        <ScrollWords id="visit-h" text="Opposite Cerajot Tiles, near Omaxe Flats" />
-        <address class="lede">{site.address.full}</address>
-        <p class="muted">{site.hoursDisplay}. Takeaway available. No wheelchair access.</p>
-        <div class="btns">
-          <a class="btn" href={site.directionsUrl} target="_blank" rel="noopener"><Icon name="pin" />Directions</a>
+  <section class="visit tone-night" aria-labelledby="visit-h">
+    <div class="visit-grid">
+      <div class="visit-photo"><Picture src={stringWide} formats={['avif', 'webp']} widths={[640, 960, 1280]} sizes="(min-width: 900px) 50vw, 100vw" alt="Strings of warm lights over lounge seating on the lawn at night" loading="lazy" /></div>
+      <div class="visit-copy">
+        <h2 id="visit-h" data-reveal>Opposite Cerajot Tiles, near Omaxe Flats</h2>
+        <address class="lede" data-reveal>{site.address.full}</address>
+        <p class="muted" data-reveal>{site.hoursDisplay}. Takeaway available. No wheelchair access.</p>
+        <div class="btns" data-reveal>
+          <a class="btn gold" href={site.directionsUrl} target="_blank" rel="noopener"><Icon name="pin" />Directions</a>
           <a class="btn ghost" href={site.tel}><Icon name="call" />Call {site.phoneDisplay}</a>
         </div>
       </div>
@@ -270,226 +235,156 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'WebSite', name: sit
   </section>
 </Base>
 
-
-<script>
-  // Stats count up once, when they are well in view (no scroll listener; IntersectionObserver only).
-  const stats = document.querySelector('.stats');
-  if (stats) { const io = new IntersectionObserver(([e]) => { if (e.isIntersecting) { stats.classList.add('counting'); io.disconnect(); } }, { threshold: 0.6 }); io.observe(stats); }
-  document.querySelectorAll('[data-dswap]').forEach((box) => {
-    const links = [...box.querySelectorAll('.dswap-list a')];
-    const figs = [...box.querySelectorAll('.dswap-fig')];
-    const show = (i) => {
-      figs.forEach((f) => f.classList.toggle('on', f.dataset.i === i));
-      links.forEach((a) => (a.dataset.i === i ? a.setAttribute('aria-current', 'true') : a.removeAttribute('aria-current')));
-    };
-    links.forEach((a) => { a.addEventListener('pointerenter', () => show(a.dataset.i)); a.addEventListener('focus', () => show(a.dataset.i)); });
-  });
-</script>
-
 <style>
-  /* ---------- Hero: phones stack name, headline and actions above the real garden-path photo ---------- */
-  .hero { display: flex; flex-direction: column; min-height: calc(100svh - var(--bar)); }
-  .hero-panel { padding: calc(var(--head) + 14px) var(--gutter) 22px; display: flex; flex-direction: column; }
-  .open-chip { display: inline-flex; align-items: center; gap: 8px; font: 650 var(--t-label)/1 var(--sans); color: var(--mute); margin: 0 0 14px; }
-  .open-chip::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: #5cc46a; box-shadow: 0 0 0 3px rgb(92 196 106 / 0.25); }
-  .open-chip[data-state='closed']::before { background: var(--gold); box-shadow: 0 0 0 3px rgb(242 207 131 / 0.25); }
-  .hero-panel { container-type: inline-size; }
-  /* One line at every width: "Red Wood Farm" is about 6.2em wide in Yellowtail, so 15% of the panel width always fits. */
-  .hero-name { font-size: clamp(2.4rem, 13vw, 6rem); font-size: clamp(2.4rem, 15cqi, 6rem); white-space: nowrap; margin: 0 0 10px; animation: flick 1.4s steps(1) 0.2s both; }
-  @keyframes flick { 0% { opacity: 0.2; } 12% { opacity: 1; } 18% { opacity: 0.35; } 26%, 100% { opacity: 1; } }
-  .hero h1 { font-size: var(--t-hero); max-width: 17ch; margin-bottom: 14px; }
-  .hero-sub { color: var(--mute); max-width: 38ch; margin-bottom: 20px; }
-  .hero-ctas { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  /* ---------- Arrival hero: full-bleed photo, copy on the lower gradient ---------- */
+  .hero { min-height: calc(100svh - var(--bar)); display: flex; flex-direction: column; justify-content: flex-end; padding: calc(var(--head) + 12px) 0 clamp(26px, 5vh, 56px); }
+  .hero::after { background:
+    linear-gradient(180deg, rgb(9 12 10 / 0.8) 0%, rgb(9 12 10 / 0.35) 20%, rgb(9 12 10 / 0.25) 40%),
+    linear-gradient(0deg, rgb(9 12 10 / 0.97) 0%, rgb(9 12 10 / 0.85) 34%, rgb(9 12 10 / 0.3) 62%, rgb(9 12 10 / 0) 78%); }
+  .hero :global(img) { object-position: 60% 30%; }
+  @media (prefers-reduced-motion: no-preference) {
+    .hero :global(img) { animation: arrive 2.8s var(--slow) both; }
+    .hero-in > * { animation: rise 1.2s var(--ease) both; }
+    .hero-name { animation-delay: 0.35s !important; }
+    .hero-title > span { display: inline-block; clip-path: inset(0 0 -0.2em 0); }
+    .hero-title { animation-delay: 0.5s !important; }
+    .hero-sub { animation-delay: 0.7s !important; }
+    .hero-ctas { animation-delay: 0.85s !important; }
+  }
+  @keyframes arrive { from { transform: scale(1.08); filter: brightness(0.55); } to { transform: none; filter: none; } }
+  @keyframes rise { from { opacity: 0; transform: translateY(16px); } }
+  .hero-end { position: absolute; top: 45%; left: 0; width: 1px; height: 1px; }
+  .hero-open { position: absolute; top: calc(var(--head) + 6px); left: max(var(--gutter), calc((100% - var(--max)) / 2)); width: auto; margin: 0; display: flex; align-items: center; gap: 8px; font: 600 var(--t-label)/1 var(--sans); letter-spacing: 0.02em; color: rgb(242 235 220 / 0.86); }
+  .hero-open::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: #6fd17d; box-shadow: 0 0 0 3px rgb(111 209 125 / 0.22); }
+  .hero-open[data-state='closed']::before { background: var(--gold); box-shadow: 0 0 0 3px rgb(232 194 124 / 0.25); }
+  .hero-in { position: relative; }
+  .hero-name { font-size: clamp(2.3rem, 10.5vw, 4.6rem); margin: 0 0 6px; white-space: nowrap; }
+  .hero-title { font-size: var(--t-hero); line-height: 1.02; max-width: 13ch; margin: 0 0 14px; }
+  .hero-sub { color: rgb(242 235 220 / 0.82); max-width: 36ch; margin: 0 0 22px; font-size: clamp(1rem, 0.95rem + 0.25vw, 1.15rem); }
+  .hero-ctas { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; max-width: 460px; }
   .hero-ctas .btn { padding: 0 12px; }
-  .hero-photo { aspect-ratio: 4 / 5; position: relative; overflow: hidden; margin: 0; }
-  .hero-photo :global(img) { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-  @media (prefers-reduced-motion: no-preference) { .hero-photo :global(img) { animation: push 26s ease-in-out infinite alternate; } }
-  @keyframes push { to { transform: scale(1.08); } }
+  @media (max-height: 680px) and (max-width: 899px) { .hero-sub { display: none; } .hero-name { font-size: 2.1rem; } }
   @media (min-width: 900px) {
-    .hero { display: grid; grid-template-columns: minmax(420px, 5fr) 7fr; min-height: 100svh; }
-    .hero-panel { justify-content: center; padding: calc(var(--head) + 40px) clamp(32px, 4vw, 72px) 56px var(--gutter); }
-    .hero-ctas { display: flex; flex-wrap: wrap; }
-    .hero-ctas .btn { padding: 0 26px; }
-    .hero h1 { font-size: clamp(2.8rem, 1rem + 3.2vw, 4.4rem); max-width: 15ch; }
-    .hero-photo { aspect-ratio: 4 / 3; align-self: center; margin: calc(var(--head) + 24px) var(--gutter) 40px 0; border-radius: 16px; box-shadow: 0 40px 80px -40px rgb(0 0 0 / 0.8); }
+    .hero { min-height: 100svh; padding-bottom: clamp(48px, 8vh, 96px); }
+    .hero::after { background:
+      linear-gradient(180deg, rgb(9 12 10 / 0.8) 0%, rgb(9 12 10 / 0.35) 12%, rgb(9 12 10 / 0) 24%),
+      linear-gradient(90deg, rgb(9 12 10 / 0.92) 0%, rgb(9 12 10 / 0.72) 40%, rgb(9 12 10 / 0.25) 60%, rgb(9 12 10 / 0) 74%),
+      linear-gradient(0deg, rgb(9 12 10 / 0.7) 0%, rgb(9 12 10 / 0) 40%); }
+    .hero :global(img) { object-position: 50% 60%; }
+    .hero-title { max-width: none; font-size: clamp(3rem, 1.2rem + 3vw, 4.6rem); }
+    .hero-title > span { display: block; }
+    .hero-ctas { display: flex; }
+    .hero-ctas .btn { padding: 0 28px; }
   }
 
-  /* ---------- Intro: editorial split with the hours card ---------- */
+  /* ---------- Shared section head ---------- */
+  .sec-head { display: grid; gap: 14px 48px; margin-bottom: clamp(28px, 4vw, 52px); }
+  .sec-head h2 { font-size: var(--t-1); max-width: 15ch; margin: 0; }
+  .sec-head h3 { font-size: var(--t-2); margin: 0; }
+  .sec-head p { margin: 0 0 10px; color: var(--mute); }
+  .sec-head .swipe-hint { color: var(--gold); }
+  @media (min-width: 900px) { .sec-head { grid-template-columns: 7fr 5fr; align-items: end; } }
+
+  /* ---------- Intro ---------- */
   .intro-grid { display: grid; gap: 40px; }
-  .intro h2 { font-size: var(--t-1); max-width: 14ch; }
-  .card { border-radius: 10px; padding: clamp(22px, 3vw, 36px); align-self: start; }
-  .card dl { margin: 0 0 22px; }
-  .card dl div { padding: 12px 0; border-top: 1px solid var(--line); display: grid; gap: 2px; }
-  .card dt { font: 650 var(--t-label)/1.3 var(--sans); color: var(--mute); }
-  .card dd { margin: 0; }
-  @media (min-width: 900px) { .intro-grid { grid-template-columns: 7fr 5fr; gap: clamp(48px, 7vw, 120px); align-items: end; } }
+  .intro h2 { font-size: var(--t-1); max-width: 13ch; }
+  .stats { list-style: none; padding: 0; margin: 0 0 24px; display: grid; grid-template-columns: repeat(3, 1fr); border-block: 1px solid var(--line); }
+  .stats li { display: grid; gap: 6px; align-content: start; padding: 18px 12px 18px 0; }
+  .stats li + li { padding-left: 14px; border-left: 1px solid var(--line); }
+  .stat-n { font: 400 clamp(2.1rem, 1.6rem + 2vw, 3.2rem)/1 var(--serif); color: var(--gold); font-variant-numeric: tabular-nums; }
+  .stat-star { font-size: 0.55em; margin-left: 2px; vertical-align: 0.35em; }
+  .stat-l { font-size: var(--t-small); color: var(--mute); line-height: 1.3; }
+  .facts { margin: 0 0 26px; }
+  .facts div { padding: 12px 0; border-bottom: 1px solid var(--line); display: grid; gap: 2px; }
+  .facts dt { font: 650 var(--t-label)/1.3 var(--sans); color: var(--gold); letter-spacing: 0.02em; }
+  .facts dd { margin: 0; }
+  @media (min-width: 900px) { .intro-grid { grid-template-columns: 6fr 5fr; gap: clamp(48px, 7vw, 128px); align-items: start; } .facts div { grid-template-columns: 7rem 1fr; gap: 16px; } }
 
-  /* ---------- Dishes: swipe row on phones (under two cards a view), grid on desktop ---------- */
-  .dish-head h2 { font-size: var(--t-1); }
-  .dish-head p { margin-bottom: 0; }
-  .swipe-hint { display: inline-flex; align-items: center; gap: 8px; margin-top: 18px !important; font: 650 var(--t-label)/1 var(--sans); color: var(--accent); transition: opacity 0.4s; }
-  .swipe-hint :global(svg) { width: 18px; height: 18px; animation: nudge 1.6s var(--ease) infinite; }
-  .swipe-hint.gone { opacity: 0; }
-  @keyframes nudge { 50% { transform: translateX(6px); } }
-  .dish-row { list-style: none; margin: 28px 0 0; padding: 0 var(--gutter) 6px; display: flex; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: var(--gutter); scrollbar-width: none; overscroll-behavior-x: contain; }
-  .dish-row::-webkit-scrollbar { display: none; }
-  .dish { flex: 0 0 min(58vw, 260px); scroll-snap-align: start; }
-  .dish > a { display: block; text-decoration: none; }
-  .dish-img { aspect-ratio: 4 / 5; }
-  .dish-img :global(img) { transition: transform 0.8s var(--ease); }
+  /* ---------- Tunnel (full bleed) ---------- */
+  .tunnel { min-height: 78svh; display: flex; align-items: flex-end; padding: 0 0 clamp(36px, 7vw, 88px); }
+  .tunnel :global(img) { object-position: 50% 50%; }
+  .tunnel::after { background: linear-gradient(180deg, rgb(9 12 10 / 0.5) 0%, rgb(9 12 10 / 0) 22%, rgb(9 12 10 / 0) 38%, rgb(9 12 10 / 0.7) 62%, rgb(9 12 10 / 0.95) 100%); }
+  @media (min-width: 900px) { .tunnel::after { background: linear-gradient(180deg, rgb(9 12 10 / 0.5) 0%, rgb(9 12 10 / 0) 22%), linear-gradient(90deg, rgb(9 12 10 / 0.88) 0%, rgb(9 12 10 / 0.4) 42%, rgb(9 12 10 / 0) 62%); } .tunnel { align-items: center; } }
+  .bleed-copy h2 { font-size: var(--t-1); max-width: 12ch; }
+  .bleed-copy p { color: rgb(242 235 220 / 0.84); max-width: 44ch; margin: 0; }
+  @media (min-width: 900px) { .tunnel { min-height: 92vh; } }
+
+  /* ---------- Dishes ---------- */
+  .dish { width: min(78vw, 330px); }
+  .dish > a { display: block; text-decoration: none; height: 100%; }
+  .dish-img { aspect-ratio: 4 / 5; overflow: hidden; border-radius: 4px; background: var(--forest); }
+  .dish-img :global(img) { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s var(--ease); }
   .dish a:hover .dish-img :global(img) { transform: scale(1.04); }
-  .dish h3 { font-size: 1.3rem; margin: 14px 0 6px; line-height: 1.15; }
-  .dish-meta { display: flex; align-items: center; gap: 10px; margin: 0 0 4px; }
-  .dish-price { font: 700 1.2rem/1 var(--sans); color: var(--price); font-variant-numeric: tabular-nums; }
+  .dish-body { padding: 16px 2px 0; }
+  .dish h3 { font-size: 1.5rem; margin: 0 0 8px; line-height: 1.1; }
+  .dish-meta { display: flex; align-items: center; gap: 10px; margin: 0 0 6px; }
+  .dish-price { font: 700 1.15rem/1 var(--sans); color: var(--gold); font-variant-numeric: tabular-nums; }
   .dish-line { font-size: var(--t-small); color: var(--mute); margin: 0; }
-  .dish-all > a { height: 100%; min-height: 320px; background: var(--paper); color: var(--ink); border-radius: 6px; display: flex; flex-direction: column; gap: 12px; padding: 22px; }
-  .da-h { font: 400 1.6rem/1.1 var(--serif); }
-  .da-c { font-size: var(--t-small); color: var(--ink-mute); }
-  .da-r { font: 700 1.2rem/1 var(--sans); margin-top: auto; }
-  .dish-all :global(svg) { width: 28px; height: 28px; color: var(--redwood); }
+  .dish-all { margin-top: clamp(28px, 4vw, 48px); display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; }
+  .dish-all p { margin: 0; font-size: var(--t-small); color: var(--mute); }
   @media (min-width: 900px) {
-    .swipe-hint { display: none; }
-    .dish-row { width: min(100% - 2 * var(--gutter), var(--max)); margin-inline: auto; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 40px 24px; overflow: visible; }
-    .dish-head { display: grid; grid-template-columns: 1fr 1fr; align-items: end; gap: 40px; }
+    .dishes .swipe-hint { display: none; }
+    .dish-row { width: min(100% - 2 * var(--gutter), var(--max)); margin-inline: auto; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px 28px; overflow: visible; }
+    .dish { width: auto; }
+    .dish-img { aspect-ratio: 5 / 4; }
   }
 
-  /* ---------- Occasions: three real set-ups, staggered on desktop ---------- */
-  .occ-head h2 { font-size: var(--t-1); max-width: 16ch; }
-  .occ-grid { list-style: none; padding: 0; margin: 40px 0 0; display: grid; gap: 44px; }
-  .occ-img { aspect-ratio: 4 / 5; }
-  .occ h3 { font-size: var(--t-3); margin: 18px 0 8px; }
-  @media (min-width: 900px) {
-    .occ-head { display: grid; grid-template-columns: 7fr 5fr; gap: 64px; align-items: end; }
-    .occ-grid { grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 64px; }
-    .occ-img { aspect-ratio: 4 / 5; }
-    .occ:nth-child(2) { margin-top: 72px; }
-  }
-
-  /* ---------- Evening: one large photo with its caption, then the film strip ---------- */
+  /* ---------- Evening: a big photo that bleeds to the edge, then the garden strip ---------- */
+  .evening { padding-block: var(--section); }
   .eve-grid { display: grid; gap: 28px; }
-  .eve-img { aspect-ratio: 4 / 5; }
-  .eve-img > div { height: 112%; margin-top: -6%; }
-  .eve-copy h2 { font-size: var(--t-1); }
+  .eve-photo { overflow: hidden; aspect-ratio: 4 / 5; background: var(--night-2); }
+  .eve-photo :global(img) { width: 100%; height: 100%; object-fit: cover; }
+  .eve-copy { padding-inline: var(--gutter); }
+  .eve-copy h2 { font-size: var(--t-1); max-width: 10ch; }
   @media (min-width: 900px) {
-    .eve-grid { grid-template-columns: 7fr 5fr; gap: clamp(40px, 6vw, 96px); align-items: end; }
-    .eve-img { aspect-ratio: 5 / 4; }
+    .eve-grid { grid-template-columns: 7fr 5fr; gap: clamp(40px, 6vw, 112px); align-items: end; }
+    .eve-photo { aspect-ratio: 5 / 4; border-radius: 0 4px 4px 0; }
+    .eve-copy { padding: 0 var(--gutter) 0 0; max-width: 520px; }
   }
-  .strip-wrap { margin-top: clamp(64px, 9vw, 120px); overflow: clip; }
-  .strip-head { display: grid; gap: 4px 40px; }
-  .strip-head h3 { font-size: var(--t-2); margin: 0; }
-  @media (min-width: 900px) { .strip-head { grid-template-columns: 1fr 1fr; align-items: end; } }
-  .strip { list-style: none; margin: 28px 0 0; padding: 0 var(--gutter); display: flex; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: var(--gutter); scrollbar-width: none; }
-  .strip::-webkit-scrollbar { display: none; }
-  .strip li { flex: 0 0 min(62vw, 300px); scroll-snap-align: start; }
+  .strip-wrap { margin-top: clamp(56px, 8vw, 112px); }
+  .strip-wrap .sec-head { margin-bottom: 22px; }
+  .strip li { width: min(72vw, 300px); }
+  .strip li:nth-child(3n + 2) { width: min(86vw, 440px); }
   .strip .frame { aspect-ratio: 3 / 4; }
-  /* Phones: the strip bends like a circular gallery, each photo turning by its place in the row (CSS only). */
-  @supports (animation-timeline: view()) {
-    @media (prefers-reduced-motion: no-preference) {
-      .strip { perspective: 1100px; }
-      .strip figure { animation: bend linear both; animation-timeline: view(inline); }
-    }
+  .strip li:nth-child(3n + 2) .frame { aspect-ratio: 4 / 3; }
+  @media (min-width: 900px) {
+    .strip { padding-left: max(var(--gutter), calc((100vw - var(--max)) / 2)); scrollbar-width: thin; scrollbar-color: var(--forest-2) transparent; }
+    .strip li { width: 24vw; max-width: 360px; }
+    .strip li:nth-child(3n + 2) { width: 36vw; max-width: 540px; }
+    .strip-wrap .swipe-hint { display: none; }
   }
-  @keyframes bend { 0% { transform: rotateY(22deg) translateZ(-40px); } 50% { transform: none; } 100% { transform: rotateY(-22deg) translateZ(-40px); } }
-  /* Desktop with a mouse: the DomeGallery replaces the strip. */
-  .strip-wrap :global(.venue-dome) { height: min(78vh, 760px); margin-top: 24px; }
-  @media (hover: hover) and (pointer: fine) and (min-width: 900px) { :global(.js) .strip { display: none; } }
-  .strip li:nth-child(3n + 2) { flex-basis: min(84vw, 420px); }
-  .strip li:nth-child(3n + 2) .frame { aspect-ratio: 4 / 3; margin-top: 40px; }
-  @media (min-width: 900px) { .strip li { flex-basis: 22vw; max-width: 340px; } .strip { padding-left: max(var(--gutter), calc((100vw - var(--max)) / 2)); } }
-
 
   /* ---------- Guides ---------- */
   .guides h2 { font-size: var(--t-1); }
-  .ex-list { margin-top: 36px; border-top: 1px solid var(--line); }
+  .ex-list { margin-top: 32px; border-top: 1px solid var(--line); }
   .ex-row { border-bottom: 1px solid var(--line); }
-  .ex-row summary { list-style: none; cursor: pointer; display: grid; grid-template-columns: 1fr 28px; gap: 6px 20px; padding: 22px 0; align-items: center; }
+  .ex-row summary { list-style: none; cursor: pointer; display: grid; grid-template-columns: 1fr 30px; gap: 6px 20px; padding: 22px 0; align-items: center; }
   .ex-row summary::-webkit-details-marker { display: none; }
-  .ex-name { font: 400 clamp(1.5rem, 1.1rem + 1.6vw, 2.4rem)/1.1 var(--serif); }
-  .ex-blurb { grid-column: 1; color: var(--ink-mute); font-size: var(--t-small); max-width: 60ch; }
-  .ex-plus { grid-column: 2; grid-row: 1 / span 2; width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--line); position: relative; transition: transform 0.4s var(--ease), background 0.3s; }
-  .ex-plus::before, .ex-plus::after { content: ''; position: absolute; left: 8px; right: 8px; top: 13px; height: 1.5px; background: currentColor; }
+  .ex-name { font: 400 clamp(1.55rem, 1.15rem + 1.6vw, 2.5rem)/1.1 var(--serif); transition: color 0.3s var(--ease); }
+  .ex-blurb { grid-column: 1; color: var(--mute); font-size: var(--t-small); max-width: 60ch; }
+  .ex-plus { grid-column: 2; grid-row: 1 / span 2; width: 30px; height: 30px; border-radius: 50%; border: 1px solid rgb(232 194 124 / 0.5); color: var(--gold); position: relative; transition: transform 0.4s var(--ease), background 0.3s; }
+  .ex-plus::before, .ex-plus::after { content: ''; position: absolute; left: 9px; right: 9px; top: 14px; height: 1.5px; background: currentColor; }
   .ex-plus::after { transform: rotate(90deg); transition: transform 0.4s var(--ease); }
-  .ex-row[open] .ex-plus { background: var(--ink); color: var(--paper); }
+  .ex-row[open] .ex-plus { background: var(--gold); color: var(--night); }
   .ex-row[open] .ex-plus::after { transform: rotate(0); }
-  .ex-row summary:hover .ex-name { color: var(--redwood); }
+  .ex-row summary:hover .ex-name { color: var(--gold); }
   .ex-row ul { list-style: none; margin: 0 0 14px; padding: 0; }
   .ex-row li a { display: flex; justify-content: space-between; align-items: center; gap: 16px; min-height: 48px; padding: 8px 0; border-top: 1px solid var(--line); text-decoration: none; }
-  .ex-row li a:hover { color: var(--redwood); }
+  .ex-row li a :global(svg) { width: 18px; height: 18px; flex: none; color: var(--gold); }
+  .ex-row li a:hover { color: var(--gold); }
   .ex-row > .link { display: inline-flex; margin-bottom: 22px; }
-  @media (min-width: 900px) { .ex-row summary { grid-template-columns: 5fr 6fr 28px; } .ex-blurb { grid-column: 2; } .ex-plus { grid-column: 3; grid-row: 1; } .ex-row ul, .ex-row > .link { margin-left: calc(5 / 11 * (100% - 48px) + 20px); } }
+  @media (min-width: 900px) { .ex-row summary { grid-template-columns: 5fr 6fr 30px; } .ex-blurb { grid-column: 2; } .ex-plus { grid-column: 3; grid-row: 1; } .ex-row ul, .ex-row > .link { margin-left: calc(5 / 11 * (100% - 50px) + 20px); } }
 
   /* ---------- Visit ---------- */
-  .visit h2 { font-size: var(--t-2); }
-  .visit-img { aspect-ratio: 1; }
-  @media (min-width: 900px) { .visit-img { aspect-ratio: 4 / 3; } }
+  .visit-grid { display: grid; }
+  .visit-photo { aspect-ratio: 4 / 3; overflow: hidden; }
+  .visit-photo :global(img) { width: 100%; height: 100%; object-fit: cover; }
+  .visit-copy { padding: clamp(32px, 6vw, 56px) var(--gutter) var(--section); }
+  .visit h2 { font-size: var(--t-2); max-width: 16ch; }
   .visit address { font-style: normal; margin-bottom: 12px; }
-
-  /* ---------- React Bits islands on Home ---------- */
-  .hero-name :global(.shiny-text) { white-space: nowrap; }
-  .hero :global(.hero-title) { font-size: var(--t-hero); max-width: 18ch; margin: 0 0 14px; line-height: 1.04; justify-content: flex-start; }
-  @media (min-width: 900px) { .hero :global(.hero-title) { font-size: clamp(2.8rem, 1rem + 3.2vw, 4.4rem); max-width: 15ch; } }
-  .hero-photo :global(.hero-lights) { position: absolute; inset: 0; pointer-events: none; mix-blend-mode: screen; }
-  .intro :global(.scroll-words), .dishes :global(.scroll-words), .occasions :global(.scroll-words), .evening :global(.scroll-words), .guides :global(.scroll-words) { font-size: var(--t-1); }
-  .intro .intro-h { font-size: var(--t-1); max-width: 14ch; }
-  .occasions :global(.scroll-words) { max-width: 16ch; }
-  .visit :global(.scroll-words) { font-size: var(--t-2); }
-  .stats { list-style: none; padding: 18px 0 0; margin: 4px 0 26px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; border-top: 1px solid var(--line); }
-  .stats li { display: grid; gap: 4px; align-content: start; }
-  .stat-n { font: 400 clamp(2rem, 1.4rem + 2.4vw, 3.2rem)/1 var(--serif); color: var(--redwood); font-variant-numeric: tabular-nums; display: inline-flex; align-items: baseline; gap: 2px; }
-  .stat-star { font-size: 0.6em; color: #a8780f; }
-  .stat-l { font-size: var(--t-small); color: var(--mute); line-height: 1.3; white-space: normal; overflow-wrap: break-word; }
-  /* Dishes: phones get the swipe stack; desktop gets the hover image swap. */
-  .dswap { display: none; }
-  .dish-all-wrap { margin-top: 28px; display: grid; justify-items: center; gap: 8px; }
-  .dish-all-wrap .da-r { margin: 0; font-size: var(--t-small); color: var(--mute); }
   @media (min-width: 900px) {
-    .dish-phone, .swipe-hint { display: none; }
-    .dswap { display: grid; grid-template-columns: 5fr 7fr; gap: 56px; margin-top: 48px; align-items: center; }
-    .dswap-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
-    .dswap-list a { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--line); text-decoration: none; transition: padding 0.4s var(--ease), color 0.3s; }
-    .dswap-name { font: 400 clamp(1.4rem, 1rem + 1vw, 2rem)/1.1 var(--serif); }
-    .dswap-price { font: 700 1.05rem/1 var(--sans); color: var(--gold); font-variant-numeric: tabular-nums; }
-    .dswap-list a[aria-current], .dswap-list a:hover, .dswap-list a:focus-visible { padding-left: 14px; color: var(--gold); }
-    .dswap :global(astro-island) { display: block; }
-    .dswap :global(.tilted-card), .dswap :global(.tilted-card__body) { width: 100% !important; height: auto !important; aspect-ratio: 4 / 5; }
-    .dswap-stage { position: relative; aspect-ratio: 4 / 5; border-radius: 10px; overflow: hidden; background: var(--night-2); }
-    .dswap-fig { position: absolute; inset: 0; margin: 0; clip-path: inset(0 0 100% 0); transition: clip-path 0.7s var(--ease); }
-    .dswap-fig.on { clip-path: inset(0 0 0 0); z-index: 1; }
-    .dswap-fig :global(img) { width: 100%; height: 100%; object-fit: cover; transform: scale(1.06); transition: transform 1.2s var(--ease); }
-    .dswap-fig.on :global(img) { transform: none; }
-    .dswap-fig figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 14px 18px; background: var(--night); color: var(--cream); font-size: var(--t-small); }
+    .visit-grid { grid-template-columns: 1fr 1fr; align-items: stretch; min-height: 80vh; }
+    .visit-photo { aspect-ratio: auto; order: 2; }
+    .visit-copy { align-self: center; padding: var(--section) clamp(40px, 6vw, 96px) var(--section) max(var(--gutter), calc((100vw - var(--max)) / 2)); }
   }
-
-  /* Counters: the real numbers show by default. When the stats are well in view, a one-time 1.3 s count-up
-     plays (an @property integer); it is time-based, so a visitor who stops scrolling never sees a half-way value. */
-  @property --n { syntax: '<integer>'; inherits: false; initial-value: 0; }
-  @media (prefers-reduced-motion: no-preference) {
-    .stats.counting .cnt { color: transparent; position: relative; display: inline-block; }
-    .stats.counting .cnt::after { content: counter(n); counter-reset: n var(--n); position: absolute; left: 0; top: 0; color: var(--redwood); animation: cnt-up 1.3s cubic-bezier(0.16, 1, 0.3, 1) both; }
-  }
-  @keyframes cnt-up { from { --n: 0; } to { --n: var(--to); } }
-  /* Phone dishes: native swipe carousel; each card tilts in 3D by its position in the row (scroll-driven). */
-  .dish-phone { list-style: none; margin: 26px 0 0; padding: 6px var(--gutter) 14px; display: flex; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: var(--gutter); scrollbar-width: none; overscroll-behavior-x: contain; perspective: 900px; }
-  .dish-phone::-webkit-scrollbar { display: none; }
-  .dtilt { flex: 0 0 min(74vw, 320px); scroll-snap-align: center; }
-  .dtilt > a { display: block; text-decoration: none; background: var(--paper); color: var(--ink); border-radius: 14px; overflow: hidden; box-shadow: 0 16px 36px -18px rgb(0 0 0 / 0.55); transform-style: preserve-3d; }
-  .dtilt-img { aspect-ratio: 4 / 5; overflow: hidden; }
-  .dtilt-img :global(img) { width: 100%; height: 100%; object-fit: cover; }
-  .dtilt-panel { padding: 14px 16px 16px; }
-  .dtilt-panel h3 { font-size: 1.35rem; margin: 0 0 6px; }
-  .dtilt-meta { display: flex; align-items: center; gap: 10px; margin: 0 0 4px; }
-  .dtilt-price { font: 700 1.2rem/1 var(--sans); }
-  .dtilt-line { margin: 0; font-size: var(--t-small); color: var(--ink-mute); }
-  @supports (animation-timeline: view()) {
-    @media (prefers-reduced-motion: no-preference) {
-      .dtilt > a { animation: dtilt linear both; animation-timeline: view(inline); }
-    }
-  }
-  @media (min-width: 900px) { .dish-phone { display: none; } }
-  @keyframes dtilt {
-    0% { transform: rotateY(28deg) scale(0.9); }
-    50% { transform: rotateY(0) scale(1); }
-    100% { transform: rotateY(-28deg) scale(0.9); }
-  }
-
 </style>

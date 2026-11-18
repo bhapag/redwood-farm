@@ -24,13 +24,13 @@ const schema = [
 ];
 ---
 <Base title={seoTitle} description={description} schema={schema} og={og} current={hub.short}>
-  <header class="h-head tone-night">
-    <div class="h-copy">
+  <header class="h-head p-bleed bleed">
+    <Picture src={img(image)} formats={['avif', 'webp']} widths={[480, 828, 1376]} sizes="(max-width: 899px) 75vw, 100vw" quality={48} alt={alt} loading="eager" fetchpriority="high" />
+    <div class="wrap h-copy">
       <h1 set:html={title} />
-      <p class="h-lede">{answer}</p>
+      <p class="p-lede">{answer}</p>
       <slot />
     </div>
-    <figure class="h-img"><Picture src={img(image)} formats={['avif', 'webp']} widths={[480, 800, 1200]} sizes="(min-width: 900px) 50vw, 100vw" alt={alt} loading="eager" fetchpriority="high" /></figure>
   </header>
   <SpokeList cluster={cluster} heading={`Everything in ${hub.name}`} />
   {faq.length > 0 && (
@@ -41,7 +41,7 @@ const schema = [
       </div>
     </section>
   )}
-  <section class="section tone-paper h-cta">
+  <section class="section tone-night h-cta">
     <div class="wrap">
       <h2>Questions before you come?</h2>
       <p class="muted">Message us with your date, time and number of guests. Open every day, 10 AM to 11 PM.</p>
@@ -53,17 +53,7 @@ const schema = [
   </section>
 </Base>
 <style>
-  .h-head { display: flex; flex-direction: column-reverse; padding-top: var(--head); }
-  .h-img { aspect-ratio: 4 / 3; overflow: hidden; }
-  .h-img :global(img) { width: 100%; height: 100%; object-fit: cover; }
-  .h-copy { padding: 26px var(--gutter) 44px; }
-  .h-copy h1 { font-size: var(--t-1); max-width: 15ch; }
-  .h-lede { color: var(--mute); font-size: clamp(1.0625rem, 1rem + 0.3vw, 1.25rem); max-width: 52ch; }
-  @media (min-width: 900px) {
-    .h-head { display: grid; grid-template-columns: 1fr 1fr; min-height: 72svh; }
-    .h-copy { align-self: center; padding: 56px clamp(32px, 4vw, 72px) 56px var(--gutter); }
-    .h-img { aspect-ratio: auto; }
-  }
+  .h-copy .p-lede { font-size: clamp(1.0625rem, 1rem + 0.3vw, 1.25rem); }
   .h-faq { display: grid; gap: 24px; }
   .h-faq h2 { font-size: var(--t-2); }
   @media (min-width: 900px) { .h-faq { grid-template-columns: 4fr 7fr; gap: 64px; } }

@@ -2,11 +2,10 @@
 import { base, u, abs, sitePath } from '../data/urls.js';
 import '../styles/global.css';
 import Icon from '../components/Icon.astro';
-import Magnet from '../components/reactbits/Magnet/Magnet';
 import { site, waLink } from '../data/site.js';
 import monogram from '../assets/rw-monogram.png';
 import { getImage } from 'astro:assets';
-import serifUrl from '@fontsource/gloock/files/gloock-latin-400-normal.woff2?url';
+import serifUrl from '@fontsource/gilda-display/files/gilda-display-latin-400-normal.woff2?url';
 import sansUrl from '@fontsource-variable/hanken-grotesk/files/hanken-grotesk-latin-wght-normal.woff2?url';
 
 // overHero: the header starts transparent over a dark first section (home only); everywhere else it is solid.
@@ -69,7 +68,7 @@ const bookMsg = 'Hello Red Wood Farm, I would like to book a table.';
   <link rel="canonical" href={canonical} />
   <link rel="preload" href={serifUrl} as="font" type="font/woff2" crossorigin />
   <link rel="preload" href={sansUrl} as="font" type="font/woff2" crossorigin />
-  <meta name="theme-color" content="#0b0f0c" />
+  <meta name="theme-color" content="#090c0a" />
   <meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large'} />
   <link rel="icon" href={u('/favicon.ico')} sizes="48x48" />
   <link rel="icon" href={u('/favicon.svg')} type="image/svg+xml" />
@@ -97,18 +96,17 @@ const bookMsg = 'Hello Red Wood Farm, I would like to book a table.';
   <!-- Analytics placeholder: Google Analytics is not set up yet. Add the GA4 tag here after the owner approves it. -->
 </head>
 <body>
-  <div class="scroll-line" aria-hidden="true"></div>
   <a class="skip" href="#main">Skip to content</a>
-  <header class="site-head" data-head data-solid={overHero ? undefined : ''}>
+  <header class="site-head" data-head data-solid={overHero ? undefined : ''} data-over={overHero ? '' : undefined}>
     <a class="brand" href={u('/')} aria-label="Red Wood Farm, home">
       <img src={mono.src} alt="" width="32" height="32" />
       <span>Red Wood Farm</span>
     </a>
     <nav class="nav" aria-label="Main">
       {nav.map(([l, h]) => <a href={u(h)} aria-current={isCur(l) ? 'page' : undefined}>{l}</a>)}
-      <Magnet client:media="(hover: hover) and (pointer: fine)" padding={60} magnetStrength={4}><a class="btn red" href={waLink(bookMsg)} target="_blank" rel="noopener"><Icon name="wa" />Book a table</a></Magnet>
+      <a class="btn gold" href={waLink(bookMsg)} target="_blank" rel="noopener"><Icon name="wa" />Book a table</a>
     </nav>
-    <button class="menu-btn" type="button" aria-haspopup="dialog" aria-controls="sheet" data-sheet-open><Icon name="burger" />Menu</button>
+    <button class="menu-btn" type="button" aria-haspopup="dialog" aria-controls="sheet" data-sheet-open><Icon name="burger" />More</button>
   </header>
 
   <dialog class="sheet" id="sheet" aria-label="Site menu" data-sheet>

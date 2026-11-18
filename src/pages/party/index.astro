@@ -5,10 +5,7 @@ import SpokeList from '../../components/SpokeList.astro';
 import ReviewBand from '../../components/ReviewBand.astro';
 import Icon from '../../components/Icon.astro';
 import { Picture, getImage } from 'astro:assets';
-import BlurHeading from '../../components/BlurHeading.astro';
-import ScrollWords from '../../components/ScrollWords.astro';
-import CardStack from '../../components/CardStack.astro';
-import Spark from '../../components/rb/Spark';
+import PartyPanels from '../../components/PartyPanels.astro';
 import { site, waLink } from '../../data/site.js';
 import { partyFaq, faqSchema } from '../../data/faq.js';
 
@@ -24,40 +21,39 @@ import birthdaySetup from '../../assets/venue/birthday.jpg';
 
 const pageUrl = abs(`/party/`);
 const types = [
-  { img: birthday, alt: 'A birthday balloon arch set up on the lawn at night', h: 'Birthday parties', p: 'Room for balloons, a cake table and dinner under the lights. Lunch or evening, for children or grown-ups.', msg: 'Birthday party' },
-  { img: kitty, alt: 'Daytime lounge seating on the lawn with cushions and low tables', h: 'Kitty parties', p: 'Daytime on the lawn from 10 AM, with the full menu and space to sit long.', msg: 'Kitty party' },
-  { img: family, alt: 'A draped tent with dining tables and chandeliers set up for a family function', h: 'Family functions', p: 'Anniversaries, get-togethers and family celebrations, with food from our own kitchen.', msg: 'Family function' },
-  { img: corporate, alt: 'Long wooden tables set up on the lawn for a daytime gathering', h: 'Corporate lunches', p: 'Team lunches and office get-togethers, away from the city, from 10 AM.', msg: 'Corporate lunch' },
+  { img: birthday, pos: '50% 60%', alt: 'A birthday balloon arch set up on the lawn at night', h: 'Birthday parties', p: 'Room for balloons, a cake table and dinner under the lights. Lunch or evening, for children or grown-ups.', msg: 'birthday party' },
+  { img: kitty, pos: '40% 50%', alt: 'Daytime lounge seating on the lawn with cushions and low tables', h: 'Kitty parties', p: 'Daytime on the lawn from 10 AM, with the full menu and space to sit long.', msg: 'kitty party' },
+  { img: family, alt: 'A draped tent with dining tables and chandeliers set up for a family function', h: 'Family functions', p: 'Anniversaries, get-togethers and family celebrations, with food from our own kitchen.', msg: 'family function' },
+  { img: corporate, alt: 'Long wooden tables set up on the lawn for a daytime gathering', h: 'Corporate lunches', p: 'Team lunches and office get-togethers, away from the city, from 10 AM.', msg: 'corporate lunch' },
 ];
-const typeCards = types.map((t) => ({ img: t.img, alt: t.alt, h: t.h, p: t.p, cta: `Ask about a ${t.msg.toLowerCase()}`, href: waLink(`Hello Red Wood Farm, I would like to plan a ${t.msg.toLowerCase()}. Date: , Time: , Guests: `) }));
 const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
   { '@type': 'ListItem', position: 1, name: 'Home', item: abs(`/`) },
   { '@type': 'ListItem', position: 2, name: 'Parties & Events', item: pageUrl },
 ] };
 ---
 <Base title="Birthday & Kitty Party Venue in Ludhiana | Red Wood Farm Lawn" description="Birthday parties, kitty parties, family functions and team lunches on a fairy-lit garden lawn on Pakhowal Road, Ludhiana. Food from our own kitchen. Enquire with a message." schema={[faqSchema(partyFaq), crumbs]} og="og-party.jpg" current="Parties">
-  <section class="p-hero tone-night">
-    <div class="p-hero-copy">
-      <BlurHeading as="h1" class="p-title" text="Birthday, kitty and family parties on the lawn" />
+  <section class="p-bleed bleed">
+    <Picture src={functionNight} formats={['avif', 'webp']} widths={[480, 828, 1376]} sizes="(max-width: 899px) 75vw, 100vw" quality={48} alt="An evening function on the Red Wood Farm lawn with a buffet line" loading="eager" fetchpriority="high" />
+    <div class="wrap">
+      <h1>Birthday, kitty and family parties on the lawn</h1>
       <p class="p-lede">Red Wood Farm is a garden party venue on outer Pakhowal Road, Ludhiana. We host birthday parties, kitty parties, family functions and corporate lunches on a fairy-lit lawn, with food from our own kitchen. To book, send your date, time and guest count.</p>
       <div class="btns">
-        <a class="btn red" href="#enquire"><Icon name="wa" />Plan your party</a>
+        <a class="btn gold" href="#enquire"><Icon name="wa" />Plan your party</a>
         <a class="btn ghost" href={site.tel}><Icon name="call" />Call {site.phoneDisplay}</a>
       </div>
     </div>
-    <figure class="p-hero-img"><Picture src={functionNight} formats={['avif', 'webp']} widths={[480, 800, 1100, 1376]} sizes="(min-width: 900px) 55vw, 100vw" alt="An evening function on the Red Wood Farm lawn with a buffet line" loading="eager" fetchpriority="high" /></figure>
   </section>
 
-  <section class="section tone-paper" aria-labelledby="types-h">
+  <section class="section tone-night" aria-labelledby="types-h">
     <div class="wrap">
-      <ScrollWords id="types-h" class="p-h2" text="What we host" />
-      <CardStack items={typeCards} />
+      <h2 id="types-h" class="p-h2" data-reveal>What we host</h2>
     </div>
+    <PartyPanels items={types} id="types" />
   </section>
 
   <section class="section tone-green" aria-labelledby="how-h">
     <div class="wrap">
-      <ScrollWords id="how-h" class="p-h2" text="How booking works" />
+      <h2 id="how-h" class="p-h2" data-reveal>How booking works</h2>
       <p class="muted">Four messages. There are no forms to fill in on this website.</p>
       <ol class="steps">
         <li data-reveal><b>Tell us the occasion</b><span>Birthday, kitty party, family function or team lunch.</span></li>
@@ -71,11 +67,11 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', it
   <section id="enquire" class="section tone-night enquire" aria-labelledby="enq-h">
     <div class="wrap split">
       <div>
-        <ScrollWords id="enq-h" class="p-h2" text="Plan your party" />
-        <p class="muted">Fill this in and it opens a chat with your message ready ready to send. Nothing is saved on this website.</p>
+        <h2 id="enq-h" class="p-h2" data-reveal>Plan your party</h2>
+        <p class="muted">Fill this in and it opens a chat with your message ready to send. Nothing is saved on this website.</p>
         <p class="muted">Guest capacity, per-plate prices and packages: ask us and we will share current details for your date.</p>
       </div>
-      <form class="enq" data-enquiry action={site.wa} method="get" target="_blank">
+      <form class="enq tone-green" data-enquiry action={site.wa} method="get" target="_blank">
         <label>Occasion
           <select name="occasion" required>
             <option>Birthday party</option><option>Kitty party</option><option>Family function</option><option>Corporate lunch</option><option>Other</option>
@@ -92,14 +88,14 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', it
         <label>Number of guests<input type="number" name="guests" min="1" max="2000" inputmode="numeric" required placeholder="e.g. 40" /></label>
         <label>Anything else (optional)<textarea name="note" rows="3" maxlength="400" placeholder="Veg only, a theme, a cake table..."></textarea></label>
         <input type="hidden" name="text" />
-        <Spark client:interact><button class="btn red" type="submit"><Icon name="wa" />Send your request</button></Spark>
+        <button class="btn" type="submit"><Icon name="wa" />Send your request</button>
       </form>
     </div>
   </section>
 
   <section class="section tone-paper" aria-labelledby="gal-h">
     <div class="wrap">
-      <ScrollWords id="gal-h" class="p-h2" text="From past parties on the lawn" />
+      <h2 id="gal-h" class="p-h2" data-reveal>From past parties on the lawn</h2>
       <p class="muted">Real set-ups at Red Wood Farm.</p>
       <div class="gal">
         <figure class="frame g-a sd-zoom"><Picture src={gate} formats={['avif', 'webp']} widths={[400, 700]} sizes="(min-width: 900px) 30vw, 46vw" alt="A floral entry gate decorated for an evening event" /></figure>
@@ -145,18 +141,8 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', it
 </script>
 
 <style>
-  .p-hero { display: flex; flex-direction: column-reverse; padding-top: var(--head); }
-  .p-hero-img { aspect-ratio: 4 / 3; overflow: hidden; }
-  .p-hero-img :global(img) { width: 100%; height: 100%; object-fit: cover; }
-  .p-hero-copy { padding: 26px var(--gutter) 40px; }
-  .p-hero h1 { font-size: var(--t-1); max-width: 14ch; }
-  .p-lede { color: var(--mute); max-width: 52ch; }
-  @media (min-width: 900px) {
-    .p-hero { display: grid; grid-template-columns: 5fr 6fr; min-height: 86svh; }
-    .p-hero-copy { align-self: center; padding: 56px clamp(32px, 4vw, 72px) 56px var(--gutter); }
-    .p-hero-img { aspect-ratio: auto; }
-  }
-  .p-h2 { font-size: var(--t-2); }
+  .p-bleed :global(img) { object-position: 50% 55%; }
+  .p-h2 { font-size: var(--t-1); max-width: 16ch; margin-bottom: clamp(24px, 3vw, 40px); }
   .types { list-style: none; padding: 0; margin: 36px 0 0; display: grid; gap: 44px; }
   .type-img { aspect-ratio: 4 / 3; }
   .type h3 { font-size: var(--t-3); margin: 18px 0 8px; }
@@ -167,23 +153,21 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', it
   .steps b { font: 400 1.45rem/1.15 var(--serif); }
   .steps b::before { content: counter(s) '. '; color: var(--gold); }
   .steps span { color: var(--mute); }
-  .enq { display: grid; gap: 16px; background: var(--paper); color: var(--ink); border-radius: 10px; padding: clamp(20px, 3vw, 36px); }
+  .enq { display: grid; gap: 16px; border-radius: 4px; padding: clamp(20px, 3vw, 36px); border: 1px solid var(--line); }
   .enq label { display: grid; gap: 8px; font: 650 0.95rem/1.3 var(--sans); }
-  .enq input, .enq select, .enq textarea { min-height: 50px; padding: 10px 14px; border-radius: 8px; border: 1.5px solid rgb(22 21 15 / 0.25); background: #fff; color: var(--ink); font: 400 1.0625rem/1.3 var(--sans); width: 100%; color-scheme: light; }
-  .enq input:focus, .enq select:focus, .enq textarea:focus { outline: 2px solid var(--ink); outline-offset: 1px; }
+  .enq input, .enq select, .enq textarea { min-height: 50px; padding: 10px 14px; border-radius: 8px; border: 1px solid rgb(242 235 220 / 0.28); background: rgb(9 12 10 / 0.55); color: var(--ivory); font: 400 1.0625rem/1.3 var(--sans); width: 100%; color-scheme: dark; }
+  .enq ::placeholder { color: rgb(242 235 220 / 0.55); }
+  .enq input:focus, .enq select:focus, .enq textarea:focus { outline: 2px solid var(--gold); outline-offset: 1px; }
   .enq textarea { resize: vertical; }
   .enq-row { display: grid; gap: 16px; grid-template-columns: 1fr 1fr; }
   @media (max-width: 420px) { .enq-row { grid-template-columns: 1fr; } }
   .enq .btn { justify-self: start; margin-top: 4px; }
-  .gal { display: grid; gap: 14px; margin-top: 28px; grid-template-columns: 1fr 1fr; }
+  .gal { display: grid; gap: 10px; margin-top: 28px; grid-template-columns: 1fr 1fr; }
+  @media (max-width: 899px) { .gal { margin-inline: calc(-1 * var(--gutter)); } .gal figure { border-radius: 0; } }
   .gal figure { aspect-ratio: 1; }
   .gal .g-b, .gal .g-d { grid-column: span 2; aspect-ratio: 16 / 10; }
   @media (min-width: 900px) { .gal { grid-template-columns: 3fr 4fr; } .gal .g-b, .gal .g-d { grid-column: auto; aspect-ratio: 4 / 3; } .gal .g-a, .gal .g-c { aspect-ratio: 4 / 3; } }
   .faq-wrap { display: grid; gap: 24px; }
   @media (min-width: 900px) { .faq-wrap { grid-template-columns: 4fr 7fr; gap: 64px; } }
-  /* Parties */
-  .p-hero :global(.p-title) { font-size: var(--t-1); max-width: 14ch; line-height: 1.04; margin: 0 0 0.45em; }
-  :global(.p-h2.scroll-words) { font-size: var(--t-2); }
-  .enq :global(.rb-spark) { justify-self: start; }
 
 </style>

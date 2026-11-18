@@ -3,7 +3,6 @@ import { base, u, abs, sitePath, CANONICAL_ORIGIN } from '../../data/urls.js';
 import Base from '../../layouts/Base.astro';
 import Icon from '../../components/Icon.astro';
 import { Picture } from 'astro:assets';
-import BlurHeading from '../../components/BlurHeading.astro';
 import { site, waLink } from '../../data/site.js';
 import { menu } from '../../data/menu.js';
 
@@ -19,6 +18,7 @@ import jalebi from '../../assets/food/paneer_jalebi_rabri.jpg';
 import platter from '../../assets/food/nonveg_platter.jpg';
 import sizzler from '../../assets/food/veg_sizzler.jpg';
 import naan from '../../assets/food/naan.jpg';
+import tandoorGlow from '../../assets/food/tandoor-glow.jpg';
 
 
 // One photo per category where a matching dish exists; the same photos power the hover preview.
@@ -58,11 +58,15 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', it
 ] };
 ---
 <Base title="Menu and Prices | Red Wood Farm, Pakhowal Road, Ludhiana" description={`Full menu with prices: ${menu.count} dishes, tandoor, North Indian, Indo-Chinese, breads and desserts. Half and full portions, veg and non-veg marked. Prices include GST.`} schema={[menuSchema, crumbs]} og="og-menu.jpg" current="Menu">
-  <header class="m-head wrap page-top">
-    <BlurHeading as="h1" class="m-title" text="Everything we cook, with prices" />
+  <header class="m-head bleed">
+    <Picture src={tandoorGlow} formats={['avif', 'webp']} widths={[480, 828, 1400]} sizes="(max-width: 899px) 75vw, 100vw" quality={48} alt="Skewers cooking inside a glowing clay tandoor" loading="eager" fetchpriority="high" />
+    <div class="wrap">
+    <h1 class="m-title">Everything we cook, with prices</h1>
     <p class="answer">Red Wood Farm serves {menu.count} dishes: soups, appetizers, tandoor, champ, platters, sizzlers, North Indian mains, breads, rice and desserts. Prices are in rupees and include GST. Many mains come in half and full portions. Open daily, 10 AM to 11 PM, for dine-in and takeaway.</p>
+    </div>
   </header>
 
+  <div class="tone-menu m-paper">
   <div class="m-bar" data-menubar>
     <div class="wrap m-tools">
       <label class="m-search">
@@ -130,12 +134,12 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', it
       <p>All prices are in ₹ and inclusive of GST. <span class="mark v" aria-hidden="true"></span> Veg <span class="mark nv" aria-hidden="true"></span> Non-veg. Ice Cream with Brownie is marked non-veg until we confirm the brownie is eggless.</p>
       <p>Open daily, 10 AM to 11 PM. Dine-in and takeaway.</p>
       <div class="btns">
-        <a class="btn red" href={waLink('Hello Red Wood Farm, I would like to order a takeaway.')} target="_blank" rel="noopener"><Icon name="wa" />Order a takeaway</a>
+        <a class="btn gold" href={waLink('Hello Red Wood Farm, I would like to order a takeaway.')} target="_blank" rel="noopener"><Icon name="wa" />Order a takeaway</a>
         <a class="btn ghost" href={site.tel}><Icon name="call" />Call {site.phoneDisplay}</a>
       </div>
     </aside>
   </div>
-  <a class="to-top" href="#main" data-top aria-label="Back to the top of the menu"><Icon name="up" /><span>Top</span></a>
+  </div>
 </Base>
 
 <script>
@@ -187,18 +191,16 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', it
   secs.forEach((s) => io.observe(s));
   setActive(secs[0].id);
 
-  // Back to top: shows once the visitor is well into the list.
-  const top = document.querySelector('[data-top]');
-  // No scroll listener: the button appears once the first two categories have scrolled away.
-  const sentinel = document.querySelector('#appetizers');
-  if (sentinel) new IntersectionObserver(([e]) => top.classList.toggle('on', e.boundingClientRect.top < 0)).observe(sentinel);
-  top.addEventListener('click', (e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' }); q.blur(); });
 </script>
 
 <style>
-  .m-head { padding-bottom: 28px; }
+  .m-head { min-height: 62svh; display: flex; align-items: flex-end; padding: calc(var(--head) + 24px) 0 clamp(28px, 5vw, 64px); }
+  .m-head::after { background: linear-gradient(180deg, rgb(9 12 10 / 0.7) 0%, rgb(9 12 10 / 0.15) 25%, rgb(9 12 10 / 0.3) 45%, rgb(9 12 10 / 0.95) 100%); }
+  .m-head :global(img) { object-position: 50% 45%; }
   .m-head h1 { font-size: var(--t-1); max-width: 15ch; }
-  .m-head .answer { font-size: 1rem; }
+  .m-head .answer { font-size: 1rem; color: rgb(242 235 220 / 0.86); }
+  @media (min-width: 900px) { .m-head { min-height: 70svh; } .m-head::after { background: linear-gradient(180deg, rgb(9 12 10 / 0.6) 0%, rgb(9 12 10 / 0) 20%), linear-gradient(90deg, rgb(9 12 10 / 0.9) 0%, rgb(9 12 10 / 0.5) 45%, rgb(9 12 10 / 0.1) 70%); } }
+  .m-paper { background: var(--paper); color: var(--paper-ink); }
   .m-bar { position: sticky; top: 0; z-index: 55; background: var(--paper); border-bottom: 1px solid var(--line); box-shadow: 0 10px 24px -18px rgb(22 21 15 / 0.35); }
   .m-tools { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; padding-block: 10px 6px; }
   .m-search { flex: 1 1 220px; }
@@ -214,7 +216,7 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', it
   .m-cats ul { list-style: none; display: flex; gap: 6px; margin: 0; padding: 4px 0 10px; width: max-content; }
   @media (min-width: 1360px) { .m-cats { padding-inline: calc((100vw - var(--max)) / 2); } }
   .m-cats a { text-decoration: none; font: 650 0.95rem/1 var(--sans); color: var(--ink); white-space: nowrap; display: flex; align-items: center; min-height: 44px; padding: 0 16px; border-radius: 999px; transition: background 0.3s, color 0.3s; }
-  .m-cats a[aria-current] { background: var(--green); color: var(--cream); }
+  .m-cats a[aria-current] { background: var(--forest); color: var(--ivory); }
   .m-ind { display: none; }
 
   .m-body { padding-block: 20px 96px; }
@@ -226,7 +228,7 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', it
   .m-fig { margin: 0; aspect-ratio: 16 / 10; }
   @media (min-width: 900px) { .m-fig { aspect-ratio: 4 / 3; } }
   .m-group + .m-group { margin-top: 28px; }
-  .m-sub { font: 700 0.95rem/1.2 var(--sans); color: var(--redwood); display: flex; align-items: flex-end; margin: 0; padding-bottom: 10px; border-bottom: 1.5px solid var(--ink); }
+  .m-sub { font: 700 0.95rem/1.2 var(--sans); color: var(--accent); display: flex; align-items: flex-end; margin: 0; padding-bottom: 10px; border-bottom: 1.5px solid var(--ink); }
   .m-hf { margin-left: auto; display: flex; }
   .m-hf span { width: 5rem; text-align: right; color: var(--ink-mute); font-weight: 650; font-size: 0.875rem; }
   .m-group ul { list-style: none; margin: 0; padding: 0; }
@@ -239,12 +241,11 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', it
   .m-half { color: var(--ink-mute); font-weight: 600; }
   .m-item[hidden], .m-sec[hidden], .m-group[hidden] { display: none; }
   .m-empty { padding: 40px 0; font-size: 1.1rem; }
-  .m-foot { margin-top: 64px; padding: clamp(22px, 4vw, 40px); border-radius: 10px; }
+  .m-foot { margin-top: 64px; padding: clamp(22px, 4vw, 40px); border-radius: 4px; }
   .m-foot .mark { vertical-align: -2px; margin-inline: 4px 2px; }
   @media (max-width: 400px) { .m-p, .m-hf span { width: 4.3rem; } .m-p { font-size: 1.15rem; } }
   .to-top { position: fixed; right: 14px; bottom: calc(var(--bar) + env(safe-area-inset-bottom) + 14px); z-index: 56; display: inline-flex; align-items: center; gap: 6px; min-height: 48px; padding: 0 18px 0 14px; border-radius: 999px; background: var(--ink); color: var(--paper); text-decoration: none; font: 650 0.95rem/1 var(--sans); box-shadow: 0 10px 24px -10px rgb(0 0 0 / 0.5); opacity: 0; transform: translateY(12px); pointer-events: none; transition: opacity 0.3s var(--ease), transform 0.3s var(--ease); }
   .to-top svg { width: 18px; height: 18px; }
   .to-top.on { opacity: 1; transform: none; pointer-events: auto; }
   @media (min-width: 900px) { .to-top { bottom: 28px; right: 28px; } }
-  .m-head :global(.m-title) { font-size: var(--t-1); max-width: 15ch; line-height: 1.04; margin: 0 0 0.45em; }
 </style>

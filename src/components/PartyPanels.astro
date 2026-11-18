@@ -1,0 +1,41 @@
+---
+// Full-bleed photo panels, one per party type, with the caption on a readable gradient and a WhatsApp CTA.
+// Phones: a swipe row. Desktop: panels side by side (three or four across).
+import { Picture } from 'astro:assets';
+import Icon from './Icon.astro';
+import { waLink } from '../data/site.js';
+const { items, id = 'party' } = Astro.props;
+---
+<ul class={`party-row swipe cols-${items.length}`} role="list" aria-label="Party types" data-swipe={id}>
+  {items.map((o) => (
+    <li class="party bleed">
+      <Picture src={o.img} formats={['avif', 'webp']} widths={[480, 720, 960]} sizes={`(min-width: 900px) ${Math.round(100 / items.length)}vw, 86vw`} alt={o.alt} loading="lazy" style={`object-position:${o.pos ?? '50% 50%'}`} />
+      <div class="party-copy">
+        <h3>{o.h}</h3>
+        <p>{o.p}</p>
+        <a class="btn gold" href={waLink(`Hello Red Wood Farm, I would like to plan a ${o.msg}. Date: , Time: , Guests: `)} target="_blank" rel="noopener"><Icon name="wa" />Ask about a {o.msg}</a>
+      </div>
+    </li>
+  ))}
+</ul>
+<p class="swipe-hint wrap party-hint" data-swipe-hint={id} aria-hidden="true">Swipe for more <Icon name="arrow" /></p>
+
+<style>
+  .party { width: 86vw; max-width: 420px; height: min(72svh, 600px); border-radius: 4px; display: flex; align-items: flex-end; }
+  .party::after { background: linear-gradient(180deg, rgb(9 12 10 / 0) 30%, rgb(9 12 10 / 0.55) 55%, rgb(9 12 10 / 0.94) 100%); }
+  .party :global(img) { transition: transform 1.4s var(--ease); }
+  .party:hover :global(img) { transform: scale(1.04); }
+  .party-copy { padding: 24px 22px; }
+  .party h3 { font-size: var(--t-2); margin: 0 0 8px; }
+  .party p { color: rgb(242 235 220 / 0.86); margin: 0 0 18px; font-size: var(--t-small); }
+  .party-hint { display: flex; margin-top: 16px; }
+  @media (min-width: 900px) {
+    .party-hint { display: none; }
+    .party-row { width: min(100% - 2 * var(--gutter), var(--max)); margin-inline: auto; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; overflow: visible; }
+    .party-row.cols-4 { grid-template-columns: repeat(4, 1fr); }
+    .party { width: auto; max-width: none; height: min(78vh, 720px); }
+    .party-copy { padding: 32px 28px; }
+    .cols-4 .party-copy { padding: 26px 22px; }
+    .cols-4 .party h3 { font-size: var(--t-3); }
+  }
+</style>

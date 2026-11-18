@@ -19,6 +19,11 @@ function openNow() {
 function header() {
   const h = document.querySelector('[data-head]');
   if (!h) return;
+  // Over a full-bleed hero the header starts clear and turns solid once the hero leaves (no scroll listener).
+  const hero = document.querySelector('[data-hero]');
+  if (h.hasAttribute('data-over') && hero && 'IntersectionObserver' in window) {
+    new IntersectionObserver(([e]) => h.classList.toggle('solid', !e.isIntersecting), { rootMargin: `-${h.offsetHeight + 8}px 0px 0px 0px`, threshold: [0, 0.02] }).observe(hero.querySelector('[data-hero-end]') || hero);
+  }
   if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
   let last = 0, hidden = false, frame = 0;
   const on = () => {

@@ -274,7 +274,10 @@ figure { margin: 0; }
 .prose a { color: var(--accent); }
 
 /* ---------- Motion: visible by default; slow fades and masked lines when allowed ---------- */
-.js [data-reveal] { opacity: 0.001; transform: translateY(18px); transition: opacity 1.1s var(--slow), transform 1.1s var(--ease); }
+/* Reveals fire as soon as a block touches the viewport and finish in 0.4 s, so text is never caught half-faded. */
+@media (prefers-reduced-motion: no-preference) {
+  .js [data-reveal] { opacity: 0.001; transform: translateY(12px); transition: opacity 0.4s var(--ease), transform 0.4s var(--ease); }
+}
 .js [data-reveal].in { opacity: 1; transform: none; }
 @supports (animation-timeline: view()) {
   @media (prefers-reduced-motion: no-preference) {

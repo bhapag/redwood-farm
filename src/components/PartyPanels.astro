@@ -13,7 +13,7 @@ const { items, id = 'party' } = Astro.props;
       <div class="party-copy">
         <h3>{o.h}</h3>
         <p>{o.p}</p>
-        <a class="btn gold" href={waLink(`Hello Red Wood Farm, I would like to plan a ${o.msg}. Date: , Time: , Guests: `)} target="_blank" rel="noopener"><Icon name="wa" />Ask about a {o.msg}</a>
+        <a class="btn gold party-btn" href={waLink(`Hello Red Wood Farm, I would like to plan a ${o.msg}. Date: , Time: , Guests: `)} target="_blank" rel="noopener" aria-label={`Ask on WhatsApp about a ${o.msg}`}><Icon name="wa" />Ask on WhatsApp</a>
       </div>
     </li>
   ))}
@@ -29,13 +29,16 @@ const { items, id = 'party' } = Astro.props;
   .party h3 { font-size: var(--t-2); margin: 0 0 8px; }
   .party p { color: rgb(242 235 220 / 0.86); margin: 0 0 18px; font-size: var(--t-small); }
   .party-hint { display: flex; margin-top: 16px; }
+  .party-btn { white-space: nowrap; }
   @media (min-width: 900px) {
     .party-hint { display: none; }
     .party-row { width: min(100% - 2 * var(--gutter), var(--max)); margin-inline: auto; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; overflow: visible; }
-    .party-row.cols-4 { grid-template-columns: repeat(4, 1fr); }
+    .party-row.cols-4 { grid-template-columns: repeat(2, 1fr); }
     .party { width: auto; max-width: none; height: min(78vh, 720px); }
     .party-copy { padding: 32px 28px; }
     .cols-4 .party-copy { padding: 26px 22px; }
     .cols-4 .party h3 { font-size: var(--t-3); }
   }
+  @media (min-width: 1200px) { .party-row.cols-4 { grid-template-columns: repeat(4, 1fr); } }
+  .party-btn { max-width: 100%; }
 </style>

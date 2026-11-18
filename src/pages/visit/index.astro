@@ -10,6 +10,7 @@ import { visitFaq, faqSchema } from '../../data/faq.js';
 import entrance from '../../assets/venue/entrance-arch.jpg';
 import palms from '../../assets/venue/palms-dusk.jpg';
 import pathDay from '../../assets/venue/garden-path-day.jpg';
+import stringWide from '../../assets/venue/string-wide.jpg';
 
 const pageUrl = abs(`/visit/`);
 const mapSrc = `https://maps.google.com/maps?q=${site.geo.lat},${site.geo.lng}&z=15&output=embed`;
@@ -19,14 +20,17 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', it
 ] };
 ---
 <Base title="Visit Red Wood Farm | Restaurant on Pakhowal Road, Ludhiana: Hours & Directions" description="Red Wood Farm, 676, VPO Daad, Pakhowal Road, opposite Cerajot Tiles, near Omaxe Flats, Ludhiana. Open daily 10 AM to 11 PM. Takeaway, Wi-Fi, no wheelchair access." schema={[faqSchema(visitFaq), crumbs]} og="og-visit.jpg" current="Visit">
-  <header class="v-head wrap page-top">
+  <header class="v-head p-bleed bleed">
+    <Picture src={palms} formats={['avif', 'webp']} widths={[640, 960, 1376]} sizes="100vw" alt="The fairy-lit palm driveway at Red Wood Farm at dusk" loading="eager" fetchpriority="high" />
+    <div class="wrap">
     <h1>Find us on outer Pakhowal Road</h1>
-    <p class="answer">Red Wood Farm is at 676, VPO Daad, Pakhowal Road, opposite Cerajot Tiles and near Omaxe Flats, Ludhiana, Punjab 142022. We are open every day from 10:00 AM to 11:00 PM for dine-in and takeaway. Call or message 096467 13555.</p>
+    <p class="p-lede">Red Wood Farm is at 676, VPO Daad, Pakhowal Road, opposite Cerajot Tiles and near Omaxe Flats, Ludhiana, Punjab 142022. We are open every day from 10:00 AM to 11:00 PM for dine-in and takeaway. Call or message 096467 13555.</p>
+    </div>
   </header>
 
   <section class="wrap v-grid">
     <div class="v-map frame" data-map>
-      <Picture src={palms} formats={['avif', 'webp']} widths={[480, 800, 1200]} sizes="(min-width: 900px) 55vw, 92vw" alt="The fairy-lit palm driveway at Red Wood Farm at dusk" class="v-map-img" loading="eager" fetchpriority="high" />
+      <Picture src={stringWide} formats={['avif', 'webp']} widths={[480, 800, 1200]} sizes="(min-width: 900px) 55vw, 92vw" alt="String lights over lounge seating on the lawn at night" class="v-map-img" loading="lazy" />
       <button type="button" class="btn v-map-btn" data-map-load><Icon name="pin" />Show the map</button>
     </div>
     <dl class="v-facts">
@@ -84,23 +88,22 @@ const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', it
 </script>
 
 <style>
-  .v-head { padding-bottom: 36px; }
-  .v-head h1 { font-size: var(--t-1); max-width: 14ch; }
-  .v-grid { display: grid; gap: 36px; padding-bottom: clamp(56px, 8vw, 110px); }
+  .v-head :global(img) { object-position: 50% 50%; }
+  .v-grid { display: grid; gap: 36px; padding-block: var(--section); }
   @media (min-width: 900px) { .v-grid { grid-template-columns: 1.3fr 1fr; align-items: start; gap: 64px; } }
   .v-map { position: relative; aspect-ratio: 4 / 3; display: grid; place-items: end start; padding: 16px; }
   .v-map :global(.v-map-img), .v-map :global(picture) { position: absolute; inset: 0; width: 100%; height: 100%; }
   .v-map :global(img) { width: 100%; height: 100%; object-fit: cover; }
-  .v-map-btn { position: relative; z-index: 1; --btn-bg: var(--paper); --btn-fg: var(--ink); box-shadow: 0 8px 24px -8px rgb(0 0 0 / 0.5); }
+  .v-map-btn { position: relative; z-index: 1; --btn-bg: var(--gold); --btn-fg: var(--night); box-shadow: 0 8px 24px -8px rgb(0 0 0 / 0.5); }
   .v-map :global(iframe) { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
   .v-facts { margin: 0; }
   .v-facts div { border-top: 1px solid var(--line); padding: 14px 0; display: grid; gap: 2px; }
   .v-facts div:last-child { border-bottom: 1px solid var(--line); }
-  .v-facts dt { font: 650 var(--t-label)/1.3 var(--sans); color: var(--mute); }
+  .v-facts dt { font: 650 var(--t-label)/1.3 var(--sans); color: var(--gold); letter-spacing: 0.02em; }
   .v-facts dd { margin: 0; }
   .v-facts dd a { font-weight: 650; display: inline-flex; align-items: center; min-height: 44px; }
   .v-facts address { font-style: normal; }
-  .v-h2 { font-size: var(--t-2); }
+  .v-h2 { font-size: var(--t-1); max-width: 14ch; }
   .v-steps { padding-left: 1.3em; margin: 20px 0 30px; display: grid; gap: 14px; color: var(--mute); }
   .v-steps li::marker { color: var(--gold); font-weight: 700; }
   .v-pics { display: grid; grid-template-columns: 1.4fr 1fr; gap: 14px; align-items: end; }

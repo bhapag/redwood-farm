@@ -33,7 +33,7 @@ const speed = (n) => `${Math.max(60, n * 10)}s`;
       <p class="rv-note">Rating as shown on Google on {site.rating.checked}. Quotes are copied exactly, with Google's spelling.</p>
     </div>
     <div class="rv-links">
-      <a class="btn" href={reviewsUrl} target="_blank" rel="noopener">Read all reviews on Google</a>
+      <a class="btn gold" href={reviewsUrl} target="_blank" rel="noopener">Read all reviews on Google</a>
       <a class="btn ghost" href={site.reviewUrl} target="_blank" rel="noopener">Leave a review</a>
     </div>
   </div>
@@ -81,14 +81,11 @@ const speed = (n) => `${Math.max(60, n * 10)}s`;
   @keyframes rv-left { from { transform: translateX(0); } to { transform: translateX(calc(-50% - 8px)); } }
   @keyframes rv-right { from { transform: translateX(calc(-50% - 8px)); } to { transform: translateX(0); } }
 
-  .rv-card { width: min(78vw, 340px); flex: none; display: flex; flex-direction: column; gap: 12px; padding: 22px; border-radius: 10px; background: var(--night-2); border: 1px solid var(--line); }
-  .tone-green .rv-card { background: var(--green-deep); }
-  .tone-paper .rv-card { background: #fff; }
+  .rv-card { width: min(78vw, 340px); flex: none; display: flex; flex-direction: column; gap: 12px; padding: 22px; border-radius: 4px; background: rgb(9 12 10 / 0.35); border: 1px solid var(--line); }
   .rv-stars { display: flex; gap: 3px; margin: 0; }
   .rv-stars svg { width: 17px; height: 17px; }
   .rv-stars .on { fill: var(--gold); }
   .rv-stars .off { fill: none; stroke: var(--mute); stroke-width: 1.5; }
-  .tone-paper .rv-stars .on { fill: #a8780f; }
   .rv-card blockquote { margin: 0; flex: 1; }
   .rv-card blockquote p { margin: 0; font: 400 1.0625rem/1.42 var(--serif); }
   @media (min-width: 900px) { .rv-card blockquote p { font-size: 1.125rem; } }
